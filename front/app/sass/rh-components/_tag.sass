@@ -1,0 +1,24 @@
+.rh-tag-hgroup
+  position: relative
+  margin-top: $base-line-height
+  margin-bottom: $base-line-height
+  span
+    margin-right: $base-line-height-half
+
+// Should be a <span>
+.rh-tag
+  @extend .small
+  text-transform: uppercase
+  padding: $base-line-height-half $base-line-height $base-line-height-half $base-line-height
+  background-color: $grey-2
+  border-radius: $border-radius-small
+  color: $grey-8
+  word-break: keep-all
+  i.fa
+    color: $blue-dark
+    padding-right: $base-line-height-half
+  em
+    font-style: normal
+    font-weight: 600
+    color: $blue-dark
+    text-transform: none
