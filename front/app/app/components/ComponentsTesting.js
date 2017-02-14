@@ -163,6 +163,7 @@ class ComponentsTesting extends React.Component {
           ]}/>
           <hr/>
           <div>
+
             <Well>
               <h2>Buttons</h2>
               <div className="rh-button-container-horiz">
@@ -176,8 +177,16 @@ class ComponentsTesting extends React.Component {
           <div>
             <Well>
               <h2>Icons</h2>
-              <IconCircle/>
+              <div className="rh-icon-horizontal-group">
+              <IconCircle icon="coffee"/>
+              <IconCircle icon="code"/>
+              <IconCircle icon="hand-spock-o"/>
+              <IconCircleText label="This"/>
+              <IconCircleText label="Is"/>
+              <IconCircleText label="The"/>
               <IconCircleText label="Label"/>
+              </div>
+              <p className="margin-top-double">Icons are from <a href="http://fontawesome.io/icons/">Font Awesome</a>. Newer icons (after v 4.6) are not included.</p>
             </Well>
           </div>
           <div>
@@ -208,6 +217,7 @@ class ComponentsTesting extends React.Component {
             </Well>
           </div>
           <hr/>
+          <h2>Card groups</h2>
           <CardGroup orientation="horizontal-decorative">
             <Card title="Title" style="bars" ctaRoute="/two">
               <p>{Lorem.paragraph(3, 7)}</p>
@@ -234,13 +244,13 @@ class ComponentsTesting extends React.Component {
           </CardGroup>
           <hr/>
           <CardGroup orientation="horizontal-table">
-            <Card title="Title" style="sea" cta="Read more" ctaRoute='/one'>
+            <Card title="Title" style="dark" cta="Read more" ctaRoute='/one'>
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
-            <Card title="Title" style="pipes" ctaRoute="/two">
+            <Card title="Title" style="bars" ctaRoute="/two">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
-            <Card title="Title" style="bridge" ctaRoute="/two">
+            <Card title="Title" style="dark" ctaRoute="/two">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
             <Card title="Title" style="bars" ctaRoute="/two">
@@ -249,7 +259,86 @@ class ComponentsTesting extends React.Component {
           </CardGroup>
           <Pagination start={1} end={4} current={2} next={false}
                       prev={false}/>
-
+          <Well>
+            <h2>Forms</h2>
+            <Well>
+              <form className="rh-form">
+                <div className="rh-form-group">
+                  <label htmlFor="input1">What's your name?</label>
+                  <input type="text" placeholder="Type here" id="input1"/>
+                </div>
+                <div className="rh-form-group">
+                  <label htmlFor="textarea1">What's your name?</label>
+                  <textarea id="textarea1">Type here</textarea>
+                </div>
+                <div className="rh-form-group">
+                  <label htmlFor="select1">How much?</label>
+                  <select id="select1">
+                    <option>None</option>
+                    <option>Some</option>
+                    <option>All</option>
+                  </select>
+                </div>
+                <div className="rh-form-group">
+                  <label>What's the best option?</label>
+                  <label><input type="checkbox" id="cbox1"
+                                value="first_checkbox"/> Option 1</label>
+                  <label><input type="checkbox" id="cbox2"
+                                value="first_checkbox"/> Option 2</label>
+                  <label><input type="checkbox" id="cbox3"
+                                value="first_checkbox"/> Option 3</label>
+                </div>
+                <div className="rh-form-group">
+                  <label>What's the best option?</label>
+                  <label><input type="radio" name="options"
+                                value="first_checkbox"/> Option 1</label>
+                  <label><input type="radio" name="options"
+                                value="first_checkbox"/> Option 2</label>
+                  <label><input type="radio" name="options"
+                                value="first_checkbox"/> Option 3</label>
+                </div>
+              </form>
+            </Well>
+            <h2>Inline</h2>
+            <Well>
+              <form className="rh-form-inline">
+                <div className="rh-form-group">
+                  <label htmlFor="input1">What's your name?</label>
+                  <input type="text" placeholder="Type here" id="input1"/>
+                </div>
+                <div className="rh-form-group">
+                  <label htmlFor="textarea1">What's your name?</label>
+                  <textarea id="textarea1">Type here</textarea>
+                </div>
+                <div className="rh-form-group">
+                  <label htmlFor="select1">How much?</label>
+                  <select id="select1">
+                    <option>None</option>
+                    <option>Some</option>
+                    <option>All</option>
+                  </select>
+                </div>
+                <div className="rh-form-group">
+                  <label>What's the best option?</label>
+                  <label><input type="checkbox" id="cbox1"
+                                value="first_checkbox"/> Option 1</label>
+                  <label><input type="checkbox" id="cbox2"
+                                value="first_checkbox"/> Option 2</label>
+                  <label><input type="checkbox" id="cbox3"
+                                value="first_checkbox"/> Option 3</label>
+                </div>
+                <div className="rh-form-group">
+                  <label>What's the best option?</label>
+                  <label><input type="radio" name="options"
+                                value="first_checkbox"/> Option 1</label>
+                  <label><input type="radio" name="options"
+                                value="first_checkbox"/> Option 2</label>
+                  <label><input type="radio" name="options"
+                                value="first_checkbox"/> Option 3</label>
+                </div>
+              </form>
+            </Well>
+          </Well>
         </PageModule>
         <PageModule style="shaded" title="Tables" headline="For every occasion">
           <p>Interactive, sortable table headings</p>
@@ -289,11 +378,12 @@ class ComponentsTesting extends React.Component {
                     headline="Module Headline">
           <TextStyles />
         </PageModule>
-        <PageModule style="black" title="Module Title"
+        <PageModule style="dark" title="Module Title"
                     headline="Module Headline">
           <TextStyles />
         </PageModule>
-      </div>);
+      </div>
+    );
   }
 }
 

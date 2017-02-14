@@ -19,7 +19,7 @@
   @extend %body-base-small
   +transition-all
   padding: 3px $base-line-height-half
-  border: 1px solid rgb(200, 200, 200)
+  border: 1px solid $blue-dark
   border-radius: $border-radius-small
   background-color: #fff
   color: $control-primary-color-dark
@@ -29,8 +29,8 @@
   height: 4rem
   line-height: $base-line-height-double
   &:focus
-    border: 1px solid $control-primary-color-dark
-    box-shadow: 0 0 10px $control-primary-color
+    border: 1px solid $blue
+    box-shadow: 0 0 10px $blue
   &:disabled
     background-color: rgba(0,0,0,.1)
     border: 1px solid transparent
@@ -51,8 +51,10 @@ legend
 
 label
   @extend %body-base-small
-  font-size: 1.6rem
+  color: $blue-dark
+  font-style: 1.2rem
   font-weight: 600
+  text-transform: uppercase
 
 input[type=text],
 input[type=password],
@@ -165,7 +167,6 @@ input.form-input-disabled
 
 
 .rh-form
-  @extend %body-base-small
   .rh-form-group
     margin-bottom: $base-line-height-double
   label
@@ -180,17 +181,16 @@ input.form-input-disabled
     margin-right: $base-line-height-half
 
 .rh-form-inline
-  display: table
-  table-layout: fixed
+  display: block
   width: 100%
   .rh-form-group
-    display: table-cell
+    display: block
     white-space: nowrap
     width: 1%
-    //overflow: hidden
-    margin-right: $base-line-height
+    margin-top: $base-line-height
+    margin-bottom: $base-line-height
   label
-    margin-right: $base-line-height-half
+    margin-right: $base-line-height-double
   input, select, textarea
     display: inline
     width: auto
@@ -199,3 +199,24 @@ input.form-input-disabled
     display: inline
     width: auto
     margin-right: $base-line-height-half
+
+//.rh-form-inline
+//  display: table
+//  table-layout: fixed
+//  width: 100%
+//  .rh-form-group
+//    display: table-row
+//    white-space: nowrap
+//    width: 1%
+//    padding-top: $base-line-height
+//    padding-bottom: $base-line-height
+//  label
+//    margin-right: $base-line-height-half
+//  input, select, textarea
+//    display: inline
+//    width: auto
+//    margin-right: $base-line-height-half
+//  input[type=radio], input[type=checkbox]
+//    display: inline
+//    width: auto
+//    margin-right: $base-line-height-half

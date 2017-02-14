@@ -31,7 +31,7 @@ class IconCircle extends React.Component {
   render() {
     let iconStyle = 'fa fa-' + this.props.icon;
 
-    return (<div className='rh-icon-circle'>
+    return (<div className='rh-icon-circle-icon'>
       <i className={iconStyle}></i>
     </div>);
   }
