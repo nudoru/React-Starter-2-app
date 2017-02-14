@@ -23,6 +23,15 @@ $card-margin: 2rem
     &:last-of-type
       margin-right: 0
 
+.rh-card-container-horizontal-decorative
+  @extend .rh-card-container-horizontal
+  margin-top: $base-line-height-triple
+  margin-bottom: $base-line-height-triple
+  .rh-card
+    box-shadow: 5px 5px 30px rgba(0,0,0,.1)
+    margin: 0
+    margin-right: $base-line-height-triple*2
+
 .rh-card-container-vertical
   display: flex
   min-height: 100%
@@ -95,7 +104,7 @@ $card-margin: 2rem
   margin-top: 4rem
 
 .rh-card-dark
-  background: #252527
+  +background-black
   h1
     color: #fff
   p
@@ -109,16 +118,23 @@ $card-margin: 2rem
 .rh-card-light
   background: #fff
 
+.rh-card-bars
+  +background-greybars
+
 .rh-card-shaded
   background: $grey-1
 
 .rh-card-pipes
   background: rgba(255,255,255,.75) url('../images/sample_image_light.jpg')
+  background-position: -1px -1px
 
 .rh-card-sea
   @extend .rh-card-shaded
   background: url('../images/sample_image_mid.jpg')
+  background-position: -1px -1px
 
 .rh-card-bridge
   @extend .rh-card-dark
   background: url('../images/sample_image_dark.jpg')
+  background-position: -1px -1px
+

@@ -123,6 +123,12 @@ p, a, ul, ol, li, pre, td, th, dl, dd, dt
 blockquote
   @extend %body-base-alt
   margin-top: $base-line-height-double
+  line-height: $base-line-height-triple
+
+pre
+  font-family: 'Andale Mono', AndaleMono, 'Lucida Console', 'Lucida Sans Typewriter', monaco, Consolas, 'Lucida Console', monospace
+  font-style: normal
+  font-variant: normal
 
 p, ul, ol, blockquote, pre
   margin-bottom: $base-line-height-double
@@ -145,13 +151,13 @@ small, .small
 
 ul, ol
   padding-left: 0
-  margin-left: 0
+  margin-left: $base-line-height
 
 ul
-  list-style: disc inside
+  list-style: disc outside
 
 ol
-  list-style: decimal inside
+  list-style: decimal outside
 
 ul li, ol li
   margin-left: $base-line-height

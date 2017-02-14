@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Tabs extends React.Component {
+class ButtonGroup extends React.Component {
 
   constructor() {
     super();
@@ -21,9 +21,9 @@ class Tabs extends React.Component {
   }
 }
 
-Tabs.defaultProps = {};
-Tabs.propTypes    = {
+ButtonGroup.defaultProps = {};
+ButtonGroup.propTypes    = {
   nav: React.PropTypes.array
 };
 
-export default Tabs;
+export default ButtonGroup;
