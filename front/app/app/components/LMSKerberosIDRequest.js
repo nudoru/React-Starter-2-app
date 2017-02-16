@@ -5,6 +5,7 @@ import IconCircle from '../rh-components/rh-IconCircle'
 import AppState from '../state/AppState';
 import {fetchUserProfile} from '../state/fetchLMS';
 import {validateInputStr} from '../utils/AppUtils';
+import {Spinner} from '../rh-components/rh-Spinner';
 
 class LMSKerberosIDRequest extends React.Component {
 
@@ -101,7 +102,7 @@ class LMSKerberosIDRequest extends React.Component {
     } else if (isFetching) {
       content = (<div><h1>Loading your profile ...</h1>
         <div className="text-center">
-          <i className="fa fa-spinner fa-pulse fa-2x fa-fw"/>
+          <Spinner/>
         </div>
       </div>)
     }

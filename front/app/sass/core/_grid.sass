@@ -1,4 +1,4 @@
-$grid-padding: 1.5rem
+$grid-padding: $base-line-height
 $grid-column-width: 7rem
 
 .grid-row-borders
@@ -18,6 +18,8 @@ $grid-column-width: 7rem
 
 .grid-12-container
   margin: 0 0 0 0
+  display: table
+  table-layout: fixed
   &:after
     content: ""
     display: table
@@ -32,7 +34,8 @@ $grid-column-width: 7rem
   background: rgba(255, 0, 0, .25)
 
 [class*='grid-col-']
-  float: left
+  //float: left
+  display: table-cell
   min-height: 1px
   padding-left: $grid-padding
   padding-right: $grid-padding
@@ -45,6 +48,7 @@ $grid-column-width: 7rem
   width: 100%
   position: relative
   overflow: hidden
+  display: table-row
   &:after
     content: ""
     display: table

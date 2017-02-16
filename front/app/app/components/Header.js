@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationBar from '../rh-components/rh-NavigationBar'
+// import NavigationBar from '../rh-components/rh-NavigationBar'
 import UtilityBar from '../rh-components/rh-UtilityBar';
 
 const Title = (props) => (
@@ -9,31 +9,46 @@ Title.propTypes = {
 };
 
 
-class Header extends React.Component {
+const Header = ({title, secondaryNav, username}) => {
 
-  render() {
+  /*
+   <NavigationBar nav={[
+   {label: 'Home', route: '/'},
+   {label: 'Two', route: '/two'},
+   {label: 'Three', route: '/three'},
+   {label: 'Four', route: '/four'},
+   {label: 'Five', route: '/five'}
+   ]} search={true} searchPlaceholder='What are you looking for?'/>
+   */
+
+
     return (
       <div className="header-region">
         <div className="page-container">
-          <UtilityBar links={[{label: 'Mojo', link: ''}, {
-            label: 'LMS',
-            link : ''
-          }, {label: 'PnT', link: ''}, {
-            label: 'Feedback',
-            link : ''
-          }, {label: 'Help & Support', link: ''}]}/>
-          <Title label="Associate Learning Portal"/>
-          <NavigationBar nav={[
-            {label: 'Home', route: '/'},
-            {label: 'Two', route: '/two'},
-            {label: 'Three', route: '/three'},
-            {label: 'Four', route: '/four'},
-            {label: 'Five', route: '/five'}
-          ]} search={true} searchPlaceholder='What are you looking for?'/>
+          <UtilityBar links={secondaryNav} username={username}/>
+          <div className="header-title"><h1>{title}</h1></div>
+
         </div>
       </div>
-    )
-  }
-}
+    );
+};
 
 export default Header;
+
+
+/*
+ import UtilityBar from '../rh-components/rh-UtilityBar';
+
+ const HeaderSubPage = ({title, secondaryNav, username}) => {
+ return (
+ <div className="header-region-subpage">
+ <div className="page-container">
+ <UtilityBar links={secondaryNav} username={username}/>
+ <div className="header-title"><h1>{title}</h1></div>
+ </div>
+ </div>
+ )
+ };
+
+ export default HeaderSubPage;
+ */

@@ -20,8 +20,8 @@ class App extends React.Component {
 
     if (this.state.ready) {
       content      = (<div>
-        <HeaderSubPage title='Application Title'
-                       secondaryNav={[]}
+        <HeaderSubPage title={AppState.getState().config.setup.title}
+                       secondaryNav={AppState.getState().config.setup.secondaryNav}
                        username='Joe User'/>
         <ComponentsTesting/>
       </div>);

@@ -16,6 +16,7 @@ import IconCircleImage from '../rh-components/rh-IconCircleImage';
 import IconCircleText from '../rh-components/rh-IconCircleText';
 import {TagHGroup, Tag} from '../rh-components/rh-Tag';
 import {StatusIcon, StatusIconTiny} from '../rh-components/rh-StatusIcon';
+import {Spinner} from '../rh-components/rh-Spinner';
 
 const TextStyles = () => {
   return (
@@ -162,34 +163,30 @@ class ComponentsTesting extends React.Component {
             {label: 'Button 3', route: '/two', active: false}
           ]}/>
           <hr/>
-          <div>
-
-            <Well>
-              <h2>Buttons</h2>
-              <div className="rh-button-container-horiz">
-                <button className="rh-button">Primary</button>
-                <button className="rh-button rh-button-secondary">Secondary
-                </button>
-                <button className="rh-button rh-button-admin">Admin</button>
-              </div>
-            </Well>
-          </div>
-          <div>
+          <Well>
+            <h2>Buttons</h2>
+            <div className="rh-button-container-horiz">
+              <button className="rh-button">Primary</button>
+              <button className="rh-button rh-button-secondary">Secondary
+              </button>
+              <button className="rh-button rh-button-admin">Admin</button>
+            </div>
+          </Well>
             <Well>
               <h2>Icons</h2>
               <div className="rh-icon-horizontal-group">
-              <IconCircle icon="coffee"/>
-              <IconCircle icon="code"/>
-              <IconCircle icon="hand-spock-o"/>
-              <IconCircleText label="This"/>
-              <IconCircleText label="Is"/>
-              <IconCircleText label="The"/>
-              <IconCircleText label="Label"/>
+                <IconCircle icon="coffee"/>
+                <IconCircle icon="code"/>
+                <IconCircle icon="hand-spock-o"/>
+                <IconCircleText label="This"/>
+                <IconCircleText label="Is"/>
+                <IconCircleText label="The"/>
+                <IconCircleText label="Label"/>
               </div>
-              <p className="margin-top-double">Icons are from <a href="http://fontawesome.io/icons/">Font Awesome</a>. Newer icons (after v 4.6) are not included.</p>
+              <p className="margin-top-double">Icons are from <a
+                href="http://fontawesome.io/icons/">Font Awesome</a>. Newer
+                icons (after v 4.6) are not included.</p>
             </Well>
-          </div>
-          <div>
             <Well>
               <h2>Tags</h2>
               <TagHGroup>
@@ -200,8 +197,6 @@ class ComponentsTesting extends React.Component {
                 <Tag>{Lorem.text(2, 7)}</Tag>
               </TagHGroup>
             </Well>
-          </div>
-          <div>
             <Well>
               <h2>Status Icons</h2>
               <StatusIcon status="0"/>
@@ -215,7 +210,6 @@ class ComponentsTesting extends React.Component {
               <StatusIconTiny status="3"/>
               <StatusIconTiny status="4"/>
             </Well>
-          </div>
           <hr/>
           <h2>Card groups</h2>
           <CardGroup orientation="horizontal-decorative">
@@ -259,86 +253,171 @@ class ComponentsTesting extends React.Component {
           </CardGroup>
           <Pagination start={1} end={4} current={2} next={false}
                       prev={false}/>
-          <Well>
-            <h2>Forms</h2>
+
+        </PageModule>
+        <PageModule style="bars" headline="Forms">
             <Well>
-              <form className="rh-form">
-                <div className="rh-form-group">
-                  <label htmlFor="input1">What's your name?</label>
-                  <input type="text" placeholder="Type here" id="input1"/>
-                </div>
-                <div className="rh-form-group">
-                  <label htmlFor="textarea1">What's your name?</label>
-                  <textarea id="textarea1">Type here</textarea>
-                </div>
-                <div className="rh-form-group">
-                  <label htmlFor="select1">How much?</label>
-                  <select id="select1">
-                    <option>None</option>
-                    <option>Some</option>
-                    <option>All</option>
-                  </select>
-                </div>
-                <div className="rh-form-group">
-                  <label>What's the best option?</label>
-                  <label><input type="checkbox" id="cbox1"
-                                value="first_checkbox"/> Option 1</label>
-                  <label><input type="checkbox" id="cbox2"
-                                value="first_checkbox"/> Option 2</label>
-                  <label><input type="checkbox" id="cbox3"
-                                value="first_checkbox"/> Option 3</label>
-                </div>
-                <div className="rh-form-group">
-                  <label>What's the best option?</label>
-                  <label><input type="radio" name="options"
-                                value="first_checkbox"/> Option 1</label>
-                  <label><input type="radio" name="options"
-                                value="first_checkbox"/> Option 2</label>
-                  <label><input type="radio" name="options"
-                                value="first_checkbox"/> Option 3</label>
-                </div>
-              </form>
+              <Well>
+                <form className="rh-form-stacked">
+                  <legend>Stacked Form</legend>
+                  <fieldset>
+                    <div className="rh-form-group">
+                      <label htmlFor="input1">What's your name?</label>
+                      <input type="text" placeholder="Type here" id="input1"/>
+                      <span className="rh-form-help">Real names only</span>
+                    </div>
+                    <div className="rh-form-group">
+                      <label htmlFor="textarea1">What's your name?</label>
+                      <textarea id="textarea1">Type here</textarea>
+                    </div>
+                    <div className="rh-form-group">
+                      <label htmlFor="select1">How much?</label>
+                      <select id="select1">
+                        <option>None</option>
+                        <option>Some</option>
+                        <option>All</option>
+                      </select>
+                    </div>
+                    <div className="rh-form-group">
+                      <label>What's the best option?</label>
+                      <label><input type="checkbox" id="cbox1"
+                                    value="first_checkbox"/> Option 1</label>
+                      <label><input type="checkbox" id="cbox2"
+                                    value="first_checkbox"/> Option 2</label>
+                      <label><input type="checkbox" id="cbox3"
+                                    value="first_checkbox"/> Option 3</label>
+                    </div>
+                    <div className="rh-form-group">
+                      <label>What's the best option?</label>
+                      <label><input type="radio" name="options"
+                                    value="first_checkbox"/> Option 1</label>
+                      <label><input type="radio" name="options"
+                                    value="first_checkbox"/> Option 2</label>
+                      <label><input type="radio" name="options"
+                                    value="first_checkbox"/> Option 3</label>
+                    </div>
+                    <div className="rh-form-group">
+                      <label htmlFor="input1">What's your name?</label>
+                      <div className="rh-form-input-group-stacked">
+                        <input type="text" placeholder="First" id="input1"/>
+                        <input type="text" placeholder="Middle" id="input1"/>
+                        <input type="text" placeholder="Last" id="input1"/>
+                        <textarea rows="3">Text area!</textarea>
+                      </div>
+                    </div>
+                    <div className="rh-form-group">
+                      <label htmlFor="input1">Disabled</label>
+                      <input disabled="true" type="text" placeholder="Type here"
+                             id="input1"/>
+                      <label htmlFor="input1">Error</label>
+                      <input className="isError" type="text"
+                             placeholder="Type here" id="input1"/>
+                    </div>
+                    <div className="rh-form-group">
+                      <input type="text" className="input-1"
+                             placeholder="Width 1"/>
+                      <input type="text" className="input-3-4"
+                             placeholder="Width 3/4"/>
+                      <input type="text" className="input-2-3"
+                             placeholder="Width 2/3"/>
+                      <input type="text" className="input-1-2"
+                             placeholder="Width 1/2"/>
+                      <input type="text" className="input-1-3"
+                             placeholder="Width 1/3"/>
+                      <input type="text" className="input-1-4"
+                             placeholder="Width 1/4"/>
+                    </div>
+                  </fieldset>
+                </form>
+              </Well>
+              <Well>
+                <form className="rh-form-inline">
+                  <legend>Inline, aligned Form</legend>
+                  <fieldset>
+                    <div className="rh-form-group">
+                      <label className="grid-col-2" htmlFor="input1">What's your
+                        name?</label>
+                      <div className="grid-col-10">
+                        <input type="text" placeholder="Type here" id="input1"/>
+                        <span
+                          className="rh-form-help-inline">Real names only</span>
+                      </div>
+                    </div>
+                    <div className="rh-form-group">
+                      <label className="grid-col-2" htmlFor="textarea1">What's
+                        your name?</label>
+                      <div className="grid-col-10">
+                        <textarea id="textarea1">Type here</textarea>
+                      </div>
+                    </div>
+                    <div className="rh-form-group">
+                      <label className="grid-col-2" htmlFor="select1">How
+                        much?</label>
+                      <div className="grid-col-10">
+                        <select id="select1">
+                          <option>None</option>
+                          <option>Some</option>
+                          <option>All</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="rh-form-group">
+                      <label className="grid-col-2">What's the best
+                        option?</label>
+                      <div className="grid-col-10">
+                        <label><input type="checkbox" id="cbox1"
+                                      value="first_checkbox"/> Option 1</label>
+                        <label><input type="checkbox" id="cbox2"
+                                      value="first_checkbox"/> Option 2</label>
+                        <label><input type="checkbox" id="cbox3"
+                                      value="first_checkbox"/> Option 3</label>
+                      </div>
+                    </div>
+                    <div className="rh-form-group">
+                      <label className="grid-col-2">What's the best
+                        option?</label>
+                      <div className="grid-col-10">
+                        <label><input type="radio" name="options"
+                                      value="first_checkbox"/> Option 1</label>
+                        <label><input type="radio" name="options"
+                                      value="first_checkbox"/> Option 2</label>
+                        <label><input type="radio" name="options"
+                                      value="first_checkbox"/> Option 3</label>
+                      </div>
+                    </div>
+                    <div className="rh-form-group">
+                      <label className="grid-col-2" htmlFor="input1">What's your
+                        name?</label>
+                      <div className="grid-col-10 rh-form-input-group-inline">
+                        <input type="text" placeholder="First" id="input1"/>
+                        <input type="text" placeholder="Middle" id="input1"/>
+                        <input type="text" placeholder="Last" id="input1"/>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <hr />
+                  <fieldset>
+                    <div className="rh-form-group">
+                      <label className="grid-col-2" htmlFor="input1">What's
+                        yourname?</label>
+                      <div className="grid-col-2">
+                        <input type="text" placeholder="Type here" id="input1"/>
+                      </div>
+                      <label className="grid-col-2" htmlFor="input1">What's your
+                        name?</label>
+                      <div className="grid-col-2">
+                        <input type="text" placeholder="Type here" id="input1"/>
+                      </div>
+                      <label className="grid-col-2" htmlFor="input1">What's your
+                        name?</label>
+                      <div className="grid-col-2">
+                        <input type="text" placeholder="Type here" id="input1"/>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </Well>
             </Well>
-            <h2>Inline</h2>
-            <Well>
-              <form className="rh-form-inline">
-                <div className="rh-form-group">
-                  <label htmlFor="input1">What's your name?</label>
-                  <input type="text" placeholder="Type here" id="input1"/>
-                </div>
-                <div className="rh-form-group">
-                  <label htmlFor="textarea1">What's your name?</label>
-                  <textarea id="textarea1">Type here</textarea>
-                </div>
-                <div className="rh-form-group">
-                  <label htmlFor="select1">How much?</label>
-                  <select id="select1">
-                    <option>None</option>
-                    <option>Some</option>
-                    <option>All</option>
-                  </select>
-                </div>
-                <div className="rh-form-group">
-                  <label>What's the best option?</label>
-                  <label><input type="checkbox" id="cbox1"
-                                value="first_checkbox"/> Option 1</label>
-                  <label><input type="checkbox" id="cbox2"
-                                value="first_checkbox"/> Option 2</label>
-                  <label><input type="checkbox" id="cbox3"
-                                value="first_checkbox"/> Option 3</label>
-                </div>
-                <div className="rh-form-group">
-                  <label>What's the best option?</label>
-                  <label><input type="radio" name="options"
-                                value="first_checkbox"/> Option 1</label>
-                  <label><input type="radio" name="options"
-                                value="first_checkbox"/> Option 2</label>
-                  <label><input type="radio" name="options"
-                                value="first_checkbox"/> Option 3</label>
-                </div>
-              </form>
-            </Well>
-          </Well>
         </PageModule>
         <PageModule style="shaded" title="Tables" headline="For every occasion">
           <p>Interactive, sortable table headings</p>
