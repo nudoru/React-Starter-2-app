@@ -394,6 +394,17 @@ class ComponentsTesting extends React.Component {
                         <input type="text" placeholder="Last" id="input1"/>
                       </div>
                     </div>
+                    <div className="rh-form-group">
+                      <label className="grid-col-2" htmlFor="input1">What's your
+                        email?</label>
+                      <div className="grid-col-10 rh-form-input-group-inline">
+                        <span className="group-addon"><i className="fa fa-user"/></span>
+                        <input type="text" placeholder="userid" id="input1"/>
+                        <span className="group-addon">@</span>
+                        <input type="text" placeholder="" id="input1" value="redhat.com"/>
+                        <button className="rh-button">Submit</button>
+                      </div>
+                    </div>
                   </fieldset>
                   <hr />
                   <fieldset>

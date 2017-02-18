@@ -199,7 +199,28 @@ input.isError
     margin-right: $base-line-height-half
 
 .rh-form-input-group-inline
-  input
+  span.group-addon
+    @extend %body-base
+    position: relative
+    top: 2px
+    display: inline-block
+    background: $grey-2
+    border: $form-el-border
+    width: $form-el-height
+    height: $form-el-height
+    line-height: $form-el-height
+    font-weight: 600
+    text-align: center
+    text-shadow: $form-el-shadow
+    color: $blue-dark
+  button
+    position: relative
+    top: 1px
+    border-right: $border-radius-small
+    height: $form-el-height
+    line-height: $form-el-height
+    border: none !important
+  input, span.group-addon, button
     position: relative
     z-index: 2
     margin-right: 0
@@ -212,7 +233,6 @@ input.isError
     &:last-child
       border-radius: 0 $border-radius-small $border-radius-small 0
       border-right: $form-el-border
-
 
 .input-focus-animation
   animation: inputFocusAnim ease-out .5s

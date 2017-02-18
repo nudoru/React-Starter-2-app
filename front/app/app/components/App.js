@@ -3,6 +3,7 @@ import AppState from '../state/AppState';
 import HeaderSubPage from './HeaderSubPage';
 import {PleaseWaitModal} from './PleaseWaitModal';
 import ComponentsTesting from './ComponentsTesting';
+import LMSKerberosIDRequest from './LMSKerberosIDRequest.js'
 
 class App extends React.Component {
 
@@ -19,12 +20,15 @@ class App extends React.Component {
       message="Loading something ..."/>;
 
     if (this.state.ready) {
+      content = <LMSKerberosIDRequest/>
+      /*
       content      = (<div>
         <HeaderSubPage title={AppState.getState().config.setup.title}
                        secondaryNav={AppState.getState().config.setup.secondaryNav}
                        username='Joe User'/>
         <ComponentsTesting/>
       </div>);
+      */
     }
 
     return content;

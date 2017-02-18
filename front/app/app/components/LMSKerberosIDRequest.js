@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ModalMessage from '../rh-components/rh-ModalMessage'
 import IconCircle from '../rh-components/rh-IconCircle'
 import AppState from '../state/AppState';
-import {fetchUserProfile} from '../state/fetchLMS';
+// import {fetchUserProfile} from '../state/fetchLMS';
 import {validateInputStr} from '../utils/AppUtils';
 import {Spinner} from '../rh-components/rh-Spinner';
 
@@ -47,21 +47,21 @@ class LMSKerberosIDRequest extends React.Component {
   }
 
   getUser() {
-    this.setState({
-      isFetching : true,
-      isWSError  : false,
-      isPrompting: false,
-      lastRequest: this.refs.emailInput.value
-    });
-    fetchUserProfile().fork(err => {
-      console.warn('GetUserInformation, WS error, probably could not find user id');
-      this.setState({isFetching: false, isWSError: true, isPrompting: true});
-    }, () => {
-      // Don't need to do anything here since ApplicationContainer has a listener
-      // on the AppState and picks up that the user profile key was set. It then
-      // renders App and removes this view
-      return;
-    });
+    /*this.setState({
+     isFetching : true,
+     isWSError  : false,
+     isPrompting: false,
+     lastRequest: this.refs.emailInput.value
+     });
+     fetchUserProfile().fork(err => {
+     console.warn('GetUserInformation, WS error, probably could not find user id');
+     this.setState({isFetching: false, isWSError: true, isPrompting: true});
+     }, () => {
+     // Don't need to do anything here since ApplicationContainer has a listener
+     // on the AppState and picks up that the user profile key was set. It then
+     // renders App and removes this view
+     return;
+     });*/
   }
 
   render() {
@@ -88,10 +88,20 @@ class LMSKerberosIDRequest extends React.Component {
 
       content = (<div>
         <form className="rh-form">
-          <h1>Please enter your Kerberos ID to continue.</h1><p>You must be connected to the corporate network or VPN to access.</p>
-          <input ref="emailInput" type="text" maxLength="30"
-                 defaultValue={this.state.usernameInput}
-                 onInput={this.onEmailInputChange.bind(this)}/>
+          <h1>Please enter your Kerberos ID to continue.</h1><p>You must be
+          connected to the corporate network or VPN to access.</p>
+          <form className="rh-form-inline">
+            <fieldset>
+              <div className="rh-form-group text-center">
+                <div className="rh-form-input-group-inline text-center">
+                  <span className="group-addon"><i className="fa fa-user"/></span>
+                  <input ref="emailInput" type="text" maxLength="30"
+                         defaultValue={this.state.usernameInput}
+                         onInput={this.onEmailInputChange.bind(this)}/>
+                </div>
+              </div>
+            </fieldset>
+          </form>
           {err}
           <button
             className={buttonStyles.join(' ')}
