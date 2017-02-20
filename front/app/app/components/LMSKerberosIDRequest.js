@@ -94,10 +94,11 @@ class LMSKerberosIDRequest extends React.Component {
             <fieldset>
               <div className="rh-form-group text-center">
                 <div className="rh-form-input-group-inline text-center">
-                  <span className="group-addon"><i className="fa fa-user"/></span>
+
                   <input ref="emailInput" type="text" maxLength="30"
                          defaultValue={this.state.usernameInput}
                          onInput={this.onEmailInputChange.bind(this)}/>
+                  <div className="group-addon">@redhat.com</div>
                 </div>
               </div>
             </fieldset>

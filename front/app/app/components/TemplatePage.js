@@ -1,4 +1,5 @@
 import React from 'react';
+import PageModule from '../rh-components/rh-PageModule';
 
 class TemplatePage extends React.Component {
 
@@ -13,12 +14,6 @@ class TemplatePage extends React.Component {
   render() {
     return (
       <div>
-        <div className="page-container">
-          <Breadcrumbs crumbs={[{label: 'Home', route: '/'}, {
-            label: 'Subpage',
-            route: '/one'
-          }, {label: 'This page'}]}/>
-        </div>
         <PageModule>
           <h1>Header</h1>
           <p>Text</p>

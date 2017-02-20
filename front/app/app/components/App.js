@@ -20,10 +20,12 @@ class App extends React.Component {
       message="Loading something ..."/>;
 
     if (this.state.ready) {
+      let {config} = AppState.getState();
+
       // content = <LMSKerberosIDRequest/>;
       content = (<div>
-        <HeaderSubPage title={AppState.getState().config.setup.title}
-                       secondaryNav={AppState.getState().config.setup.secondaryNav}
+        <HeaderSubPage title={config.setup.title}
+                       secondaryNav={config.setup.secondaryNav}
                        username='Joe User'/>
         <ComponentsTesting/>
       </div>);
