@@ -172,44 +172,44 @@ class ComponentsTesting extends React.Component {
               <button className="rh-button rh-button-admin">Admin</button>
             </div>
           </Well>
-            <Well>
-              <h2>Icons</h2>
-              <div className="rh-icon-horizontal-group">
-                <IconCircle icon="coffee"/>
-                <IconCircle icon="code"/>
-                <IconCircle icon="hand-spock-o"/>
-                <IconCircleText label="This"/>
-                <IconCircleText label="Is"/>
-                <IconCircleText label="The"/>
-                <IconCircleText label="Label"/>
-              </div>
-              <p className="margin-top-double">Icons are from <a
-                href="http://fontawesome.io/icons/">Font Awesome</a>. Newer
-                icons (after v 4.6) are not included.</p>
-            </Well>
-            <Well>
-              <h2>Tags</h2>
-              <TagHGroup>
-                <Tag>Foo</Tag>
-                <Tag>Bar</Tag>
-                <Tag>Qiz</Tag>
-                <Tag>{Lorem.text(2, 7)}</Tag>
-                <Tag>{Lorem.text(2, 7)}</Tag>
-              </TagHGroup>
-            </Well>
-            <Well>
-              <h2>Status Icons</h2>
-              <StatusIcon status="0"/>
-              <StatusIcon status="1"/>
-              <StatusIcon status="2"/>
-              <StatusIcon status="3"/>
-              <StatusIcon status="4"/>
-              <StatusIconTiny status="0"/>
-              <StatusIconTiny status="1"/>
-              <StatusIconTiny status="2"/>
-              <StatusIconTiny status="3"/>
-              <StatusIconTiny status="4"/>
-            </Well>
+          <Well>
+            <h2>Icons</h2>
+            <div className="rh-icon-horizontal-group">
+              <IconCircle icon="coffee"/>
+              <IconCircle icon="code"/>
+              <IconCircle icon="hand-spock-o"/>
+              <IconCircleText label="This"/>
+              <IconCircleText label="Is"/>
+              <IconCircleText label="The"/>
+              <IconCircleText label="Label"/>
+            </div>
+            <p className="margin-top-double">Icons are from <a
+              href="http://fontawesome.io/icons/">Font Awesome</a>. Newer
+              icons (after v 4.6) are not included.</p>
+          </Well>
+          <Well>
+            <h2>Tags</h2>
+            <TagHGroup>
+              <Tag>Foo</Tag>
+              <Tag>Bar</Tag>
+              <Tag>Qiz</Tag>
+              <Tag>{Lorem.text(2, 7)}</Tag>
+              <Tag>{Lorem.text(2, 7)}</Tag>
+            </TagHGroup>
+          </Well>
+          <Well>
+            <h2>Status Icons</h2>
+            <StatusIcon status="0"/>
+            <StatusIcon status="1"/>
+            <StatusIcon status="2"/>
+            <StatusIcon status="3"/>
+            <StatusIcon status="4"/>
+            <StatusIconTiny status="0"/>
+            <StatusIconTiny status="1"/>
+            <StatusIconTiny status="2"/>
+            <StatusIconTiny status="3"/>
+            <StatusIconTiny status="4"/>
+          </Well>
           <hr/>
           <h2>Card groups</h2>
           <CardGroup orientation="horizontal-decorative">
@@ -256,30 +256,115 @@ class ComponentsTesting extends React.Component {
 
         </PageModule>
         <PageModule style="bars" headline="Forms">
+          <Well>
             <Well>
-              <Well>
-                <form className="rh-form-stacked">
-                  <legend>Stacked Form</legend>
-                  <fieldset>
-                    <div className="rh-form-group">
-                      <label htmlFor="input1">What's your name?</label>
-                      <input type="text" placeholder="Type here" id="input1"/>
-                      <span className="rh-form-help">Real names only</span>
+              <form className="rh-form-stacked">
+                <legend>Stacked Form</legend>
+                <fieldset>
+                  <div className="rh-form-group">
+                    <label htmlFor="input1">What's your name?</label>
+                    <input type="text" placeholder="Type here" id="input1"/>
+                    <span className="rh-form-help">Real names only</span>
+                  </div>
+                  <div className="rh-form-group">
+                    <label htmlFor="textarea1">What's your name?</label>
+                    <textarea id="textarea1">Type here</textarea>
+                  </div>
+                  <div className="rh-form-group">
+                    <label htmlFor="select1">How much?</label>
+                    <select id="select1">
+                      <option>None</option>
+                      <option>Some</option>
+                      <option>All</option>
+                    </select>
+                  </div>
+                  <div className="rh-form-group">
+                    <label>What's the best option?</label>
+                    <label><input type="checkbox" id="cbox1"
+                                  value="first_checkbox"/> Option 1</label>
+                    <label><input type="checkbox" id="cbox2"
+                                  value="first_checkbox"/> Option 2</label>
+                    <label><input type="checkbox" id="cbox3"
+                                  value="first_checkbox"/> Option 3</label>
+                  </div>
+                  <div className="rh-form-group">
+                    <label>What's the best option?</label>
+                    <label><input type="radio" name="options"
+                                  value="first_checkbox"/> Option 1</label>
+                    <label><input type="radio" name="options"
+                                  value="first_checkbox"/> Option 2</label>
+                    <label><input type="radio" name="options"
+                                  value="first_checkbox"/> Option 3</label>
+                  </div>
+                  <div className="rh-form-group">
+                    <label htmlFor="input1">What's your name?</label>
+                    <div className="rh-form-input-group-stacked">
+                      <input type="text" placeholder="First" id="input1"/>
+                      <input type="text" placeholder="Middle" id="input1"/>
+                      <input type="text" placeholder="Last" id="input1"/>
+                      <textarea rows="3">Text area!</textarea>
                     </div>
-                    <div className="rh-form-group">
-                      <label htmlFor="textarea1">What's your name?</label>
+                  </div>
+                  <div className="rh-form-group">
+                    <label htmlFor="input1">Disabled</label>
+                    <input disabled="true" type="text" placeholder="Type here"
+                           id="input1"/>
+                    <label htmlFor="input1">Error</label>
+                    <input className="isError" type="text"
+                           placeholder="Type here" id="input1"/>
+                  </div>
+                  <div className="rh-form-group">
+                    <input type="text" className="input-1"
+                           placeholder="Width 1"/>
+                    <input type="text" className="input-3-4"
+                           placeholder="Width 3/4"/>
+                    <input type="text" className="input-2-3"
+                           placeholder="Width 2/3"/>
+                    <input type="text" className="input-1-2"
+                           placeholder="Width 1/2"/>
+                    <input type="text" className="input-1-3"
+                           placeholder="Width 1/3"/>
+                    <input type="text" className="input-1-4"
+                           placeholder="Width 1/4"/>
+                  </div>
+                </fieldset>
+              </form>
+            </Well>
+            <Well>
+              <form className="rh-form-inline">
+                <legend>Inline, aligned Form</legend>
+                <fieldset>
+                  <div className="rh-form-group">
+                    <label className="grid-col-2" htmlFor="input1">What's your
+                      name?</label>
+                    <div className="grid-col-10">
+                      <input type="text" placeholder="Type here" id="input1"/>
+                      <span
+                        className="rh-form-help-inline">Real names only</span>
+                    </div>
+                  </div>
+                  <div className="rh-form-group">
+                    <label className="grid-col-2" htmlFor="textarea1">What's
+                      your name?</label>
+                    <div className="grid-col-10">
                       <textarea id="textarea1">Type here</textarea>
                     </div>
-                    <div className="rh-form-group">
-                      <label htmlFor="select1">How much?</label>
+                  </div>
+                  <div className="rh-form-group">
+                    <label className="grid-col-2" htmlFor="select1">How
+                      much?</label>
+                    <div className="grid-col-10">
                       <select id="select1">
                         <option>None</option>
                         <option>Some</option>
                         <option>All</option>
                       </select>
                     </div>
-                    <div className="rh-form-group">
-                      <label>What's the best option?</label>
+                  </div>
+                  <div className="rh-form-group">
+                    <label className="grid-col-2">What's the best
+                      option?</label>
+                    <div className="grid-col-10">
                       <label><input type="checkbox" id="cbox1"
                                     value="first_checkbox"/> Option 1</label>
                       <label><input type="checkbox" id="cbox2"
@@ -287,8 +372,11 @@ class ComponentsTesting extends React.Component {
                       <label><input type="checkbox" id="cbox3"
                                     value="first_checkbox"/> Option 3</label>
                     </div>
-                    <div className="rh-form-group">
-                      <label>What's the best option?</label>
+                  </div>
+                  <div className="rh-form-group">
+                    <label className="grid-col-2">What's the best
+                      option?</label>
+                    <div className="grid-col-10">
                       <label><input type="radio" name="options"
                                     value="first_checkbox"/> Option 1</label>
                       <label><input type="radio" name="options"
@@ -296,139 +384,57 @@ class ComponentsTesting extends React.Component {
                       <label><input type="radio" name="options"
                                     value="first_checkbox"/> Option 3</label>
                     </div>
-                    <div className="rh-form-group">
-                      <label htmlFor="input1">What's your name?</label>
-                      <div className="rh-form-input-group-stacked">
-                        <input type="text" placeholder="First" id="input1"/>
-                        <input type="text" placeholder="Middle" id="input1"/>
-                        <input type="text" placeholder="Last" id="input1"/>
-                        <textarea rows="3">Text area!</textarea>
-                      </div>
-                    </div>
-                    <div className="rh-form-group">
-                      <label htmlFor="input1">Disabled</label>
-                      <input disabled="true" type="text" placeholder="Type here"
-                             id="input1"/>
-                      <label htmlFor="input1">Error</label>
-                      <input className="isError" type="text"
-                             placeholder="Type here" id="input1"/>
-                    </div>
-                    <div className="rh-form-group">
-                      <input type="text" className="input-1"
-                             placeholder="Width 1"/>
-                      <input type="text" className="input-3-4"
-                             placeholder="Width 3/4"/>
-                      <input type="text" className="input-2-3"
-                             placeholder="Width 2/3"/>
-                      <input type="text" className="input-1-2"
-                             placeholder="Width 1/2"/>
-                      <input type="text" className="input-1-3"
-                             placeholder="Width 1/3"/>
-                      <input type="text" className="input-1-4"
-                             placeholder="Width 1/4"/>
-                    </div>
-                  </fieldset>
-                </form>
-              </Well>
-              <Well>
-                <form className="rh-form-inline">
-                  <legend>Inline, aligned Form</legend>
-                  <fieldset>
-                    <div className="rh-form-group">
-                      <label className="grid-col-2" htmlFor="input1">What's your
-                        name?</label>
-                      <div className="grid-col-10">
-                        <input type="text" placeholder="Type here" id="input1"/>
-                        <span
-                          className="rh-form-help-inline">Real names only</span>
-                      </div>
-                    </div>
-                    <div className="rh-form-group">
-                      <label className="grid-col-2" htmlFor="textarea1">What's
-                        your name?</label>
-                      <div className="grid-col-10">
-                        <textarea id="textarea1">Type here</textarea>
-                      </div>
-                    </div>
-                    <div className="rh-form-group">
-                      <label className="grid-col-2" htmlFor="select1">How
-                        much?</label>
-                      <div className="grid-col-10">
-                        <select id="select1">
-                          <option>None</option>
-                          <option>Some</option>
-                          <option>All</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="rh-form-group">
-                      <label className="grid-col-2">What's the best
-                        option?</label>
-                      <div className="grid-col-10">
-                        <label><input type="checkbox" id="cbox1"
-                                      value="first_checkbox"/> Option 1</label>
-                        <label><input type="checkbox" id="cbox2"
-                                      value="first_checkbox"/> Option 2</label>
-                        <label><input type="checkbox" id="cbox3"
-                                      value="first_checkbox"/> Option 3</label>
-                      </div>
-                    </div>
-                    <div className="rh-form-group">
-                      <label className="grid-col-2">What's the best
-                        option?</label>
-                      <div className="grid-col-10">
-                        <label><input type="radio" name="options"
-                                      value="first_checkbox"/> Option 1</label>
-                        <label><input type="radio" name="options"
-                                      value="first_checkbox"/> Option 2</label>
-                        <label><input type="radio" name="options"
-                                      value="first_checkbox"/> Option 3</label>
-                      </div>
-                    </div>
-                    <div className="rh-form-group">
-                      <label className="grid-col-2" htmlFor="input1">What's your
-                        name?</label>
-                      <div className="grid-col-10 rh-form-input-group-inline">
+                  </div>
+                  <div className="rh-form-group">
+                    <label className="grid-col-2" htmlFor="input1">What's your
+                      name?</label>
+                    <div className="grid-col-10">
+                      <div className="rh-form-input-group-inline">
                         <input type="text" placeholder="First" id="input1"/>
                         <input type="text" placeholder="Middle" id="input1"/>
                         <input type="text" placeholder="Last" id="input1"/>
                       </div>
                     </div>
-                    <div className="rh-form-group">
-                      <label className="grid-col-2" htmlFor="input1">What's your
-                        email?</label>
-                      <div className="grid-col-10 rh-form-input-group-inline">
-                        <span className="group-addon"><i className="fa fa-user"/></span>
+                  </div>
+                  <div className="rh-form-group">
+                    <label className="grid-col-2" htmlFor="input1">What's your
+                      email?</label>
+                    <div className="grid-col-10">
+                      <div className="rh-form-input-group-inline">
+                        <div className="group-addon"><i className="fa fa-user"/>
+                        </div>
                         <input type="text" placeholder="userid" id="input1"/>
-                        <span className="group-addon">@</span>
-                        <input type="text" placeholder="" id="input1" value="redhat.com"/>
+                        <div className="group-addon">@</div>
+                        <input type="text" placeholder="" id="input1"
+                               value="redhat.com"/>
                         <button className="rh-button">Submit</button>
                       </div>
                     </div>
-                  </fieldset>
-                  <hr />
-                  <fieldset>
-                    <div className="rh-form-group">
-                      <label className="grid-col-2" htmlFor="input1">What's
-                        yourname?</label>
-                      <div className="grid-col-2">
-                        <input type="text" placeholder="Type here" id="input1"/>
-                      </div>
-                      <label className="grid-col-2" htmlFor="input1">What's your
-                        name?</label>
-                      <div className="grid-col-2">
-                        <input type="text" placeholder="Type here" id="input1"/>
-                      </div>
-                      <label className="grid-col-2" htmlFor="input1">What's your
-                        name?</label>
-                      <div className="grid-col-2">
-                        <input type="text" placeholder="Type here" id="input1"/>
-                      </div>
+                  </div>
+                </fieldset>
+                <hr />
+                <fieldset>
+                  <div className="rh-form-group">
+                    <label className="grid-col-2" htmlFor="input1">What's
+                      yourname?</label>
+                    <div className="grid-col-2">
+                      <input type="text" placeholder="Type here" id="input1"/>
                     </div>
-                  </fieldset>
-                </form>
-              </Well>
+                    <label className="grid-col-2" htmlFor="input1">What's your
+                      name?</label>
+                    <div className="grid-col-2">
+                      <input type="text" placeholder="Type here" id="input1"/>
+                    </div>
+                    <label className="grid-col-2" htmlFor="input1">What's your
+                      name?</label>
+                    <div className="grid-col-2">
+                      <input type="text" placeholder="Type here" id="input1"/>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
             </Well>
+          </Well>
         </PageModule>
         <PageModule style="shaded" title="Tables" headline="For every occasion">
           <p>Interactive, sortable table headings</p>

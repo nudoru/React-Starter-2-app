@@ -19,7 +19,7 @@ $form-el-shadow: 1px 1px 0 rgba(255,255,255,.5)
   //+transition-all
   +transition-prop(border)
   +transition-prop(box-shadow)
-  padding: $base-line-height-half/2 $base-line-height-half
+  padding: $base-line-height-half
   border: $form-el-border
   border-radius: $border-radius-small
   background-color: #fff
@@ -28,7 +28,8 @@ $form-el-shadow: 1px 1px 0 rgba(255,255,255,.5)
   vertical-align: middle
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, .05), $form-el-shadow
   height: $form-el-height
-  line-height: $base-line-height-double
+  //line-height: $base-line-height-double
+  line-height: $form-el-height
   display: inline-block
   &:focus
     border: $form-el-border-focus
@@ -96,6 +97,7 @@ select, textarea
 
 textarea
   height: auto
+  line-height: $base-line-height-double
 
 input[type=text],
 input[type=password],
@@ -198,34 +200,39 @@ input.isError
   input[type=radio], input[type=checkbox]
     margin-right: $base-line-height-half
 
+// group-addons don't work in the middle
 .rh-form-input-group-inline
-  span.group-addon
+  display: inline-table
+  vertical-align: middle
+  border-collapse: separate
+  width: auto
+  div.group-addon
     @extend %body-base
-    position: relative
-    top: 2px
-    display: inline-block
     background: $grey-2
     border: $form-el-border
-    width: $form-el-height
-    height: $form-el-height
-    line-height: $form-el-height
+    line-height: 1px
+    padding: $base-line-height-half $base-line-height
     font-weight: 600
     text-align: center
     text-shadow: $form-el-shadow
+    box-shadow: $form-el-shadow
     color: $blue-dark
   button
-    position: relative
-    top: 1px
     border-right: $border-radius-small
     height: $form-el-height
-    line-height: $form-el-height
+    line-height: 1px
+    padding: $base-line-height-half $base-line-height-double
     border: none !important
-  input, span.group-addon, button
+  input, div.group-addon, button
+    display: table-cell
+    width: auto
     position: relative
     z-index: 2
+    vertical-align: middle
     margin-right: 0
     border-radius: 0
     border-right: 1px solid transparent
+    white-space: nowrap
     &:focus
       z-index: 3
     &:first-child
