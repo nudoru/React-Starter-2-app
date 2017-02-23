@@ -4,14 +4,6 @@
 // Mixins, etc.
 //------------------------------------------------------------------------------
 
-=control-emboss-shadow
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, .15), 1px 1px 0 rgba(255, 255, 255, .1)
-
-$form-el-height: 4rem
-$form-el-border: 1px solid $grey-6
-$form-el-border-focus: 1px solid $blue
-$form-el-border-error: 1px solid $control-danger-color
-$form-el-shadow: 1px 1px 0 rgba(255,255,255,.5)
 
 
 %rh-form-element
@@ -26,7 +18,7 @@ $form-el-shadow: 1px 1px 0 rgba(255,255,255,.5)
   color: $control-primary-color-dark
   font-size: 1.6rem
   vertical-align: middle
-  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, .05), $form-el-shadow
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, .05), $box-shadow-light
   height: $form-el-height
   //line-height: $base-line-height-double
   line-height: $form-el-height
@@ -214,8 +206,8 @@ input.isError
     padding: $base-line-height-half $base-line-height
     font-weight: 600
     text-align: center
-    text-shadow: $form-el-shadow
-    box-shadow: $form-el-shadow
+    text-shadow: $text-shadow-light
+    box-shadow: $box-shadow-light
     color: $blue-dark
   button
     border-right: $border-radius-small

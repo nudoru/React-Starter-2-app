@@ -17,6 +17,7 @@ import IconCircleText from '../rh-components/rh-IconCircleText';
 import {TagHGroup, Tag} from '../rh-components/rh-Tag';
 import {StatusIcon, StatusIconTiny} from '../rh-components/rh-StatusIcon';
 import {Spinner} from '../rh-components/rh-Spinner';
+import {Status} from '../rh-components/rh_Status';
 
 const TextStyles = () => {
   return (
@@ -190,8 +191,9 @@ class ComponentsTesting extends React.Component {
           <Well>
             <h2>Tags</h2>
             <TagHGroup>
-              <Tag>Foo</Tag>
-              <Tag>Bar</Tag>
+              <Tag><i className="fa fa-hashtag"/>Foo</Tag>
+              <Tag><i className="fa fa-tag"/>Bar</Tag>
+              <Tag><i className="fa fa-tags"/>This bar <em>that quaz</em> like a foo</Tag>
               <Tag>Qiz</Tag>
               <Tag>{Lorem.text(2, 7)}</Tag>
               <Tag>{Lorem.text(2, 7)}</Tag>
@@ -209,6 +211,11 @@ class ComponentsTesting extends React.Component {
             <StatusIconTiny status="2"/>
             <StatusIconTiny status="3"/>
             <StatusIconTiny status="4"/>
+            <Status>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Status>
+            <Status type="info">About that something ... </Status>
+            <Status type="pass">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Status>
+            <Status type="warning">Something might go wrong ...</Status>
+            <Status type="fail">Something blew up!</Status>
           </Well>
           <hr/>
           <h2>Card groups</h2>

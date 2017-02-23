@@ -1,0 +1,61 @@
+.rh-status
+  position: relative
+  overflow: hidden
+  display: table
+  table-layout: fixed
+  height: $form-el-height
+  width: 100%
+  margin: $base-line-height-half 0
+  background: #fff
+  border: 1px solid $control-neutral-color
+  border-radius: $border-radius-small
+  box-shadow: $box-shadow-dark
+  .icon
+    display: table-cell
+    vertical-align: middle
+    width: $form-el-height
+    padding: $base-line-height-half 0
+    text-align: center
+    background: $control-neutral-color $dark-gradient
+    background-color: $control-neutral-color
+    color: #fff
+    text-shadow: $text-shadow-dark
+  .message
+    @extend %body-base-small
+    display: table-cell
+    vertical-align: middle
+    padding: $base-line-height-half $base-line-height
+    height: $form-el-height
+    text-transform: uppercase
+
+.rh-status-info
+  @extend .rh-status
+  border: 1px solid $control-info-color
+  .icon
+    background-color: $control-info-color
+  .message
+    color: $control-info-color-dark
+
+.rh-status-pass
+  @extend .rh-status
+  border: 1px solid $control-success-color
+  .icon
+    background-color: $control-success-color
+  .message
+    color: $control-success-color-dark
+
+.rh-status-warning
+  @extend .rh-status
+  border: 1px solid $control-warning-color
+  .icon
+    background-color: $control-warning-color
+  .message
+    color: $control-warning-color-dark
+
+.rh-status-fail
+  @extend .rh-status
+  border: 1px solid $control-danger-color
+  .icon
+    background-color: $control-danger-color
+  .message
+    color: $control-danger-color-dark

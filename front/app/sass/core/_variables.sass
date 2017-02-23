@@ -35,7 +35,12 @@ $border-radius: $base-line-height
 //  Colors
 //------------------------------------------------------------------------------
 
-// RH Palette
+// RH Palette, light reds are NOT corporate - we don't like pink
+
+$red-light-1: rgb(208,170,171)
+$red-light-2: rgb(207,131,131)
+$red-light-3: rgb(205,88,88)
+$red-light-4: rgb(204,48,49)
 $red: rgb(202, 6, 18)
 $red-dark-1: rgb(162, 4, 12)
 $red-dark-2: rgb(129, 2, 8)
@@ -125,12 +130,37 @@ $control-over-color-dark: rgba(255, 255, 255, .25)
 $control-primary-color: $blue-dark-2
 $control-primary-color-dark: $blue-dark
 
-$control-success-color: $green
-$control-warning-color: $gold
-$control-danger-color: $red
-$control-info-color: $blue
-$control-neutral-color: $grey-light
+// From patternfly
+$control-success-color: rgb(66, 156, 65)
+$control-success-color-light: rgb(206, 229, 206)
+$control-success-color-dark: rgb(48, 118, 45)
+$control-warning-color: rgb(235, 122, 40)
+$control-warning-color-light: rgb(250, 221, 199)
+$control-warning-color-dark: rgb(178, 92, 26)
+$control-danger-color: rgb(202, 6, 18)
+$control-danger-color-light: rgb(241, 190, 194)
+$control-danger-color-dark: rgb(138, 3, 9)
+$control-info-color: rgb(22, 185, 225)
+$control-info-color-light: rgb(126, 219, 241)
+$control-info-color-dark: rgb(14, 139, 171)
+$control-neutral-color: rgb(187, 187, 187)
+$control-neutral-color-light: rgb(209, 209, 209)
+$control-neutral-color-dark: rgb(114, 118, 123)
 
+$light-gradient: linear-gradient(to bottom, transparent, rgba(255,255,255,.1))
+$dark-gradient: linear-gradient(to bottom, transparent, rgba(0,0,0,.1))
+$text-shadow-light: 1px 1px 0 rgba(255,255,255,.5)
+$text-shadow-dark: 1px 1px 0 rgba(0,0,0,.25)
+$box-shadow-light: 1px 1px 0 rgba(255,255,255,.5)
+$box-shadow-dark: 1px 1px 0 rgba(0,0,0,.25)
+
+=control-emboss-shadow
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .15), 1px 1px 0 rgba(255, 255, 255, .1)
+
+$form-el-height: 4rem
+$form-el-border: 1px solid $grey-6
+$form-el-border-focus: 1px solid $control-info-color
+$form-el-border-error: 1px solid $control-danger-color
 
 // From the SAML login page
 =background-greybars

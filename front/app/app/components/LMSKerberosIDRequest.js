@@ -6,6 +6,7 @@ import AppState from '../state/AppState';
 // import {fetchUserProfile} from '../state/fetchLMS';
 import {validateInputStr} from '../utils/AppUtils';
 import {Spinner} from '../rh-components/rh-Spinner';
+import {Status} from '../rh-components/rh-Status';
 
 class LMSKerberosIDRequest extends React.Component {
 
@@ -72,14 +73,14 @@ class LMSKerberosIDRequest extends React.Component {
 
       if (isWSError) {
         err =
-          <p className="login-error padding-top">There was problem getting
+          <Status type="fail">There was problem getting
             the profile for <strong>{lastRequest}</strong>! Please check your
             spelling and try
-            again.</p>;
+            again.</Status>;
       } else if (isInputError) {
         err =
-          <p className="login-error padding-top">That doesn't look like a valid
-            ID.</p>;
+          <Status type="warning">That doesn't look like a valid
+            ID.</Status>;
       }
 
       if (isInputError || usernameInput.length === 0) {
