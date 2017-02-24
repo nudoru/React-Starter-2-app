@@ -21,14 +21,14 @@
   width: 40rem
   padding: $base-line-height-triple
   text-align: center
-  border-top: $base-line-height-half solid $blue
+  border-top: $base-line-height-half solid $control-info-color
   h1
     @extend h3
     color: $blue-dark
   &.error
-    border-color: $red
+    border-color: $control-danger-color
     h1
-      color: $red-dark-1
+      color: $control-danger-color-dark
 
 .modal-appear
   .rh-modal-cover, .rh-modal-cover-dismissable
@@ -77,7 +77,7 @@
   .rh-modal-box, .rh-modal-box-error
     @extend .flipOutX
 
-.rh-login
+.rh-modal-prompt
   position: relative
   text-align: center
   padding: $base-line-height
@@ -85,12 +85,6 @@
     position: relative
     margin: 0 auto
     background-color: $blue
-  .login-error
-    color: $red-dark-1
-  input
-    width: 175px
-    text-align: right
-    font-weight: 600
   h1
     padding: $base-line-height-double 0 $base-line-height 0
     font-weight: 400
@@ -99,3 +93,12 @@
     @extend .rh-button-admin
     @extend .rh-button-block
     margin-top: $base-line-height-double
+
+.rh-login
+  @extend .rh-modal-prompt
+  .login-error
+    color: $control-danger-color
+  input
+    width: 175px
+    text-align: right
+    font-weight: 600

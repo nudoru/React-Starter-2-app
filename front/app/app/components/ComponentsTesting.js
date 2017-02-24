@@ -17,7 +17,8 @@ import IconCircleText from '../rh-components/rh-IconCircleText';
 import {TagHGroup, Tag} from '../rh-components/rh-Tag';
 import {StatusIcon, StatusIconTiny} from '../rh-components/rh-StatusIcon';
 import {Spinner} from '../rh-components/rh-Spinner';
-import {Status} from '../rh-components/rh_Status';
+import {Status} from '../rh-components/rh-Status';
+import {ToolTip} from '../rh-components/rh-ToolTip';
 
 const TextStyles = () => {
   return (
@@ -164,10 +165,12 @@ class ComponentsTesting extends React.Component {
             {label: 'Button 3', route: '/two', active: false}
           ]}/>
           <hr/>
+
           <Well>
             <h2>Buttons</h2>
             <div className="rh-button-container-horiz">
-              <button className="rh-button">Primary</button>
+              <ToolTip position="top" label="I'm a tool-tip!">
+              <button className="rh-button">Primary</button></ToolTip>
               <button className="rh-button rh-button-secondary">Secondary
               </button>
               <button className="rh-button rh-button-admin">Admin</button>
@@ -189,6 +192,14 @@ class ComponentsTesting extends React.Component {
               icons (after v 4.6) are not included.</p>
           </Well>
           <Well>
+            <h2>Spinner</h2>
+            <Spinner type="spinner-xlg"/>
+            <Spinner type="spinner-lg"/>
+            <Spinner />
+            <Spinner type="spinner-sm"/>
+            <Spinner type="spinner-xs"/>
+          </Well>
+          <Well>
             <h2>Tags</h2>
             <TagHGroup>
               <Tag><i className="fa fa-hashtag"/>Foo</Tag>
@@ -198,6 +209,20 @@ class ComponentsTesting extends React.Component {
               <Tag>{Lorem.text(2, 7)}</Tag>
               <Tag>{Lorem.text(2, 7)}</Tag>
             </TagHGroup>
+          </Well>
+          <Well>
+            <h2>Tool-tips</h2>
+            <h4>CSS only tool-tips based on hint.css</h4>
+            <ul className="listing">
+              <li><ToolTip position="top" label="I'm a tool-tip!">On the top</ToolTip></li>
+              <li><ToolTip position="bottom" label="I'm a tool-tip!">On the bottom</ToolTip></li>
+              <li><ToolTip position="left" label="I'm a tool-tip!">On the left</ToolTip></li>
+              <li><ToolTip position="right" label="I'm a tool-tip!">On the right</ToolTip></li>
+              <li><ToolTip position="top-left" label="I'm a tool-tip!">On the top left</ToolTip></li>
+              <li><ToolTip position="top-right" label="I'm a tool-tip!">On the top right</ToolTip></li>
+              <li><ToolTip position="bottom-left" label="I'm a tool-tip!">On the bottom left</ToolTip></li>
+              <li><ToolTip position="bottom-right" label="I'm a tool-tip!">On the bottom right</ToolTip></li>
+            </ul>
           </Well>
           <Well>
             <h2>Status Icons</h2>
@@ -443,7 +468,7 @@ class ComponentsTesting extends React.Component {
             </Well>
           </Well>
         </PageModule>
-        <PageModule style="shaded" title="Tables" headline="For every occasion">
+        <PageModule style="shaded" title="Tables" headline="">
           <p>Interactive, sortable table headings</p>
           <Table jsonData={tableJson} hover={true}/>
           <hr/>

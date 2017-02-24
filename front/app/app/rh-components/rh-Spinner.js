@@ -1,3 +1,11 @@
 import React from 'react';
 
-export const Spinner = ({children}) => <div><i className="fa fa-spinner fa-pulse fa-2x fa-fw"/></div>;
+export const Spinner = ({type}) => {
+  let cls = ['spinner'];
+
+  if(type) {
+    cls.push(type);
+  }
+
+  return (<div className={cls.join(' ')}></div>)
+};
