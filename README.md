@@ -25,7 +25,13 @@ SASS is `front/app/index.sass`
 
 ## Docker
 
-I'm experimenting with a Docker based workflow. Current setup is based on this post https://medium.com/@andyccs/webpack-and-docker-for-development-and-deployment-ae0e73243db4#.dmfqhhbyk
+I'm experimenting with a Docker based workflow. Current setup is based on these posts
+https://medium.com/@andyccs/webpack-and-docker-for-development-and-deployment-ae0e73243db4#.dmfqhhbyk
+http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html#the-nodemodules-volume-trick
+
+Start with `docker-compose up`
+
+The `node_modules` folder contents will be installed to a dir inside the image so that it doesn't take up space on the host.
 
 ## Build options
 

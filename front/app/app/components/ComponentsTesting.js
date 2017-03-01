@@ -198,6 +198,7 @@ class ComponentsTesting extends React.Component {
             <Spinner />
             <Spinner type="spinner-sm"/>
             <Spinner type="spinner-xs"/>
+            <Spinner type="spinner-inverse"/>
           </Well>
           <Well>
             <h2>Tags</h2>
