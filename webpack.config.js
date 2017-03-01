@@ -63,7 +63,7 @@ module.exports = env => {
           test   : /\.(jpe?g|png|gif|svg)$/i,
           loaders: [
             'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-            'image-Webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
+            'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
           ]
         },
         {
@@ -77,7 +77,7 @@ module.exports = env => {
           loader : 'babel-loader',
           exclude: ['/node_modules/'],
           query  : {
-            presets: removeEmpty(['stage-0', 'es2015-loose', 'react', isProd ? undefined : 'react-hmre']),
+            presets: removeEmpty(['stage-0', 'es2015', 'react', isProd ? undefined : 'react-hmre']),
             compact: true
           }
         }
