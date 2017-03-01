@@ -1,14 +1,14 @@
 version: "3"
 services:
-  web-dev:
+  web-prod:
     build:
       context: .
       dockerfile: Dockerfile-dev
     ports:
-    - "3000:3000"
+    - "8080:8080"
     volumes:
     - .:/usr/src/app/:rw
     - /usr/src/app/node_modules
     environment:
-    - NODE_ENV=dev
-    command: npm run dev
+    - NODE_ENV=prod
+    command: npm run build:prod

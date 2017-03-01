@@ -13,4 +13,4 @@ RUN npm config set registry http://registry.npmjs.org/ && npm install && npm cac
 
 # Run it
 EXPOSE 3000
-CMD ["npm", "run", "dev"]
+#CMD ["npm", "run", "dev"]

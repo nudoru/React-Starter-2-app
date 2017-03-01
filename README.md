@@ -29,7 +29,8 @@ I'm experimenting with a Docker based workflow. Current setup is based on these 
 https://medium.com/@andyccs/webpack-and-docker-for-development-and-deployment-ae0e73243db4#.dmfqhhbyk
 http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html#the-nodemodules-volume-trick
 
-Start with `docker-compose up`
+- For development `docker-compose up` and open a browser to `http://0.0.0.0:3000`
+- To build for prod `docker-compose -f docker-compose-prod.yml up`
 
 The `node_modules` folder contents will be installed to a dir inside the image so that it doesn't take up space on the host.
 
