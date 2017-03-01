@@ -23,6 +23,10 @@ On build, the `front/www/js/app` directory is cleaned and new code is bundled th
 JS Entry point is `front/app/index.js`
 SASS is `front/app/index.sass`
 
+## Docker
+
+I'm experimenting with a Docker based workflow. Current setup is based on this post https://medium.com/@andyccs/webpack-and-docker-for-development-and-deployment-ae0e73243db4#.dmfqhhbyk
+
 ## Build options
 
 `npm run dev` to start the webpack-dev-server with hot reloading at localhost:3000. Will also open the default browser to the site.
