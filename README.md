@@ -29,6 +29,7 @@ I'm experimenting with a Docker based workflow. Current setup is based on these 
 https://medium.com/@andyccs/webpack-and-docker-for-development-and-deployment-ae0e73243db4#.dmfqhhbyk
 http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html#the-nodemodules-volume-trick
 
+- The `Dockerfile` and `docker-compose.yml` files are for running the compiled app as standalone.
 - For front end development `docker-compose -f docker-compose-dev.yml up` and open a browser to `http://0.0.0.0:3000`
 - To build the front end for prod `docker-compose -f docker-compose-build.yml up`
 

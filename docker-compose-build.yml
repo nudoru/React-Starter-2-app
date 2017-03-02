@@ -10,5 +10,5 @@ services:
     - .:/usr/src/app/:rw
     - /usr/src/app/node_modules
     environment:
-    - NODE_ENV=prod
+    - NODE_ENV=production
     command: npm run build:prod

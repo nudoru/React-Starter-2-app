@@ -12,8 +12,8 @@ var express = require('express'),
     app = express(),
     env = process.env,
     isProduction = env.NODE_ENV === 'production',
-    ipAddress = env.OPENSHIFT_NODEJS_IP || 'localhost',
-    port = env.OPENSHIFT_NODEJS_PORT || (isProduction ? env.PORT : 8080);
+    ipAddress = env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
+    port = env.OPENSHIFT_NODEJS_PORT || 8080; //(isProduction ? env.PORT : 8080);
 
 // app.use(favicon(path.join(__dirname, 'front', 'www', 'favicon.ico')));
 app.use(morgan('dev'));
