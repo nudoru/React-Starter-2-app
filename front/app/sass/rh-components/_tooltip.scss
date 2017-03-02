@@ -24,6 +24,12 @@
  * Classes added:
  * 	1) hint
  */
+
+$tooltip-background-color: rgba(240,240,240,.95);
+$tooltip-arrow-color: #fff;
+$tooltip-text-color: $grey-10;
+
+
 [class*="tooltip-"] {
   position: relative;
   display: inline-block;
@@ -73,10 +79,15 @@
 
 [class*="tooltip-"]:after {
   font-family: $base-font-content;
-  background: $grey-10;
-  color: #fff;
+  background: $tooltip-background-color;
+  color: $tooltip-text-color;
   padding: $base-line-height-half $base-line-height;
   white-space: nowrap;
+  font-weight: 600;
+  border-radius: $border-radius-small;
+  text-shadow: $text-shadow-light;
+  //box-shadow: $box-shadow-dark;
+  box-shadow: inset 0 0 3px 3px $tooltip-arrow-color, 0 0 10px 2px rgba(0,0,0,.25);
 }
 
 [class*="tooltip-"][aria-label]:after {
@@ -108,35 +119,35 @@
  * set default color for tooltip arrows
  */
 .tooltip-top-left:before {
-  border-top-color: $grey-10;
+  border-top-color: $tooltip-arrow-color;
 }
 
 .tooltip-top-right:before {
-  border-top-color: $grey-10;
+  border-top-color: $tooltip-arrow-color;
 }
 
 .tooltip-top:before {
-  border-top-color: $grey-10;
+  border-top-color: $tooltip-arrow-color;
 }
 
 .tooltip-bottom-left:before {
-  border-bottom-color: $grey-10;
+  border-bottom-color: $tooltip-arrow-color;
 }
 
 .tooltip-bottom-right:before {
-  border-bottom-color: $grey-10;
+  border-bottom-color: $tooltip-arrow-color;
 }
 
 .tooltip-bottom:before {
-  border-bottom-color: $grey-10;
+  border-bottom-color: $tooltip-arrow-color;
 }
 
 .tooltip-left:before {
-  border-left-color: $grey-10;
+  border-left-color: $tooltip-arrow-color;
 }
 
 .tooltip-right:before {
-  border-right-color: $grey-10;
+  border-right-color: $tooltip-arrow-color;
 }
 
 /**
@@ -461,10 +472,7 @@
 	 */
 }
 
-[class*="tooltip-"]:after {
-  text-shadow: $text-shadow-dark;
-  box-shadow: $box-shadow-dark;
-}
+
 
 /**
  * source: hint-color-types.scss
