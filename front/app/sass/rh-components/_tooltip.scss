@@ -26,7 +26,7 @@
  */
 
 $tooltip-background-color: rgba(240,240,240,.95);
-$tooltip-arrow-color: #fff;
+$tooltip-arrow-color: rgb(250,250,250);
 $tooltip-text-color: $grey-10;
 
 
@@ -86,8 +86,7 @@ $tooltip-text-color: $grey-10;
   font-weight: 600;
   border-radius: $border-radius-small;
   text-shadow: $text-shadow-light;
-  //box-shadow: $box-shadow-dark;
-  box-shadow: inset 0 0 3px 3px $tooltip-arrow-color, 0 0 10px 2px rgba(0,0,0,.25);
+  box-shadow: inset 0 0 3px 3px $tooltip-arrow-color, $box-shadow-medium //, 0 0 10px 2px rgba(0,0,0,.25);
 }
 
 [class*="tooltip-"][aria-label]:after {

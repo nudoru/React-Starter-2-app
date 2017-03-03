@@ -16,7 +16,7 @@ class ModalMessage extends React.Component {
 
   render() {
     let content,
-        boxClass   = ['rh-modal-box'],
+        boxClass   = ['rh-popup-box'],
         coverClass = ['rh-modal-cover'],
         button     = this.props.dismissible ? (
           <button className="rh-button" onClick={this.onClick.bind(this)}>

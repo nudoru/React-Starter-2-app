@@ -9,22 +9,33 @@
   &.dismissible
     background: rgba(200,200,200,.5)
     cursor: pointer
+  .rh-popup-box
+    position: fixed
+    z-index: 101
+    top: 25%
+    left: 50%
+    margin-left: -20rem
+    width: 40rem
 
-.rh-modal-box
-  +standard-shadow
-  position: fixed
-  z-index: 101
+.rh-popup-box
   background: #fff
-  top: 25%
-  left: 50%
-  margin-left: -20rem
-  width: 40rem
   padding: $base-line-height-triple
   text-align: center
-  border-top: $base-line-height-half solid $control-info-color
+  border-top: 3px solid $control-info-color
+  box-shadow: $box-shadow-xlarge
+  .rh-icon-circle-icon
+    @extend .rh-icon-outline
+    position: relative
+    margin: 0 auto
+    //background-color: $blue
   h1
-    @extend h3
-    color: $blue-dark
+    @extend .h1-small
+    padding: $base-line-height-double 0 $base-line-height 0
+    line-height: $base-line-height-double + $base-line-height-half
+  button
+    @extend .rh-button-neutral
+    @extend .rh-button-block
+    margin-top: $base-line-height-double
   &.error
     border-color: $control-danger-color
     h1
@@ -35,7 +46,7 @@
     transition: all 0.5s ease-out
     opacity: 0
     visibility: hidden
-  .rh-modal-box, .rh-modal-box-error
+  .rh-popup-box, .rh-modal-box-error
     @extend .animated
     visibility: hidden
 
@@ -43,7 +54,7 @@
   .rh-modal-cover, .rh-modal-cover-dismissable
     opacity: 1
     visibility: visible
-  .rh-modal-box, .rh-modal-box-error
+  .rh-popup-box, .rh-modal-box-error
     @extend .flipInX
     visibility: visible
 
@@ -52,7 +63,7 @@
     transition: all 0.5s ease-out
     opacity: 0
     visibility: hidden
-  .rh-modal-box, .rh-modal-box-error
+  .rh-popup-box, .rh-modal-box-error
     @extend .animated
     visibility: hidden
 
@@ -60,7 +71,7 @@
   .rh-modal-cover, .rh-modal-cover-dismissable
     opacity: 1
     visibility: visible
-  .rh-modal-box, .rh-modal-box-error
+  .rh-popup-box, .rh-modal-box-error
     @extend .flipInX
     visibility: visible
 
@@ -68,31 +79,31 @@
   .rh-modal-cover, .rh-modal-cover-dismissable
     transition: all 0.5s ease-out
     opacity: 1
-  .rh-modal-box, .rh-modal-box-error
+  .rh-popup-box, .rh-modal-box-error
     @extend .animated
 
 .modal-leave.modal-leave-active
   .rh-modal-cover, .rh-modal-cover-dismissable
     opacity: 0
-  .rh-modal-box, .rh-modal-box-error
+  .rh-popup-box, .rh-modal-box-error
     @extend .flipOutX
 
 .rh-modal-prompt
   position: relative
   text-align: center
   padding: $base-line-height
-  .rh-icon-circle-icon
-    position: relative
-    margin: 0 auto
-    background-color: $blue
-  h1
-    padding: $base-line-height-double 0 $base-line-height 0
-    font-weight: 400
-    line-height: $base-line-height-double + $base-line-height-half
-  button
-    @extend .rh-button-admin
-    @extend .rh-button-block
-    margin-top: $base-line-height-double
+  //.rh-icon-circle-icon
+  //  position: relative
+  //  margin: 0 auto
+  //  background-color: $blue
+  //h1
+  //  padding: $base-line-height-double 0 $base-line-height 0
+  //  font-weight: 400
+  //  line-height: $base-line-height-double + $base-line-height-half
+  //button
+  //  @extend .rh-button-admin
+  //  @extend .rh-button-block
+  //  margin-top: $base-line-height-double
 
 .rh-login
   @extend .rh-modal-prompt

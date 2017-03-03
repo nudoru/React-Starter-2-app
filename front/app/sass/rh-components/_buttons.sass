@@ -1,6 +1,6 @@
 %control-button-text
   font-family: $base-font-header
-  font-weight: 700
+  font-weight: 600
   text-transform: uppercase
   font-size: 1.6rem
 
@@ -15,10 +15,10 @@
   border: none
   color: #fff
   border: 1px solid $color-nocolor
-  box-shadow: $box-shadow-dark
+  box-shadow: $box-shadow-xsmall
   text-shadow: $text-shadow-dark
   &:hover
-    background: rgb(161, 4, 12)
+    background: $red-dark-1
   &.disabled, &.disabled:hover
     cursor: not-allowed
     background: $grey-3
@@ -30,18 +30,30 @@
   width: 100%
 
 .rh-button-secondary
+  background: $blue
+  &:hover
+    background: rgb(2, 165, 205)
+
+.rh-button-hallow
   background: none
   border: 1px solid $red
   color: $red
   &:hover
     background: none
-    border: 1px solid rgb(161, 4, 12)
-    color: rgb(161, 4, 12)
+    border: 1px solid $red-dark-1
+    color: $red-dark-1
 
-.rh-button-admin
+// Admin from administrative buttons on the Totara LMS theme
+.rh-button-neutral
   background: rgb(122, 133, 138)
   &:hover
     background: rgb(89, 102, 109)
+
+.rh-button-small
+  font-size: 1.2rem // .small font size
+  height: 3rem
+  padding: 0 3rem 0 3rem
+  line-height: 3rem
 
 .rh-button-container-horiz
   width: 100%

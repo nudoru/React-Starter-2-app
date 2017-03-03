@@ -2,13 +2,18 @@
   @extend %list-horizontal
   padding: 2.2rem 0 !important
   li, li > a
-    font-size: 1.6rem
+    @extend .small
     font-weight: 600
+    text-transform: uppercase
     margin: 0
     padding: 0
+    a, a:hover, a:visited
+      color: $color-link
   li:after
-    content: ">"
-    font-weight: 300
-    padding: 0 $base-line-height-half
+    content: "\f101"
+    font-family: FontAwesome
+    font-weight: 400
+    color: $grey-6
+    padding: 0 $base-line-height
   li:last-of-type:after
     content: ""

@@ -20,7 +20,7 @@ $icon-size: 8rem
 .rh-icon-circle-icon
   +circle-icon($icon-size, $red, #fff)
   line-height: $base-line-height
-  padding-top: ($icon-size/2) - (3.4rem / 2)
+  padding-top: ($icon-size/2) - (3.4rem / 2) - .1rem
 
 .rh-icon-circle-image
   +circle-icon($icon-size, $color-nocolor, $color-body)
@@ -46,3 +46,9 @@ $icon-size: 8rem
     margin-right: $base-line-height-double
     &:last-of-type
       margin-right: 0
+
+.rh-icon-outline
+  border: 2px solid $blue
+  background: #fff
+  color: $control-neutral-color-dark
+  text-shadow: none

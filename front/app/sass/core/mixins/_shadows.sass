@@ -40,11 +40,6 @@
     -moz-box-shadow: $distance $distance $blur $spread rgba($color, $color, $color, $alpha)
     box-shadow: $distance $distance $blur $spread rgba($color, $color, $color, $alpha)
 
-=box-shadow($shadow)
-    -webkit-box-shadow: $shadow
-    // iOS <4.3 & Android <4.1
-    box-shadow: $shadow
-
 =standard-shadow
     +box-shadow-exp(3px, 10px, 0px, 0, .25)
 

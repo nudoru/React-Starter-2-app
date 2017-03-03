@@ -165,19 +165,32 @@ class ComponentsTesting extends React.Component {
             {label: 'Button 3', route: '/two', active: false}
           ]}/>
           <hr/>
-
           <Well>
-            <h2>Buttons</h2>
-            <div className="rh-button-container-horiz">
-              <ToolTip position="top" label="I'm a tool-tip!">
-              <button className="rh-button">Primary</button></ToolTip>
-              <button className="rh-button rh-button-secondary">Secondary
-              </button>
-              <button className="rh-button rh-button-admin">Admin</button>
+            <h1>Pop ups</h1>
+            <div className='rh-popup-box'>
+              <IconCircle icon="cog"/>
+              <h1>Hello!</h1>
+              <p>{Lorem.paragraph(3, 7)}</p>
+              <button className="rh-button" >Click Me</button>
             </div>
           </Well>
           <Well>
-            <h2>Icons</h2>
+            <h1>Buttons</h1>
+            <div className="rh-button-container-horiz">
+              <button className="rh-button">Primary</button>
+              <button className="rh-button rh-button-secondary">Secondary</button>
+              <button className="rh-button rh-button-neutral">Neutral</button>
+              <button className="rh-button rh-button-hallow">Hallow</button>
+            </div>
+            <div className="rh-button-container-horiz">
+              <button className="rh-button rh-button-small">Primary</button>
+              <button className="rh-button rh-button-secondary rh-button-small">Secondary</button>
+              <button className="rh-button rh-button-neutral rh-button-small">Neutral</button>
+              <button className="rh-button rh-button-hallow rh-button-small">Hallow</button>
+            </div>
+          </Well>
+          <Well>
+            <h1>Icons</h1>
             <div className="rh-icon-horizontal-group">
               <IconCircle icon="coffee"/>
               <IconCircle icon="code"/>
@@ -192,7 +205,7 @@ class ComponentsTesting extends React.Component {
               icons (after v 4.6) are not included.</p>
           </Well>
           <Well>
-            <h2>Spinner</h2>
+            <h1>Spinner</h1>
             <Spinner type="spinner-xlg"/>
             <Spinner type="spinner-lg"/>
             <Spinner />
@@ -201,7 +214,7 @@ class ComponentsTesting extends React.Component {
             <Spinner type="spinner-inverse"/>
           </Well>
           <Well>
-            <h2>Tags</h2>
+            <h1>Tags</h1>
             <TagHGroup>
               <Tag><i className="fa fa-hashtag"/>Foo</Tag>
               <Tag><i className="fa fa-tag"/>Bar</Tag>
@@ -212,7 +225,7 @@ class ComponentsTesting extends React.Component {
             </TagHGroup>
           </Well>
           <Well>
-            <h2>Tool-tips</h2>
+            <h1>Tool-tips</h1>
             <h4>CSS only tool-tips based on hint.css</h4>
             <ul className="listing">
               <li><ToolTip position="top" label="I'm a tool-tip!">On the top</ToolTip></li>
@@ -226,7 +239,7 @@ class ComponentsTesting extends React.Component {
             </ul>
           </Well>
           <Well>
-            <h2>Status Icons</h2>
+            <h1>Status Icons</h1>
             <StatusIcon status="0"/>
             <StatusIcon status="1"/>
             <StatusIcon status="2"/>
@@ -244,7 +257,7 @@ class ComponentsTesting extends React.Component {
             <Status type="fail">Something blew up!</Status>
           </Well>
           <hr/>
-          <h2>Card groups</h2>
+          <h1>Card groups</h1>
           <CardGroup orientation="horizontal-decorative">
             <Card title="Title" style="bars" ctaRoute="/two">
               <p>{Lorem.paragraph(3, 7)}</p>
