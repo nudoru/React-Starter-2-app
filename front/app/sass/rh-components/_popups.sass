@@ -1,39 +1,25 @@
-.rh-modal-cover
-  position: fixed
-  z-index: 100
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  background: rgba(100,100,100,.75)
-  &.dismissible
-    background: rgba(200,200,200,.5)
-    cursor: pointer
-  .rh-popup-box
-    position: fixed
-    z-index: 101
-    top: 25%
-    left: 50%
-    margin-left: -20rem
-    width: 40rem
-
-.rh-popup-box
+.rh-popup-simple
+  position: relative
   background: #fff
-  padding: $base-line-height-triple
+  padding: $base-line-height-double
   text-align: center
   border-top: 3px solid $control-info-color
   box-shadow: $box-shadow-xlarge
+  z-index: 101
   .rh-icon-circle-icon
-    @extend .rh-icon-outline
+    //@extend .rh-icon-outline
     position: relative
     margin: 0 auto
-    //background-color: $blue
+    margin-top: -5rem
+    margin-bottom: $base-line-height-double
+    background-color: $blue
   h1
     @extend .h1-small
-    padding: $base-line-height-double 0 $base-line-height 0
+    margin: 0
+    padding-bottom: $base-line-height-double
     line-height: $base-line-height-double + $base-line-height-half
   button
-    @extend .rh-button-neutral
+    //@extend .rh-button-neutral
     @extend .rh-button-block
     margin-top: $base-line-height-double
   &.error
@@ -46,7 +32,7 @@
     transition: all 0.5s ease-out
     opacity: 0
     visibility: hidden
-  .rh-popup-box, .rh-modal-box-error
+  .rh-popup-simple, .rh-modal-box-error
     @extend .animated
     visibility: hidden
 
@@ -54,7 +40,7 @@
   .rh-modal-cover, .rh-modal-cover-dismissable
     opacity: 1
     visibility: visible
-  .rh-popup-box, .rh-modal-box-error
+  .rh-popup-simple, .rh-modal-box-error
     @extend .flipInX
     visibility: visible
 
@@ -63,7 +49,7 @@
     transition: all 0.5s ease-out
     opacity: 0
     visibility: hidden
-  .rh-popup-box, .rh-modal-box-error
+  .rh-popup-simple, .rh-modal-box-error
     @extend .animated
     visibility: hidden
 
@@ -71,7 +57,7 @@
   .rh-modal-cover, .rh-modal-cover-dismissable
     opacity: 1
     visibility: visible
-  .rh-popup-box, .rh-modal-box-error
+  .rh-popup-simple, .rh-modal-box-error
     @extend .flipInX
     visibility: visible
 
@@ -79,37 +65,24 @@
   .rh-modal-cover, .rh-modal-cover-dismissable
     transition: all 0.5s ease-out
     opacity: 1
-  .rh-popup-box, .rh-modal-box-error
+  .rh-popup-simple, .rh-modal-box-error
     @extend .animated
 
 .modal-leave.modal-leave-active
   .rh-modal-cover, .rh-modal-cover-dismissable
     opacity: 0
-  .rh-popup-box, .rh-modal-box-error
+  .rh-popup-simple, .rh-modal-box-error
     @extend .flipOutX
 
-.rh-modal-prompt
-  position: relative
-  text-align: center
-  padding: $base-line-height
-  //.rh-icon-circle-icon
-  //  position: relative
-  //  margin: 0 auto
-  //  background-color: $blue
-  //h1
-  //  padding: $base-line-height-double 0 $base-line-height 0
-  //  font-weight: 400
-  //  line-height: $base-line-height-double + $base-line-height-half
-  //button
-  //  @extend .rh-button-admin
-  //  @extend .rh-button-block
-  //  margin-top: $base-line-height-double
-
+// Used by LMSKerberosIdRequest
 .rh-login
-  @extend .rh-modal-prompt
-  .login-error
-    color: $control-danger-color
   input
-    width: 175px
+    width: 143px
     text-align: right
     font-weight: 600
+
+// Simple popup in a modal
+.rh-popup-container
+  .rh-popup-simple
+    width: 320px
+    margin: 50px auto

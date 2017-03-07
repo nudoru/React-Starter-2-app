@@ -1,63 +1,32 @@
 import React from 'react';
+import ModalCover from './rh-ModalCover';
+import PopupSimple from './rh-PopupSimple';
 
 /**
  * Simple modal message cover
  */
 
 class ModalMessage extends React.Component {
-
-  onClick(e) {
-    e.preventDefault();
-
-    if (this.props.dismissible && this.props.dismissFunc) {
-      this.props.dismissFunc.call(null);
-    }
-  }
-
   render() {
-    let content,
-        boxClass   = ['rh-popup-box'],
-        coverClass = ['rh-modal-cover'],
-        button     = this.props.dismissible ? (
-          <button className="rh-button" onClick={this.onClick.bind(this)}>
-            {this.props.dismissButtonLabel}</button>) : '';
-
-    if (this.props.error) {
-      boxClass.push('error');
-    }
-
-    if (this.props.dismissible) {
-      coverClass.push('dismissible');
-    }
-
-    content = this.props.children ? (
-        <div>
-          <div className={coverClass.join(' ')}
-               onClick={this.onClick.bind(this)}>
-          </div>
-          <div className={boxClass.join(' ')}>
-            {this.props.children}
-            {button}
-          </div>
-        </div>
-    ) : null;
-
-    return content;
+    return (
+      <div className="rh-popup-container">
+        <ModalCover {...this.props.modal}/>
+        <PopupSimple {...this.props.message}>
+          {this.props.children}
+        </PopupSimple>
+      </div>
+    );
   }
 }
 
 ModalMessage.defaultProps = {
-  error             : false,
-  dismissible       : false,
-  dismissFunc       : null,
-  dismissButtonLabel: 'Ok'
+  modal  : {},
+  message: {}
 };
 
 ModalMessage.propTypes = {
-  error             : React.PropTypes.bool,
-  dismissible       : React.PropTypes.bool,
-  dismissFunc       : React.PropTypes.func,
-  dismissButtonLabel: React.PropTypes.string
+  modal  : React.PropTypes.object,
+  message: React.PropTypes.object
 };
 
 export default ModalMessage;

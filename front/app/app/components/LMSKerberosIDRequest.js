@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ModalMessage from '../rh-components/rh-ModalMessage'
-import IconCircle from '../rh-components/rh-IconCircle'
 import AppState from '../state/AppState';
 // import {fetchUserProfile} from '../state/fetchLMS';
 import {validateInputStr} from '../utils/AppUtils';
@@ -125,9 +124,9 @@ class LMSKerberosIDRequest extends React.Component {
                                transitionAppearTimeout={1000}
                                transitionEnterTimeout={1000}
                                transitionLeaveTimeout={1000}>
-        <ModalMessage dismissible={false} error={isWSError || isInputError}>
+        <ModalMessage
+          message={{error: isWSError || isInputError, icon: 'user'}}>
           <div className="rh-login">
-            <IconCircle icon="user"/>
             {content}
           </div>
         </ModalMessage>

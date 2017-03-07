@@ -3,52 +3,7 @@
 @import "vendor/animate"
 @import "core/all"
 @import "rh-components/all"
-@import "rh-lms/all"
 @import "vendor/react-toggle"
 
-// From the SAML login page
-=background-greybars
-  background: linear-gradient(-45deg,#fff 0%,#eee 22%,#f6f6f6 22.01%,#fff 85%,#fafafa 85.01%,#fff 100%)
-  //background-size: cover
-  //background-attachment: fixed
-
-//url('../images/pattern/debut_light.png')
-body
-  background: #fff
-
-.content-region
-  background: none
-  margin: 0
-
-
-
-//------------------------------------------------------------------------------
-// Reusables
-//------------------------------------------------------------------------------
-
-
-.text-summary
-  text-align: left
-  p, li, a
-    font-size: 1.6rem
-  p
-    margin-bottom: $base-line-height
-    line-height: $base-line-height-double
-    &:last-of-type
-      margin-bottom: 0
-  ul, ol
-    margin: $base-line-height 0
-  +max-width(800px)
-    p, li, a
-      font-size: 1.4rem
-  +max-width(500px)
-    p, li, a
-      font-size: 1.4rem
-      line-height: $base-line-height
-
-%text-summary-big
-  p, li, a
-    font-size: 1.8rem
-    line-height: $base-line-height-triple
-  p
-    margin-bottom: $base-line-height-triple
+// All custom styling for the application goes in this file
+@import "AppCustom"

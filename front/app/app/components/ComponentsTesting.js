@@ -19,6 +19,12 @@ import {StatusIcon, StatusIconTiny} from '../rh-components/rh-StatusIcon';
 import {Spinner} from '../rh-components/rh-Spinner';
 import {Status} from '../rh-components/rh-Status';
 import {ToolTip} from '../rh-components/rh-ToolTip';
+import Popupsimple from '../rh-components/rh-PopupSimple';
+import ModalCover from '../rh-components/rh-ModalCover';
+import ModalMessage from '../rh-components/rh-ModalMessage';
+import {PleaseWaitModal} from '../components/PleaseWaitModal';
+import LMSKerberosIDRequest from '../components/LMSKerberosIDRequest';
+import Panel from '../rh-components/rh-Panel';
 
 const TextStyles = () => {
   return (
@@ -68,10 +74,19 @@ class ComponentsTesting extends React.Component {
 
   constructor() {
     super();
-    this.state = {};
+    this.state = {modal:false};
   }
 
   componentDidMount() {
+  }
+
+  _onButtonClick(e) {
+    console.log('A button was clicked!',e);
+  }
+
+  _onModalClick(e) {
+    console.log('Modal was clicked!',e);
+    this.setState({modal: false});
   }
 
   render() {
@@ -144,6 +159,17 @@ class ComponentsTesting extends React.Component {
         ];
 
 
+    /*
+     <ModalCover visible={this.state.modal} dismissible={true} dismissFunc={this._onModalClick.bind(this)}/>
+     <ModalMessage
+     message={{title: "Hello!", buttonLabel: 'Click me', buttonOnClick: this._onButtonClick.bind(this)}}>
+     <p>MESSAGE IN A MODAL!!!</p>
+     </ModalMessage>
+     <PleaseWaitModal message="Reticulating splines"/>
+     <LMSKerberosIDRequest/>
+
+     */
+
     return (
       <div>
         <div className="page-container">
@@ -166,13 +192,33 @@ class ComponentsTesting extends React.Component {
           ]}/>
           <hr/>
           <Well>
-            <h1>Pop ups</h1>
-            <div className='rh-popup-box'>
-              <IconCircle icon="cog"/>
-              <h1>Hello!</h1>
-              <p>{Lorem.paragraph(3, 7)}</p>
-              <button className="rh-button" >Click Me</button>
+            <h1>Panel</h1>
+            <Panel title='Ima control panel!' icon="cog" footerNote="Status!">
+              <p>Ima the panel's content!</p>
+            </Panel>
+          </Well>
+          <Well>
+            <h1>Pop ups (Simple)</h1>
+            <div className="grid-12-container">
+              <div className="grid-row">
+                <div className="grid-col-4">
+                  <Popupsimple title="Hello!" icon="comment">
+                    <p>{Lorem.paragraph(3, 7)}</p>
+                  </Popupsimple>
+                </div>
+                <div className="grid-col-4">
+                  <Popupsimple title="Hello!" buttonLabel='Click me' buttonOnClick={this._onButtonClick.bind(this)}>
+                    <p>{Lorem.paragraph(3, 7)}</p>
+                  </Popupsimple>
+                </div>
+                <div className="grid-col-4">
+                  <Popupsimple title="Oh no .." buttonLabel='Click me' buttonOnClick={this._onButtonClick.bind(this)} error={true}>
+                    <p>{Lorem.paragraph(3, 7)}</p>
+                  </Popupsimple>
+                </div>
+              </div>
             </div>
+
           </Well>
           <Well>
             <h1>Buttons</h1>

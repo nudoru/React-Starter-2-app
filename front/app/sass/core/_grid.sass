@@ -2,16 +2,14 @@ $grid-padding: $base-line-height
 $grid-column-width: 7rem
 
 .grid-row-borders
-  .grid-row
+  .grid-row:not(:last-of-type)
     border-bottom: 1px solid rgba(0, 0, 0, .25)
     &:last-of-type
       border-bottom: none
 
 .grid-column-borders
-  [class*='grid-col-']
+  [class*='grid-col-']:not(:last-of-type)
     border-right: 1px solid rgba(0, 0, 0, .25)
-    &:last-of-type
-      border-right: none
 
 .grid-padded
   padding: $grid-padding 0 $grid-padding $grid-padding
@@ -33,17 +31,6 @@ $grid-column-width: 7rem
   width: 100%
   background: rgba(255, 0, 0, .25)
 
-[class*='grid-col-']
-  //float: left
-  display: table-cell
-  min-height: 1px
-  padding-left: $grid-padding
-  padding-right: $grid-padding
-  &:first-of-type
-    padding-left: 0
-  &:last-of-type
-    padding-right: 0
-
 .grid-row
   width: 100%
   position: relative
@@ -53,6 +40,11 @@ $grid-column-width: 7rem
     content: ""
     display: table
     clear: both
+
+[class*='grid-col-']
+  display: table-cell
+  min-height: 1px
+  vertical-align: top
 
 .grid-col-1
   width: 8.333333333333332%

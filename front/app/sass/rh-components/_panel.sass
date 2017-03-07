@@ -1,10 +1,58 @@
-@import "../vendor/paper-shadows"
-
-%panel-base
-  position: relative
-  background: #fff
-  padding: $base-line-height
+$panel-border: 1px solid $grey-3
+$panel-header-height: 4rem
+$panel-footer-height: 4rem
 
 .rh-panel
-  @extend %panel-base
-  margin: $base-line-height
+  position: relative
+  background: #fff
+  box-shadow: $box-shadow-medium
+  border: $panel-border
+
+
+%panel-area-common
+  padding: 0 $base-line-height
+
+
+.rh-panel-header
+  @extend %panel-area-common
+  padding-left: 0
+  background: $grey-1
+  border-bottom: $panel-border
+  height: $panel-header-height
+  text-shadow: $text-shadow-light
+  .icon
+    position: relative
+    display: inline
+    padding: 0 $base-line-height
+    width: $panel-header-height
+    height: $panel-header-height
+    border-right: $panel-border
+    text-align: center
+    i.fa
+      font-size: 1.6rem
+      line-height: $panel-header-height
+  h1
+    display: inline
+    font-size: 1.4rem
+    line-height: $panel-header-height
+    padding: 0
+    padding-left: $base-line-height
+    margin: 0
+
+
+.rh-panel-content
+  @extend %panel-area-common
+  padding-top: $base-line-height
+  padding-bottom: $base-line-height
+
+.rh-panel-footer
+  @extend %panel-area-common
+  background: $grey-1
+  border-top: $panel-border
+  height: $panel-footer-height
+  line-height: $panel-footer-height
+  h1
+    font-size: 1.4rem
+    line-height: $panel-footer-height
+    padding: 0
+    margin: 0
