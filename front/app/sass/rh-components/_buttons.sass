@@ -98,3 +98,32 @@ $control-button-size: 4rem
   text-align: center
   button:not(:last-of-type)
     margin-right: $base-line-height
+
+.rh-button-group-horiz
+  width: 100%
+  display: block
+  margin: $base-line-height 0
+  text-align: center
+  button
+    margin: 0
+    border-radius: 0
+    box-shadow: none
+    &:first-child
+      border-radius: $border-radius-small 0 0 $border-radius-small
+    &:last-child
+      border-radius: 0 $border-radius-small $border-radius-small 0
+
+.rh-button-group-vert
+  display: inline-block
+  margin: $base-line-height 0
+  text-align: center
+  button
+    display: block
+    width: 100%
+    margin: 0
+    border-radius: 0
+    box-shadow: none
+    &:first-child
+      border-radius: $border-radius-small $border-radius-small 0 0
+    &:last-child
+      border-radius: 0 0 $border-radius-small $border-radius-small

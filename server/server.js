@@ -5,6 +5,7 @@
 var express = require('express'),
     path = require('path'),
     morgan = require('morgan'),
+    compression = require('compression'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     favicon = require('serve-favicon'),
@@ -15,7 +16,8 @@ var express = require('express'),
     ipAddress = env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
     port = env.OPENSHIFT_NODEJS_PORT || 8080; //(isProduction ? env.PORT : 8080);
 
-// app.use(favicon(path.join(__dirname, 'front', 'www', 'favicon.ico')));
+app.use(compression());
+app.use(favicon(path.join(__dirname, 'front', 'www', 'favicon.ico')));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

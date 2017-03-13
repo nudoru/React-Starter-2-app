@@ -1,29 +1,14 @@
 import React from 'react';
 
-class Tabs extends React.Component {
-
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (<div className="rh-tabs">
+export const TabsHorizontal = ({children}) => {
+    return (<div className="rh-tabs-vert">
       <ul>
-        {
-          this.props.nav.map((item, i) => {
-            return <li key={i} className={item.active === true ? 'active' : ''}>
-              <a href={item.route}>{item.label}</a></li>
-          })
-        }
+        {children}
       </ul>
     </div>);
-  }
-}
-
-Tabs.defaultProps = {};
-Tabs.propTypes    = {
-  nav: React.PropTypes.array
 };
 
-export default Tabs;
+export const Tab = ({active, label, onClick = ()=>{}}) => {
+  return (<li className={'rh-tab '+ (active === true ? 'active' : '')}>
+      <a onClick={onClick}>{label}</a></li>);
+};

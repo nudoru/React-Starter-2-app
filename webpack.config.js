@@ -75,8 +75,11 @@ module.exports = env => {
         {
           test   : /\.jsx?$/,
           loader : 'babel-loader',
-          exclude: ['/node_modules/']
-
+          exclude: ['/node_modules/'],
+          query  : {
+            presets: removeEmpty(['react', isProd ? undefined : 'react-hmre']),
+            compact: true
+          }
         }
       ]
     },

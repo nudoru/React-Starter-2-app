@@ -7,9 +7,8 @@ import CardGroup from '../rh-components/rh-CardGroup';
 import CardIcon from '../rh-components/rh-CardIcon';
 import Card from '../rh-components/rh-Card';
 import Table from '../rh-components/rh-DataTable';
-import Tabs from '../rh-components/rh-Tabs';
+import {TabsHorizontal, Tab} from '../rh-components/rh-Tabs';
 import Pagination from '../rh-components/rh-Pagination';
-import ButtonGroup from '../rh-components/rh-ButtonGroup';
 import Well from '../rh-components/rh-Well';
 import IconCircle from '../rh-components/rh-IconCircle';
 import IconCircleImage from '../rh-components/rh-IconCircleImage';
@@ -180,16 +179,11 @@ class ComponentsTesting extends React.Component {
         </div>
         <PageModule style="white">
           <h1>Testing Page for Reusable Components</h1>
-          <Tabs nav={[
-            {label: 'Tab 1', route: '/', active: true},
-            {label: 'Tab 2', route: '/one', active: false},
-            {label: 'Tab 3', route: '/two', active: false}
-          ]}/>
-          <ButtonGroup nav={[
-            {label: 'Button 1', route: '/', active: true},
-            {label: 'Button 2', route: '/one', active: false},
-            {label: 'Button 3', route: '/two', active: false}
-          ]}/>
+          <TabsHorizontal>
+            <Tab active={true} label="Tab One" />
+            <Tab active={false} label="Tab Two" onClick={this._onButtonClick.bind(this)} />
+            <Tab active={false} label="Tab Three" onClick={this._onButtonClick.bind(this)} />
+            </TabsHorizontal>
           <hr/>
           <Well>
             <h1>Panel</h1>
@@ -278,6 +272,18 @@ class ComponentsTesting extends React.Component {
               </button>
               <button className="rh-button rh-button-icon rh-button-small"><i
                 className="fa fa-user"/></button>
+            </div>
+            <div className="rh-button-group-horiz">
+              <button className="rh-button">Grouped horizontal</button>
+              <button className="rh-button rh-button-secondary">Secondary
+              </button>
+              <button className="rh-button rh-button-secondary">Neutral</button>
+            </div>
+            <div className="rh-button-group-vert">
+              <button className="rh-button">Grouped vertical</button>
+              <button className="rh-button rh-button-secondary">Secondary
+              </button>
+              <button className="rh-button rh-button-secondary">Neutral</button>
             </div>
           </Well>
           <Well>
