@@ -5,7 +5,6 @@
   text-align: center
   border-top: 3px solid $control-info-color
   box-shadow: $box-shadow-xlarge
-  z-index: 101
   .rh-icon-circle-icon
     //@extend .rh-icon-outline
     position: relative
@@ -81,8 +80,16 @@
     text-align: right
     font-weight: 600
 
-// Simple popup in a modal
+// ...in a modal
 .rh-popup-container
+  .rh-popup-simple, .rh-panel
+    position: fixed
+
+    z-index: 101
   .rh-popup-simple
-    width: 320px
-    margin: 50px auto
+    width: 50%
+    margin: 50px 25%
+  .rh-panel
+    margin: 50px 13%
+    width: 75%
+

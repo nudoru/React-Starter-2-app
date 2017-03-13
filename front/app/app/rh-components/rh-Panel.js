@@ -1,8 +1,4 @@
 import React from 'react';
-import IconCircle from '../rh-components/rh-IconCircle';
-
-const NOOP = () => {
-};
 
 export const Panel = (props) => {
 

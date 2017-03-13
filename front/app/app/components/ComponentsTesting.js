@@ -21,6 +21,7 @@ import {ToolTip} from '../rh-components/rh-ToolTip';
 import Popupsimple from '../rh-components/rh-PopupSimple';
 import ModalCover from '../rh-components/rh-ModalCover';
 import ModalMessage from '../rh-components/rh-ModalMessage';
+import ModalPanel from '../rh-components/rh-ModalPanel';
 import {PleaseWaitModal} from '../components/PleaseWaitModal';
 import LMSKerberosIDRequest from '../components/LMSKerberosIDRequest';
 import {Panel} from '../rh-components/rh-Panel';
@@ -160,17 +161,35 @@ class ComponentsTesting extends React.Component {
 
     /*
      <ModalCover visible={this.state.modal} dismissible={true} dismissFunc={this._onModalClick.bind(this)}/>
-     <ModalMessage
-     message={{title: "Hello!", buttonLabel: 'Click me', buttonOnClick: this._onButtonClick.bind(this)}}>
-     <p>MESSAGE IN A MODAL!!!</p>
-     </ModalMessage>
+
      <PleaseWaitModal message="Reticulating splines"/>
      <LMSKerberosIDRequest/>
+
+     <ModalMessage message={{title:"Hello"}}><p>Paragraph {Lorem.paragraph(5, 10)}</p></ModalMessage>
+
+     <ModalPanel panel={{title:'Ima control panel!', icon:"cog", footerNote:"Status!",
+     utilityButtons:[
+     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-wrench"/></button>,
+     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-comment"/></button>,
+     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-close"/></button>
+     ],
+     actionButtons:[<button className="rh-button rh-button-text">
+     Primary</button>,
+     <button className="rh-button rh-button-text-secondary">
+     Secondary</button>,
+     <button className="rh-button rh-button-text-neutral">
+     Neutral</button>]}}>
+     <h1>H1 {Lorem.text(2, 5)}</h1>
+     <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+     <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+     </ModalPanel>
 
      */
 
     return (
       <div>
+
+
         <div className="page-container">
           <Breadcrumbs crumbs={[{label: 'Home', route: '/'}, {
             label: 'Subpage',
