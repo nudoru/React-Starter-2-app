@@ -24,7 +24,7 @@ import ModalCover from '../rh-components/rh-ModalCover';
 import ModalMessage from '../rh-components/rh-ModalMessage';
 import {PleaseWaitModal} from '../components/PleaseWaitModal';
 import LMSKerberosIDRequest from '../components/LMSKerberosIDRequest';
-import Panel from '../rh-components/rh-Panel';
+import {Panel} from '../rh-components/rh-Panel';
 
 const TextStyles = () => {
   return (
@@ -74,18 +74,18 @@ class ComponentsTesting extends React.Component {
 
   constructor() {
     super();
-    this.state = {modal:false};
+    this.state = {modal: false};
   }
 
   componentDidMount() {
   }
 
   _onButtonClick(e) {
-    console.log('A button was clicked!',e);
+    console.log('A button was clicked!', e);
   }
 
   _onModalClick(e) {
-    console.log('Modal was clicked!',e);
+    console.log('Modal was clicked!', e);
     this.setState({modal: false});
   }
 
@@ -193,8 +193,33 @@ class ComponentsTesting extends React.Component {
           <hr/>
           <Well>
             <h1>Panel</h1>
-            <Panel title='Ima control panel!' icon="cog" footerNote="Status!">
-              <p>Ima the panel's content!</p>
+            <Panel title='Ima control panel!' icon="cog" footerNote="Status!"
+                   utilityButtons={[
+                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-wrench"/></button>,
+                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-comment"/></button>,
+                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-close"/></button>
+                   ]}
+                   actionButtons={[<button className="rh-button rh-button-text">
+                     Primary</button>,
+                     <button className="rh-button rh-button-text-secondary">
+                       Secondary</button>,
+                     <button className="rh-button rh-button-text-neutral">
+                       Neutral</button>]}>
+              <h1>H1 {Lorem.text(2, 5)}</h1>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+            </Panel>
+            <h4>No footer</h4>
+            <Panel title='Ima control panel!'>
+              <h1>H1 {Lorem.text(2, 5)}</h1>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+            </Panel>
+            <h4>No header</h4>
+            <Panel footerNote="Status!">
+              <h1>H1 {Lorem.text(2, 5)}</h1>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
             </Panel>
           </Well>
           <Well>
@@ -207,12 +232,15 @@ class ComponentsTesting extends React.Component {
                   </Popupsimple>
                 </div>
                 <div className="grid-col-4">
-                  <Popupsimple title="Hello!" buttonLabel='Click me' buttonOnClick={this._onButtonClick.bind(this)}>
+                  <Popupsimple title="Hello!" buttonLabel='Click me'
+                               buttonOnClick={this._onButtonClick.bind(this)}>
                     <p>{Lorem.paragraph(3, 7)}</p>
                   </Popupsimple>
                 </div>
                 <div className="grid-col-4">
-                  <Popupsimple title="Oh no .." buttonLabel='Click me' buttonOnClick={this._onButtonClick.bind(this)} error={true}>
+                  <Popupsimple title="Oh no .." buttonLabel='Click me'
+                               buttonOnClick={this._onButtonClick.bind(this)}
+                               error={true}>
                     <p>{Lorem.paragraph(3, 7)}</p>
                   </Popupsimple>
                 </div>
@@ -224,15 +252,32 @@ class ComponentsTesting extends React.Component {
             <h1>Buttons</h1>
             <div className="rh-button-container-horiz">
               <button className="rh-button">Primary</button>
-              <button className="rh-button rh-button-secondary">Secondary</button>
+              <button className="rh-button rh-button-secondary">Secondary
+              </button>
               <button className="rh-button rh-button-neutral">Neutral</button>
-              <button className="rh-button rh-button-hallow">Hallow</button>
+              <button className="rh-button rh-button-hollow">Hollow</button>
+              <button className="rh-button rh-button-text">Text only</button>
+              <button className="rh-button rh-button-text-secondary">Text only</button>
+              <button className="rh-button rh-button-text-neutral">Text only</button>
+              <button className="rh-button rh-button-icon"><i
+                className="fa fa-user"/></button>
             </div>
             <div className="rh-button-container-horiz">
               <button className="rh-button rh-button-small">Primary</button>
-              <button className="rh-button rh-button-secondary rh-button-small">Secondary</button>
-              <button className="rh-button rh-button-neutral rh-button-small">Neutral</button>
-              <button className="rh-button rh-button-hallow rh-button-small">Hallow</button>
+              <button className="rh-button rh-button-secondary rh-button-small">
+                Secondary
+              </button>
+              <button className="rh-button rh-button-neutral rh-button-small">
+                Neutral
+              </button>
+              <button className="rh-button rh-button-hollow rh-button-small">
+                Hollow
+              </button>
+              <button className="rh-button rh-button-text rh-button-small">Text
+                only
+              </button>
+              <button className="rh-button rh-button-icon rh-button-small"><i
+                className="fa fa-user"/></button>
             </div>
           </Well>
           <Well>
@@ -264,7 +309,8 @@ class ComponentsTesting extends React.Component {
             <TagHGroup>
               <Tag><i className="fa fa-hashtag"/>Foo</Tag>
               <Tag><i className="fa fa-tag"/>Bar</Tag>
-              <Tag><i className="fa fa-tags"/>This bar <em>that quaz</em> like a foo</Tag>
+              <Tag><i className="fa fa-tags"/>This bar <em>that quaz</em> like a
+                foo</Tag>
               <Tag>Qiz</Tag>
               <Tag>{Lorem.text(2, 7)}</Tag>
               <Tag>{Lorem.text(2, 7)}</Tag>
@@ -274,14 +320,22 @@ class ComponentsTesting extends React.Component {
             <h1>Tool-tips</h1>
             <h4>CSS only tool-tips based on hint.css</h4>
             <ul className="listing">
-              <li><ToolTip position="top" label="I'm a tool-tip!">On the top</ToolTip></li>
-              <li><ToolTip position="bottom" label="I'm a tool-tip!">On the bottom</ToolTip></li>
-              <li><ToolTip position="left" label="I'm a tool-tip!">On the left</ToolTip></li>
-              <li><ToolTip position="right" label="I'm a tool-tip!">On the right</ToolTip></li>
-              <li><ToolTip position="top-left" label="I'm a tool-tip!">On the top left</ToolTip></li>
-              <li><ToolTip position="top-right" label="I'm a tool-tip!">On the top right</ToolTip></li>
-              <li><ToolTip position="bottom-left" label="I'm a tool-tip!">On the bottom left</ToolTip></li>
-              <li><ToolTip position="bottom-right" label="I'm a tool-tip!">On the bottom right</ToolTip></li>
+              <li><ToolTip position="top" label="I'm a tool-tip!">On the
+                top</ToolTip></li>
+              <li><ToolTip position="bottom" label="I'm a tool-tip!">On the
+                bottom</ToolTip></li>
+              <li><ToolTip position="left" label="I'm a tool-tip!">On the
+                left</ToolTip></li>
+              <li><ToolTip position="right" label="I'm a tool-tip!">On the
+                right</ToolTip></li>
+              <li><ToolTip position="top-left" label="I'm a tool-tip!">On the
+                top left</ToolTip></li>
+              <li><ToolTip position="top-right" label="I'm a tool-tip!">On the
+                top right</ToolTip></li>
+              <li><ToolTip position="bottom-left" label="I'm a tool-tip!">On the
+                bottom left</ToolTip></li>
+              <li><ToolTip position="bottom-right" label="I'm a tool-tip!">On
+                the bottom right</ToolTip></li>
             </ul>
           </Well>
           <Well>
@@ -296,9 +350,27 @@ class ComponentsTesting extends React.Component {
             <StatusIconTiny status="2"/>
             <StatusIconTiny status="3"/>
             <StatusIconTiny status="4"/>
-            <Status>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Status>
+            <Status>Lorem Ipsum is simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever since the 1500s, when an unknown printer took a
+              galley of type and scrambled it to make a type specimen book. It
+              has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.</Status>
             <Status type="info">About that something ... </Status>
-            <Status type="pass">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Status>
+            <Status type="pass">Lorem Ipsum is simply dummy text of the printing
+              and typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever since the 1500s, when an unknown printer
+              took a galley of type and scrambled it to make a type specimen
+              book. It has survived not only five centuries, but also the leap
+              into electronic typesetting, remaining essentially unchanged. It
+              was popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.</Status>
             <Status type="warning">Something might go wrong ...</Status>
             <Status type="fail">Something blew up!</Status>
           </Well>

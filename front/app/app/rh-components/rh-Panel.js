@@ -4,44 +4,47 @@ import IconCircle from '../rh-components/rh-IconCircle';
 const NOOP = () => {
 };
 
-class Panel extends React.Component {
+export const Panel = (props) => {
 
-  render() {
-    let panelClass = ['rh-panel'],
-        headerIcon = this.props.icon ? <div className="icon"><i className={'fa fa-'+this.props.icon} /></div> : null;
+  let panelClass = ['rh-panel'],
+      header, footer;
 
-    /*
-     {this.props.icon ? <IconCircle icon={this.props.icon}/> : null}
-     {this.props.title ? <h1>{this.props.title}</h1> : null}
-     */
-
-    return <div className={panelClass.join(' ')}>
-      <div className="rh-panel-header">
-        {headerIcon}
-        <h1>{this.props.title}</h1>
-      </div>
-      <div className="rh-panel-content">
-        {this.props.children}
-      </div>
-      <div className="rh-panel-footer">
-        <h1>{this.props.footerNote}</h1>
-      </div>
-    </div>;
+  if (props.title || props.icon || props.utilityButtons) {
+    header = <PanelHeader {...props}/>
   }
-}
 
-Panel.defaultProps = {
-  title  : null,
-  footerNote  : null,
-  buttons: [],
-  icon   : null
+  if (props.footerNote || props.actionButtons) {
+    footer = <PanelFooter {...props}/>
+  }
+
+  return (<div className={panelClass.join(' ')}>
+    {header}
+    <div className="rh-panel-content">
+      {props.children}
+    </div>
+    {footer}
+  </div>);
 };
 
-Panel.propTypes = {
-  title  : React.PropTypes.string,
-  footerNote  : React.PropTypes.string,
-  icon   : React.PropTypes.string,
-  buttons: React.PropTypes.array
+
+export const PanelHeader = ({title, icon, utilityButtons}) => {
+  let headerIcon = icon ?
+    <div className="icon"><i className={'fa fa-' + icon}/></div> : null;
+
+  return (<div className="rh-panel-header">
+    {headerIcon}
+    <h1>{title}</h1>
+    <div className="rh-panel-header-buttons">
+      {utilityButtons ? utilityButtons.map(b => b) : null}
+    </div>
+  </div>);
 };
 
-export default Panel;
+export const PanelFooter = ({footerNote, actionButtons}) => {
+  return (<div className="rh-panel-footer">
+    <h1>{footerNote}</h1>
+    <div className="rh-panel-footer-buttons">
+      {actionButtons ? actionButtons.map(b => b) : null}
+    </div>
+  </div>);
+};

@@ -1,0 +1,22 @@
+PACKAGE
+
+
+"babel-preset-es2015": "^6.18.0",
+    "babel-preset-es2015-loose": "^8.0.0",
+    "babel-preset-stage-0": "^6.5.0",
+
+WEBPACK
+
+// ,
+          // query  : {
+          //   presets: removeEmpty(['stage-0', 'es2015', 'react', isProd ? undefined : 'react-hmre']),
+          //   compact: true
+          // }
+
+{  "presets": [
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "plugins": ["transform-class-properties"]
+}

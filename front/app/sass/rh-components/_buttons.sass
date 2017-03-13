@@ -4,12 +4,14 @@
   text-transform: uppercase
   font-size: 1.6rem
 
+$control-button-size: 4rem
+
 .rh-button
   +transition-all
   @extend %control-button-text
-  height: 4rem
-  padding: 0 4rem 0 4rem
-  line-height: 4rem
+  height: $control-button-size
+  padding: 0 $control-button-size 0 $control-button-size
+  line-height: $control-button-size
   margin: 0
   background: $red
   border: none
@@ -32,35 +34,67 @@
 .rh-button-secondary
   background: $blue
   &:hover
-    background: rgb(2, 165, 205)
+    background: darken($blue, 10%)
 
-.rh-button-hallow
+.rh-button-hollow
   background: none
   border: 1px solid $red
   color: $red
+  text-shadow: none
   &:hover
-    background: none
+    background: rgba(255,255,255,.5)
     border: 1px solid $red-dark-1
     color: $red-dark-1
 
+.rh-button-text
+  background: none
+  border: 1px solid transparent
+  color: $red
+  box-shadow: none
+  text-shadow: none
+  padding: 0 $control-button-size/2 0 $control-button-size/2
+  &:hover
+    background: rgba(255,255,255,.5)
+    border: 1px solid transparent
+    color: $red-dark-1
+
+.rh-button-text-neutral
+  @extend .rh-button-text
+  color: darken($control-neutral-color, 35%)
+  &:hover
+    color: darken($control-neutral-color, 45%)
+
+.rh-button-text-secondary
+  @extend .rh-button-text
+  color: $blue
+  &:hover
+    color: darken($blue, 10%)
+
 // Admin from administrative buttons on the Totara LMS theme
 .rh-button-neutral
-  background: rgb(122, 133, 138)
+  background: $control-neutral-color
   &:hover
-    background: rgb(89, 102, 109)
+    background: darken($control-neutral-color, 15%)
+
+.rh-button-icon
+  border-radius: 50%
+  padding: 0
+  width: $control-button-size
 
 .rh-button-small
   font-size: 1.2rem // .small font size
   height: 3rem
-  padding: 0 3rem 0 3rem
   line-height: 3rem
+  padding: 0 $control-button-size/2 0 $control-button-size/2
+
+.rh-button-small.rh-button-icon
+  padding: 0
+  width: 3rem
 
 .rh-button-container-horiz
   width: 100%
   display: block
   margin: $base-line-height 0
   text-align: center
-  button
+  button:not(:last-of-type)
     margin-right: $base-line-height
-  &:last-of-type
-    margin-right: 0
