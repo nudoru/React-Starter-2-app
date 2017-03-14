@@ -8,7 +8,7 @@ const PurifyCSSPlugin   = require('purifycss-webpack-plugin');
 // Source
 const appEntryFile  = resolve(__dirname, 'front', 'app', 'index.js');
 const appConfigFile = resolve(__dirname, 'front', 'app', 'config.json');
-const favicon = resolve(__dirname, 'front', 'app', 'favicon.ico');
+const favicon       = resolve(__dirname, 'front', 'app', 'favicon.ico');
 // const appSourcePath = resolve(__dirname, 'front', 'app');
 // Destination
 const appDestPath = resolve(__dirname, 'front', 'www');
@@ -51,7 +51,7 @@ module.exports = env => {
         {
           test  : /\.(s?)(a|c)ss$/,
           loader: ExtractTextPlugin.extract({
-            fallbackLoader: 'style-loader',
+            fallback: 'style-loader',
             loader        : ['css-loader', 'postcss-loader', 'sass-loader']
           })
         },
@@ -101,30 +101,35 @@ module.exports = env => {
         template: 'front/app/index.html'
       }),
       new CopyPlugin([
-        {from: appConfigFile },
-        {from: favicon }
-        ]),
+        {from: appConfigFile},
+        {from: favicon}
+      ]),
       new ExtractTextPlugin({
         filename : 'style.css',
         allChunks: true
       }),
       // Disabled, was causing CSS classes referenced in conditional statements
       // to not be present in output
-      // !isProd ? undefined : new PurifyCSSPlugin({
-      //   purifyOptions: {info: true, minify: true}
-      // }),
+      !isProd ? undefined : new PurifyCSSPlugin({
+          basePath     : __dirname,
+          purifyOptions: {
+            info     : true,
+            minify   : true,
+            whitelist: ['fa-*']
+          }
+        }),
       // Optimize ID order
       !isProd ? undefined : new webpack.optimize.OccurrenceOrderPlugin(),
       // If we're not in testing, create a separate vendor bundle file
       isTest ? undefined : new webpack.optimize.CommonsChunkPlugin({
-        name     : 'vendor',
-        minChunks: Infinity,
-        filename : '[name].[hash].js',
-      }),
+          name     : 'vendor',
+          minChunks: Infinity,
+          filename : '[name].[hash].js',
+        }),
       // If we're in prod, optimization
       isProd ? undefined : new webpack.DefinePlugin({
-        'process.env': {NODE_ENV: '"production"'}
-      })
+          'process.env': {NODE_ENV: '"production"'}
+        })
     ])
   }
 };
