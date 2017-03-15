@@ -1,5 +1,3 @@
 import React from 'react';
 
-const Well = ({children}) => <div className="rh-well">{children}</div>;
-
-export default Well;
+export const Well = ({children}) => <div className="rh-well">{children}</div>;

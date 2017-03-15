@@ -5,6 +5,7 @@ import AppState from './AppState';
 export const fetchConfigData = () => {
   return new Task((reject, resolve) => {
     request({json: true, url: 'config.json'}).then((data) => {
+      console.log('Config loaded ',data)
       AppState.setState({config: data});
       resolve(data);
     }).catch((err) => {

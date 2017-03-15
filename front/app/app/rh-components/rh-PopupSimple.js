@@ -1,47 +1,34 @@
 import React from 'react';
 import IconCircle from '../rh-components/rh-IconCircle';
 
-class Popupsimple extends React.Component {
-
-  render() {
-    let content,
-        boxClass = ['rh-popup-simple'],
-        button   = this.props.buttonLabel ? (
-            <button className="rh-button" onClick={this.props.buttonOnClick}>
-              {this.props.buttonLabel}</button>) : null;
-
-    if (this.props.error) {
-      boxClass.push('error');
-    }
-
-    content = this.props.children ? (
-        <div className={boxClass.join(' ')}>
-          {this.props.icon ? <IconCircle icon={this.props.icon}/> : null}
-          {this.props.title ? <h1>{this.props.title}</h1> : null}
-          {this.props.children}
-          {button}
-        </div>
-      ) : null;
-
-    return content;
-  }
-}
-
-Popupsimple.defaultProps = {
-  title        : null,
-  error        : false,
-  buttonOnClick: () => {
+const Popupsimple = ({
+  title,
+  error,
+  buttonOnClick = () => {
   },
-  buttonLabel  : null,
-  icon         : null
-};
+  buttonLabel,
+  icon,
+  children
+}) => {
 
-Popupsimple.propTypes = {
-  title        : React.PropTypes.string,
-  icon         : React.PropTypes.string,
-  error        : React.PropTypes.bool,
-  buttonOnClick: React.PropTypes.func,
-  buttonLabel  : React.PropTypes.string
+  let content,
+      boxClass = ['rh-popup-simple'],
+      button   = buttonLabel ? (
+          <button className="rh-button" onClick={buttonOnClick}>
+            {buttonLabel}</button>) : null;
+
+  if (error) {
+    boxClass.push('error');
+  }
+
+  content = <div className={boxClass.join(' ')}>
+    {icon ? <IconCircle icon={icon}/> : null}
+    {title ? <h1>{title}</h1> : null}
+    {children}
+    {button}
+  </div>;
+
+  return content;
 };
 
 export default Popupsimple;

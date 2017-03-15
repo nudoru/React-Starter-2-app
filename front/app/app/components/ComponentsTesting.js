@@ -1,15 +1,15 @@
 import React from 'react';
 import Lorem from '../../../../shared/utils/Lorem';
 
-import PageModule from '../rh-components/rh-PageModule';
-import Breadcrumbs from '../rh-components/rh-Breadcrumbs';
+import {PageModule} from '../rh-components/rh-PageModule';
+import {Breadcrumbs} from '../rh-components/rh-Breadcrumbs';
 import CardGroup from '../rh-components/rh-CardGroup';
 import CardIcon from '../rh-components/rh-CardIcon';
 import Card from '../rh-components/rh-Card';
 import Table from '../rh-components/rh-DataTable';
 import {TabsHorizontal, Tab} from '../rh-components/rh-Tabs';
-import Pagination from '../rh-components/rh-Pagination';
-import Well from '../rh-components/rh-Well';
+import {Pagination} from '../rh-components/rh-Pagination';
+import {Well} from '../rh-components/rh-Well';
 import IconCircle from '../rh-components/rh-IconCircle';
 import IconCircleImage from '../rh-components/rh-IconCircleImage';
 import IconCircleText from '../rh-components/rh-IconCircleText';
@@ -20,7 +20,7 @@ import {Status} from '../rh-components/rh-Status';
 import {ToolTip} from '../rh-components/rh-ToolTip';
 import Popupsimple from '../rh-components/rh-PopupSimple';
 import ModalCover from '../rh-components/rh-ModalCover';
-import ModalMessage from '../rh-components/rh-ModalMessage';
+import {ModalMessage} from '../rh-components/rh-ModalMessage';
 import ModalPanel from '../rh-components/rh-ModalPanel';
 import {PleaseWaitModal} from '../components/PleaseWaitModal';
 import LMSKerberosIDRequest from '../components/LMSKerberosIDRequest';
@@ -184,6 +184,8 @@ class ComponentsTesting extends React.Component {
      <p>Paragraph {Lorem.paragraph(5, 10)}</p>
      </ModalPanel>
 
+
+
      */
 
     return (
@@ -204,63 +206,7 @@ class ComponentsTesting extends React.Component {
             <Tab active={false} label="Tab Three" onClick={this._onButtonClick.bind(this)} />
             </TabsHorizontal>
           <hr/>
-          <Well>
-            <h1>Panel</h1>
-            <Panel title='Ima control panel!' icon="cog" footerNote="Status!"
-                   utilityButtons={[
-                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-wrench"/></button>,
-                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-comment"/></button>,
-                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-close"/></button>
-                   ]}
-                   actionButtons={[<button className="rh-button rh-button-text">
-                     Primary</button>,
-                     <button className="rh-button rh-button-text-secondary">
-                       Secondary</button>,
-                     <button className="rh-button rh-button-text-neutral">
-                       Neutral</button>]}>
-              <h1>H1 {Lorem.text(2, 5)}</h1>
-              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
-              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
-            </Panel>
-            <h4>No footer</h4>
-            <Panel title='Ima control panel!'>
-              <h1>H1 {Lorem.text(2, 5)}</h1>
-              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
-              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
-            </Panel>
-            <h4>No header</h4>
-            <Panel footerNote="Status!">
-              <h1>H1 {Lorem.text(2, 5)}</h1>
-              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
-              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
-            </Panel>
-          </Well>
-          <Well>
-            <h1>Pop ups (Simple)</h1>
-            <div className="grid-12-container">
-              <div className="grid-row">
-                <div className="grid-col-4">
-                  <Popupsimple title="Hello!" icon="comment">
-                    <p>{Lorem.paragraph(3, 7)}</p>
-                  </Popupsimple>
-                </div>
-                <div className="grid-col-4">
-                  <Popupsimple title="Hello!" buttonLabel='Click me'
-                               buttonOnClick={this._onButtonClick.bind(this)}>
-                    <p>{Lorem.paragraph(3, 7)}</p>
-                  </Popupsimple>
-                </div>
-                <div className="grid-col-4">
-                  <Popupsimple title="Oh no .." buttonLabel='Click me'
-                               buttonOnClick={this._onButtonClick.bind(this)}
-                               error={true}>
-                    <p>{Lorem.paragraph(3, 7)}</p>
-                  </Popupsimple>
-                </div>
-              </div>
-            </div>
 
-          </Well>
           <Well>
             <h1>Buttons</h1>
             <div className="rh-button-container-horiz">
@@ -623,6 +569,65 @@ class ComponentsTesting extends React.Component {
                 </fieldset>
               </form>
             </Well>
+          </Well>
+        </PageModule>
+        <PageModule style="shaded" title="Panels" headline="">
+          <Well>
+            <h1>Panel</h1>
+            <Panel title='Ima control panel!' icon="cog" footerNote="Status!"
+                   utilityButtons={[
+                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-wrench"/></button>,
+                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-comment"/></button>,
+                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-close"/></button>
+                   ]}
+                   actionButtons={[<button className="rh-button rh-button-text">
+                     Primary</button>,
+                     <button className="rh-button rh-button-text-secondary">
+                       Secondary</button>,
+                     <button className="rh-button rh-button-text-neutral">
+                       Neutral</button>]}>
+              <h1>H1 {Lorem.text(2, 5)}</h1>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+            </Panel>
+            <h4>No footer</h4>
+            <Panel title='Ima control panel!'>
+              <h1>H1 {Lorem.text(2, 5)}</h1>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+            </Panel>
+            <h4>No header</h4>
+            <Panel footerNote="Status!">
+              <h1>H1 {Lorem.text(2, 5)}</h1>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+              <p>Paragraph {Lorem.paragraph(5, 10)}</p>
+            </Panel>
+          </Well>
+          <Well>
+            <h1>Pop ups (Simple)</h1>
+            <div className="grid-12-container">
+              <div className="grid-row">
+                <div className="grid-col-4">
+                  <Popupsimple title="Hello!" icon="comment">
+                    <p>{Lorem.paragraph(3, 7)}</p>
+                  </Popupsimple>
+                </div>
+                <div className="grid-col-4">
+                  <Popupsimple title="Hello!" buttonLabel='Click me'
+                               buttonOnClick={this._onButtonClick.bind(this)}>
+                    <p>{Lorem.paragraph(3, 7)}</p>
+                  </Popupsimple>
+                </div>
+                <div className="grid-col-4">
+                  <Popupsimple title="Oh no .." buttonLabel='Click me'
+                               buttonOnClick={this._onButtonClick.bind(this)}
+                               error={true}>
+                    <p>{Lorem.paragraph(3, 7)}</p>
+                  </Popupsimple>
+                </div>
+              </div>
+            </div>
+
           </Well>
         </PageModule>
         <PageModule style="shaded" title="Tables" headline="">

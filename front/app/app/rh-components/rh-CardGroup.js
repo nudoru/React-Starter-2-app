@@ -1,28 +1,8 @@
 import React from 'react';
 
-class CardGroup extends React.Component {
-
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  componentDidMount() {
-  }
-
-  render() {
-    let orientation = 'rh-card-container-'+this.props.orientation;
-
-    return (<div className={orientation}>{this.props.children}</div>);
-  }
-}
-
-CardGroup.defaultProps = {
-  orientation: 'horizontal'
-};
-
-CardGroup.propTypes = {
-  orientation: React.PropTypes.string
+const CardGroup = ({orientation = 'horizontal', children}) => {
+  orientation = 'rh-card-container-' + orientation;
+  return (<div className={orientation}>{children}</div>);
 };
 
 export default CardGroup;

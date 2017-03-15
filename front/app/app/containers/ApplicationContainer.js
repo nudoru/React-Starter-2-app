@@ -1,5 +1,6 @@
 import React from 'react';
-import ModalMessage from '../rh-components/rh-ModalMessage'
+import {ModalMessage} from '../rh-components/rh-ModalMessage';
+import {PleaseWaitModal} from '../components/PleaseWaitModal';
 import App from '../components/App';
 import {fetchConfigData} from '../state/fetchConfig';
 
@@ -30,12 +31,11 @@ class ApplicationContainer extends React.Component {
     let loadingContent;
 
     if (this.state.loading) {
-      loadingContent = (<ModalMessage dismissible={false}>
+      loadingContent = (<PleaseWaitModal>
         <h1>Please wait ...</h1>
-      </ModalMessage>);
+      </PleaseWaitModal>);
     } else if (this.state.isError) {
-      loadingContent = (<ModalMessage error={true} dismissible={false}>
-        <h1>There was a problem loading the configuration.</h1>
+      loadingContent = (<ModalMessage message={{title: 'There was a problem loading the configuration.', icon: 'exclamation', error: true}}>
       </ModalMessage>);
     }
 

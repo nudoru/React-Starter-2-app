@@ -1,54 +1,30 @@
 import React from 'react';
 
-class Card extends React.Component {
+const Card = ({
+  style = 'light',
+  title,
+  cta = 'Read more',
+  ctaLink, children
+}) => {
 
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  componentDidMount() {
-  }
-
-  render() {
-    let headerArea = this.props.title ? (<div className="rh-card-header">
-          <h1>{this.props.title}</h1>
+  let headerArea = title ? (<div className="rh-card-header">
+          <h1>{title}</h1>
         </div>) : (<div/>),
-        buttonArea = (<div></div>),
-        content    = this.props.content ? (<p>{this.props.content}</p>) : (
-          <div></div>),
-        style      = 'rh-card rh-card-' + this.props.style;
+      buttonArea;
 
-    // if (this.props.ctaRoute) {
-    //   buttonArea = (<div className="rh-card-footer">
-    //     <Link to={this.props.ctaRoute} className="cta">{this.props.cta}</Link>
-    //   </div>)
-    // } else
-      if (this.props.ctaLink) {
-      buttonArea = (<div className="rh-card-footer">
-        <a href={this.props.ctaLink} className="cta">{this.props.cta}</a>
-      </div>)
-    }
+  style = 'rh-card rh-card-' + style;
 
-    return (<div className={style}>
-      {headerArea}
-      {this.props.children}
-      {buttonArea}
-    </div>);
+  if (ctaLink) {
+    buttonArea = (<div className="rh-card-footer">
+      <a href={ctaLink} className="cta">{cta}</a>
+    </div>)
   }
-}
 
-Card.defaultProps = {
-  style: 'light',
-  cta  : 'Read more'
-};
-
-Card.propTypes = {
-  style   : React.PropTypes.string,
-  title   : React.PropTypes.string,
-  cta     : React.PropTypes.string,
-  ctaRoute: React.PropTypes.string,
-  ctaLink : React.PropTypes.string
+  return (<div className={style}>
+    {headerArea}
+    {children}
+    {buttonArea}
+  </div>);
 };
 
 export default Card;
