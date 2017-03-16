@@ -3,7 +3,14 @@ import Lorem from '../../../../../shared/utils/Lorem';
 
 import PageModule from '../../rh-components/rh-PageModule';
 import Breadcrumbs from '../../rh-components/rh-Breadcrumbs';
-import {Card, CardHGroup, CardHGroupDecorative, CardHGroupTable, CardVGroup, CardIcon} from '../../rh-components/rh-Card';
+import {
+  Card,
+  CardHGroup,
+  CardHGroupDecorative,
+  CardHGroupTable,
+  CardVGroup,
+  CardIcon
+} from '../../rh-components/rh-Card';
 import DataTable from '../../rh-components/rh-DataTable';
 import {TabHGroup, Tab} from '../../rh-components/rh-Tabs';
 import Pagination from '../../rh-components/rh-Pagination';
@@ -24,7 +31,12 @@ import PleaseWaitModal from '../../rh-components/rh-PleaseWaitModal';
 import LoginPanel from '../../rh-components/rh-LoginPanel';
 import Panel from '../../rh-components/rh-Panel';
 import EventCard from '../../rh-components/rh-EventCard';
-import {BlockLinkHGroup, BlockLinkVGroup, BlockLink} from '../../rh-components/rh-BlockLinks';
+import {
+  BlockLinkHGroup,
+  BlockLinkVGroup,
+  BlockLink
+} from '../../rh-components/rh-BlockLinks';
+import {Grid, Row, Col} from '../../rh-components/rh-Grid';
 
 const TextStyles = () => {
   return (
@@ -201,32 +213,128 @@ class ComponentsTesting extends React.Component {
         <PageModule style="white">
           <h1>Testing Page for Reusable Components</h1>
           <TabHGroup>
-            <Tab active={true} label="Tab One" />
-            <Tab active={false} label="Tab Two" onClick={this._onButtonClick.bind(this)} />
-            <Tab active={false} label="Tab Three" onClick={this._onButtonClick.bind(this)} />
-            </TabHGroup>
+            <Tab active={true} label="Tab One"/>
+            <Tab active={false} label="Tab Two"
+                 onClick={this._onButtonClick.bind(this)}/>
+            <Tab active={false} label="Tab Three"
+                 onClick={this._onButtonClick.bind(this)}/>
+          </TabHGroup>
           <hr/>
+          <Well>
+            <h1>Flex Grid - 12 column</h1>
+            <Grid>
+              <Row>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+              </Row>
+              <Row>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="1">
+                  <div className="fxgrid-test-box">1</div>
+                </Col>
+                <Col width="2">
+                  <div className="fxgrid-test-box">2</div>
+                </Col>
+                <Col width="2">
+                  <div className="fxgrid-test-box">2</div>
+                </Col>
+                <Col width="6">
+                  <div className="fxgrid-test-box">6</div>
+                </Col>
+              </Row>
+              <Row>
+                <Col width="3">
+                  <div className="fxgrid-test-box">3</div>
+                </Col>
+                <Col width="3">
+                  <div className="fxgrid-test-box">3</div>
+                </Col>
+                <Col width="2">
+                  <div className="fxgrid-test-box">2</div>
+                </Col>
+                <Col width="4">
+                  <div className="fxgrid-test-box">4</div>
+                </Col>
+              </Row>
+            </Grid>
+            <p className="margin-top-double">Modifies for rows and columns:
+              offsets, auto, alignment, top, middle, bottom, around, between,
+              first, last and reverse. Refer to docs.</p>
+            <p>Grid from <a href="http://flexboxgrid.com/">http://flexboxgrid.com/</a>
+            </p>
+          </Well>
           <Well>
             <h1>Misc</h1>
             <CardHGroup>
-            <EventCard startDate="March 17, 2017" name="RHEL Fundamentals" city="Raleigh" country="US" room="RHT-01-02-03" />
-            <EventCard startDate="March 17, 2017" name="RHEL Fundamentals" city="Raleigh" country="US" room="RHT-01-02-03" />
-            <EventCard startDate="March 17, 2017" name="RHEL Fundamentals" city="Raleigh" country="US" room="RHT-01-02-03" />
+              <EventCard startDate="March 17, 2017" name="RHEL Fundamentals"
+                         city="Raleigh" country="US" room="RHT-01-02-03"/>
+              <EventCard startDate="March 17, 2017" name="RHEL Fundamentals"
+                         city="Raleigh" country="US" room="RHT-01-02-03"/>
+              <EventCard startDate="March 17, 2017" name="RHEL Fundamentals"
+                         city="Raleigh" country="US" room="RHT-01-02-03"/>
             </CardHGroup>
             <BlockLinkHGroup>
-              <BlockLink label="Open Decision Framework" byline="Bring together ideas and best practices" link="#" />
-              <BlockLink label="Crucial Conversations" byline="Tools for talking when stakes are high" link="#" />
-              <BlockLink label="Leading your Career"link="#" />
+              <BlockLink label="Open Decision Framework"
+                         byline="Bring together ideas and best practices"
+                         link="#"/>
+              <BlockLink label="Crucial Conversations"
+                         byline="Tools for talking when stakes are high"
+                         link="#"/>
+              <BlockLink label="Leading your Career" link="#"/>
             </BlockLinkHGroup>
             <BlockLinkHGroup style="shaded">
-              <BlockLink label="Open Decision Framework" byline="Bring together ideas and best practices" link="#" />
-              <BlockLink label="Crucial Conversations" link="#" />
-              <BlockLink label="Leading your Career" byline="Create a plan. Take action. Achieve goal." link="#" />
+              <BlockLink label="Open Decision Framework"
+                         byline="Bring together ideas and best practices"
+                         link="#"/>
+              <BlockLink label="Crucial Conversations" link="#"/>
+              <BlockLink label="Leading your Career"
+                         byline="Create a plan. Take action. Achieve goal."
+                         link="#"/>
             </BlockLinkHGroup>
             <BlockLinkVGroup style="blue">
-              <BlockLink label="Open Decision Framework" link="#" />
-              <BlockLink label="Crucial Conversations" byline="Tools for talking when stakes are high" link="#" />
-              <BlockLink label="Leading your Career" byline="Create a plan. Take action. Achieve goal." link="#" />
+              <BlockLink label="Open Decision Framework" link="#"/>
+              <BlockLink label="Crucial Conversations"
+                         byline="Tools for talking when stakes are high"
+                         link="#"/>
+              <BlockLink label="Leading your Career"
+                         byline="Create a plan. Take action. Achieve goal."
+                         link="#"/>
             </BlockLinkVGroup>
 
           </Well>
@@ -239,8 +347,10 @@ class ComponentsTesting extends React.Component {
               <button className="rh-button rh-button-neutral">Neutral</button>
               <button className="rh-button rh-button-hollow">Hollow</button>
               <button className="rh-button rh-button-text">Text only</button>
-              <button className="rh-button rh-button-text-secondary">Text only</button>
-              <button className="rh-button rh-button-text-neutral">Text only</button>
+              <button className="rh-button rh-button-text-secondary">Text only
+              </button>
+              <button className="rh-button rh-button-text-neutral">Text only
+              </button>
               <button className="rh-button rh-button-icon"><i
                 className="fa fa-user"/></button>
             </div>
@@ -615,9 +725,15 @@ class ComponentsTesting extends React.Component {
             <h1>Panel</h1>
             <Panel title='Ima control panel!' icon="cog" footerNote="Status!"
                    utilityButtons={[
-                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-wrench"/></button>,
-                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-comment"/></button>,
-                     <button className="rh-button rh-button-text-neutral rh-button-icon"><i className="fa fa-close"/></button>
+                     <button
+                       className="rh-button rh-button-text-neutral rh-button-icon">
+                       <i className="fa fa-wrench"/></button>,
+                     <button
+                       className="rh-button rh-button-text-neutral rh-button-icon">
+                       <i className="fa fa-comment"/></button>,
+                     <button
+                       className="rh-button rh-button-text-neutral rh-button-icon">
+                       <i className="fa fa-close"/></button>
                    ]}
                    actionButtons={[<button className="rh-button rh-button-text">
                      Primary</button>,
