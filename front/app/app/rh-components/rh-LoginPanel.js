@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import ModalMessage from '../rh-components/rh-ModalMessage'
+import ModalMessage from './rh-ModalMessage'
 import AppState from '../state/AppState';
 // import {fetchUserProfile} from '../state/fetchLMS';
 import {validateInputStr} from '../utils/AppUtils';
-import {Spinner} from '../rh-components/rh-Spinner';
-import {Status} from '../rh-components/rh-Status';
+import {Spinner} from './rh-Spinner';
+import {Status} from './rh-Status';
 
-class LMSKerberosIDRequest extends React.Component {
+class LoginPanel extends React.Component {
 
   constructor() {
     super();
@@ -57,7 +57,7 @@ class LMSKerberosIDRequest extends React.Component {
      console.warn('GetUserInformation, WS error, probably could not find user id');
      this.setState({isFetching: false, isWSError: true, isPrompting: true});
      }, () => {
-     // Don't need to do anything here since ApplicationContainer has a listener
+     // Don't need to do anything here since Bootstrap has a listener
      // on the AppState and picks up that the user profile key was set. It then
      // renders App and removes this view
      return;
@@ -134,7 +134,7 @@ class LMSKerberosIDRequest extends React.Component {
   }
 }
 
-LMSKerberosIDRequest.defaultProps = {};
-LMSKerberosIDRequest.propTypes    = {};
+LoginPanel.defaultProps = {};
+LoginPanel.propTypes    = {};
 
-export default LMSKerberosIDRequest;
+export default LoginPanel;

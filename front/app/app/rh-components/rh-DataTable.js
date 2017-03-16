@@ -23,7 +23,6 @@ class DataTable extends React.Component {
 
   constructor() {
     super();
-    // TODO what can be moved from state to a var?
     this.state = {tableData: null};
   }
 
@@ -65,7 +64,6 @@ class DataTable extends React.Component {
     this.copyPropsToState();
   }
 
-  // TODO fix this bad function
   copyPropsToState(nextProps) {
     let newData;
     if (this.props.data && !this.props.jsonData) {

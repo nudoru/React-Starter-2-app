@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Spinner = ({type}) => {
+const Spinner = ({type}) => {
   let cls = ['spinner'];
 
   if(type) {
@@ -9,3 +9,5 @@ export const Spinner = ({type}) => {
 
   return (<div className={cls.join(' ')}></div>)
 };
+
+export default Spinner;

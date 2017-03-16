@@ -1,10 +1,10 @@
 import React from 'react';
-import {ModalMessage} from '../rh-components/rh-ModalMessage';
-import {PleaseWaitModal} from '../components/PleaseWaitModal';
-import App from '../components/App';
+import ModalMessage from '../rh-components/rh-ModalMessage';
+import PleaseWaitModal from '../rh-components/rh-PleaseWaitModal';
+import App from './App';
 import {fetchConfigData} from '../state/fetchConfig';
 
-class ApplicationContainer extends React.Component {
+class Bootstrap extends React.Component {
 
   constructor() {
     super();
@@ -47,4 +47,4 @@ class ApplicationContainer extends React.Component {
   }
 }
 
-export default ApplicationContainer
+export default Bootstrap

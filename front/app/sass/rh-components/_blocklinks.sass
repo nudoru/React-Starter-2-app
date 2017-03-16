@@ -35,8 +35,18 @@
   li
     a
       background: $grey-9
+      text-shadow: $text-shadow-dark
     a:hover
       background: $grey-7
+
+.block-links-blue
+  @extend .block-links
+  li
+    a
+      background: $blue
+      text-shadow: $text-shadow-dark
+    a:hover
+      background: $blue-7
 
 .block-links-white
   @extend .block-links
@@ -44,8 +54,9 @@
     a
       color: $color-body
       background: #fff
+      text-shadow: $text-shadow-light
     a:hover
-      background: #ccc
+      background: $grey-2
     a:before
       color: $red
 

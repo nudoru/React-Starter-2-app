@@ -1,30 +1,30 @@
 import React from 'react';
-import Lorem from '../../../../shared/utils/Lorem';
+import Lorem from '../../../../../shared/utils/Lorem';
 
-import {PageModule} from '../rh-components/rh-PageModule';
-import {Breadcrumbs} from '../rh-components/rh-Breadcrumbs';
-import CardGroup from '../rh-components/rh-CardGroup';
-import CardIcon from '../rh-components/rh-CardIcon';
-import Card from '../rh-components/rh-Card';
-import Table from '../rh-components/rh-DataTable';
-import {TabsHorizontal, Tab} from '../rh-components/rh-Tabs';
-import {Pagination} from '../rh-components/rh-Pagination';
-import {Well} from '../rh-components/rh-Well';
-import IconCircle from '../rh-components/rh-IconCircle';
-import IconCircleImage from '../rh-components/rh-IconCircleImage';
-import IconCircleText from '../rh-components/rh-IconCircleText';
-import {TagHGroup, Tag} from '../rh-components/rh-Tag';
-import {StatusIcon, StatusIconTiny} from '../rh-components/rh-StatusIcon';
-import {Spinner} from '../rh-components/rh-Spinner';
-import {Status} from '../rh-components/rh-Status';
-import {ToolTip} from '../rh-components/rh-ToolTip';
-import Popupsimple from '../rh-components/rh-PopupSimple';
-import ModalCover from '../rh-components/rh-ModalCover';
-import {ModalMessage} from '../rh-components/rh-ModalMessage';
-import ModalPanel from '../rh-components/rh-ModalPanel';
-import {PleaseWaitModal} from '../components/PleaseWaitModal';
-import LMSKerberosIDRequest from '../components/LMSKerberosIDRequest';
-import {Panel} from '../rh-components/rh-Panel';
+import PageModule from '../../rh-components/rh-PageModule';
+import Breadcrumbs from '../../rh-components/rh-Breadcrumbs';
+import {Card, CardHGroup, CardHGroupDecorative, CardHGroupTable, CardVGroup, CardIcon} from '../../rh-components/rh-Card';
+import DataTable from '../../rh-components/rh-DataTable';
+import {TabHGroup, Tab} from '../../rh-components/rh-Tabs';
+import Pagination from '../../rh-components/rh-Pagination';
+import Well from '../../rh-components/rh-Well';
+import IconCircle from '../../rh-components/rh-IconCircle';
+import IconCircleImage from '../../rh-components/rh-IconCircleImage';
+import IconCircleText from '../../rh-components/rh-IconCircleText';
+import {TagHGroup, Tag} from '../../rh-components/rh-Tag';
+import {StatusIcon, StatusIconTiny} from '../../rh-components/rh-StatusIcon';
+import Spinner from '../../rh-components/rh-Spinner';
+import Status from '../../rh-components/rh-Status';
+import ToolTip from '../../rh-components/rh-ToolTip';
+import Popupsimple from '../../rh-components/rh-PopupSimple';
+import ModalCover from '../../rh-components/rh-ModalCover';
+import ModalMessage from '../../rh-components/rh-ModalMessage';
+import ModalPanel from '../../rh-components/rh-ModalPanel';
+import PleaseWaitModal from '../../rh-components/rh-PleaseWaitModal';
+import LoginPanel from '../../rh-components/rh-LoginPanel';
+import Panel from '../../rh-components/rh-Panel';
+import EventCard from '../../rh-components/rh-EventCard';
+import {BlockLinkHGroup, BlockLinkVGroup, BlockLink} from '../../rh-components/rh-BlockLinks';
 
 const TextStyles = () => {
   return (
@@ -163,7 +163,7 @@ class ComponentsTesting extends React.Component {
      <ModalCover visible={this.state.modal} dismissible={true} dismissFunc={this._onModalClick.bind(this)}/>
 
      <PleaseWaitModal message="Reticulating splines"/>
-     <LMSKerberosIDRequest/>
+     <LoginPanel/>
 
      <ModalMessage message={{title:"Hello"}}><p>Paragraph {Lorem.paragraph(5, 10)}</p></ModalMessage>
 
@@ -200,13 +200,36 @@ class ComponentsTesting extends React.Component {
         </div>
         <PageModule style="white">
           <h1>Testing Page for Reusable Components</h1>
-          <TabsHorizontal>
+          <TabHGroup>
             <Tab active={true} label="Tab One" />
             <Tab active={false} label="Tab Two" onClick={this._onButtonClick.bind(this)} />
             <Tab active={false} label="Tab Three" onClick={this._onButtonClick.bind(this)} />
-            </TabsHorizontal>
+            </TabHGroup>
           <hr/>
+          <Well>
+            <h1>Misc</h1>
+            <CardHGroup>
+            <EventCard startDate="March 17, 2017" name="RHEL Fundamentals" city="Raleigh" country="US" room="RHT-01-02-03" />
+            <EventCard startDate="March 17, 2017" name="RHEL Fundamentals" city="Raleigh" country="US" room="RHT-01-02-03" />
+            <EventCard startDate="March 17, 2017" name="RHEL Fundamentals" city="Raleigh" country="US" room="RHT-01-02-03" />
+            </CardHGroup>
+            <BlockLinkHGroup>
+              <BlockLink label="Open Decision Framework" byline="Bring together ideas and best practices" link="#" />
+              <BlockLink label="Crucial Conversations" byline="Tools for talking when stakes are high" link="#" />
+              <BlockLink label="Leading your Career"link="#" />
+            </BlockLinkHGroup>
+            <BlockLinkHGroup style="shaded">
+              <BlockLink label="Open Decision Framework" byline="Bring together ideas and best practices" link="#" />
+              <BlockLink label="Crucial Conversations" link="#" />
+              <BlockLink label="Leading your Career" byline="Create a plan. Take action. Achieve goal." link="#" />
+            </BlockLinkHGroup>
+            <BlockLinkVGroup style="blue">
+              <BlockLink label="Open Decision Framework" link="#" />
+              <BlockLink label="Crucial Conversations" byline="Tools for talking when stakes are high" link="#" />
+              <BlockLink label="Leading your Career" byline="Create a plan. Take action. Achieve goal." link="#" />
+            </BlockLinkVGroup>
 
+          </Well>
           <Well>
             <h1>Buttons</h1>
             <div className="rh-button-container-horiz">
@@ -347,7 +370,7 @@ class ComponentsTesting extends React.Component {
           </Well>
           <hr/>
           <h1>Card groups</h1>
-          <CardGroup orientation="horizontal-decorative">
+          <CardHGroupDecorative>
             <Card title="Title" style="bars" ctaRoute="/two">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
@@ -357,38 +380,54 @@ class ComponentsTesting extends React.Component {
             <Card title="Title" style="bars" ctaRoute="/two">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
-          </CardGroup>
+          </CardHGroupDecorative>
           <hr/>
-          <CardGroup orientation="horizontal">
+          <CardHGroup>
             <CardIcon title="Title"
-                      content="Content! Content! Content! Content! "
-                      icon="star" cta="Read more" ctaRoute='/one'/>
-            <CardIcon title="Title" style="shaded"
-                      icon="star" ctaRoute="/two">
+                      icon="star" cta="Read more" ctaLink="#">
               <p>{Lorem.paragraph(3, 7)}</p>
             </CardIcon>
-            <CardIcon title="Title" style="dark" content="Content!"
-                      icon="star"
-                      ctaRoute="/two"/>
-          </CardGroup>
+            <CardIcon title="Title" style="shaded"
+                      icon="star" ctaLink="#">
+              <p>{Lorem.paragraph(3, 7)}</p>
+            </CardIcon>
+            <CardIcon title="Title" style="dark"
+                      icon="star" ctaLink="#">
+              <p>{Lorem.paragraph(3, 7)}</p>
+            </CardIcon>
+          </CardHGroup>
           <hr/>
-          <CardGroup orientation="horizontal-table">
-            <Card title="Title" style="dark" cta="Read more" ctaRoute='/one'>
+          <CardHGroupTable>
+            <Card title="Title" style="dark">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
-            <Card title="Title" style="bars" ctaRoute="/two">
+            <Card title="Title" style="bars">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
-            <Card title="Title" style="dark" ctaRoute="/two">
+            <Card title="Title" style="dark">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
-            <Card title="Title" style="bars" ctaRoute="/two">
+            <Card title="Title" style="bars">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
-          </CardGroup>
+          </CardHGroupTable>
           <Pagination start={1} end={4} current={2} next={false}
                       prev={false}/>
-
+          <hr/>
+          <CardVGroup>
+            <Card title="Title" style="dark">
+              <p>{Lorem.paragraph(3, 7)}</p>
+            </Card>
+            <Card title="Title" style="bars">
+              <p>{Lorem.paragraph(3, 7)}</p>
+            </Card>
+            <Card title="Title" style="dark">
+              <p>{Lorem.paragraph(3, 7)}</p>
+            </Card>
+            <Card title="Title" style="bars">
+              <p>{Lorem.paragraph(3, 7)}</p>
+            </Card>
+          </CardVGroup>
         </PageModule>
         <PageModule style="bars" headline="Forms">
           <Well>
@@ -632,7 +671,7 @@ class ComponentsTesting extends React.Component {
         </PageModule>
         <PageModule style="shaded" title="Tables" headline="">
           <p>Interactive, sortable table headings</p>
-          <Table jsonData={tableJson} hover={true}/>
+          <DataTable jsonData={tableJson} hover={true}/>
           <hr/>
           <p>Customizable table for more flexibility</p>
           <table className="rh-custom-table">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Breadcrumbs =({crumbs}) => {
+const Breadcrumbs =({crumbs}) => {
     return (
       <ul className="rh-breadcrumbs">
         {
@@ -14,3 +14,5 @@ export const Breadcrumbs =({crumbs}) => {
       </ul>
     );
 };
+
+export default Breadcrumbs;

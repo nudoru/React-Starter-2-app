@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ApplicationContainer from './app/containers/ApplicationContainer'
+import Bootstrap from './app/components/Bootstrap'
 
 // Globally available styles
 import css from './sass/index.sass';
@@ -68,4 +68,4 @@ if (!Array.prototype.findIndex) {
 
 
 // Application container optionally loads config.json and sets up routing
-ReactDOM.render(<ApplicationContainer />, document.querySelector('#app'));
+ReactDOM.render(<Bootstrap />, document.querySelector('#app'));

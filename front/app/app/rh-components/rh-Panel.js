@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Panel = (props) => {
+const Panel = (props) => {
 
   let panelClass = ['rh-panel'],
       header, footer;
@@ -22,6 +22,7 @@ export const Panel = (props) => {
   </div>);
 };
 
+export default Panel;
 
 export const PanelHeader = ({title, icon, utilityButtons}) => {
   let headerIcon = icon ?

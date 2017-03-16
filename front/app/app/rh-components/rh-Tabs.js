@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TabsHorizontal = ({children}) => {
+export const TabHGroup = ({children}) => {
     return (<div className="rh-tabs-vert">
       <ul>
         {children}

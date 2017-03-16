@@ -1,6 +1,6 @@
 import React from 'react';
 
-import UtilityBar from '../rh-components/rh-UtilityBar';
+import UtilityBar from './rh-UtilityBar';
 
 const HeaderSubPage = ({title, secondaryNav, username}) => {
     return (

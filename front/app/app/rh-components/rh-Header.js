@@ -1,6 +1,6 @@
 import React from 'react';
 // import NavigationBar from '../rh-components/rh-NavigationBar'
-import UtilityBar from '../rh-components/rh-UtilityBar';
+import UtilityBar from './rh-UtilityBar';
 
 const Title = (props) => (
   <div className="header-title"><h1>{props.label}</h1></div>);

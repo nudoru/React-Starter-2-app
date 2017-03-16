@@ -1,7 +1,7 @@
 import React from 'react';
 import {fillIntArray} from '../../../../shared/utils/Toolbox';
 
-export const Pagination = ({
+const Pagination = ({
   prev = false,
   next = true,
   start = 1,
@@ -9,14 +9,17 @@ export const Pagination = ({
   current = 1
 }) => {
 
-  prev        = prev ? (
+  let numbers = fillIntArray(start, end);
+
+  prev = prev ? (
       <a href="#"><i className="fa fa-step-backward"/></a>) : (
       <span className="disabled"><i className="fa fa-step-backward"/></span>);
-  next        = next ? (
+
+  next = next ? (
       <a href="#"><i className="fa fa-step-forward"/></a>) : (
       <span className="disabled"><i
         className="fa fa-step-forward"/></span>);
-  let numbers = fillIntArray(start, end);
+
 
   return (<div className="rh-pagination">
     <ul>
@@ -31,5 +34,6 @@ export const Pagination = ({
       <li>{next}</li>
     </ul>
   </div>);
-
 };
+
+export default Pagination;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const PageModule = ({style = 'white', title, headline, children}) => {
+const PageModule = ({style = 'white', title, headline, children}) => {
 
   /*
    <div className="rh-page-module-cta">
@@ -24,4 +24,6 @@ export const PageModule = ({style = 'white', title, headline, children}) => {
       {children}
     </div>
   </div>);
-}
+};
+
+export default PageModule;

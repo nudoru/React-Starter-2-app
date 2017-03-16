@@ -1,5 +1,5 @@
 import React from 'react';
-import PageModule from '../rh-components/rh-PageModule';
+import PageModule from '../../rh-components/rh-PageModule';
 
 class TemplatePage extends React.Component {
 

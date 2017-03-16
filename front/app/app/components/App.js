@@ -1,9 +1,8 @@
 import React from 'react';
 import AppState from '../state/AppState';
-import HeaderSubPage from './HeaderSubPage';
-import {PleaseWaitModal} from './PleaseWaitModal';
-import ComponentsTesting from './ComponentsTesting';
-import LMSKerberosIDRequest from './LMSKerberosIDRequest.js'
+import HeaderSubPage from '../rh-components/rh-HeaderSubPage';
+import PleaseWaitModal from '../rh-components/rh-PleaseWaitModal';
+import ComponentsTesting from './pages/ComponentsTesting';
 
 class App extends React.Component {
 
@@ -22,7 +21,7 @@ class App extends React.Component {
     if (this.state.ready) {
       let {config} = AppState.getState();
 
-      // content = <LMSKerberosIDRequest/>;
+      // content = <LoginPanel/>;
       content = (<div>
         <HeaderSubPage title={config.setup.title}
                        secondaryNav={config.setup.secondaryNav}

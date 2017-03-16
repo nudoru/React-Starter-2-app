@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Status = ({type, children}) => {
+const Status = ({type, children}) => {
   let cls = 'rh-status', icon;
 
   if (type) {
@@ -32,3 +32,5 @@ export const Status = ({type, children}) => {
     <div className="message">{children}</div>
   </div>);
 };
+
+export default Status;
