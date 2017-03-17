@@ -37,6 +37,7 @@ import {
   BlockLink
 } from '../../rh-components/rh-BlockLinks';
 import {Grid, Row, Col} from '../../rh-components/rh-Grid';
+import {Button, SecondaryButton, NeutralButton, ButtonHGroup, ButtonHRow, ButtonVGroup} from '../../rh-components/rh-Button';
 
 const TextStyles = () => {
   return (
@@ -292,6 +293,17 @@ class ComponentsTesting extends React.Component {
                   <div className="fxgrid-test-box">4</div>
                 </Col>
               </Row>
+              <Row>
+                <Col>
+                  <div className="fxgrid-test-box">Auto</div>
+                </Col>
+                <Col>
+                  <div className="fxgrid-test-box">Auto</div>
+                </Col>
+                <Col>
+                  <div className="fxgrid-test-box">Auto</div>
+                </Col>
+              </Row>
             </Grid>
             <p className="margin-top-double">Modifies for rows and columns:
               offsets, auto, alignment, top, middle, bottom, around, between,
@@ -340,49 +352,90 @@ class ComponentsTesting extends React.Component {
           </Well>
           <Well>
             <h1>Buttons</h1>
-            <div className="rh-button-container-horiz">
-              <button className="rh-button">Primary</button>
-              <button className="rh-button rh-button-secondary">Secondary
-              </button>
-              <button className="rh-button rh-button-neutral">Neutral</button>
-              <button className="rh-button rh-button-hollow">Hollow</button>
-              <button className="rh-button rh-button-text">Text only</button>
-              <button className="rh-button rh-button-text-secondary">Text only
-              </button>
-              <button className="rh-button rh-button-text-neutral">Text only
-              </button>
-              <button className="rh-button rh-button-icon"><i
-                className="fa fa-user"/></button>
-            </div>
-            <div className="rh-button-container-horiz">
-              <button className="rh-button rh-button-small">Primary</button>
-              <button className="rh-button rh-button-secondary rh-button-small">
-                Secondary
-              </button>
-              <button className="rh-button rh-button-neutral rh-button-small">
-                Neutral
-              </button>
-              <button className="rh-button rh-button-hollow rh-button-small">
-                Hollow
-              </button>
-              <button className="rh-button rh-button-text rh-button-small">Text
-                only
-              </button>
-              <button className="rh-button rh-button-icon rh-button-small"><i
-                className="fa fa-user"/></button>
-            </div>
-            <div className="rh-button-group-horiz">
-              <button className="rh-button">Grouped horizontal</button>
-              <button className="rh-button rh-button-secondary">Secondary
-              </button>
-              <button className="rh-button rh-button-secondary">Neutral</button>
-            </div>
-            <div className="rh-button-group-vert">
-              <button className="rh-button">Grouped vertical</button>
-              <button className="rh-button rh-button-secondary">Secondary
-              </button>
-              <button className="rh-button rh-button-secondary">Neutral</button>
-            </div>
+
+            <ButtonHRow>
+              <Button onClick={this._onButtonClick.bind(this)}>Default</Button>
+              <SecondaryButton onClick={this._onButtonClick.bind(this)}>Secondary</SecondaryButton>
+              <NeutralButton onClick={this._onButtonClick.bind(this)}>Neutral</NeutralButton>
+              <Button isHollow={true}>Button</Button>
+              <SecondaryButton isHollow={true}>Button</SecondaryButton>
+              <NeutralButton isHollow={true}>Button</NeutralButton>
+              <Button isText={true}>Button</Button>
+              <SecondaryButton isText={true}>Button</SecondaryButton>
+              <NeutralButton isText={true}>Button</NeutralButton>
+            </ButtonHRow>
+            <ButtonHRow>
+              <Button isSmall={true}>Button</Button>
+              <SecondaryButton isSmall={true}>Button</SecondaryButton>
+              <NeutralButton isSmall={true}>Button</NeutralButton>
+              <Button isSmall={true} isHollow={true}>Button</Button>
+              <SecondaryButton isSmall={true} isHollow={true}>Button</SecondaryButton>
+              <NeutralButton isSmall={true} isHollow={true}>Button</NeutralButton>
+              <Button isSmall={true} isText={true}>Button</Button>
+              <SecondaryButton isSmall={true} isText={true}>Button</SecondaryButton>
+              <NeutralButton isSmall={true} isText={true}>Button</NeutralButton>
+            </ButtonHRow>
+            <ButtonHRow>
+              <Button isIcon={true}><i className="fa fa-cog" /></Button>
+              <SecondaryButton isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
+              <NeutralButton isIcon={true}><i className="fa fa-cog" /></NeutralButton>
+              <Button isIcon={true} isHollow={true}><i className="fa fa-cog" /></Button>
+              <SecondaryButton isIcon={true} isHollow={true}><i className="fa fa-cog" /></SecondaryButton>
+              <NeutralButton isIcon={true} isHollow={true}><i className="fa fa-cog" /></NeutralButton>
+              <Button isText={true} isIcon={true}><i className="fa fa-cog" /></Button>
+              <SecondaryButton isText={true} isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
+              <NeutralButton isText={true} isIcon={true}><i className="fa fa-cog" /></NeutralButton>
+            </ButtonHRow>
+            <ButtonHRow>
+              <Button isSmall={true} isIcon={true}><i className="fa fa-cog" /></Button>
+              <SecondaryButton isSmall={true} isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
+              <NeutralButton isSmall={true} isIcon={true}><i className="fa fa-cog" /></NeutralButton>
+              <Button isSmall={true} isIcon={true} isHollow={true}><i className="fa fa-cog" /></Button>
+              <SecondaryButton isSmall={true} isIcon={true} isHollow={true}><i className="fa fa-cog" /></SecondaryButton>
+              <NeutralButton isSmall={true} isIcon={true} isHollow={true}><i className="fa fa-cog" /></NeutralButton>
+              <Button isSmall={true} isText={true} isIcon={true}><i className="fa fa-cog" /></Button>
+              <SecondaryButton isSmall={true} isText={true} isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
+              <NeutralButton isSmall={true} isText={true} isIcon={true}><i className="fa fa-cog" /></NeutralButton>
+            </ButtonHRow>
+            <Row>
+              <Col width="4">
+                <Row>
+                  <Col width="6">
+                    <ButtonVGroup>
+                      <Button>Button</Button>
+                      <SecondaryButton>Button</SecondaryButton>
+                      <NeutralButton>Button</NeutralButton>
+                    </ButtonVGroup>
+                  </Col>
+                  <Col width="6">
+                    <ButtonVGroup>
+                      <Button isIcon={true} ><i className="fa fa-cog" /></Button>
+                      <SecondaryButton isIcon={true} ><i className="fa fa-cog" /></SecondaryButton>
+                      <NeutralButton isIcon={true} ><i className="fa fa-cog" /></NeutralButton>
+                    </ButtonVGroup>
+                  </Col>
+                </Row>
+
+              </Col>
+              <Col width="8">
+                <ButtonHGroup>
+                  <Button>Button</Button>
+                  <SecondaryButton>Button</SecondaryButton>
+                  <NeutralButton>Button</NeutralButton>
+                </ButtonHGroup>
+                <ButtonHGroup>
+                  <Button isSmall={true}>Button</Button>
+                  <SecondaryButton isSmall={true}>Button</SecondaryButton>
+                  <NeutralButton isSmall={true}>Button</NeutralButton>
+                </ButtonHGroup>
+                <ButtonHGroup>
+                  <Button isIcon={true}><i className="fa fa-cog" /></Button>
+                  <SecondaryButton isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
+                  <NeutralButton isIcon={true}><i className="fa fa-cog" /></NeutralButton>
+                </ButtonHGroup>
+              </Col>
+            </Row>
+            <Button isBlock={true} onClick={this._onButtonClick.bind(this)}>Block Button</Button>
           </Well>
           <Well>
             <h1>Icons</h1>

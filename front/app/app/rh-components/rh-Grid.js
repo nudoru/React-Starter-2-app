@@ -15,7 +15,13 @@ export const Row = ({children, modifier}) => {
   return <div className={cls}>{children}</div>
 };
 
-export const Col = ({width = '12', children, modifier}) => {
-  let cls = 'col-xs-' + width + (modifier ? ' ' + modifier : '');
+export const Col = ({width, children, modifier}) => {
+  let cls = 'col-xs';
+  if(width) {
+    cls += '-' + width;
+  }
+  if(modifier) {
+     cls += ' ' + modifier;
+  }
   return <div className={cls}>{children}</div>
 };
