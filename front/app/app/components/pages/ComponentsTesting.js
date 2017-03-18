@@ -8,8 +8,7 @@ import {
   CardHGroup,
   CardHGroupDecorative,
   CardHGroupTable,
-  CardVGroup,
-  CardIcon
+  CardVGroup
 } from '../../rh-components/rh-Card';
 import DataTable from '../../rh-components/rh-DataTable';
 import {TabHGroup, Tab} from '../../rh-components/rh-Tabs';
@@ -534,30 +533,30 @@ class ComponentsTesting extends React.Component {
           <hr/>
           <h1>Card groups</h1>
           <CardHGroupDecorative>
-            <Card title="Title" style="bars" ctaRoute="/two">
+            <Card title="Title" style="bars">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
-            <Card title="Title" style="bars" ctaRoute="/two">
+            <Card title="Title" style="bars">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
-            <Card title="Title" style="bars" ctaRoute="/two">
+            <Card title="Title" style="bars">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
           </CardHGroupDecorative>
           <hr/>
           <CardHGroup>
-            <CardIcon title="Title"
-                      icon="star" cta="Read more" ctaLink="#">
+            <Card title="CTA Card"
+                      icon="star" cta="Read more" onClick={this._onButtonClick.bind(this)}>
               <p>{Lorem.paragraph(3, 7)}</p>
-            </CardIcon>
-            <CardIcon title="Title" style="shaded"
-                      icon="star" ctaLink="#">
+            </Card>
+            <Card title="Title" style="shaded"
+                      icon="star">
               <p>{Lorem.paragraph(3, 7)}</p>
-            </CardIcon>
-            <CardIcon title="Title" style="dark"
-                      icon="star" ctaLink="#">
+            </Card>
+            <Card title="Title" style="dark"
+                      icon="star">
               <p>{Lorem.paragraph(3, 7)}</p>
-            </CardIcon>
+            </Card>
           </CardHGroup>
           <hr/>
           <CardHGroupTable>

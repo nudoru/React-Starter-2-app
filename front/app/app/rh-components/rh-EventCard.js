@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card} from './rh-Card';
+import {Row, Col} from './rh-Grid';
 
 // Expects format January 1, 2017
 const splitDate = (datestr) => {
@@ -14,23 +15,23 @@ const splitDate = (datestr) => {
 const EventCard = ({startDate, endDate="", name, city, country, room=""}) => {
   let date = splitDate(startDate);
   return (<Card >
-    <div className="inner">
-      <div className="left-1-3">
+    <Row>
+      <Col width="4">
         <ul className="rh-event">
           <li className="month">{date.month}</li>
           <li className="day">{date.day}</li>
           <li className="year">{date.year}</li>
         </ul>
-      </div>
-      <div className="right-2-3">
+      </Col>
+      <Col width="8">
         <ul className="rh-event-details">
           <li className="class">{name}</li>
           <li
             className="city">{city + ', ' + country}</li>
           <li className="room">{room}</li>
         </ul>
-      </div>
-    </div>
+      </Col>
+    </Row>
   </Card>);
 };
 
