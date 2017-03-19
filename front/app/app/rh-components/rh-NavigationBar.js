@@ -1,9 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
-import {LocationSubscriber} from 'react-router/Broadcasts';
+import {NavLink} from 'react-router-dom';
 
 /*
-Depends on LocationSubscriber in React-router 4 to get the current path and update on changes
+ Depends on LocationSubscriber in React-router 4 to get the current path and update on changes
  */
 
 class NavigationBar extends React.Component {
@@ -22,19 +21,17 @@ class NavigationBar extends React.Component {
 
     return (
       <div className="navigationbar">
-        <LocationSubscriber channel="location">
-          {(location) =>(
-            <ul>
-              {
-                this.props.nav.map((item, i) => {
-                  return <li key={i}><Link
-                    className={location.pathname === item.route ? 'active' : ''}
-                    to={item.route}>{item.label}</Link></li>
-                })
-              }
-            </ul>
-            )}
-        </LocationSubscriber>
+        {(location) => (
+          <ul>
+            {
+              this.props.nav.map((item, i) => {
+                return <li key={i}><NavLink exact
+                  activeClassName='active'
+                  to={item.route}>{item.label}</NavLink></li>
+              })
+            }
+          </ul>
+        )}
         {searchBox}
       </div>
     );
