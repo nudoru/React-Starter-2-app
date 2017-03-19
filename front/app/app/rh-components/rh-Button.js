@@ -39,6 +39,8 @@ const buttonMaker = ({children, style, isSmall, isText, isHollow, isIcon, isBloc
   return <button onClick={onClick} className={cls}>{children}</button>;
 };
 
+// TODO - needs to be spread operator but ESLint give me errors
+
 export const Button = ({children, style, isSmall, isText, isHollow, isIcon, isBlock, onClick}) => buttonMaker({
   style: '',
   children,

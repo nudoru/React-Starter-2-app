@@ -1,16 +1,17 @@
+import {combineReducers} from 'redux';
+
 import DefaultState from './DefaultState';
+import Actions from './actions/Actions';
 
-const DefaultReducer = (state = DefaultState, action) => {
-  // console.log('Reducer',state, action);
-
+const config = (config = DefaultState.config, action) => {
   switch (action.type) {
-    case 'SET_CONFIG':
-      state.config = action.config;
-      break;
-    default:
-      break;
+    case Actions.SET_CONFIG:
+      // Should be return {...action.config}
+      return action.config;
   }
-  return state;
+  return config;
 };
+
+const DefaultReducer = combineReducers({config});
 
 export default DefaultReducer;

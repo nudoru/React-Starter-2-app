@@ -1,6 +1,8 @@
+import Actions from './Actions';
+
 const SetConfig = (data)  => {
   return {
-    type: 'SET_CONFIG',
+    type: Actions.SET_CONFIG,
     config: data
   };
 };
