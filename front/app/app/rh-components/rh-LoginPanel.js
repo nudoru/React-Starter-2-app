@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ModalMessage from './rh-ModalMessage'
-import AppState from '../state/AppState';
+import AppStore from '../store/AppStore';
 // import {fetchUserProfile} from '../state/fetchLMS';
 import {validateInputStr} from '../utils/AppUtils';
 import {Spinner} from './rh-Spinner';
@@ -42,7 +42,7 @@ class LoginPanel extends React.Component {
       return false;
     }
 
-    AppState.setState({config: {defaultuser: userinput + '@redhat.com'}});
+    AppStore.setState({config: {defaultuser: userinput + '@redhat.com'}});
     this.getUser();
   }
 
@@ -58,7 +58,7 @@ class LoginPanel extends React.Component {
      this.setState({isFetching: false, isWSError: true, isPrompting: true});
      }, () => {
      // Don't need to do anything here since Bootstrap has a listener
-     // on the AppState and picks up that the user profile key was set. It then
+     // on the AppStore and picks up that the user profile key was set. It then
      // renders App and removes this view
      return;
      });*/

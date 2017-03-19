@@ -2,7 +2,9 @@ import React from 'react';
 import ModalMessage from '../rh-components/rh-ModalMessage';
 import PleaseWaitModal from '../rh-components/rh-PleaseWaitModal';
 import App from './App';
-import {fetchConfigData} from '../state/fetchConfig';
+import {fetchConfigData} from '../store/fetchConfig';
+import AppStore from '../store/AppStore';
+import SetConfig from'../store/actions/SetConfig';
 
 class Bootstrap extends React.Component {
 
@@ -22,7 +24,8 @@ class Bootstrap extends React.Component {
   // Start the app or load the configuration file
   fetchConfig() {
     fetchConfigData().fork(console.error,
-      c => {
+      config => {
+        AppStore.dispatch(SetConfig(config));
         this.setState({loading: false});
       });
   }

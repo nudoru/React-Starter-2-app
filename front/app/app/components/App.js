@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import AppState from '../state/AppState';
+import AppStore from '../store/AppStore';
 import HeaderSubPage from '../rh-components/rh-HeaderSubPage';
 import PleaseWaitModal from '../rh-components/rh-PleaseWaitModal';
 import ComponentsTesting from './pages/ComponentsTesting';
@@ -24,7 +24,7 @@ class App extends React.Component {
       message="Loading something ..."/>;
 
     if (this.state.ready) {
-      let {config} = AppState.getState();
+      let {config} = AppStore.getState();
 
       // content = <LoginPanel/>;
       content = (
