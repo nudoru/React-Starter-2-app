@@ -1,4 +1,5 @@
 import React from 'react';
+import {Provider} from 'react-redux';
 import ModalMessage from './rh-components/rh-ModalMessage';
 import PleaseWaitModal from './rh-components/rh-PleaseWaitModal';
 import App from './App';
@@ -38,7 +39,11 @@ class Bootstrap extends React.Component {
         <h1>Please wait ...</h1>
       </PleaseWaitModal>);
     } else if (this.state.isError) {
-      loadingContent = (<ModalMessage message={{title: 'There was a problem loading the configuration.', icon: 'exclamation', error: true}}>
+      loadingContent = (<ModalMessage message={{
+        title: 'There was a problem loading the configuration.',
+        icon : 'exclamation',
+        error: true
+      }}>
       </ModalMessage>);
     }
 
@@ -46,8 +51,11 @@ class Bootstrap extends React.Component {
       return loadingContent;
     }
 
-    return <App/>;
+    return (
+      <Provider store={AppStore}>
+        <App/>
+      </Provider>);
   }
 }
 
-export default Bootstrap
+export default Bootstrap;

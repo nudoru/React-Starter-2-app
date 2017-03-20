@@ -13,9 +13,9 @@ router.get('/health', function (req, res) {
   res.end();
 });
 
-// For React-Router History, use * rather than / but other routes will no longer
+// For React-Router History, use /* rather than / but other routes will no longer
 // resolve
-router.get('/', function (req, res) {
+router.get('/*', function (req, res) {
   res.sendFile(path.resolve('./front/www/index.html'));
 });
 
