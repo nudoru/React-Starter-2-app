@@ -32,7 +32,7 @@ module.exports = env => {
       // Main application
       app   : appEntryFile,
       // Vendor libs to include in separate file
-      vendor: ['lodash', 'react', 'react-dom', 'moment', 'react-scroll']
+      vendor: ['lodash', 'react', 'react-dom', 'moment', 'react-scroll', 'redux', 'redux-react', 'react-router-dom']
     },
 
     output: {
@@ -52,7 +52,7 @@ module.exports = env => {
           test  : /\.(s?)(a|c)ss$/,
           loader: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            loader        : ['css-loader', 'postcss-loader', 'sass-loader']
+            loader  : ['css-loader', 'postcss-loader', 'sass-loader']
           })
         },
         {
