@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Bootstrap from './app/components/Bootstrap'
+import Bootstrap from './app/Bootstrap'
 
 // Globally available styles
 import css from './sass/index.sass';

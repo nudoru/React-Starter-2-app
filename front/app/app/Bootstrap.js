@@ -1,10 +1,10 @@
 import React from 'react';
-import ModalMessage from '../rh-components/rh-ModalMessage';
-import PleaseWaitModal from '../rh-components/rh-PleaseWaitModal';
+import ModalMessage from './rh-components/rh-ModalMessage';
+import PleaseWaitModal from './rh-components/rh-PleaseWaitModal';
 import App from './App';
-import {fetchConfigData} from '../store/fetchConfig';
-import AppStore from '../store/AppStore';
-import SetConfig from'../store/actions/SetConfig';
+import {fetchConfigData} from './services/fetchConfig';
+import AppStore from './store/AppStore';
+import SetConfig from'./store/actions/SetConfig';
 
 class Bootstrap extends React.Component {
 

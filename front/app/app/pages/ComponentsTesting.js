@@ -1,42 +1,42 @@
 import React from 'react';
-import Lorem from '../../../../../shared/utils/Lorem';
+import Lorem from '../../../../shared/utils/Lorem';
 
-import PageModule from '../../rh-components/rh-PageModule';
-import Breadcrumbs from '../../rh-components/rh-Breadcrumbs';
+import PageModule from '../rh-components/rh-PageModule';
+import Breadcrumbs from '../rh-components/rh-Breadcrumbs';
 import {
   Card,
   CardHGroup,
   CardHGroupDecorative,
   CardHGroupTable,
   CardVGroup
-} from '../../rh-components/rh-Card';
-import DataTable from '../../rh-components/rh-DataTable';
-import {TabHGroup, Tab} from '../../rh-components/rh-Tabs';
-import Pagination from '../../rh-components/rh-Pagination';
-import Well from '../../rh-components/rh-Well';
-import IconCircle from '../../rh-components/rh-IconCircle';
-import IconCircleImage from '../../rh-components/rh-IconCircleImage';
-import IconCircleText from '../../rh-components/rh-IconCircleText';
-import {TagHGroup, Tag} from '../../rh-components/rh-Tag';
-import {StatusIcon, StatusIconTiny} from '../../rh-components/rh-StatusIcon';
-import Spinner from '../../rh-components/rh-Spinner';
-import Status from '../../rh-components/rh-Status';
-import ToolTip from '../../rh-components/rh-ToolTip';
-import Popupsimple from '../../rh-components/rh-PopupSimple';
-import ModalCover from '../../rh-components/rh-ModalCover';
-import ModalMessage from '../../rh-components/rh-ModalMessage';
-import ModalPanel from '../../rh-components/rh-ModalPanel';
-import PleaseWaitModal from '../../rh-components/rh-PleaseWaitModal';
-import LoginPanel from '../../rh-components/rh-LoginPanel';
-import Panel from '../../rh-components/rh-Panel';
-import EventCard from '../../rh-components/rh-EventCard';
+} from '../rh-components/rh-Card';
+import DataTable from '../rh-components/rh-DataTable';
+import {TabHGroup, Tab} from '../rh-components/rh-Tabs';
+import Pagination from '../rh-components/rh-Pagination';
+import Well from '../rh-components/rh-Well';
+import IconCircle from '../rh-components/rh-IconCircle';
+import IconCircleImage from '../rh-components/rh-IconCircleImage';
+import IconCircleText from '../rh-components/rh-IconCircleText';
+import {TagHGroup, Tag} from '../rh-components/rh-Tag';
+import {StatusIcon, StatusIconTiny} from '../rh-components/rh-StatusIcon';
+import Spinner from '../rh-components/rh-Spinner';
+import Status from '../rh-components/rh-Status';
+import ToolTip from '../rh-components/rh-ToolTip';
+import Popupsimple from '../rh-components/rh-PopupSimple';
+import ModalCover from '../rh-components/rh-ModalCover';
+import ModalMessage from '../rh-components/rh-ModalMessage';
+import ModalPanel from '../rh-components/rh-ModalPanel';
+import PleaseWaitModal from '../rh-components/rh-PleaseWaitModal';
+import LoginPanel from '../rh-components/rh-LoginPanel';
+import Panel from '../rh-components/rh-Panel';
+import EventCard from '../rh-components/rh-EventCard';
 import {
   BlockLinkHGroup,
   BlockLinkVGroup,
   BlockLink
-} from '../../rh-components/rh-BlockLinks';
-import {Grid, Row, Col} from '../../rh-components/rh-Grid';
-import {Button, SecondaryButton, NeutralButton, ButtonHGroup, ButtonHRow, ButtonVGroup} from '../../rh-components/rh-Button';
+} from '../rh-components/rh-BlockLinks';
+import {Grid, Row, Col} from '../rh-components/rh-Grid';
+import {Button, SecondaryButton, NeutralButton, ButtonHGroup, ButtonHRow, ButtonVGroup} from '../rh-components/rh-Button';
 
 const TextStyles = () => {
   return (
