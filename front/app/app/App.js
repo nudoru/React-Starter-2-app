@@ -7,6 +7,8 @@ import HeaderSubPage from './rh-components/rh-HeaderSubPage';
 import PleaseWaitModal from './rh-components/rh-PleaseWaitModal';
 import ComponentsTesting from './pages/ComponentsTesting';
 import TemplatePage from './pages/TemplatePage';
+import LoginPanel from './rh-components/rh-LoginPanel'
+import {validateInputStr} from './utils/AppUtils';
 
 // Just a test route
 const Hello = () => <h1>Hello!</h1>;
@@ -21,6 +23,18 @@ class App extends React.Component {
   componentDidMount() {
   }
 
+  // For LoginPanel, validate user input
+  validateLoginInput(str) {
+    return validateInputStr(str);
+  }
+
+  // For LoginPanel, handle loading and validating the user ID
+  handleLogin(userId, onSuccessFn, onErrorFn) {
+    console.log('Login for ', userId);
+    onSuccessFn();
+    // onErrorFn();
+  }
+
   render() {
     let content = <PleaseWaitModal
       message="Loading something ..."/>;
@@ -28,7 +42,15 @@ class App extends React.Component {
     if (this.state.ready) {
       let {config} = this.props;
 
-      // content = <LoginPanel/>;
+      // content = <LoginPanel
+      //   title="Please enter your Kerberos ID to continue."
+      //   prompt="You must be connected to the corporate network or VPN to access."
+      //   inputLabel="@redhat.com"
+      //   buttonLabel="Continue"
+      //   validateFn={this.validateLoginInput.bind(this)}
+      //   processLoginFn={this.handleLogin.bind(this)}
+      // />;
+
       content = (
         <Router>
           <div>

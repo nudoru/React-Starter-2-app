@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ModalMessage from './rh-ModalMessage'
-import AppStore from '../store/AppStore';
-// import {fetchUserProfile} from '../state/fetchLMS';
-import {validateInputStr} from '../utils/AppUtils';
-import {Spinner} from './rh-Spinner';
-import {Status} from './rh-Status';
+import Spinner from './rh-Spinner';
+import Status from './rh-Status';
 
 class LoginPanel extends React.Component {
 
@@ -28,7 +25,7 @@ class LoginPanel extends React.Component {
   onEmailInputChange(e) {
     let userinput = this.refs.emailInput.value;
     this.setState({
-      isInputError : validateInputStr(userinput),
+      isInputError : this.props.validateFn(userinput),
       usernameInput: userinput
     });
   }
@@ -42,26 +39,19 @@ class LoginPanel extends React.Component {
       return false;
     }
 
-    AppStore.setState({config: {defaultuser: userinput + '@redhat.com'}});
-    this.getUser();
+    this.setState({lastRequest: userinput});
+
+    this.props.processLoginFn(userinput + '@redhat.com',
+      this.onProcessLoginFnSuccess.bind(this),
+      this.onProcessLoginFnError.bind(this));
   }
 
-  getUser() {
-    /*this.setState({
-     isFetching : true,
-     isWSError  : false,
-     isPrompting: false,
-     lastRequest: this.refs.emailInput.value
-     });
-     fetchUserProfile().fork(err => {
-     console.warn('GetUserInformation, WS error, probably could not find user id');
-     this.setState({isFetching: false, isWSError: true, isPrompting: true});
-     }, () => {
-     // Don't need to do anything here since Bootstrap has a listener
-     // on the AppStore and picks up that the user profile key was set. It then
-     // renders App and removes this view
-     return;
-     });*/
+  onProcessLoginFnSuccess(msg) {
+    this.setState({isPrompting: false, isFetching: true})
+  }
+
+  onProcessLoginFnError(err) {
+    this.setState({isWSError: true});
   }
 
   render() {
@@ -86,19 +76,17 @@ class LoginPanel extends React.Component {
         buttonStyles.push('disabled');
       }
 
-      content = (<div>
+      content = (<div className="rh-loginpanel">
         <form className="rh-form">
-          <h1>Please enter your Kerberos ID to continue.</h1><p>You must be
-          connected to the corporate network or VPN to access.</p>
+          <h1>{this.props.title}</h1><p>{this.props.prompt}</p>
           <form className="rh-form-inline">
             <fieldset>
-              <div className="rh-form-group text-center">
-                <div className="rh-form-input-group-inline text-center">
-
+              <div className="rh-form-group">
+                <div className="rh-form-input-group-flex">
                   <input ref="emailInput" type="text" maxLength="30"
                          defaultValue={this.state.usernameInput}
                          onInput={this.onEmailInputChange.bind(this)}/>
-                  <div className="group-addon">@redhat.com</div>
+                  <div className="label">{this.props.inputLabel}</div>
                 </div>
               </div>
             </fieldset>
@@ -106,14 +94,14 @@ class LoginPanel extends React.Component {
           {err}
           <button
             className={buttonStyles.join(' ')}
-            onClick={this.onContinueClick.bind(this)}>Continue
+            onClick={this.onContinueClick.bind(this)}>{this.props.buttonLabel}
           </button>
         </form>
       </div>);
     } else if (isFetching) {
       content = (<div><h1>Loading your profile ...</h1>
         <div className="text-center">
-          <Spinner/>
+          <Spinner type="spinner-lg"/>
         </div>
       </div>)
     }
@@ -135,6 +123,13 @@ class LoginPanel extends React.Component {
 }
 
 LoginPanel.defaultProps = {};
-LoginPanel.propTypes    = {};
+LoginPanel.propTypes    = {
+  title         : React.PropTypes.string,
+  prompt        : React.PropTypes.string,
+  inputLabel    : React.PropTypes.string,
+  buttonLabel   : React.PropTypes.string,
+  validateFn    : React.PropTypes.func,
+  processLoginFn: React.PropTypes.func
+};
 
 export default LoginPanel;
