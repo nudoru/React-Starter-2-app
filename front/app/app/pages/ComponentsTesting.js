@@ -37,6 +37,7 @@ import {
 } from '../rh-components/rh-BlockLinks';
 import {Grid, Row, Col} from '../rh-components/rh-Grid';
 import {Button, SecondaryButton, NeutralButton, ButtonHGroup, ButtonHRow, ButtonVGroup} from '../rh-components/rh-Button';
+import {FormStacked, FormInline, Group, InlineGroup, InputsStacked, InputsInline, InputInlineIcon, InputInlinePhase} from '../rh-components/rh-Form';
 
 const TextStyles = () => {
   return (
@@ -590,27 +591,27 @@ class ComponentsTesting extends React.Component {
         <PageModule style="bars" headline="Forms">
           <Well>
             <Well>
-              <form className="rh-form-stacked">
+              <FormStacked>
                 <legend>Stacked Form</legend>
                 <fieldset>
-                  <div className="rh-form-group">
+                  <Group>
                     <label htmlFor="input1">What's your name?</label>
                     <input type="text" placeholder="Type here" id="input1"/>
                     <span className="rh-form-help">Real names only</span>
-                  </div>
-                  <div className="rh-form-group">
+                  </Group>
+                  <Group>
                     <label htmlFor="textarea1">What's your name?</label>
                     <textarea id="textarea1">Type here</textarea>
-                  </div>
-                  <div className="rh-form-group">
+                  </Group>
+                  <Group>
                     <label htmlFor="select1">How much?</label>
                     <select id="select1">
                       <option>None</option>
                       <option>Some</option>
                       <option>All</option>
                     </select>
-                  </div>
-                  <div className="rh-form-group">
+                  </Group>
+                  <Group>
                     <label>What's the best option?</label>
                     <label><input type="checkbox" id="cbox1"
                                   value="first_checkbox"/> Option 1</label>
@@ -618,8 +619,8 @@ class ComponentsTesting extends React.Component {
                                   value="first_checkbox"/> Option 2</label>
                     <label><input type="checkbox" id="cbox3"
                                   value="first_checkbox"/> Option 3</label>
-                  </div>
-                  <div className="rh-form-group">
+                  </Group>
+                  <Group>
                     <label>What's the best option?</label>
                     <label><input type="radio" name="options"
                                   value="first_checkbox"/> Option 1</label>
@@ -627,25 +628,25 @@ class ComponentsTesting extends React.Component {
                                   value="first_checkbox"/> Option 2</label>
                     <label><input type="radio" name="options"
                                   value="first_checkbox"/> Option 3</label>
-                  </div>
-                  <div className="rh-form-group">
+                  </Group>
+                  <Group>
                     <label htmlFor="input1">What's your name?</label>
-                    <div className="rh-form-input-group-stacked">
+                    <InputsStacked>
                       <input type="text" placeholder="First" id="input1"/>
                       <input type="text" placeholder="Middle" id="input1"/>
                       <input type="text" placeholder="Last" id="input1"/>
                       <textarea rows="3">Text area!</textarea>
-                    </div>
-                  </div>
-                  <div className="rh-form-group">
+                    </InputsStacked>
+                  </Group>
+                  <Group>
                     <label htmlFor="input1">Disabled</label>
                     <input disabled="true" type="text" placeholder="Type here"
                            id="input1"/>
                     <label htmlFor="input1">Error</label>
                     <input className="isError" type="text"
                            placeholder="Type here" id="input1"/>
-                  </div>
-                  <div className="rh-form-group">
+                  </Group>
+                  <Group>
                     <input type="text" className="input-1"
                            placeholder="Width 1"/>
                     <input type="text" className="input-3-4"
@@ -658,92 +659,63 @@ class ComponentsTesting extends React.Component {
                            placeholder="Width 1/3"/>
                     <input type="text" className="input-1-4"
                            placeholder="Width 1/4"/>
-                  </div>
+                  </Group>
                 </fieldset>
-              </form>
+              </FormStacked>
             </Well>
             <Well>
-              <form className="rh-form-inline">
+              <FormInline>
                 <legend>Inline, aligned Form</legend>
                 <fieldset>
-                  <div className="rh-form-group">
-                    <label className="rh-form-inline-label" htmlFor="input1">What's your
-                      name?</label>
-                    <div className="rh-form-inline-controls">
+                  <InlineGroup label="What's your name?">
                       <input type="text" placeholder="Type here" id="input1"/>
                       <span className="rh-form-help">Real names only</span>
-                    </div>
-                  </div>
-                  <div className="rh-form-group">
-                    <label className="rh-form-inline-label" htmlFor="textarea1">What's
-                      your name?</label>
-                    <div className="rh-form-inline-controls">
+                  </InlineGroup>
+                  <InlineGroup label="What's your name?">
                       <textarea id="textarea1">Type here</textarea>
-                    </div>
-                  </div>
-                  <div className="rh-form-group">
-                    <label className="rh-form-inline-label" htmlFor="select1">How
-                      much?</label>
-                    <div className="rh-form-inline-controls">
+                  </InlineGroup>
+                  <InlineGroup label="How much?">
                       <select id="select1">
                         <option>None</option>
                         <option>Some</option>
                         <option>All</option>
                       </select>
-                    </div>
-                  </div>
-                  <div className="rh-form-group">
-                    <label className="rh-form-inline-label">What's the best
-                      option?</label>
-                    <div className="rh-form-inline-controls">
+                  </InlineGroup>
+                  <InlineGroup label="What's the best option?">
                       <label><input type="checkbox" id="cbox1"
                                     value="first_checkbox"/> Option 1</label>
                       <label><input type="checkbox" id="cbox2"
                                     value="first_checkbox"/> Option 2</label>
                       <label><input type="checkbox" id="cbox3"
                                     value="first_checkbox"/> Option 3</label>
-                    </div>
-                  </div>
-                  <div className="rh-form-group">
-                    <label className="rh-form-inline-label">What's the best
-                      option?</label>
-                    <div className="rh-form-inline-controls">
+                  </InlineGroup>
+                  <InlineGroup label="What's the best option?">
                       <label><input type="radio" name="options"
                                     value="first_checkbox"/> Option 1</label>
                       <label><input type="radio" name="options"
                                     value="first_checkbox"/> Option 2</label>
                       <label><input type="radio" name="options"
                                     value="first_checkbox"/> Option 3</label>
-                    </div>
-                  </div>
-                  <div className="rh-form-group">
-                    <label className="rh-form-inline-label" htmlFor="input1">What's your
-                      name?</label>
-                    <div className="rh-form-inline-controls">
-                      <div className="rh-form-input-group-inline">
+                  </InlineGroup>
+                  <InlineGroup label="What's your name?">
+                      <InputsInline>
                         <input type="text" placeholder="First" id="input1"/>
                         <input type="text" placeholder="Middle" id="input1"/>
                         <input type="text" placeholder="Last" id="input1"/>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rh-form-group">
-                    <label className="rh-form-inline-label" htmlFor="input1">What's your
-                      email?</label>
-                    <div className="rh-form-inline-controls">
-                      <div className="rh-form-input-group-inline">
-                        <div className="group-addon"><i className="fa fa-user"/>
-                        </div>
+                      </InputsInline>
+                  </InlineGroup>
+                  <InlineGroup label="What's your email?">
+                      <InputsInline className="rh-form-input-group-inline">
+                        <InputInlineIcon icon="user" />
                         <input type="text" placeholder="userid" id="input1"/>
-                        <div className="group-addon">@</div>
+                        <InputInlinePhase phrase="@"/>
                         <input type="text" placeholder="" id="input1"
                                value="redhat.com"/>
-                        <button className="rh-button">Submit</button>
-                      </div>
-                    </div>
-                  </div>
+                        <Button>Submit</Button>
+                      </InputsInline>
+                  </InlineGroup>
                 </fieldset>
-              </form>
+              </FormInline>
             </Well>
           </Well>
         </PageModule>
