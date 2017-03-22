@@ -195,15 +195,10 @@ class ComponentsTesting extends React.Component {
      <p>Paragraph {Lorem.paragraph(5, 10)}</p>
      <p>Paragraph {Lorem.paragraph(5, 10)}</p>
      </ModalPanel>
-
-
-
      */
 
     return (
       <div>
-
-
         <div className="page-container">
           <Breadcrumbs crumbs={[{label: 'Home', route: '/'}, {
             label: 'Subpage',
@@ -792,28 +787,26 @@ class ComponentsTesting extends React.Component {
           </Well>
           <Well>
             <h1>Pop ups (Simple)</h1>
-            <div className="grid-12-container">
-              <div className="grid-row">
-                <div className="grid-col-4">
+            <Row>
+                <Col>
                   <Popupsimple title="Hello!" icon="comment">
                     <p>{Lorem.paragraph(3, 7)}</p>
                   </Popupsimple>
-                </div>
-                <div className="grid-col-4">
+                </Col>
+                <Col>
                   <Popupsimple title="Hello!" buttonLabel='Click me'
                                buttonOnClick={this._onButtonClick.bind(this)}>
                     <p>{Lorem.paragraph(3, 7)}</p>
                   </Popupsimple>
-                </div>
-                <div className="grid-col-4">
+                </Col>
+                <Col>
                   <Popupsimple title="Oh no .." buttonLabel='Click me'
                                buttonOnClick={this._onButtonClick.bind(this)}
                                error={true}>
                     <p>{Lorem.paragraph(3, 7)}</p>
                   </Popupsimple>
-                </div>
-              </div>
-            </div>
+                </Col>
+            </Row>
 
           </Well>
         </PageModule>
