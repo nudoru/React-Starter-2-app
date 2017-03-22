@@ -672,25 +672,24 @@ class ComponentsTesting extends React.Component {
                 <legend>Inline, aligned Form</legend>
                 <fieldset>
                   <div className="rh-form-group">
-                    <label className="grid-col-2" htmlFor="input1">What's your
+                    <label className="rh-form-inline-label" htmlFor="input1">What's your
                       name?</label>
-                    <div className="grid-col-10">
+                    <div className="rh-form-inline-controls">
                       <input type="text" placeholder="Type here" id="input1"/>
-                      <span
-                        className="rh-form-help-inline">Real names only</span>
+                      <span className="rh-form-help">Real names only</span>
                     </div>
                   </div>
                   <div className="rh-form-group">
-                    <label className="grid-col-2" htmlFor="textarea1">What's
+                    <label className="rh-form-inline-label" htmlFor="textarea1">What's
                       your name?</label>
-                    <div className="grid-col-10">
+                    <div className="rh-form-inline-controls">
                       <textarea id="textarea1">Type here</textarea>
                     </div>
                   </div>
                   <div className="rh-form-group">
-                    <label className="grid-col-2" htmlFor="select1">How
+                    <label className="rh-form-inline-label" htmlFor="select1">How
                       much?</label>
-                    <div className="grid-col-10">
+                    <div className="rh-form-inline-controls">
                       <select id="select1">
                         <option>None</option>
                         <option>Some</option>
@@ -699,9 +698,9 @@ class ComponentsTesting extends React.Component {
                     </div>
                   </div>
                   <div className="rh-form-group">
-                    <label className="grid-col-2">What's the best
+                    <label className="rh-form-inline-label">What's the best
                       option?</label>
-                    <div className="grid-col-10">
+                    <div className="rh-form-inline-controls">
                       <label><input type="checkbox" id="cbox1"
                                     value="first_checkbox"/> Option 1</label>
                       <label><input type="checkbox" id="cbox2"
@@ -711,9 +710,9 @@ class ComponentsTesting extends React.Component {
                     </div>
                   </div>
                   <div className="rh-form-group">
-                    <label className="grid-col-2">What's the best
+                    <label className="rh-form-inline-label">What's the best
                       option?</label>
-                    <div className="grid-col-10">
+                    <div className="rh-form-inline-controls">
                       <label><input type="radio" name="options"
                                     value="first_checkbox"/> Option 1</label>
                       <label><input type="radio" name="options"
@@ -723,9 +722,9 @@ class ComponentsTesting extends React.Component {
                     </div>
                   </div>
                   <div className="rh-form-group">
-                    <label className="grid-col-2" htmlFor="input1">What's your
+                    <label className="rh-form-inline-label" htmlFor="input1">What's your
                       name?</label>
-                    <div className="grid-col-10">
+                    <div className="rh-form-inline-controls">
                       <div className="rh-form-input-group-inline">
                         <input type="text" placeholder="First" id="input1"/>
                         <input type="text" placeholder="Middle" id="input1"/>
@@ -734,9 +733,9 @@ class ComponentsTesting extends React.Component {
                     </div>
                   </div>
                   <div className="rh-form-group">
-                    <label className="grid-col-2" htmlFor="input1">What's your
+                    <label className="rh-form-inline-label" htmlFor="input1">What's your
                       email?</label>
-                    <div className="grid-col-10">
+                    <div className="rh-form-inline-controls">
                       <div className="rh-form-input-group-inline">
                         <div className="group-addon"><i className="fa fa-user"/>
                         </div>
@@ -746,26 +745,6 @@ class ComponentsTesting extends React.Component {
                                value="redhat.com"/>
                         <button className="rh-button">Submit</button>
                       </div>
-                    </div>
-                  </div>
-                </fieldset>
-                <hr />
-                <fieldset>
-                  <div className="rh-form-group">
-                    <label className="grid-col-2" htmlFor="input1">What's
-                      yourname?</label>
-                    <div className="grid-col-2">
-                      <input type="text" placeholder="Type here" id="input1"/>
-                    </div>
-                    <label className="grid-col-2" htmlFor="input1">What's your
-                      name?</label>
-                    <div className="grid-col-2">
-                      <input type="text" placeholder="Type here" id="input1"/>
-                    </div>
-                    <label className="grid-col-2" htmlFor="input1">What's your
-                      name?</label>
-                    <div className="grid-col-2">
-                      <input type="text" placeholder="Type here" id="input1"/>
                     </div>
                   </div>
                 </fieldset>

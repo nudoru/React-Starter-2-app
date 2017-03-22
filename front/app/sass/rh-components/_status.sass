@@ -6,58 +6,67 @@
   height: $form-el-height
   width: 100%
   margin: $base-line-height-half 0
-  background: $control-neutral-color $dark-gradient
-  border: 1px solid $control-neutral-color
+  background: $control-neutral-color-light
+  //border: 1px solid $control-neutral-color
   border-radius: $border-radius-small
-  box-shadow: $box-shadow-xsmall
+  //box-shadow: $box-shadow-xsmall
   .icon
     display: table-cell
     vertical-align: middle
     width: $form-el-height
     padding: $base-line-height-half 0
     text-align: center
-    color: #fff
-    text-shadow: $text-shadow-dark
+    color: $control-neutral-color-dark
+    text-shadow: $text-shadow-light
   .message
     @extend %body-base-small
-    font-weight: 600
+    //font-weight: 600
     display: table-cell
-    background: #fff
+    background: $control-neutral-color-dark $dark-gradient
     vertical-align: middle
     border-radius: $border-radius-small
     padding: $base-line-height-half $base-line-height
     height: $form-el-height
     text-transform: uppercase
-    text-shadow: $text-shadow-light
+    text-shadow: $text-shadow-dark
+    color: $control-neutral-color-light
 
 .rh-status-info
   @extend .rh-status
-  border: 1px solid $control-info-color
-  background-color: $control-info-color
+  //border: 1px solid $control-info-color
+  background-color: lighten($control-info-color-light, 25%)
+  .icon
+    color: $control-info-color
   .message
-    color: $control-info-color-dark
-    background-color: lighten($control-info-color-light, 25%)
+    background-color: $control-info-color-dark
+    color: lighten($control-info-color-light, 25%)
 
 .rh-status-pass
   @extend .rh-status
-  border: 1px solid $control-success-color
-  background-color: $control-success-color
+  //border: 1px solid $control-success-color
+  background-color: lighten($control-success-color-light, 10%)
+  .icon
+    color: $control-success-color
   .message
-    color: $control-success-color-dark
-    background-color: lighten($control-success-color-light, 10%)
+    background-color: $control-success-color-dark
+    color: lighten($control-success-color-light, 10%)
 
 .rh-status-warning
   @extend .rh-status
-  border: 1px solid $control-warning-color
-  background-color: $control-warning-color
+  //border: 1px solid $control-warning-color
+  background-color: lighten($control-warning-color-light, 10%)
+  .icon
+    color: $control-warning-color
   .message
-    color: $control-warning-color-dark
-    background-color: lighten($control-warning-color-light, 10%)
+    background-color: $control-warning-color-dark
+    color: lighten($control-warning-color-light, 10%)
 
 .rh-status-fail
   @extend .rh-status
-  border: 1px solid $control-danger-color
-  background-color: $control-danger-color
+  //border: 1px solid $control-danger-color
+  background-color: lighten($control-danger-color-light, 10%)
+  .icon
+    color: $control-danger-color
   .message
-    color: $control-danger-color-dark
-    background-color: lighten($control-danger-color-light, 10%)
+    background-color: $control-danger-color-dark
+    color: lighten($control-danger-color-light, 10%)

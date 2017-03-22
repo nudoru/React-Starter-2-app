@@ -4,8 +4,6 @@
 // Mixins, etc.
 //------------------------------------------------------------------------------
 
-
-
 %rh-form-element
   @extend %body-base-small
   //+transition-all
@@ -58,11 +56,6 @@ label
   display: block
   padding: 0
   margin: 0
-
-.rh-form-help-inline
-  @extend .rh-form-help
-  display: inline
-  margin-left: $base-line-height-half
 
 input[type=text],
 input[type=password],
@@ -171,21 +164,25 @@ input.isError
       border-bottom: $form-el-border
 
 .rh-form-inline
-  fieldset
-    @extend .grid-12-container
-  [class*='grid-col-']
-    vertical-align: middle
-    &:first-of-type
-      padding-right: $base-line-height
+  .rh-form-help
+    display: inline
+    margin-left: $base-line-height-half
   .rh-form-group
-    @extend .grid-row
+    display: flex
+    width: 100%
     height: $form-el-height + $base-line-height
-  label
-    vertical-align: middle
-    text-align: right
-    margin-right: $base-line-height
-  input[type=radio], input[type=checkbox]
-    margin-right: $base-line-height-half
+    align-items: center
+    margin-bottom: $base-line-height-half
+    label
+      margin-right: $base-line-height
+    label > input[type='radio'], label > input[type='checkbox']
+      margin-right: $base-line-height-half
+    .rh-form-inline-label
+      text-align: right
+      width: 16.66666667% // grid-col-2
+    .rh-form-inline-controls
+      flex: 1
+
 
 // TODO Needs more development ... used on rh-LoginPanel.js
 .rh-form-input-group-flex
@@ -199,18 +196,19 @@ input.isError
     color: $blue-dark
     font-weight: 400
 
-// group-addons don't work in the middle
 .rh-form-input-group-inline
-  display: inline-table
+  display: flex
   vertical-align: middle
   border-collapse: separate
-  width: auto
+  width: 100%
+  align-items: center
   div.group-addon
     @extend %body-base
     background: $grey-2
     border: $form-el-border
-    line-height: 1px
-    padding: $base-line-height-half $base-line-height
+    height: $form-el-height
+    line-height: $form-el-height
+    padding: 0 $base-line-height
     font-weight: 600
     text-align: center
     text-shadow: $text-shadow-light
@@ -222,9 +220,11 @@ input.isError
     line-height: 1px
     padding: $base-line-height-half $base-line-height-double
     border: none !important
+    flex: 1
+  input
+    flex: 2
+    width: 100%
   input, div.group-addon, button
-    display: table-cell
-    width: auto
     position: relative
     z-index: 2
     vertical-align: middle
