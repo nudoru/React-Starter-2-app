@@ -356,6 +356,7 @@ class ComponentsTesting extends React.Component {
               <Button onClick={this._onButtonClick.bind(this)}>Default</Button>
               <SecondaryButton onClick={this._onButtonClick.bind(this)}>Secondary</SecondaryButton>
               <NeutralButton onClick={this._onButtonClick.bind(this)}>Neutral</NeutralButton>
+              <Button isDisabled={true} onClick={this._onButtonClick.bind(this)}>Disabled</Button>
               <Button isHollow={true}>Button</Button>
               <SecondaryButton isHollow={true}>Button</SecondaryButton>
               <NeutralButton isHollow={true}>Button</NeutralButton>
