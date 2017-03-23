@@ -44,3 +44,23 @@
   color: #fff !important
   h1,h2,h3,h4,h5,h6,p,li,pre,blockquote
     color: #fff
+
+
+
+.rh-page-module-full
+  @extend .flex-full-center
+  min-height: 100vh
+
+.rh-page-module-full-homepage
+  @extend .flex-full-center
+  min-height: calc(100vh - #{$header-height-homepage})
+
+.rh-page-module-full-subpage
+  @extend .rh-page-module-bars
+  @extend .flex-full-center
+  min-height: calc(100vh - #{$header-height-subpage})
+
+.rh-page-module-full-subpage-bc
+  @extend .rh-page-module-bars
+  @extend .flex-full-center
+  min-height: calc(100vh - #{$header-height-subpage} - #{$breadcrumbs-height})

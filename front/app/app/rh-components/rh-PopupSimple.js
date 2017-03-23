@@ -22,7 +22,7 @@ const Popupsimple = ({
   }
 
   content = <div className={boxClass.join(' ')}>
-    {icon ? <IconCircle icon={icon}/> : null}
+    {icon ? <IconCircle icon={icon} /> : null}
     {title ? <h1>{title}</h1> : null}
     {children}
     {button}

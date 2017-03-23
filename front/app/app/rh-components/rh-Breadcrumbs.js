@@ -2,6 +2,7 @@ import React from 'react';
 
 const Breadcrumbs =({crumbs}) => {
     return (
+    <div  className='rh-breadcrumbs-container'>
       <ul className="rh-breadcrumbs">
         {
           crumbs.map((item, i) => {
@@ -12,6 +13,7 @@ const Breadcrumbs =({crumbs}) => {
           })
         }
       </ul>
+    </div>
     );
 };
 

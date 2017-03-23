@@ -28,7 +28,7 @@ export const Card = ({
 }) => {
 
   let iconArea   = icon ? (<CardHeader>
-      <IconCircle icon={icon}/>
+      <IconCircle center icon={icon}/>
     </CardHeader>) : null,
     headerArea = title ? (<CardHeader><h1>{title}</h1></CardHeader>) : null,
       buttonArea = onClick ? (<CardFooter><Button isText={true} onClick={onClick}>{ctaLabel}</Button></CardFooter>) : null;

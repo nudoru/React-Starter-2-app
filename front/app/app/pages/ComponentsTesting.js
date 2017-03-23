@@ -11,14 +11,14 @@ import {
   CardVGroup
 } from '../rh-components/rh-Card';
 import DataTable from '../rh-components/rh-DataTable';
-import {TabHGroup, Tab} from '../rh-components/rh-Tabs';
+import { TabHGroup, Tab } from '../rh-components/rh-Tabs';
 import Pagination from '../rh-components/rh-Pagination';
 import Well from '../rh-components/rh-Well';
 import IconCircle from '../rh-components/rh-IconCircle';
 import IconCircleImage from '../rh-components/rh-IconCircleImage';
 import IconCircleText from '../rh-components/rh-IconCircleText';
-import {TagHGroup, Tag} from '../rh-components/rh-Tag';
-import {StatusIcon, StatusIconTiny} from '../rh-components/rh-StatusIcon';
+import { TagHGroup, Tag } from '../rh-components/rh-Tag';
+import { StatusIcon, StatusIconTiny } from '../rh-components/rh-StatusIcon';
 import Spinner from '../rh-components/rh-Spinner';
 import Status from '../rh-components/rh-Status';
 import ToolTip from '../rh-components/rh-ToolTip';
@@ -35,9 +35,25 @@ import {
   BlockLinkVGroup,
   BlockLink
 } from '../rh-components/rh-BlockLinks';
-import {Grid, Row, Col} from '../rh-components/rh-Grid';
-import {Button, SecondaryButton, NeutralButton, ButtonHGroup, ButtonHRow, ButtonVGroup} from '../rh-components/rh-Button';
-import {VForm, HForm, FormGroup, FormHGroupRow, FormVGroup, FormHGroup, HInputDecorator, InputInlinePhase} from '../rh-components/rh-Form';
+import { Grid, Row, Col } from '../rh-components/rh-Grid';
+import {
+  Button,
+  SecondaryButton,
+  NeutralButton,
+  ButtonHGroup,
+  ButtonHRow,
+  ButtonVGroup
+} from '../rh-components/rh-Button';
+import {
+  VForm,
+  HForm,
+  FormGroup,
+  FormHGroupRow,
+  FormVGroup,
+  FormHGroup,
+  HInputDecorator,
+  InputInlinePhase
+} from '../rh-components/rh-Form';
 
 const TextStyles = () => {
   return (
@@ -85,24 +101,24 @@ const TextStyles = () => {
 
 class ComponentsTesting extends React.Component {
 
-  constructor() {
+  constructor () {
     super();
     this.state = {modal: false};
   }
 
-  componentDidMount() {
+  componentDidMount () {
   }
 
-  _onButtonClick(e) {
+  _onButtonClick (e) {
     console.log('A button was clicked!', e);
   }
 
-  _onModalClick(e) {
+  _onModalClick (e) {
     console.log('Modal was clicked!', e);
     this.setState({modal: false});
   }
 
-  render() {
+  render () {
 
     let tabledata = {
           headers: [
@@ -122,55 +138,54 @@ class ComponentsTesting extends React.Component {
         },
         tableJson = [
           {
-            "name"    : "Strickland Zimmerman",
-            "balance" : "$1,522.36",
-            "age"     : 23,
-            "eyeColor": "brown",
-            "gender"  : "male",
-            "company" : "SECURIA"
+            'name'    : 'Strickland Zimmerman',
+            'balance' : '$1,522.36',
+            'age'     : 23,
+            'eyeColor': 'brown',
+            'gender'  : 'male',
+            'company' : 'SECURIA'
           },
           {
-            "name"    : "Hughes Obrien",
-            "balance" : "$3,967.97",
-            "age"     : 22,
-            "eyeColor": "blue",
-            "gender"  : "male",
-            "company" : "GEEKY"
+            'name'    : 'Hughes Obrien',
+            'balance' : '$3,967.97',
+            'age'     : 22,
+            'eyeColor': 'blue',
+            'gender'  : 'male',
+            'company' : 'GEEKY'
           },
           {
-            "name"    : "Ortiz Burris",
-            "balance" : "$3,703.80",
-            "age"     : 29,
-            "eyeColor": "green",
-            "gender"  : "male",
-            "company" : "PYRAMI"
+            'name'    : 'Ortiz Burris',
+            'balance' : '$3,703.80',
+            'age'     : 29,
+            'eyeColor': 'green',
+            'gender'  : 'male',
+            'company' : 'PYRAMI'
           },
           {
-            "name"    : "Deanna Peterson",
-            "balance" : "$1,891.08",
-            "age"     : 25,
-            "eyeColor": "blue",
-            "gender"  : "female",
-            "company" : "GEEKETRON"
+            'name'    : 'Deanna Peterson',
+            'balance' : '$1,891.08',
+            'age'     : 25,
+            'eyeColor': 'blue',
+            'gender'  : 'female',
+            'company' : 'GEEKETRON'
           },
           {
-            "name"    : "Mayra Estrada",
-            "balance" : "$1,910.12",
-            "age"     : 34,
-            "eyeColor": "green",
-            "gender"  : "female",
-            "company" : "QUILK"
+            'name'    : 'Mayra Estrada',
+            'balance' : '$1,910.12',
+            'age'     : 34,
+            'eyeColor': 'green',
+            'gender'  : 'female',
+            'company' : 'QUILK'
           },
           {
-            "name"    : "Villarreal Mooney",
-            "balance" : "$2,183.56",
-            "age"     : 28,
-            "eyeColor": "blue",
-            "gender"  : "male",
-            "company" : "FIBRODYNE"
+            'name'    : 'Villarreal Mooney',
+            'balance' : '$2,183.56',
+            'age'     : 28,
+            'eyeColor': 'blue',
+            'gender'  : 'male',
+            'company' : 'FIBRODYNE'
           }
         ];
-
 
     /*
      <ModalCover visible={this.state.modal} dismissible={true} dismissFunc={this._onModalClick.bind(this)}/>
@@ -206,6 +221,11 @@ class ComponentsTesting extends React.Component {
             route: '/one'
           }, {label: 'This page'}]}/>
         </div>
+        <PageModule style="full-subpage-bc">
+          <h1>Hello</h1>
+          <h3>Let's take a look at some components! Scroll down ...</h3>
+          <IconCircle center icon="arrow-down"/>
+        </PageModule>
         <PageModule style="white">
           <h1>Testing Page for Reusable Components</h1>
           <TabHGroup>
@@ -351,8 +371,10 @@ class ComponentsTesting extends React.Component {
             <ButtonHRow>
               <Button onClick={this._onButtonClick.bind(this)}>Default</Button>
               <SecondaryButton onClick={this._onButtonClick.bind(this)}>Secondary</SecondaryButton>
-              <NeutralButton onClick={this._onButtonClick.bind(this)}>Neutral</NeutralButton>
-              <Button isDisabled={true} onClick={this._onButtonClick.bind(this)}>Disabled</Button>
+              <NeutralButton
+                onClick={this._onButtonClick.bind(this)}>Neutral</NeutralButton>
+              <Button isDisabled={true}
+                      onClick={this._onButtonClick.bind(this)}>Disabled</Button>
               <Button isHollow={true}>Button</Button>
               <SecondaryButton isHollow={true}>Button</SecondaryButton>
               <NeutralButton isHollow={true}>Button</NeutralButton>
@@ -365,33 +387,53 @@ class ComponentsTesting extends React.Component {
               <SecondaryButton isSmall={true}>Button</SecondaryButton>
               <NeutralButton isSmall={true}>Button</NeutralButton>
               <Button isSmall={true} isHollow={true}>Button</Button>
-              <SecondaryButton isSmall={true} isHollow={true}>Button</SecondaryButton>
-              <NeutralButton isSmall={true} isHollow={true}>Button</NeutralButton>
+              <SecondaryButton isSmall={true}
+                               isHollow={true}>Button</SecondaryButton>
+              <NeutralButton isSmall={true}
+                             isHollow={true}>Button</NeutralButton>
               <Button isSmall={true} isText={true}>Button</Button>
-              <SecondaryButton isSmall={true} isText={true}>Button</SecondaryButton>
+              <SecondaryButton isSmall={true}
+                               isText={true}>Button</SecondaryButton>
               <NeutralButton isSmall={true} isText={true}>Button</NeutralButton>
             </ButtonHRow>
             <ButtonHRow>
-              <Button isIcon={true}><i className="fa fa-cog" /></Button>
-              <SecondaryButton isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
-              <NeutralButton isIcon={true}><i className="fa fa-cog" /></NeutralButton>
-              <Button isIcon={true} isHollow={true}><i className="fa fa-cog" /></Button>
-              <SecondaryButton isIcon={true} isHollow={true}><i className="fa fa-cog" /></SecondaryButton>
-              <NeutralButton isIcon={true} isHollow={true}><i className="fa fa-cog" /></NeutralButton>
-              <Button isText={true} isIcon={true}><i className="fa fa-cog" /></Button>
-              <SecondaryButton isText={true} isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
-              <NeutralButton isText={true} isIcon={true}><i className="fa fa-cog" /></NeutralButton>
+              <Button isIcon={true}><i className="fa fa-cog"/></Button>
+              <SecondaryButton isIcon={true}><i
+                className="fa fa-cog"/></SecondaryButton>
+              <NeutralButton isIcon={true}><i
+                className="fa fa-cog"/></NeutralButton>
+              <Button isIcon={true} isHollow={true}><i
+                className="fa fa-cog"/></Button>
+              <SecondaryButton isIcon={true} isHollow={true}><i
+                className="fa fa-cog"/></SecondaryButton>
+              <NeutralButton isIcon={true} isHollow={true}><i
+                className="fa fa-cog"/></NeutralButton>
+              <Button isText={true} isIcon={true}><i
+                className="fa fa-cog"/></Button>
+              <SecondaryButton isText={true} isIcon={true}><i
+                className="fa fa-cog"/></SecondaryButton>
+              <NeutralButton isText={true} isIcon={true}><i
+                className="fa fa-cog"/></NeutralButton>
             </ButtonHRow>
             <ButtonHRow>
-              <Button isSmall={true} isIcon={true}><i className="fa fa-cog" /></Button>
-              <SecondaryButton isSmall={true} isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
-              <NeutralButton isSmall={true} isIcon={true}><i className="fa fa-cog" /></NeutralButton>
-              <Button isSmall={true} isIcon={true} isHollow={true}><i className="fa fa-cog" /></Button>
-              <SecondaryButton isSmall={true} isIcon={true} isHollow={true}><i className="fa fa-cog" /></SecondaryButton>
-              <NeutralButton isSmall={true} isIcon={true} isHollow={true}><i className="fa fa-cog" /></NeutralButton>
-              <Button isSmall={true} isText={true} isIcon={true}><i className="fa fa-cog" /></Button>
-              <SecondaryButton isSmall={true} isText={true} isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
-              <NeutralButton isSmall={true} isText={true} isIcon={true}><i className="fa fa-cog" /></NeutralButton>
+              <Button isSmall={true} isIcon={true}><i
+                className="fa fa-cog"/></Button>
+              <SecondaryButton isSmall={true} isIcon={true}><i
+                className="fa fa-cog"/></SecondaryButton>
+              <NeutralButton isSmall={true} isIcon={true}><i
+                className="fa fa-cog"/></NeutralButton>
+              <Button isSmall={true} isIcon={true} isHollow={true}><i
+                className="fa fa-cog"/></Button>
+              <SecondaryButton isSmall={true} isIcon={true} isHollow={true}><i
+                className="fa fa-cog"/></SecondaryButton>
+              <NeutralButton isSmall={true} isIcon={true} isHollow={true}><i
+                className="fa fa-cog"/></NeutralButton>
+              <Button isSmall={true} isText={true} isIcon={true}><i
+                className="fa fa-cog"/></Button>
+              <SecondaryButton isSmall={true} isText={true} isIcon={true}><i
+                className="fa fa-cog"/></SecondaryButton>
+              <NeutralButton isSmall={true} isText={true} isIcon={true}><i
+                className="fa fa-cog"/></NeutralButton>
             </ButtonHRow>
             <Row>
               <Col width="4">
@@ -405,9 +447,10 @@ class ComponentsTesting extends React.Component {
                   </Col>
                   <Col width="6">
                     <ButtonVGroup>
-                      <Button isIcon={true} ><i className="fa fa-cog" /></Button>
-                      <SecondaryButton isIcon={true} ><i className="fa fa-cog" /></SecondaryButton>
-                      <NeutralButton isIcon={true} ><i className="fa fa-cog" /></NeutralButton>
+                      <Button isIcon={true}><i className="fa fa-cog"/></Button>
+                      <SecondaryButton isIcon={true}><i className="fa fa-cog"/></SecondaryButton>
+                      <NeutralButton isIcon={true}><i
+                        className="fa fa-cog"/></NeutralButton>
                     </ButtonVGroup>
                   </Col>
                 </Row>
@@ -425,13 +468,16 @@ class ComponentsTesting extends React.Component {
                   <NeutralButton isSmall={true}>Button</NeutralButton>
                 </ButtonHGroup>
                 <ButtonHGroup>
-                  <Button isIcon={true}><i className="fa fa-cog" /></Button>
-                  <SecondaryButton isIcon={true}><i className="fa fa-cog" /></SecondaryButton>
-                  <NeutralButton isIcon={true}><i className="fa fa-cog" /></NeutralButton>
+                  <Button isIcon={true}><i className="fa fa-cog"/></Button>
+                  <SecondaryButton isIcon={true}><i
+                    className="fa fa-cog"/></SecondaryButton>
+                  <NeutralButton isIcon={true}><i
+                    className="fa fa-cog"/></NeutralButton>
                 </ButtonHGroup>
               </Col>
             </Row>
-            <Button isBlock={true} onClick={this._onButtonClick.bind(this)}>Block Button</Button>
+            <Button isBlock={true} onClick={this._onButtonClick.bind(this)}>Block
+              Button</Button>
           </Well>
           <Well>
             <h1>Icons</h1>
@@ -543,15 +589,16 @@ class ComponentsTesting extends React.Component {
           <hr/>
           <CardHGroup>
             <Card title="CTA Card"
-                      icon="star" cta="Read more" onClick={this._onButtonClick.bind(this)}>
+                  icon="star" cta="Read more"
+                  onClick={this._onButtonClick.bind(this)}>
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
             <Card title="Title" style="shaded"
-                      icon="star">
+                  icon="star">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
             <Card title="Title" style="dark"
-                      icon="star">
+                  icon="star">
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
           </CardHGroup>
@@ -668,51 +715,51 @@ class ComponentsTesting extends React.Component {
                 <legend>Inline, aligned Form</legend>
                 <fieldset>
                   <FormHGroupRow label="What's your name?">
-                      <input type="text" placeholder="Type here" id="input1"/>
-                      <span className="rh-form-help">Real names only</span>
+                    <input type="text" placeholder="Type here" id="input1"/>
+                    <span className="rh-form-help">Real names only</span>
                   </FormHGroupRow>
                   <FormHGroupRow label="What's your name?">
-                      <textarea id="textarea1">Type here</textarea>
+                    <textarea id="textarea1">Type here</textarea>
                   </FormHGroupRow>
                   <FormHGroupRow label="How much?">
-                      <select id="select1">
-                        <option>None</option>
-                        <option>Some</option>
-                        <option>All</option>
-                      </select>
+                    <select id="select1">
+                      <option>None</option>
+                      <option>Some</option>
+                      <option>All</option>
+                    </select>
                   </FormHGroupRow>
                   <FormHGroupRow label="What's the best option?">
-                      <label><input type="checkbox" id="cbox1"
-                                    value="first_checkbox"/> Option 1</label>
-                      <label><input type="checkbox" id="cbox2"
-                                    value="first_checkbox"/> Option 2</label>
-                      <label><input type="checkbox" id="cbox3"
-                                    value="first_checkbox"/> Option 3</label>
+                    <label><input type="checkbox" id="cbox1"
+                                  value="first_checkbox"/> Option 1</label>
+                    <label><input type="checkbox" id="cbox2"
+                                  value="first_checkbox"/> Option 2</label>
+                    <label><input type="checkbox" id="cbox3"
+                                  value="first_checkbox"/> Option 3</label>
                   </FormHGroupRow>
                   <FormHGroupRow label="What's the best option?">
-                      <label><input type="radio" name="options"
-                                    value="first_checkbox"/> Option 1</label>
-                      <label><input type="radio" name="options"
-                                    value="first_checkbox"/> Option 2</label>
-                      <label><input type="radio" name="options"
-                                    value="first_checkbox"/> Option 3</label>
+                    <label><input type="radio" name="options"
+                                  value="first_checkbox"/> Option 1</label>
+                    <label><input type="radio" name="options"
+                                  value="first_checkbox"/> Option 2</label>
+                    <label><input type="radio" name="options"
+                                  value="first_checkbox"/> Option 3</label>
                   </FormHGroupRow>
                   <FormHGroupRow label="What's your name?">
-                      <FormHGroup>
-                        <input type="text" placeholder="First" id="input1"/>
-                        <input type="text" placeholder="Middle" id="input1"/>
-                        <input type="text" placeholder="Last" id="input1"/>
-                      </FormHGroup>
+                    <FormHGroup>
+                      <input type="text" placeholder="First" id="input1"/>
+                      <input type="text" placeholder="Middle" id="input1"/>
+                      <input type="text" placeholder="Last" id="input1"/>
+                    </FormHGroup>
                   </FormHGroupRow>
                   <FormHGroupRow label="What's your email?">
-                      <FormHGroup className="rh-form-input-group-inline">
-                        <HInputDecorator icon="user"/>
-                        <input type="text" placeholder="userid" id="input1"/>
-                        <HInputDecorator>@</HInputDecorator>
-                        <input type="text" placeholder="" id="input1"
-                               value="redhat.com"/>
-                        <Button>Submit</Button>
-                      </FormHGroup>
+                    <FormHGroup className="rh-form-input-group-inline">
+                      <HInputDecorator icon="user"/>
+                      <input type="text" placeholder="userid" id="input1"/>
+                      <HInputDecorator>@</HInputDecorator>
+                      <input type="text" placeholder="" id="input1"
+                             value="redhat.com"/>
+                      <Button>Submit</Button>
+                    </FormHGroup>
                   </FormHGroupRow>
                 </fieldset>
               </HForm>
@@ -760,24 +807,24 @@ class ComponentsTesting extends React.Component {
           <Well>
             <h1>Pop ups (Simple)</h1>
             <Row>
-                <Col>
-                  <Popupsimple title="Hello!" icon="comment">
-                    <p>{Lorem.paragraph(3, 7)}</p>
-                  </Popupsimple>
-                </Col>
-                <Col>
-                  <Popupsimple title="Hello!" buttonLabel='Click me'
-                               buttonOnClick={this._onButtonClick.bind(this)}>
-                    <p>{Lorem.paragraph(3, 7)}</p>
-                  </Popupsimple>
-                </Col>
-                <Col>
-                  <Popupsimple title="Oh no .." buttonLabel='Click me'
-                               buttonOnClick={this._onButtonClick.bind(this)}
-                               error={true}>
-                    <p>{Lorem.paragraph(3, 7)}</p>
-                  </Popupsimple>
-                </Col>
+              <Col>
+                <Popupsimple title="Hello!" icon="comment">
+                  <p>{Lorem.paragraph(3, 7)}</p>
+                </Popupsimple>
+              </Col>
+              <Col>
+                <Popupsimple title="Hello!" buttonLabel='Click me'
+                             buttonOnClick={this._onButtonClick.bind(this)}>
+                  <p>{Lorem.paragraph(3, 7)}</p>
+                </Popupsimple>
+              </Col>
+              <Col>
+                <Popupsimple title="Oh no .." buttonLabel='Click me'
+                             buttonOnClick={this._onButtonClick.bind(this)}
+                             error={true}>
+                  <p>{Lorem.paragraph(3, 7)}</p>
+                </Popupsimple>
+              </Col>
             </Row>
 
           </Well>
@@ -828,7 +875,6 @@ class ComponentsTesting extends React.Component {
     );
   }
 }
-
 
 ComponentsTesting.propTypes = {};
 
