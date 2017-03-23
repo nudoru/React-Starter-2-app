@@ -221,7 +221,7 @@ class ComponentsTesting extends React.Component {
             route: '/one'
           }, {label: 'This page'}]}/>
         </div>
-        <PageModule style="full-subpage-bc">
+        <PageModule style="full-homepage">
           <h1>Hello</h1>
           <h3>Let's take a look at some components! Scroll down ...</h3>
           <IconCircle center icon="arrow-down"/>

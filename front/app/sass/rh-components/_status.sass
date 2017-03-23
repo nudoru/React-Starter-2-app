@@ -7,9 +7,7 @@
   width: 100%
   margin: $base-line-height-half 0
   background: $control-neutral-color-light
-  //border: 1px solid $control-neutral-color
   border-radius: $border-radius-small
-  //box-shadow: $box-shadow-xsmall
   .icon
     display: table-cell
     vertical-align: middle
@@ -20,7 +18,6 @@
     text-shadow: $text-shadow-light
   .message
     @extend %body-base-small
-    //font-weight: 600
     display: table-cell
     background: $control-neutral-color-dark $dark-gradient
     vertical-align: middle
@@ -29,44 +26,36 @@
     height: $form-el-height
     text-transform: uppercase
     text-shadow: $text-shadow-dark
-    color: $control-neutral-color-light
+    color: #fff
 
 .rh-status-info
   @extend .rh-status
-  //border: 1px solid $control-info-color
   background-color: lighten($control-info-color-light, 25%)
   .icon
     color: $control-info-color
   .message
-    background-color: $control-info-color-dark
-    color: lighten($control-info-color-light, 25%)
+    background-color: $control-info-color
 
 .rh-status-pass
   @extend .rh-status
-  //border: 1px solid $control-success-color
   background-color: lighten($control-success-color-light, 10%)
   .icon
     color: $control-success-color
   .message
-    background-color: $control-success-color-dark
-    color: lighten($control-success-color-light, 10%)
+    background-color: $control-success-color
 
 .rh-status-warning
   @extend .rh-status
-  //border: 1px solid $control-warning-color
   background-color: lighten($control-warning-color-light, 10%)
   .icon
     color: $control-warning-color
   .message
-    background-color: $control-warning-color-dark
-    color: lighten($control-warning-color-light, 10%)
+    background-color: $control-warning-color
 
 .rh-status-fail
   @extend .rh-status
-  //border: 1px solid $control-danger-color
   background-color: lighten($control-danger-color-light, 10%)
   .icon
     color: $control-danger-color
   .message
-    background-color: $control-danger-color-dark
-    color: lighten($control-danger-color-light, 10%)
+    background-color: $control-danger-color
