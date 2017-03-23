@@ -1,19 +1,14 @@
 .footer-region
   @extend %page-region-base
-  position: fixed
-  left: 0
-  right: 0
-  bottom: 0
-  height: 4rem
-  background: $grey-12
+  +background-black
   padding: $base-line-height-double 0
   h1, h2, h3, h4, h5, h6, p, a, li, td
     color: #fff
 
 .footer-disclaimer
   p
-    color: #fff
-    text-align: right
+    @extend .small
+    color: #646464
 
 .featured-container
   display: table

@@ -1,41 +1,42 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AppStore from './store/AppStore';
 import HeaderSubPage from './rh-components/rh-HeaderSubPage';
+import Footer from './rh-components/rh-Footer';
 import PleaseWaitModal from './rh-components/rh-PleaseWaitModal';
 import ComponentsTesting from './pages/ComponentsTesting';
 import TemplatePage from './pages/TemplatePage';
-import LoginPanel from './rh-components/rh-LoginPanel'
-import {validateInputStr} from './utils/AppUtils';
+import LoginPanel from './rh-components/rh-LoginPanel';
+import { validateInputStr } from './utils/AppUtils';
 
 // Just a test route
 const Hello = () => <h1>Hello!</h1>;
 
 class App extends React.Component {
 
-  constructor() {
+  constructor () {
     super();
-    this.state = {ready: true}
+    this.state = {ready: true};
   }
 
-  componentDidMount() {
+  componentDidMount () {
   }
 
   // For LoginPanel, validate user input
-  validateLoginInput(str) {
+  validateLoginInput (str) {
     return validateInputStr(str);
   }
 
   // For LoginPanel, handle loading and validating the user ID
-  handleLogin(userId, onSuccessFn, onErrorFn) {
+  handleLogin (userId, onSuccessFn, onErrorFn) {
     console.log('Login for ', userId);
     onSuccessFn();
     // onErrorFn();
   }
 
-  render() {
+  render () {
     let content = <PleaseWaitModal
       message="Loading something ..."/>;
 
@@ -53,16 +54,19 @@ class App extends React.Component {
 
       content = (
         <Router>
-          <div>
-            <HeaderSubPage title={config.setup.title}
-                           secondaryNav={config.setup.secondaryNav}
-                           username='Joe User'/>
-            <Switch>
-              <Route exact path="/" component={ComponentsTesting}/>
-              <Route path="/template" component={TemplatePage}/>
-              <Route path="/hello" component={Hello}/>
-              <Route render={() => <h1>Nothing here</h1>}/>
-            </Switch>
+          <div className="application-container">
+            <div className="application-content">
+              <HeaderSubPage title={config.setup.title}
+                             secondaryNav={config.setup.secondaryNav}
+                             username='Joe User'/>
+              <Switch>
+                <Route exact path="/" component={ComponentsTesting}/>
+                <Route path="/template" component={TemplatePage}/>
+                <Route path="/hello" component={Hello}/>
+                <Route render={() => <h1>Nothing here</h1>}/>
+              </Switch>
+            </div>
+            <Footer />
           </div>
         </Router>
       );
