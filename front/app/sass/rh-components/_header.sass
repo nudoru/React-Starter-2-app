@@ -1,24 +1,15 @@
-.header-region-home
-  @extend %page-region-base
-  background: $blue-dark
-  height: auto
-
-.header-region
-  @extend %page-region-base
-  background: url('../images/lms_banner_only_blue.png') $blue-dark
-  height: $header-height-homepage
-
-.header-region-subpage
+%header-common
   @extend %page-region-base
   background: url('../images/lms_banner_only_blue.png') $blue-dark
   background-size: cover
+
+.header-region
+  @extend %header-common
+  height: $header-height-homepage
+
+.header-region-subpage
+  @extend %header-common
   height: $header-height-subpage
-  .header-title
-    height: 8rem
-    position: relative
-    overflow: hidden
-    h1
-      line-height: 8rem
 
 .header-title
   height: 8rem
@@ -32,7 +23,7 @@
     margin: 0
     color: #fff
     font-size: 2.6rem
-    line-height: 11rem
+    line-height: 8rem
     text-transform: uppercase
   .header-title-logo
     position: absolute

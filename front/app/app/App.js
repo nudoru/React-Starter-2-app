@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AppStore from './store/AppStore';
 import HeaderSubPage from './rh-components/rh-HeaderSubPage';
+import Header from './rh-components/rh-Header';
 import Footer from './rh-components/rh-Footer';
 import PleaseWaitModal from './rh-components/rh-PleaseWaitModal';
 import ComponentsTesting from './pages/ComponentsTesting';
@@ -55,10 +56,15 @@ class App extends React.Component {
       content = (
         <Router>
           <div className="application-container">
+            <Header title={config.setup.title}
+                    secondaryNav={config.setup.secondaryNav}
+                    username='Joe User'
+                    nav={[
+                      {label: 'Home', route: '/'},
+                      {label: 'Template', route: '/template'},
+                      {label: 'Hello', route: '/hello'}
+                    ]}/>
             <div className="application-content">
-              <HeaderSubPage title={config.setup.title}
-                             secondaryNav={config.setup.secondaryNav}
-                             username='Joe User'/>
               <Switch>
                 <Route exact path="/" component={ComponentsTesting}/>
                 <Route path="/template" component={TemplatePage}/>

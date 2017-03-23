@@ -1,52 +1,35 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-/*
- Depends on LocationSubscriber in React-router 4 to get the current path and update on changes
- */
-
-class NavigationBar extends React.Component {
-
-  constructor() {
-    super();
-    this.state = {currentPath: ''};
-  }
-
-  render() {
-    let searchBox = this.props.search ?
-      (<div className="navigationbar-search"><input type="text"
-                                                    placeholder={this.props.searchPlaceholder}/>
-        <button><i className="fa fa-search"/></button>
-      </div>) : <div/>;
-
-    return (
-      <div className="navigationbar">
-        {(location) => (
-          <ul>
-            {
-              this.props.nav.map((item, i) => {
-                return <li key={i}><NavLink exact
-                  activeClassName='active'
-                  to={item.route}>{item.label}</NavLink></li>
-              })
-            }
-          </ul>
-        )}
-        {searchBox}
-      </div>
-    );
-  }
-}
-
-NavigationBar.defaultProps = {
-  search           : false,
-  searchPlaceholder: 'Search'
+// TODO fix placeholder isn't showing up
+const SearchBar = ({placeholder}) => {
+  return <div className="navigationbar-search">
+    <input type="text" placeholder={placeholder}/>
+    <button><i className="fa fa-search"/></button>
+  </div>;
 };
 
-NavigationBar.propTypes = {
-  nav              : React.PropTypes.array,
-  search           : React.PropTypes.bool,
-  searchPlaceholder: React.PropTypes.string
+const NavItem = ({item, key}) => {
+  return <li key={key}>
+    <NavLink exact
+             activeClassName='active'
+             to={item.route}>{item.label}</NavLink>
+  </li>;
+};
+
+const NavigationBar = ({search, searchPlaceHolder, nav}) => {
+  let searchBox = search ? <SearchBar placeholder={searchPlaceHolder}/> : null;
+
+  return (
+    <div className="navigationbar">
+      <ul>
+        {
+          nav.map((item, i) => <NavItem item={item} key={i}/>)
+        }
+      </ul>
+      {searchBox}
+    </div>
+  );
 };
 
 export default NavigationBar;

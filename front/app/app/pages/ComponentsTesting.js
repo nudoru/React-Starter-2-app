@@ -329,7 +329,7 @@ class ComponentsTesting extends React.Component {
           <Well>
             <h1>Misc</h1>
             <CardHGroup>
-              <EventCard startDate="March 17, 2017" name="RHEL Fundamentals"
+              <EventCard startDate="December 17, 2016" name="RHEL Fundamentals"
                          city="Raleigh" country="US" room="RHT-01-02-03"/>
               <EventCard startDate="March 17, 2017" name="RHEL Fundamentals"
                          city="Raleigh" country="US" room="RHT-01-02-03"/>
