@@ -37,7 +37,7 @@ import {
 } from '../rh-components/rh-BlockLinks';
 import {Grid, Row, Col} from '../rh-components/rh-Grid';
 import {Button, SecondaryButton, NeutralButton, ButtonHGroup, ButtonHRow, ButtonVGroup} from '../rh-components/rh-Button';
-import {FormStacked, FormInline, Group, InlineGroup, InputsStacked, InputsInline, InputInlineIcon, InputInlinePhase} from '../rh-components/rh-Form';
+import {VForm, HForm, FormGroup, FormHGroupRow, FormVGroup, FormHGroup, HInputDecorator, InputInlinePhase} from '../rh-components/rh-Form';
 
 const TextStyles = () => {
   return (
@@ -591,27 +591,27 @@ class ComponentsTesting extends React.Component {
         <PageModule style="bars" headline="Forms">
           <Well>
             <Well>
-              <FormStacked>
+              <VForm>
                 <legend>Stacked Form</legend>
                 <fieldset>
-                  <Group>
+                  <FormGroup>
                     <label htmlFor="input1">What's your name?</label>
                     <input type="text" placeholder="Type here" id="input1"/>
                     <span className="rh-form-help">Real names only</span>
-                  </Group>
-                  <Group>
+                  </FormGroup>
+                  <FormGroup>
                     <label htmlFor="textarea1">What's your name?</label>
                     <textarea id="textarea1">Type here</textarea>
-                  </Group>
-                  <Group>
+                  </FormGroup>
+                  <FormGroup>
                     <label htmlFor="select1">How much?</label>
                     <select id="select1">
                       <option>None</option>
                       <option>Some</option>
                       <option>All</option>
                     </select>
-                  </Group>
-                  <Group>
+                  </FormGroup>
+                  <FormGroup>
                     <label>What's the best option?</label>
                     <label><input type="checkbox" id="cbox1"
                                   value="first_checkbox"/> Option 1</label>
@@ -619,8 +619,8 @@ class ComponentsTesting extends React.Component {
                                   value="first_checkbox"/> Option 2</label>
                     <label><input type="checkbox" id="cbox3"
                                   value="first_checkbox"/> Option 3</label>
-                  </Group>
-                  <Group>
+                  </FormGroup>
+                  <FormGroup>
                     <label>What's the best option?</label>
                     <label><input type="radio" name="options"
                                   value="first_checkbox"/> Option 1</label>
@@ -628,25 +628,25 @@ class ComponentsTesting extends React.Component {
                                   value="first_checkbox"/> Option 2</label>
                     <label><input type="radio" name="options"
                                   value="first_checkbox"/> Option 3</label>
-                  </Group>
-                  <Group>
+                  </FormGroup>
+                  <FormGroup>
                     <label htmlFor="input1">What's your name?</label>
-                    <InputsStacked>
+                    <FormVGroup>
                       <input type="text" placeholder="First" id="input1"/>
                       <input type="text" placeholder="Middle" id="input1"/>
                       <input type="text" placeholder="Last" id="input1"/>
                       <textarea rows="3">Text area!</textarea>
-                    </InputsStacked>
-                  </Group>
-                  <Group>
+                    </FormVGroup>
+                  </FormGroup>
+                  <FormGroup>
                     <label htmlFor="input1">Disabled</label>
                     <input disabled="true" type="text" placeholder="Type here"
                            id="input1"/>
                     <label htmlFor="input1">Error</label>
                     <input className="isError" type="text"
                            placeholder="Type here" id="input1"/>
-                  </Group>
-                  <Group>
+                  </FormGroup>
+                  <FormGroup>
                     <input type="text" className="input-1"
                            placeholder="Width 1"/>
                     <input type="text" className="input-3-4"
@@ -659,63 +659,63 @@ class ComponentsTesting extends React.Component {
                            placeholder="Width 1/3"/>
                     <input type="text" className="input-1-4"
                            placeholder="Width 1/4"/>
-                  </Group>
+                  </FormGroup>
                 </fieldset>
-              </FormStacked>
+              </VForm>
             </Well>
             <Well>
-              <FormInline>
+              <HForm>
                 <legend>Inline, aligned Form</legend>
                 <fieldset>
-                  <InlineGroup label="What's your name?">
+                  <FormHGroupRow label="What's your name?">
                       <input type="text" placeholder="Type here" id="input1"/>
                       <span className="rh-form-help">Real names only</span>
-                  </InlineGroup>
-                  <InlineGroup label="What's your name?">
+                  </FormHGroupRow>
+                  <FormHGroupRow label="What's your name?">
                       <textarea id="textarea1">Type here</textarea>
-                  </InlineGroup>
-                  <InlineGroup label="How much?">
+                  </FormHGroupRow>
+                  <FormHGroupRow label="How much?">
                       <select id="select1">
                         <option>None</option>
                         <option>Some</option>
                         <option>All</option>
                       </select>
-                  </InlineGroup>
-                  <InlineGroup label="What's the best option?">
+                  </FormHGroupRow>
+                  <FormHGroupRow label="What's the best option?">
                       <label><input type="checkbox" id="cbox1"
                                     value="first_checkbox"/> Option 1</label>
                       <label><input type="checkbox" id="cbox2"
                                     value="first_checkbox"/> Option 2</label>
                       <label><input type="checkbox" id="cbox3"
                                     value="first_checkbox"/> Option 3</label>
-                  </InlineGroup>
-                  <InlineGroup label="What's the best option?">
+                  </FormHGroupRow>
+                  <FormHGroupRow label="What's the best option?">
                       <label><input type="radio" name="options"
                                     value="first_checkbox"/> Option 1</label>
                       <label><input type="radio" name="options"
                                     value="first_checkbox"/> Option 2</label>
                       <label><input type="radio" name="options"
                                     value="first_checkbox"/> Option 3</label>
-                  </InlineGroup>
-                  <InlineGroup label="What's your name?">
-                      <InputsInline>
+                  </FormHGroupRow>
+                  <FormHGroupRow label="What's your name?">
+                      <FormHGroup>
                         <input type="text" placeholder="First" id="input1"/>
                         <input type="text" placeholder="Middle" id="input1"/>
                         <input type="text" placeholder="Last" id="input1"/>
-                      </InputsInline>
-                  </InlineGroup>
-                  <InlineGroup label="What's your email?">
-                      <InputsInline className="rh-form-input-group-inline">
-                        <InputInlineIcon icon="user" />
+                      </FormHGroup>
+                  </FormHGroupRow>
+                  <FormHGroupRow label="What's your email?">
+                      <FormHGroup className="rh-form-input-group-inline">
+                        <HInputDecorator icon="user"/>
                         <input type="text" placeholder="userid" id="input1"/>
-                        <InputInlinePhase phrase="@"/>
+                        <HInputDecorator>@</HInputDecorator>
                         <input type="text" placeholder="" id="input1"
                                value="redhat.com"/>
                         <Button>Submit</Button>
-                      </InputsInline>
-                  </InlineGroup>
+                      </FormHGroup>
+                  </FormHGroupRow>
                 </fieldset>
-              </FormInline>
+              </HForm>
             </Well>
           </Well>
         </PageModule>
