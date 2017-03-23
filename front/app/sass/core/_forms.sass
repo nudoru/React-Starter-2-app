@@ -18,8 +18,6 @@
   vertical-align: middle
   box-shadow: inset 1px 2px 1px rgba(0, 0, 0, .1), $box-shadow-light
   height: $form-el-height
-  //line-height: $base-line-height-double
-  line-height: $form-el-height
   display: inline-block
   &:focus
     border: $form-el-border-focus
@@ -168,7 +166,7 @@ input.isError
   .rh-form-group
     display: flex
     width: 100%
-    height: $form-el-height + $base-line-height
+    min-height: $form-el-height + $base-line-height
     align-items: center
     margin-bottom: $base-line-height-half
     label

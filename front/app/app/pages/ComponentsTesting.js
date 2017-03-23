@@ -211,16 +211,17 @@ class ComponentsTesting extends React.Component {
      <p>Paragraph {Lorem.paragraph(5, 10)}</p>
      <p>Paragraph {Lorem.paragraph(5, 10)}</p>
      </ModalPanel>
+
+     <div className="page-container">
+     <Breadcrumbs crumbs={[{label: 'Home', route: '/'}, {
+     label: 'Subpage',
+     route: '/one'
+     }, {label: 'This page'}]}/>
+     </div>
      */
 
     return (
       <div>
-        <div className="page-container">
-          <Breadcrumbs crumbs={[{label: 'Home', route: '/'}, {
-            label: 'Subpage',
-            route: '/one'
-          }, {label: 'This page'}]}/>
-        </div>
         <PageModule style="full-homepage">
           <h1>Hello</h1>
           <h3>Let's take a look at some components! Scroll down ...</h3>
