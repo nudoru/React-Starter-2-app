@@ -2,8 +2,10 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["last 4 versions", "Firefox ESR"]
-      }
+        "browsers": ["last 3 versions", "Firefox ESR", "not ie <= 10"]
+      },
+      "useBuiltIns": true,
+      "debug": true
     }], "react"
   ],
   "plugins": ["transform-class-properties"]

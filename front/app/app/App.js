@@ -9,6 +9,7 @@ import Footer from './rh-components/rh-Footer';
 import PleaseWaitModal from './rh-components/rh-PleaseWaitModal';
 import ComponentsTesting from './pages/ComponentsTesting';
 import TemplatePage from './pages/TemplatePage';
+import PortalHome from './pages/PortalHome';
 import LoginPanel from './rh-components/rh-LoginPanel';
 import { validateInputStr } from './utils/AppUtils';
 
@@ -61,12 +62,14 @@ class App extends React.Component {
                     username='Joe User'
                     nav={[
                       {label: 'Home', route: '/'},
+                      {label: 'Components', route: '/components'},
                       {label: 'Template', route: '/template'},
                       {label: 'Hello', route: '/hello'}
                     ]}/>
             <div className="application-content">
               <Switch>
-                <Route exact path="/" component={ComponentsTesting}/>
+                <Route exact path="/" component={PortalHome}/>
+                <Route path="/components" component={ComponentsTesting}/>
                 <Route path="/template" component={TemplatePage}/>
                 <Route path="/hello" component={Hello}/>
                 <Route render={() => <h1>Nothing here</h1>}/>

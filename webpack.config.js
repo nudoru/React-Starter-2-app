@@ -42,8 +42,8 @@ module.exports = env => {
       publicPath: isProd ? '' : '/'
     },
 
-    // devtool: env.prod ? 'source-map' : 'eval',
-    devtool: 'hidden-source-map',
+    devtool: env.prod ? 'cheap-module-source-map' : 'eval',
+    // devtool: 'hidden-source-map',
     bail   : env.prod,
 
     module: {
