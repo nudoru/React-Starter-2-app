@@ -27,7 +27,7 @@ const UserColumn = () => {
   return (<CardVGroup>
     <Card style="bars">
       <Row>
-        <Col width="4"><IconCircleText label="JL"/></Col>
+        <Col width="4"><IconCircleText label="JL" className="rh-icon-circle-text-big"/></Col>
         <Col>
           <h4 className="margin-none">Joe Learner</h4>
           <p>Senior Consultant</p>
@@ -52,19 +52,19 @@ const UserColumn = () => {
         </thead>
         <tr>
           <td><StatusIconTiny status="1"/></td>
-          <td>{Lorem.text(3,6)}</td>
+          <td>{Lorem.sentence(3,5)}</td>
         </tr>
         <tr>
           <td><StatusIconTiny status="1"/></td>
-          <td>{Lorem.text(3,6)}</td>
+          <td>{Lorem.sentence(3,5)}</td>
         </tr>
         <tr>
           <td><StatusIconTiny status="0"/></td>
-          <td>{Lorem.text(3,6)}</td>
+          <td>{Lorem.sentence(3,5)}</td>
         </tr>
         <tr>
           <td><StatusIconTiny status="0"/></td>
-          <td>{Lorem.text(3,6)}</td>
+          <td>{Lorem.sentence(3,5)}</td>
         </tr>
       </table>
     </Card>
@@ -105,54 +105,107 @@ class TemplatePage extends React.Component {
                 <li>By date (for instructor led offerings)</li>
                 <li>Peer-Trusted Learning (Open Learning Community)</li>
               </ul>
+              <h3>Learning News</h3>
+              <table className="rh-custom-table margin-bottom-double">
+                <thead>
+                <tr>
+                  <td></td>
+                  <td>Title</td>
+                  <td>Date</td>
+                </tr>
+                </thead>
+                <tr>
+                  <td><IconCircle icon="newspaper-o" size="s"/></td>
+                  <td><a href="#">{Lorem.sentence(5,20)}</a>
+                    <TagHGroup>
+                      <Tag><i className="fa fa-hashtag"/>RHEL</Tag>
+                    </TagHGroup></td>
+                  <td>March 24, 2017</td>
+                </tr>
+                <tr>
+                  <td><IconCircle icon="newspaper-o" size="s"/></td>
+                  <td><a href="#">{Lorem.sentence(5,20)}</a>
+                    <TagHGroup>
+                      <Tag><i className="fa fa-hashtag"/>Atomic</Tag>
+                      <Tag><i className="fa fa-hashtag"/>OpenShift</Tag>
+                    </TagHGroup></td>
+                  <td>March 24, 2017</td>
+                </tr>
+                <tr>
+                  <td><IconCircle icon="newspaper-o" size="s"/></td>
+                  <td><a href="#">{Lorem.sentence(5,20)}</a>
+                    <TagHGroup>
+                      <Tag><i className="fa fa-hashtag"/>Managers</Tag>
+                      <Tag><i className="fa fa-hashtag"/>Personal Dev</Tag>
+                    </TagHGroup></td>
+                  <td>March 24, 2017</td>
+                </tr>
+                <tr>
+                  <td><IconCircle icon="newspaper-o" size="s"/></td>
+                  <td><a href="#">{Lorem.sentence(5,20)}</a>
+                    <TagHGroup>
+                      <Tag><i className="fa fa-hashtag"/>Sales</Tag>
+                      <Tag><i className="fa fa-hashtag"/>Technical</Tag>
+                    </TagHGroup>
+                  </td>
+                  <td>March 24, 2017</td>
+                </tr>
+              </table>
               <h3>Explore Learning Channels</h3>
               <CardMasonry33Group>
                 <Card style="bars">
-                  <h4 className="margin-bottom"><i className="fa fa-cog padding-right"/>New Hire</h4>
+                  <h4 className="margin-bottom"><i className="fa fa-television padding-right"/>New Hire</h4>
                   <hr className="margin-none margin-bottom"/>
                   <p>{Lorem.paragraph(1,2)}</p>
                 </Card>
                 <Card style="bars">
-                  <h4 className="margin-bottom"><i className="fa fa-cog padding-right"/>Management</h4>
+                  <h4 className="margin-bottom"><i className="fa fa-television padding-right"/>Management</h4>
                   <hr className="margin-none margin-bottom"/>
                   <p>{Lorem.paragraph(1,2)}</p>
                 </Card>
                 <Card style="bars">
-                  <h4 className="margin-bottom"><i className="fa fa-cog padding-right"/>Information Technology</h4>
+                  <h4 className="margin-bottom"><i className="fa fa-television padding-right"/>Information Technology</h4>
                   <hr className="margin-none margin-bottom"/>
                   <p>{Lorem.paragraph(1,2)}</p>
                 </Card>
                 <Card style="bars">
-                  <h4 className="margin-bottom"><i className="fa fa-cog padding-right"/>Sales</h4>
+                  <h4 className="margin-bottom"><i className="fa fa-television padding-right"/>Sales</h4>
                   <hr className="margin-none margin-bottom"/>
                   <p>{Lorem.paragraph(1,2)}</p>
                 </Card>
                 <Card style="bars">
-                  <h4 className="margin-bottom"><i className="fa fa-cog padding-right"/>Marketing</h4>
+                  <h4 className="margin-bottom"><i className="fa fa-television padding-right"/>Marketing</h4>
                   <hr className="margin-none margin-bottom"/>
                   <p>{Lorem.paragraph(1,2)}</p>
                 </Card>
                 <Card style="bars">
-                  <h4 className="margin-bottom"><i className="fa fa-cog padding-right"/>Finance</h4>
+                  <h4 className="margin-bottom"><i className="fa fa-television padding-right"/>Finance</h4>
                   <hr className="margin-none margin-bottom"/>
                   <p>{Lorem.paragraph(1,2)}</p>
                 </Card>
                 <Card style="bars">
-                  <h4 className="margin-bottom"><i className="fa fa-cog padding-right"/>People</h4>
+                  <h4 className="margin-bottom"><i className="fa fa-television padding-right"/>People</h4>
                   <hr className="margin-none margin-bottom"/>
                   <p>{Lorem.paragraph(1,2)}</p>
                 </Card>
                 <Card style="bars">
-                  <h4 className="margin-bottom"><i className="fa fa-cog padding-right"/>Engineering</h4>
+                  <h4 className="margin-bottom"><i className="fa fa-television padding-right"/>Engineering</h4>
                   <hr className="margin-none margin-bottom"/>
                   <p>{Lorem.paragraph(1,2)}</p>
                 </Card>
                 <Card style="bars">
-                  <h4 className="margin-bottom"><i className="fa fa-cog padding-right"/>GWS</h4>
+                  <h4 className="margin-bottom"><i className="fa fa-television padding-right"/>GWS</h4>
                   <hr className="margin-none margin-bottom"/>
                   <p>{Lorem.paragraph(1,2)}</p>
                 </Card>
               </CardMasonry33Group>
+              <h3 className="margin-top-double">More Resources</h3>
+              <BlockLinkHGroup style="blue">
+                <BlockLink label="Global Training Calendar" byline="Search for instructor-led training" link="#"/>
+                <BlockLink label="Career Possibilities"
+                           byline="Tips, tools and advice"
+                           link="#"/>
+              </BlockLinkHGroup>
             </Col>
             <Col width="4">
               <UserColumn/>

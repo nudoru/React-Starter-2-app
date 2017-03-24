@@ -1,14 +1,18 @@
 import React from 'react';
 
-const IconCircleText = ({label, style, center}) => {
+const IconCircleText = ({label, style, center, className}) => {
   let cls = 'rh-icon-circle-text';
 
   if (style) {
     cls += '-' + this.props.style;
   }
 
-  if(center) {
-   cls += ' margin-center' ;
+  if (center) {
+    cls += ' margin-center';
+  }
+
+  if (className) {
+    cls += ' ' + className;
   }
 
   return (<div className={cls}>
