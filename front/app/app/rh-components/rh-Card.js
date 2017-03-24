@@ -31,7 +31,7 @@ export const Card = ({
       <IconCircle center icon={icon}/>
     </CardHeader>) : null,
     headerArea = title ? (<CardHeader><h1>{title}</h1></CardHeader>) : null,
-      buttonArea = onClick ? (<CardFooter><Button isText={true} onClick={onClick}>{ctaLabel}</Button></CardFooter>) : null;
+      buttonArea = onClick ? (<CardFooter><Button text block onClick={onClick}>{ctaLabel}</Button></CardFooter>) : null;
 
   style = 'rh-card rh-card-' + style;
 

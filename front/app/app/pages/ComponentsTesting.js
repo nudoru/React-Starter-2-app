@@ -374,83 +374,83 @@ class ComponentsTesting extends React.Component {
               <SecondaryButton onClick={this._onButtonClick.bind(this)}>Secondary</SecondaryButton>
               <NeutralButton
                 onClick={this._onButtonClick.bind(this)}>Neutral</NeutralButton>
-              <Button isDisabled={true}
+              <Button disabled
                       onClick={this._onButtonClick.bind(this)}>Disabled</Button>
-              <Button isHollow={true}>Button</Button>
-              <SecondaryButton isHollow={true}>Button</SecondaryButton>
-              <NeutralButton isHollow={true}>Button</NeutralButton>
-              <Button isText={true}>Button</Button>
-              <SecondaryButton isText={true}>Button</SecondaryButton>
-              <NeutralButton isText={true}>Button</NeutralButton>
+              <Button hollow>Button</Button>
+              <SecondaryButton hollow>Button</SecondaryButton>
+              <NeutralButton hollow>Button</NeutralButton>
+              <Button text>Button</Button>
+              <SecondaryButton text>Button</SecondaryButton>
+              <NeutralButton text>Button</NeutralButton>
             </ButtonHRow>
             <ButtonHRow>
-              <Button isSmall={true}>Button</Button>
-              <SecondaryButton isSmall={true}>Button</SecondaryButton>
-              <NeutralButton isSmall={true}>Button</NeutralButton>
-              <Button isSmall={true} isHollow={true}>Button</Button>
-              <SecondaryButton isSmall={true}
-                               isHollow={true}>Button</SecondaryButton>
-              <NeutralButton isSmall={true}
-                             isHollow={true}>Button</NeutralButton>
-              <Button isSmall={true} isText={true}>Button</Button>
-              <SecondaryButton isSmall={true}
-                               isText={true}>Button</SecondaryButton>
-              <NeutralButton isSmall={true} isText={true}>Button</NeutralButton>
+              <Button small>Button</Button>
+              <SecondaryButton small>Button</SecondaryButton>
+              <NeutralButton small>Button</NeutralButton>
+              <Button small hollow>Button</Button>
+              <SecondaryButton small
+                               hollow>Button</SecondaryButton>
+              <NeutralButton small
+                             hollow>Button</NeutralButton>
+              <Button small text>Button</Button>
+              <SecondaryButton small
+                               text>Button</SecondaryButton>
+              <NeutralButton small text>Button</NeutralButton>
             </ButtonHRow>
             <ButtonHRow>
-              <Button isIcon={true}><i className="fa fa-cog"/></Button>
-              <SecondaryButton isIcon={true}><i
+              <Button icon><i className="fa fa-cog"/></Button>
+              <SecondaryButton icon><i
                 className="fa fa-cog"/></SecondaryButton>
-              <NeutralButton isIcon={true}><i
+              <NeutralButton icon><i
                 className="fa fa-cog"/></NeutralButton>
-              <Button isIcon={true} isHollow={true}><i
+              <Button icon hollow><i
                 className="fa fa-cog"/></Button>
-              <SecondaryButton isIcon={true} isHollow={true}><i
+              <SecondaryButton icon hollow><i
                 className="fa fa-cog"/></SecondaryButton>
-              <NeutralButton isIcon={true} isHollow={true}><i
+              <NeutralButton icon hollow><i
                 className="fa fa-cog"/></NeutralButton>
-              <Button isText={true} isIcon={true}><i
+              <Button text icon><i
                 className="fa fa-cog"/></Button>
-              <SecondaryButton isText={true} isIcon={true}><i
+              <SecondaryButton text icon><i
                 className="fa fa-cog"/></SecondaryButton>
-              <NeutralButton isText={true} isIcon={true}><i
+              <NeutralButton text icon><i
                 className="fa fa-cog"/></NeutralButton>
             </ButtonHRow>
             <ButtonHRow>
-              <Button isSmall={true} isIcon={true}><i
+              <Button small icon><i
                 className="fa fa-cog"/></Button>
-              <SecondaryButton isSmall={true} isIcon={true}><i
+              <SecondaryButton small icon><i
                 className="fa fa-cog"/></SecondaryButton>
-              <NeutralButton isSmall={true} isIcon={true}><i
+              <NeutralButton small icon><i
                 className="fa fa-cog"/></NeutralButton>
-              <Button isSmall={true} isIcon={true} isHollow={true}><i
+              <Button small icon hollow><i
                 className="fa fa-cog"/></Button>
-              <SecondaryButton isSmall={true} isIcon={true} isHollow={true}><i
+              <SecondaryButton small icon hollow><i
                 className="fa fa-cog"/></SecondaryButton>
-              <NeutralButton isSmall={true} isIcon={true} isHollow={true}><i
+              <NeutralButton small icon hollow><i
                 className="fa fa-cog"/></NeutralButton>
-              <Button isSmall={true} isText={true} isIcon={true}><i
+              <Button small text icon><i
                 className="fa fa-cog"/></Button>
-              <SecondaryButton isSmall={true} isText={true} isIcon={true}><i
+              <SecondaryButton small text icon><i
                 className="fa fa-cog"/></SecondaryButton>
-              <NeutralButton isSmall={true} isText={true} isIcon={true}><i
+              <NeutralButton small text icon><i
                 className="fa fa-cog"/></NeutralButton>
             </ButtonHRow>
             <Row>
-              <Col width="4">
+              <Col>
                 <Row>
-                  <Col width="6">
+                  <Col>
                     <ButtonVGroup>
                       <Button>Button</Button>
                       <SecondaryButton>Button</SecondaryButton>
                       <NeutralButton>Button</NeutralButton>
                     </ButtonVGroup>
                   </Col>
-                  <Col width="6">
+                  <Col>
                     <ButtonVGroup>
-                      <Button isIcon={true}><i className="fa fa-cog"/></Button>
-                      <SecondaryButton isIcon={true}><i className="fa fa-cog"/></SecondaryButton>
-                      <NeutralButton isIcon={true}><i
+                      <Button icon><i className="fa fa-cog"/></Button>
+                      <SecondaryButton icon><i className="fa fa-cog"/></SecondaryButton>
+                      <NeutralButton icon><i
                         className="fa fa-cog"/></NeutralButton>
                     </ButtonVGroup>
                   </Col>
@@ -464,20 +464,20 @@ class ComponentsTesting extends React.Component {
                   <NeutralButton>Button</NeutralButton>
                 </ButtonHGroup>
                 <ButtonHGroup>
-                  <Button isSmall={true}>Button</Button>
-                  <SecondaryButton isSmall={true}>Button</SecondaryButton>
-                  <NeutralButton isSmall={true}>Button</NeutralButton>
+                  <Button small>Button</Button>
+                  <SecondaryButton small>Button</SecondaryButton>
+                  <NeutralButton small>Button</NeutralButton>
                 </ButtonHGroup>
                 <ButtonHGroup>
-                  <Button isIcon={true}><i className="fa fa-cog"/></Button>
-                  <SecondaryButton isIcon={true}><i
+                  <Button icon><i className="fa fa-cog"/></Button>
+                  <SecondaryButton icon><i
                     className="fa fa-cog"/></SecondaryButton>
-                  <NeutralButton isIcon={true}><i
+                  <NeutralButton icon><i
                     className="fa fa-cog"/></NeutralButton>
                 </ButtonHGroup>
               </Col>
             </Row>
-            <Button isBlock={true} onClick={this._onButtonClick.bind(this)}>Block
+            <Button block onClick={this._onButtonClick.bind(this)}>Block
               Button</Button>
           </Well>
           <Well>

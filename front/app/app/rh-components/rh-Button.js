@@ -13,29 +13,29 @@ const NOOP = () => {
 /*
  style = secondary, neutral, hollow
  */
-const buttonMaker = ({children, style, isSmall, isText, isHollow, isIcon, isBlock, isDisabled, onClick = NOOP}) => {
+const buttonMaker = ({children, style, small, text, hollow, icon, block, disabled, onClick = NOOP}) => {
   let cls = 'rh-button' + (style ? ' rh-button-' + style : '');
-  if (isText) {
+  if (text) {
     if(!style) {
       cls += ' rh-button';
     }
     cls += '-text';
-  } else if(isHollow) {
+  } else if(hollow) {
     if(!style) {
       cls += ' rh-button';
     }
     cls += '-hollow';
   }
-  if (isSmall) {
+  if (small) {
     cls += ' rh-button-small';
   }
-  if(isIcon) {
+  if(icon) {
     cls += ' rh-button-icon';
   }
-  if(isBlock) {
+  if(block) {
     cls += ' rh-button-block';
   }
-  if(isDisabled) {
+  if(disabled) {
     cls += ' disabled';
     if(onClick) {
       onClick = NOOP;
@@ -48,38 +48,38 @@ const buttonMaker = ({children, style, isSmall, isText, isHollow, isIcon, isBloc
 
 // TODO - needs to be spread operator but ESLint give me errors
 
-export const Button = ({children, style, isSmall, isText, isHollow, isIcon, isBlock, isDisabled, onClick}) => buttonMaker({
+export const Button = ({children, style, small, text, hollow, icon, block, disabled, onClick}) => buttonMaker({
   style: '',
   children,
-  isSmall,
-  isText,
-  isHollow,
-  isIcon,
-  isBlock,
-  isDisabled,
+  small,
+  text,
+  hollow,
+  icon,
+  block,
+  disabled,
   onClick
 });
 
-export const SecondaryButton = ({children, style, isSmall, isText, isHollow, isIcon, isBlock, isDisabled, onClick}) => buttonMaker({
+export const SecondaryButton = ({children, style, small, text, hollow, icon, block, disabled, onClick}) => buttonMaker({
   style: 'secondary',
   children,
-  isSmall,
-  isText,
-  isHollow,
-  isIcon,
-  isBlock,
-  isDisabled,
+  small,
+  text,
+  hollow,
+  icon,
+  block,
+  disabled,
   onClick
 });
 
-export const NeutralButton = ({children, style, isSmall, isText, isHollow, isIcon, isBlock, isDisabled, onClick}) => buttonMaker({
+export const NeutralButton = ({children, style, small, text, hollow, icon, block, disabled, onClick}) => buttonMaker({
   style: 'neutral',
   children,
-  isSmall,
-  isText,
-  isHollow,
-  isIcon,
-  isBlock,
-  isDisabled,
+  small,
+  text,
+  hollow,
+  icon,
+  block,
+  disabled,
   onClick
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 import IconCircle from '../rh-components/rh-IconCircle';
+import {Button} from '../rh-components/rh-Button';
 
 const Popupsimple = ({
   title,
@@ -14,8 +15,7 @@ const Popupsimple = ({
   let content,
       boxClass = ['rh-popup-simple'],
       button   = buttonLabel ? (
-          <button className="rh-button" onClick={buttonOnClick}>
-            {buttonLabel}</button>) : null;
+          <Button text block onClick={buttonOnClick}>{buttonLabel}</Button>) : null;
 
   if (error) {
     boxClass.push('error');
