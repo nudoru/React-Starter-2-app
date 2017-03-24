@@ -15,6 +15,11 @@ export const CardVGroup = ({children}) => {
   return (<div className='rh-card-container-vertical'>{children}</div>);
 };
 
+
+export const CardMasonry33Group = ({children}) => {
+  return (<div className='rh-card-container-masonry-33'>{children}</div>);
+};
+
 const CardHeader = ({children}) => <div className="rh-card-header">{children}</div>;
 const CardFooter = ({children}) => <div className="rh-card-footer">{children}</div>;
 
