@@ -3,6 +3,12 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ModalMessage from './rh-ModalMessage'
 import Spinner from './rh-Spinner';
 import Status from './rh-Status';
+import {
+  HForm,
+  FormHGroupRow,
+  FormHGroup,
+  HInputDecorator
+} from '../rh-components/rh-Form';
 
 class LoginPanel extends React.Component {
 
@@ -79,18 +85,18 @@ class LoginPanel extends React.Component {
       content = (<div className="rh-loginpanel">
         <form className="rh-form">
           <h1>{this.props.title}</h1><p>{this.props.prompt}</p>
-          <form className="rh-form-inline">
-            <fieldset>
-              <div className="rh-form-group">
-                <div className="rh-form-input-group-flex">
-                  <input ref="emailInput" type="text" maxLength="30"
-                         defaultValue={this.state.usernameInput}
-                         onInput={this.onEmailInputChange.bind(this)}/>
-                  <div className="label">{this.props.inputLabel}</div>
-                </div>
-              </div>
-            </fieldset>
-          </form>
+          <HForm>
+            <FormHGroupRow>
+              <FormHGroup>
+                <HInputDecorator icon="user"/>
+                <input ref="emailInput" type="text" maxLength="30"
+                       defaultValue={this.state.usernameInput}
+                       onInput={this.onEmailInputChange.bind(this)}/>
+                <HInputDecorator>@redhat.com</HInputDecorator>
+              </FormHGroup>
+            </FormHGroupRow>
+          </HForm>
+
           {err}
           <button
             className={buttonStyles.join(' ')}

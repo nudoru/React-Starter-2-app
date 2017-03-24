@@ -51,8 +51,7 @@ import {
   FormHGroupRow,
   FormVGroup,
   FormHGroup,
-  HInputDecorator,
-  InputInlinePhase
+  HInputDecorator
 } from '../rh-components/rh-Form';
 
 const TextStyles = () => {
@@ -753,7 +752,7 @@ class ComponentsTesting extends React.Component {
                     </FormHGroup>
                   </FormHGroupRow>
                   <FormHGroupRow label="What's your email?">
-                    <FormHGroup className="rh-form-input-group-inline">
+                    <FormHGroup>
                       <HInputDecorator icon="user"/>
                       <input type="text" placeholder="userid" id="input1"/>
                       <HInputDecorator>@</HInputDecorator>

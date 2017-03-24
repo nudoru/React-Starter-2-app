@@ -10,9 +10,11 @@ const ModalMessage = ({modal, message, children}) => {
   return (
     <div className="rh-popup-container">
       <ModalCover {...modal}/>
-      <PopupSimple {...message}>
-        {children}
-      </PopupSimple>
+      <div className="full-window-cover-center">
+        <PopupSimple {...message}>
+          {children}
+        </PopupSimple>
+      </div>
     </div>
   );
 };

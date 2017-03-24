@@ -39,20 +39,19 @@ class App extends React.Component {
   }
 
   render () {
-    let content = <PleaseWaitModal
-      message="Loading something ..."/>;
+    let content = <PleaseWaitModal><h1>Reticulating splines ...</h1></PleaseWaitModal>;
 
     if (this.state.ready) {
       let {config} = this.props;
 
-      // content = <LoginPanel
-      //   title="Please enter your Kerberos ID to continue."
-      //   prompt="You must be connected to the corporate network or VPN to access."
-      //   inputLabel="@redhat.com"
-      //   buttonLabel="Continue"
-      //   validateFn={this.validateLoginInput.bind(this)}
-      //   processLoginFn={this.handleLogin.bind(this)}
-      // />;
+       //content = <LoginPanel
+       //  title="Please enter your Kerberos ID to continue."
+       //  prompt="You must be connected to the corporate network or VPN to access."
+       //  inputLabel="@redhat.com"
+       //  buttonLabel="Continue"
+       //  validateFn={this.validateLoginInput.bind(this)}
+       //  processLoginFn={this.handleLogin.bind(this)}
+       ///>;
 
       content = (
         <Router>
