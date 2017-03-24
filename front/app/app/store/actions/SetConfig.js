@@ -1,9 +1,9 @@
 import Actions from './Actions';
 
-const SetConfig = (data)  => {
+const SetConfig = (config)  => {
   return {
     type: Actions.SET_CONFIG,
-    config: data
+    config
   };
 };
 

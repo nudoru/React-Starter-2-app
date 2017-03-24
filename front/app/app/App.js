@@ -21,10 +21,16 @@ class App extends React.Component {
   constructor () {
     super();
     this.state = {ready: true};
+    this.storeListener;
   }
 
   componentDidMount () {
+    //this.storeListener = AppStore.subscribe(this.listenToStore);
   }
+
+  //listenToStore() {
+  //  console.log('Store had an action');
+  //}
 
   // For LoginPanel, validate user input
   validateLoginInput (str) {
