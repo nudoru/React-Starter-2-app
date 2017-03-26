@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card} from './rh-Card';
 import {Row, Col} from './rh-Grid';
+import {CalendarTile} from './rh-CalendarTile';
 
 // Expects format January 1, 2017
 const splitDate = (datestr) => {
@@ -17,11 +18,7 @@ const EventCard = ({startDate, endDate="", name, city, country, room=""}) => {
   return (<Card >
     <Row>
       <Col width="4">
-        <ul className="rh-event">
-          <li className="month">{date.month}</li>
-          <li className="day">{date.day}</li>
-          <li className="year">{date.year}</li>
-        </ul>
+        <CalendarTile month={date.month} day={date.day} year={date.year} />
       </Col>
       <Col width="8">
         <ul className="rh-event-details">
