@@ -43,7 +43,7 @@ const UserColumn = () => {
                    city="Raleigh" country="US" room="RHT-01-02-03"/>
       </CardVGroup>
       <h5 className="margin-top-double">Inprogress Training</h5>
-      <table className="rh-custom-table">
+      <table className="rh-custom-table table-small">
         <thead>
         <tr>
           <td>Status</td>
@@ -106,7 +106,7 @@ class TemplatePage extends React.Component {
                 <li>Peer-Trusted Learning (Open Learning Community)</li>
               </ul>
               <h3>Learning News</h3>
-              <table className="rh-custom-table margin-bottom-double">
+              <table className="rh-custom-table table-small margin-bottom-double">
                 <thead>
                 <tr>
                   <td></td>
