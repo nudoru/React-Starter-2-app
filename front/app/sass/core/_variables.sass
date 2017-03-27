@@ -24,6 +24,7 @@ $ms--4: 0.146rem
 
 $base-font-size: $ms-0
 $base-line-height: $ms-1 //1.1rem // html font size set to 1rem = 10px
+$base-line-height-quarter: ($base-line-height * .25)
 $base-line-height-half: ($base-line-height * .5)
 $base-line-height-double: ($base-line-height * 2)
 $base-line-height-triple: ($base-line-height * 3)
@@ -159,9 +160,6 @@ $box-shadow-medium: 2px 2px 7px rgba(0,0,0,.2)
 $box-shadow-large: 5px 5px 10px rgba(0,0,0,.2)
 $box-shadow-xlarge: 5px 5px 30px rgba(0,0,0,.2)
 
-=control-emboss-shadow
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, .15), 1px 1px 0 rgba(255, 255, 255, .1)
-
 $form-el-height: 4rem
 $form-el-border: 1px solid $grey-6
 $form-el-border-focus: 1px solid $control-info-color
@@ -172,6 +170,8 @@ $header-height-homepage: 19rem
 $header-height-subpage: 12rem
 $breadcrumbs-height: $base-line-height * 4
 
+=text-emboss-shadow
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .15), 1px 1px 0 rgba(255, 255, 255, .1)
 
 // From the SAML login page
 =background-greybars
