@@ -52,19 +52,19 @@ const UserColumn = () => {
         </thead>
         <tr>
           <td><StatusIconTiny status="1"/></td>
-          <td>{Lorem.sentence(3,5)}</td>
+          <td><a href="#">{Lorem.title(5,8)}</a></td>
         </tr>
         <tr>
           <td><StatusIconTiny status="1"/></td>
-          <td>{Lorem.sentence(3,5)}</td>
+          <td><a href="#">{Lorem.title(5,8)}</a></td>
         </tr>
         <tr>
           <td><StatusIconTiny status="0"/></td>
-          <td>{Lorem.sentence(3,5)}</td>
+          <td><a href="#">{Lorem.title(5,8)}</a></td>
         </tr>
         <tr>
           <td><StatusIconTiny status="0"/></td>
-          <td>{Lorem.sentence(3,5)}</td>
+          <td><a href="#">{Lorem.title(5,8)}</a></td>
         </tr>
       </table>
     </Card>
@@ -120,7 +120,7 @@ class TemplatePage extends React.Component {
                     <TagHGroup>
                       <Tag><i className="fa fa-hashtag"/>RHEL</Tag>
                     </TagHGroup></td>
-                  <td>March 24, 2017</td>
+                  <td>{Lorem.date().string}</td>
                 </tr>
                 <tr>
                   <td><IconCircle icon="newspaper-o" size="s"/></td>
@@ -129,7 +129,7 @@ class TemplatePage extends React.Component {
                       <Tag><i className="fa fa-hashtag"/>Atomic</Tag>
                       <Tag><i className="fa fa-hashtag"/>OpenShift</Tag>
                     </TagHGroup></td>
-                  <td>March 24, 2017</td>
+                  <td>{Lorem.date().string}</td>
                 </tr>
                 <tr>
                   <td><IconCircle icon="newspaper-o" size="s"/></td>
@@ -138,7 +138,7 @@ class TemplatePage extends React.Component {
                       <Tag><i className="fa fa-hashtag"/>Managers</Tag>
                       <Tag><i className="fa fa-hashtag"/>Personal Dev</Tag>
                     </TagHGroup></td>
-                  <td>March 24, 2017</td>
+                  <td>{Lorem.date().string}</td>
                 </tr>
                 <tr>
                   <td><IconCircle icon="newspaper-o" size="s"/></td>
@@ -148,7 +148,7 @@ class TemplatePage extends React.Component {
                       <Tag><i className="fa fa-hashtag"/>Technical</Tag>
                     </TagHGroup>
                   </td>
-                  <td>March 24, 2017</td>
+                  <td>{Lorem.date().string}</td>
                 </tr>
               </table>
               <h3>Explore Learning Channels</h3>
