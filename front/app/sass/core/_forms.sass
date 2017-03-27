@@ -35,6 +35,8 @@ fieldset
   border: none
   padding: 0
   margin: 0
+  &:not(:first-of-type)
+    margin-top: $base-line-height-double
 
 legend
   @extend %body-base
@@ -122,11 +124,13 @@ input.isError
 // Form types
 //------------------------------------------------------------------------------
 
-.rh-form-component
-  background-color: rgba(0,255,0,.25)
+//.rh-form-component
+  //background-color: rgba(0,255,0,.25)
 
 .rh-form-control
-  border: 1px solid #00f
+  width: 100%
+  input, textarea, select
+    width: 100%
 
 .rh-form-control-listbox
   height: auto
@@ -134,13 +138,24 @@ input.isError
 .rh-form-help
   @extend %body-base-small
   display: block
-  padding: 0
+  padding: $base-line-height-quarter $base-line-height-half
   margin: 0
+  background-color: rgba(255,255,255,.5)
+  border: 1px solid rgba(255,255,255,.75)
+  border-radius: $border-radius-small
+  &::before
+    font-family: FontAwesome
+    content: '\f0eb'
+    padding-right: $base-line-height-half
 
 .rh-form-group
   margin-bottom: $base-line-height-half
 
 .rh-vform
+  .rh-form-help
+    margin-top: $base-line-height-quarter
+    margin-bottom: $base-line-height
+    display: inline-block
   .rh-form-component, .rh-form-control
     display: block
   label
@@ -157,26 +172,45 @@ input.isError
     width: auto
 
 .rh-hform
-  .rh-form-help
-    display: inline
-    margin-left: $base-line-height-half
   .rh-form-component
     display: flex
     width: 100%
     min-height: $form-el-height + $base-line-height
     align-items: center
     margin-bottom: $base-line-height-half
+  .rh-form-component > label
+    margin-right: $base-line-height
+    text-align: right
+    width: 16.66666667% // grid-col-2
+  .rh-form-control
+    flex: 1
+    display: flex
+    align-items: center
+    align-content: flex-start
+    input, textarea, select
+      flex: 1
     label
       margin-right: $base-line-height
-      text-align: right
-      width: 16.66666667% // grid-col-2
     label > input[type='radio'], label > input[type='checkbox']
       margin-right: $base-line-height-half
       width: auto
-    .rh-form-control
-      flex: 1
+    .rh-form-help
+      display: inline-block
+      margin-left: $base-line-height-half
 
-.rh-form-input-group-stacked
+//.rh-form-v-group
+  // nothing
+
+.rh-form-v-group-controls
+  .rh-form-component
+    margin: 0
+  [class~='rh-form-component']:first-of-type
+    input, textarea
+      border-radius: $border-radius-small $border-radius-small 0 0
+  [class~='rh-form-component']:last-of-type
+    input, textarea
+      border-radius: 0 0 $border-radius-small $border-radius-small
+      border-bottom: $form-el-border
   input, textarea
     position: relative
     border-radius: 0
@@ -184,31 +218,25 @@ input.isError
     z-index: 2
     &:focus
       z-index: 3
-    &:first-child
-      border-radius: $border-radius-small $border-radius-small 0 0
-    &:last-child
-      border-radius: 0 0 $border-radius-small $border-radius-small
-      border-bottom: $form-el-border
 
-
-// TODO Needs more development ... used on rh-LoginPanel.js
-.rh-form-input-group-flex
+.rh-form-h-group
   display: flex
-  input[type='text']
-    flex: 1
-    width: 100%
-  .label
-    padding: $base-line-height-half $base-line-height
-    padding-left: 5px
-    color: $blue-dark
-    font-weight: 400
+  align-items: center
+  label
+    margin-right: $base-line-height
+    text-align: right
+    width: 16.66666667% // grid-col-2
 
-.rh-form-input-group-inline
+.rh-form-h-group-controls
   display: flex
+  flex: 1
   vertical-align: middle
   border-collapse: separate
   width: 100%
   align-items: center
+  .rh-form-component
+    margin: 0
+    flex: 2
   div.group-addon
     @extend %body-base
     background: $grey-2
@@ -224,13 +252,10 @@ input.isError
   button
     border-right: $border-radius-small
     height: $form-el-height
-    line-height: 1px
-    padding: $base-line-height-half $base-line-height-double
+    line-height: $form-el-height
+    padding: 0 $base-line-height-double
     border: none !important
     flex: 1
-  input
-    flex: 2
-    width: 100%
   input, div.group-addon, button
     position: relative
     z-index: 2
@@ -241,11 +266,30 @@ input.isError
     white-space: nowrap
     &:focus
       z-index: 3
-    &:first-child
+  .group-addon:first-child, button:first-child
+    border-radius: $border-radius-small 0 0 $border-radius-small
+  .rh-form-component:first-child
+    input
       border-radius: $border-radius-small 0 0 $border-radius-small
-    &:last-child
+  .group-addon:last-child, button:last-child
+    border-radius: 0 $border-radius-small $border-radius-small 0
+    border-right: $form-el-border
+  .rh-form-component:last-child
+    input
       border-radius: 0 $border-radius-small $border-radius-small 0
       border-right: $form-el-border
+
+// TODO Needs more development ... used on rh-LoginPanel.js
+.rh-form-input-group-flex
+  display: flex
+  input[type='text']
+    flex: 1
+    width: 100%
+  .label
+    padding: $base-line-height-half $base-line-height
+    padding-left: 5px
+    color: $blue-dark
+    font-weight: 400
 
 .input-focus-animation
   animation: inputFocusAnim ease-out .5s

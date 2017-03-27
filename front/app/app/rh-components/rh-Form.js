@@ -26,11 +26,21 @@ export const Fieldset = ({legend, children}) => {
 export const FormGroup = ({children}) => <div
   className="rh-form-group">{children}</div>;
 
-export const FormVGroup = ({children}) => <div
-  className="rh-form-input-group-stacked">{children}</div>;
+export const FormVGroup = ({children, label}) => {
+  return (<div className="rh-form-v-group">
+      {label ? <Label>{label}</Label> : null}
+      <div className="rh-form-v-group-controls">{children}</div>
+    </div>
+  );
+};
 
-export const FormHGroup = ({children}) => <div
-  className="rh-form-input-group-inline">{children}</div>;
+export const FormHGroup = ({children, label}) => {
+  return (<div className="rh-form-h-group">
+      {label ? <Label>{label}</Label> : null}
+      <div className="rh-form-h-group-controls">{children}</div>
+    </div>
+  );
+};
 
 export const HInputGroup = ({children}) => <div
   className="rh-form-inline-controls">{children}</div>;
@@ -57,7 +67,8 @@ export const FormHGroupRow = ({children, label}) => {
 export const Label = ({children, htmlFor, ...other}) => <label
   htmlFor={htmlFor} {...other}>{children}</label>;
 
-export const Help = ({children}) => <span className="rh-form-help">{children}</span>;
+export const Help = ({children}) => <span
+  className="rh-form-help">{children}</span>;
 
 //------------------------------------------------------------------------------
 

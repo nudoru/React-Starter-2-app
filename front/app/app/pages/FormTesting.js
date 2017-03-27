@@ -192,41 +192,38 @@ class TemplatePage extends React.Component {
             <VForm>
               <fieldset>
             <legend>Vetical Groups</legend>
-              <FormGroup>
-                <label htmlFor="input1">What's your name?</label>
-                <FormVGroup>
-                  <input type="text" placeholder="First" id="input1"/>
-                  <input type="text" placeholder="Middle" id="input1"/>
-                  <input type="text" placeholder="Last" id="input1"/>
-                  <textarea rows="3">Text area!</textarea>
-                </FormVGroup>
-              </FormGroup>
+                <FormGroup>
+                  <FormVGroup label="What's your name?">
+                    <TextInput placeholder="First"/>
+                    <TextInput placeholder="Middle"/>
+                    <TextInput placeholder="Last"/>
+                    <TextArea>Some long text ...</TextArea>
+                  </FormVGroup>
+                </FormGroup>
               </fieldset>
             </VForm>
             <HForm>
               <fieldset>
                 <legend>Horizontal Groups</legend>
-                <FormHGroupRow label="What's your name?">
-                  <FormHGroup>
-                    <input type="text" placeholder="First" id="input1"/>
-                    <input type="text" placeholder="Middle" id="input1"/>
-                    <input type="text" placeholder="Last" id="input1"/>
+                <FormGroup>
+                  <FormHGroup label="What's your name?">
+                    <TextInput placeholder="First"/>
+                    <TextInput placeholder="Middle"/>
+                    <TextInput placeholder="Last"/>
                   </FormHGroup>
-                </FormHGroupRow>
-                <FormHGroupRow label="What's your email?">
-                  <FormHGroup>
+                </FormGroup>
+                <FormGroup>
+                  <FormHGroup label="What's your Email">
                     <HInputDecorator icon="user"/>
-                    <input type="text" placeholder="userid" id="input1"/>
+                    <TextInput placeholder="user id"/>
                     <HInputDecorator>@</HInputDecorator>
-                    <input type="text" placeholder="" id="input1"
-                           value="redhat.com"/>
+                    <TextInput placeholder="@redhat.com"/>
                     <Button>Submit</Button>
                   </FormHGroup>
-                </FormHGroupRow>
+                </FormGroup>
               </fieldset>
             </HForm>
           </Well>
-
         </PageModule>
       </div>);
   }
