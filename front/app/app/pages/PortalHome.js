@@ -43,13 +43,8 @@ const UserColumn = () => {
                    city="Raleigh" country="US" room="RHT-01-02-03"/>
       </CardVGroup>
       <h5 className="margin-top-double">Inprogress Training</h5>
-      <table className="rh-custom-table table-small">
-        <thead>
-        <tr>
-          <td>Status</td>
-          <td>Title</td>
-        </tr>
-        </thead>
+      <Card>
+      <table className="rh-custom-table table-small margin-none">
         <tr>
           <td><StatusIconTiny status="1"/></td>
           <td><a href="#">{Lorem.title(5,8)}</a></td>
@@ -67,6 +62,7 @@ const UserColumn = () => {
           <td><a href="#">{Lorem.title(5,8)}</a></td>
         </tr>
       </table>
+      </Card>
     </Card>
   </CardVGroup>);
 };
@@ -107,13 +103,6 @@ class TemplatePage extends React.Component {
               </ul>
               <h3>Learning News</h3>
               <table className="rh-custom-table table-small margin-bottom-double">
-                <thead>
-                <tr>
-                  <td></td>
-                  <td>Title</td>
-                  <td>Date</td>
-                </tr>
-                </thead>
                 <tr>
                   <td><IconCircle icon="newspaper-o" size="s"/></td>
                   <td><a href="#">{Lorem.sentence(5,20)}</a>
