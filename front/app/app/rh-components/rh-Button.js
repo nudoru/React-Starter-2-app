@@ -13,7 +13,7 @@ const NOOP = () => {
 /*
  style = secondary, neutral, hollow
  */
-const buttonMaker = ({children, style, small, text, hollow, icon, block, disabled, onClick = NOOP}) => {
+const buttonMaker = ({children, style, small, text, hollow, icon, block, disabled, onClick = NOOP, ...other}) => {
   let cls = 'rh-button' + (style ? ' rh-button-' + style : '');
   if (text) {
     if(!style) {
@@ -42,44 +42,20 @@ const buttonMaker = ({children, style, small, text, hollow, icon, block, disable
     }
   }
 
-
-  return <button onClick={onClick} className={cls}>{children}</button>;
+  return <button onClick={onClick} className={cls} {...other}>{children}</button>;
 };
 
-// TODO - needs to be spread operator but ESLint give me errors
+export const Button = (props) => {
+  const {style='', ...other} = props;
+  return buttonMaker({style, ...other});
+};
 
-export const Button = ({children, style, small, text, hollow, icon, block, disabled, onClick}) => buttonMaker({
-  style: '',
-  children,
-  small,
-  text,
-  hollow,
-  icon,
-  block,
-  disabled,
-  onClick
-});
+export const SecondaryButton = (props) => {
+  const {style='secondary', ...other} = props;
+  return buttonMaker({style, ...other});
+};
 
-export const SecondaryButton = ({children, style, small, text, hollow, icon, block, disabled, onClick}) => buttonMaker({
-  style: 'secondary',
-  children,
-  small,
-  text,
-  hollow,
-  icon,
-  block,
-  disabled,
-  onClick
-});
-
-export const NeutralButton = ({children, style, small, text, hollow, icon, block, disabled, onClick}) => buttonMaker({
-  style: 'neutral',
-  children,
-  small,
-  text,
-  hollow,
-  icon,
-  block,
-  disabled,
-  onClick
-});
+export const NeutralButton = (props) => {
+  const {style='neutral', ...other} = props;
+  return buttonMaker({style, ...other});
+};
