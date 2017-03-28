@@ -84,7 +84,11 @@ export class TextInput extends React.Component {
   }
 
   render () {
-    let {label, help, datalist, ...other} = this.props;
+    let {label, help, datalist, error, className='', ...other} = this.props;
+
+    if (error) {
+      className += ' isError';
+    }
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
@@ -94,6 +98,7 @@ export class TextInput extends React.Component {
             id={this.id}
             list={this.id}
             ref={el => { this.el = el; }} //eslint-disable-line brace-style
+            className={className}
             {...other}>
           </input>
           {datalist ? (
@@ -129,7 +134,11 @@ export class TextArea extends React.Component {
   }
 
   render () {
-    let {label, children, help, ...other} = this.props;
+    let {label, children, error, className='', help, ...other} = this.props;
+
+    if (error) {
+      className += ' isError';
+    }
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
@@ -137,6 +146,7 @@ export class TextArea extends React.Component {
           <textarea
             id={this.id}
             ref={el => { this.el = el; }} //eslint-disable-line brace-style
+            className={className}
             {...other}>
             {children}
           </textarea>
@@ -161,7 +171,11 @@ export class DropDown extends React.Component {
   }
 
   render () {
-    let {label, children, help, ...other} = this.props;
+    let {label, children, error, className='', help, ...other} = this.props;
+
+    if (error) {
+      className += ' isError';
+    }
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
@@ -169,6 +183,7 @@ export class DropDown extends React.Component {
           <select
             id={this.id}
             ref={el => { this.el = el; }} //eslint-disable-line brace-style
+            className={className}
             {...other}>
             {children}
           </select>
@@ -191,17 +206,23 @@ export class ListBox extends React.Component {
   }
 
   render () {
-    let {label, children, help, ...other} = this.props;
+    let {label, children, error, className='', help, ...other} = this.props;
+
+    className = 'rh-form-control-listbox '+className;
+
+    if (error) {
+      className += ' isError';
+    }
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
         <div className="rh-form-control">
           <select
-            className="rh-form-control-listbox"
             multiple
             size="3"
             id={this.id}
             ref={el => { this.el = el; }} //eslint-disable-line brace-style
+            className={className}
             {...other}>
             {children}
           </select>
@@ -232,7 +253,17 @@ export class CheckGroup extends React.Component {
   }
 
   render () {
-    let {label, children, help, ...other} = this.props;
+    let {label, children, error, className='', help, disabled} = this.props;
+
+    if (error) {
+      className += ' isError';
+    }
+
+    children.forEach(c => c.props.className = className);
+
+    if (disabled) {
+      children.forEach(c => c.props.disabled = true);
+    }
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
@@ -245,9 +276,9 @@ export class CheckGroup extends React.Component {
   }
 }
 
-export const Checkbox = ({children, value, ...other}) => {
+export const Checkbox = ({children, value, className, ...other}) => {
   let id = getNextId();
-  return (<Label htmlFor={id}>
+  return (<Label htmlFor={id} className={className}>
     <input type='checkbox' id={id} value={value} {...other}></input>
     {children}
   </Label>);
@@ -267,10 +298,20 @@ export class RadioGroup extends React.Component {
   }
 
   render () {
-    let {label, children, help} = this.props;
+    let {label, children, error, className='', disabled, help} = this.props;
+
+    if (error) {
+      className += ' isError';
+    }
+
+    children.forEach(c => c.props.className = className);
 
     // Assign the same name so they group properly
     children.forEach(c => c.props.name = this.id);
+
+    if (disabled) {
+      children.forEach(c => c.props.disabled = true);
+    }
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
@@ -283,9 +324,9 @@ export class RadioGroup extends React.Component {
   }
 }
 
-export const Radio = ({children, name, value, ...other}) => {
+export const Radio = ({children, name, value, className, ...other}) => {
   let id = getNextId();
-  return (<Label htmlFor={id}>
+  return (<Label className={className} htmlFor={id}>
     <input type='radio' name={name} id={id} value={value} {...other}></input>
     {children}
   </Label>);

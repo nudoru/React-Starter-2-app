@@ -10,17 +10,18 @@
   +transition-prop(border)
   +transition-prop(box-shadow)
   padding: $base-line-height-half
-  border: $form-el-border
-  border-radius: $border-radius-small
+  border: 1px solid transparent
+  border-bottom: 1px solid $control-info-color
+  //border-radius: $border-radius-small
   background-color: #fff
   color: $control-primary-color-dark
   font-size: 1.6rem
   vertical-align: middle
-  box-shadow: inset 1px 2px 1px rgba(0, 0, 0, .1), $box-shadow-light
+  //box-shadow: inset 1px 2px 1px rgba(0, 0, 0, .05), $box-shadow-light
   height: $form-el-height
   display: inline-block
   &:focus
-    border: $form-el-border-focus
+    border-color: $form-el-border-focus
     box-shadow: 0 0 10px $blue
     outline: 0
   &:disabled
@@ -49,6 +50,7 @@ legend
 label
   @extend %body-base-small
   color: $blue-dark
+  font-weight: 600
   text-transform: uppercase
 
 input[type=text],
@@ -97,14 +99,19 @@ input[type=radio]
 input[type=radio], input[type=checkbox]
   margin-right: $base-line-height-half
   &:focus
-    border: $form-el-border
     box-shadow: 0 0 3px $control-primary-color
 
-input.isError
-  border: $form-el-border-error
+input.isError, textarea.isError, select.isError
+  color: $control-danger-color
+  //border: 1px solid $control-danger-color
+  border-bottom: 1px solid $control-danger-color
   &:focus
-    border: $form-el-border-error
     box-shadow: 0 0 10px $control-danger-color
+    border-color: $control-danger-color
+    //border-bottom: 1px solid $control-danger-color
+
+label.isError
+  color: $control-danger-color
 
 [class*='rh-form-']
   .input-1
@@ -132,6 +139,7 @@ input.isError
   input, textarea, select
     width: 100%
 
+// Multi-line select
 .rh-form-control-listbox
   height: auto
 
@@ -145,7 +153,8 @@ input.isError
   border-radius: $border-radius-small
   &::before
     font-family: FontAwesome
-    content: '\f0eb'
+    content: '\f059'
+    color: $blue
     padding-right: $base-line-height-half
 
 .rh-form-group
@@ -204,17 +213,17 @@ input.isError
 .rh-form-v-group-controls
   .rh-form-component
     margin: 0
-  [class~='rh-form-component']:first-of-type
-    input, textarea
-      border-radius: $border-radius-small $border-radius-small 0 0
-  [class~='rh-form-component']:last-of-type
-    input, textarea
-      border-radius: 0 0 $border-radius-small $border-radius-small
-      border-bottom: $form-el-border
+  //[class~='rh-form-component']:first-of-type
+  //  input, textarea
+  //    border-radius: $border-radius-small $border-radius-small 0 0
+  //[class~='rh-form-component']:last-of-type
+  //  input, textarea
+  //    border-radius: 0 0 $border-radius-small $border-radius-small
+  //    border-bottom: $form-el-border
   input, textarea
     position: relative
     border-radius: 0
-    border-bottom: 1px solid transparent
+    border-bottom: 1px solid rgba(0,0,0,.1)
     z-index: 2
     &:focus
       z-index: 3
@@ -230,9 +239,9 @@ input.isError
 .rh-form-h-group-controls
   display: flex
   flex: 1
-  vertical-align: middle
-  border-collapse: separate
-  width: 100%
+  //vertical-align: middle
+  //border-collapse: separate
+  //width: 100%
   align-items: center
   .rh-form-component
     margin: 0
@@ -262,22 +271,22 @@ input.isError
     vertical-align: middle
     margin-right: 0
     border-radius: 0
-    border-right: 1px solid transparent
+    //border-right: 1px solid transparent
     white-space: nowrap
     &:focus
       z-index: 3
   .group-addon:first-child, button:first-child
     border-radius: $border-radius-small 0 0 $border-radius-small
   .rh-form-component:first-child
-    input
-      border-radius: $border-radius-small 0 0 $border-radius-small
+    //input
+    //  border-radius: $border-radius-small 0 0 $border-radius-small
   .group-addon:last-child, button:last-child
     border-radius: 0 $border-radius-small $border-radius-small 0
     border-right: $form-el-border
   .rh-form-component:last-child
-    input
-      border-radius: 0 $border-radius-small $border-radius-small 0
-      border-right: $form-el-border
+    //input
+    //  border-radius: 0 $border-radius-small $border-radius-small 0
+    //  border-right: $form-el-border
 
 // TODO Needs more development ... used on rh-LoginPanel.js
 .rh-form-input-group-flex

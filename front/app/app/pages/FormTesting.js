@@ -54,15 +54,16 @@ class TemplatePage extends React.Component {
     console.log('Template page, ', this.props);
   }
 
-  onFormChange(e) {
-    console.log('Change',e);
+  onFormChange (e) {
+    console.log('Change', e);
   }
 
-  onFormBlur(e) {
-    console.log('Blur',e);
+  onFormBlur (e) {
+    console.log('Blur', e);
   }
-  onFormFocus(e) {
-    console.log('Focus',e);
+
+  onFormFocus (e) {
+    console.log('Focus', e);
   }
 
   render () {
@@ -85,7 +86,8 @@ class TemplatePage extends React.Component {
                   />
                 </FormGroup>
                 <FormGroup>
-                  <TextArea label="Some long input ..." help="Consult wikipedia">
+                  <TextArea label="Some long input ..."
+                            help="Consult wikipedia">
                     Lots-o-text</TextArea>
                 </FormGroup>
                 <FormGroup>
@@ -117,8 +119,10 @@ class TemplatePage extends React.Component {
                   </RadioGroup>
                 </FormGroup>
                 <FormGroup>
-                  <TextInput label="I'm disabled" disabled="true" value="Can't edit this"/>
-                  <TextInput label="I'm ERRORED" className="isError" value="You did it wrong!"/>
+                  <TextInput label="I'm disabled" disabled="true"
+                             value="Can't edit this"/>
+                  <TextInput label="I'm ERRORED" className="isError"
+                             value="You did it wrong!"/>
                 </FormGroup>
                 <FormGroup>
                   <TextInput className="input-1" placeholder="Width 1"/>
@@ -148,7 +152,8 @@ class TemplatePage extends React.Component {
                   />
                 </FormGroup>
                 <FormGroup>
-                  <TextArea label="Some long input ..." help="Consult wikipedia">
+                  <TextArea label="Some long input ..."
+                            help="Consult wikipedia">
                     Lots-o-text</TextArea>
                 </FormGroup>
                 <FormGroup>
@@ -180,8 +185,10 @@ class TemplatePage extends React.Component {
                   </RadioGroup>
                 </FormGroup>
                 <FormGroup>
-                  <TextInput label="I'm disabled" disabled="true" value="Can't edit this"/>
-                  <TextInput label="I'm ERRORED" className="isError" value="You did it wrong!"/>
+                  <TextInput label="I'm disabled" disabled
+                             value="Can't edit this"/>
+                  <TextInput label="I'm ERRORED" error
+                             value="You did it wrong!"/>
                 </FormGroup>
               </fieldset>
             </HForm>
@@ -191,7 +198,7 @@ class TemplatePage extends React.Component {
           <Well>
             <VForm>
               <fieldset>
-            <legend>Vetical Groups</legend>
+                <legend>Vetical Groups</legend>
                 <FormGroup>
                   <FormVGroup label="What's your name?">
                     <TextInput placeholder="First"/>
