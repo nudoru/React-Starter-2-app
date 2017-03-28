@@ -62,6 +62,15 @@ export const FormHGroupRow = ({children, label}) => {
 // Elements
 //------------------------------------------------------------------------------
 
+/*
+  required
+  active
+  pristine
+ normalized
+ focus -> touched -> active
+ blur -> validateFn -> error
+ */
+
 //https://hackernoon.com/10-react-mini-patterns-c1da92f068c5#.jnip3uvdo
 
 export const Label = ({children, htmlFor, ...other}) => <label
@@ -255,6 +264,8 @@ export class CheckGroup extends React.Component {
   render () {
     let {label, children, error, className='', help, disabled} = this.props;
 
+    className = 'rh-form-label-large '+className;
+
     if (error) {
       className += ' isError';
     }
@@ -299,6 +310,8 @@ export class RadioGroup extends React.Component {
 
   render () {
     let {label, children, error, className='', disabled, help} = this.props;
+
+    className = 'rh-form-label-large '+className;
 
     if (error) {
       className += ' isError';

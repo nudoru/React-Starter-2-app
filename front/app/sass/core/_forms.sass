@@ -1,27 +1,22 @@
-//http://purecss.io/forms/?
-
 //------------------------------------------------------------------------------
 // Mixins, etc.
 //------------------------------------------------------------------------------
 
 %rh-form-element
-  @extend %body-base-small
-  //+transition-all
+  @extend %body-base
   +transition-prop(border)
   +transition-prop(box-shadow)
   padding: $base-line-height-half
-  border: 1px solid transparent
-  border-bottom: 1px solid $control-info-color
+  border: $form-el-border
   //border-radius: $border-radius-small
   background-color: #fff
   color: $control-primary-color-dark
-  font-size: 1.6rem
   vertical-align: middle
-  //box-shadow: inset 1px 2px 1px rgba(0, 0, 0, .05), $box-shadow-light
+  box-shadow: inset 1px 2px 1px rgba(0, 0, 0, .05), $box-shadow-light
   height: $form-el-height
   display: inline-block
   &:focus
-    border-color: $form-el-border-focus
+    border-color: $control-info-color
     box-shadow: 0 0 10px $blue
     outline: 0
   &:disabled
@@ -52,6 +47,13 @@ label
   color: $blue-dark
   font-weight: 600
   text-transform: uppercase
+
+// used for checkbox / radio labels
+.rh-form-label-large
+  @extend %body-base
+  margin-bottom: $base-line-height
+  line-height: $base-font-size
+  text-transform: none
 
 input[type=text],
 input[type=password],
@@ -93,9 +95,6 @@ input[type=file],
 textarea
   resize: vertical
 
-input[type=radio]
-  @extend label
-
 input[type=radio], input[type=checkbox]
   margin-right: $base-line-height-half
   &:focus
@@ -108,7 +107,6 @@ input.isError, textarea.isError, select.isError
   &:focus
     box-shadow: 0 0 10px $control-danger-color
     border-color: $control-danger-color
-    //border-bottom: 1px solid $control-danger-color
 
 label.isError
   color: $control-danger-color
@@ -191,6 +189,8 @@ label.isError
     margin-right: $base-line-height
     text-align: right
     width: 16.66666667% // grid-col-2
+  .rh-form-label-large
+    margin-bottom: 0
   .rh-form-control
     flex: 1
     display: flex
@@ -213,17 +213,17 @@ label.isError
 .rh-form-v-group-controls
   .rh-form-component
     margin: 0
-  //[class~='rh-form-component']:first-of-type
-  //  input, textarea
-  //    border-radius: $border-radius-small $border-radius-small 0 0
-  //[class~='rh-form-component']:last-of-type
-  //  input, textarea
-  //    border-radius: 0 0 $border-radius-small $border-radius-small
-  //    border-bottom: $form-el-border
+  [class~='rh-form-component']:first-of-type
+    input, textarea
+      border-radius: $border-radius-small $border-radius-small 0 0
+  [class~='rh-form-component']:last-of-type
+    input, textarea
+      border-radius: 0 0 $border-radius-small $border-radius-small
+      border-bottom: $form-el-border
   input, textarea
     position: relative
     border-radius: 0
-    border-bottom: 1px solid rgba(0,0,0,.1)
+    border-bottom: none
     z-index: 2
     &:focus
       z-index: 3
@@ -236,6 +236,19 @@ label.isError
     text-align: right
     width: 16.66666667% // grid-col-2
 
+.group-addon
+  @extend %body-base
+  background: $grey-2
+  border: $form-el-border
+  height: $form-el-height
+  line-height: $form-el-height
+  padding: 0 $base-line-height
+  font-weight: 600
+  text-align: center
+  text-shadow: $text-shadow-light
+  box-shadow: $box-shadow-light
+  color: $blue-dark
+
 .rh-form-h-group-controls
   display: flex
   flex: 1
@@ -246,18 +259,6 @@ label.isError
   .rh-form-component
     margin: 0
     flex: 2
-  div.group-addon
-    @extend %body-base
-    background: $grey-2
-    border: $form-el-border
-    height: $form-el-height
-    line-height: $form-el-height
-    padding: 0 $base-line-height
-    font-weight: 600
-    text-align: center
-    text-shadow: $text-shadow-light
-    box-shadow: $box-shadow-light
-    color: $blue-dark
   button
     border-right: $border-radius-small
     height: $form-el-height
@@ -271,22 +272,22 @@ label.isError
     vertical-align: middle
     margin-right: 0
     border-radius: 0
-    //border-right: 1px solid transparent
+    border-right: none
     white-space: nowrap
     &:focus
       z-index: 3
   .group-addon:first-child, button:first-child
     border-radius: $border-radius-small 0 0 $border-radius-small
   .rh-form-component:first-child
-    //input
-    //  border-radius: $border-radius-small 0 0 $border-radius-small
+    input
+      border-radius: $border-radius-small 0 0 $border-radius-small
   .group-addon:last-child, button:last-child
     border-radius: 0 $border-radius-small $border-radius-small 0
     border-right: $form-el-border
   .rh-form-component:last-child
-    //input
-    //  border-radius: 0 $border-radius-small $border-radius-small 0
-    //  border-right: $form-el-border
+    input
+      border-radius: 0 $border-radius-small $border-radius-small 0
+      border-right: $form-el-border
 
 // TODO Needs more development ... used on rh-LoginPanel.js
 .rh-form-input-group-flex
