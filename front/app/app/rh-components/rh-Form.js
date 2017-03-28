@@ -63,9 +63,9 @@ export const FormHGroupRow = ({children, label}) => {
 //------------------------------------------------------------------------------
 
 /*
-  required
-  active
-  pristine
+ required
+ active
+ pristine
  normalized
  focus -> touched -> active
  blur -> validateFn -> error
@@ -85,15 +85,39 @@ export class TextInput extends React.Component {
 
   constructor (props) {
     super(props);
-    this.id = getNextId();
+    this.id       = getNextId();
+    this.active   = false;
+    this.pristine = true;
+    this.touched  = false;
+    this.error    = false;
   }
 
   focus () {
     this.el.focus();
   }
 
+  value () {
+    return this.el.value;
+  }
+
+  onElFocus () {
+    console.log('focus', this.el);
+    this.touched = true;
+    this.active  = true;
+  }
+
+  onElBlur () {
+    console.log('blur', this.el);
+    this.active = false;
+  }
+
+  onElChange () {
+    console.log('change', this.value(), this.el);
+    this.pristine = false;
+  }
+
   render () {
-    let {label, help, datalist, error, className='', ...other} = this.props;
+    let {label, help, datalist, error, className = '', ...other} = this.props;
 
     if (error) {
       className += ' isError';
@@ -101,7 +125,10 @@ export class TextInput extends React.Component {
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
-        <div className="rh-form-control">
+        <div className="rh-form-control"
+             onBlur={this.onElBlur.bind(this)}
+             onFocus={this.onElFocus.bind(this)}
+             onChange={this.onElChange.bind(this)}>
           <input
             type='text'
             id={this.id}
@@ -110,11 +137,7 @@ export class TextInput extends React.Component {
             className={className}
             {...other}>
           </input>
-          {datalist ? (
-            <Datalist id={this.id}>
-              {datalist.split(',').map(d => <DatalistOption value={d}/>)}
-            </Datalist>
-          ) : null}
+
           {help ? <Help>{help}</Help> : null}
         </div>
       </div>
@@ -122,12 +145,18 @@ export class TextInput extends React.Component {
   }
 }
 
-// TODO better implemention https://www.noupe.com/design/html5-datalists-what-you-need-to-know-78024.html
-export const Datalist = ({children, id, ...other}) => <datalist
-  id={id} {...other}>{children}</datalist>;
+/* Disabled
+ {datalist ? (
+ <Datalist id={this.id}>
+ {datalist.split(',').map(d => <DatalistOption value={d}/>)}
+ </Datalist>
+ ) : null}
+ export const Datalist = ({children, id, ...other}) => <datalist
+ id={id} {...other}>{children}</datalist>;
 
-export const DatalistOption = ({value, children, ...other}) => <option
-  value={value}>{children}</option>;
+ export const DatalistOption = ({value, children, ...other}) => <option
+ value={value}>{children}</option>;
+ */
 
 //------------------------------------------------------------------------------
 
@@ -135,15 +164,39 @@ export class TextArea extends React.Component {
 
   constructor (props) {
     super(props);
-    this.id = getNextId();
+    this.id       = getNextId();
+    this.active   = false;
+    this.pristine = true;
+    this.touched  = false;
+    this.error    = false;
   }
 
   focus () {
     this.el.focus();
   }
 
+  value () {
+    return this.el.value;
+  }
+
+  onElFocus () {
+    console.log('focus', this.el);
+    this.touched = true;
+    this.active  = true;
+  }
+
+  onElBlur () {
+    console.log('blur', this.el);
+    this.active = false;
+  }
+
+  onElChange () {
+    console.log('change', this.value(), this.el);
+    this.pristine = false;
+  }
+
   render () {
-    let {label, children, error, className='', help, ...other} = this.props;
+    let {label, children, error, className = '', help, ...other} = this.props;
 
     if (error) {
       className += ' isError';
@@ -151,7 +204,10 @@ export class TextArea extends React.Component {
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
-        <div className="rh-form-control">
+        <div className="rh-form-control"
+             onBlur={this.onElBlur.bind(this)}
+             onFocus={this.onElFocus.bind(this)}
+             onChange={this.onElChange.bind(this)}>
           <textarea
             id={this.id}
             ref={el => { this.el = el; }} //eslint-disable-line brace-style
@@ -172,15 +228,39 @@ export class DropDown extends React.Component {
 
   constructor (props) {
     super(props);
-    this.id = getNextId();
+    this.id       = getNextId();
+    this.active   = false;
+    this.pristine = true;
+    this.touched  = false;
+    this.error    = false;
   }
 
   focus () {
     this.el.focus();
   }
 
+  value () {
+    return this.el.value;
+  }
+
+  onElFocus () {
+    console.log('focus', this.el);
+    this.touched = true;
+    this.active  = true;
+  }
+
+  onElBlur () {
+    console.log('blur', this.el);
+    this.active = false;
+  }
+
+  onElChange () {
+    console.log('change', this.value(), this.el);
+    this.pristine = false;
+  }
+
   render () {
-    let {label, children, error, className='', help, ...other} = this.props;
+    let {label, children, error, className = '', help, ...other} = this.props;
 
     if (error) {
       className += ' isError';
@@ -188,7 +268,10 @@ export class DropDown extends React.Component {
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
-        <div className="rh-form-control">
+        <div className="rh-form-control"
+             onBlur={this.onElBlur.bind(this)}
+             onFocus={this.onElFocus.bind(this)}
+             onChange={this.onElChange.bind(this)}>
           <select
             id={this.id}
             ref={el => { this.el = el; }} //eslint-disable-line brace-style
@@ -207,17 +290,48 @@ export class ListBox extends React.Component {
 
   constructor (props) {
     super(props);
-    this.id = getNextId();
+    this.id       = getNextId();
+    this.active   = false;
+    this.pristine = true;
+    this.touched  = false;
+    this.error    = false;
   }
 
   focus () {
     this.el.focus();
   }
 
-  render () {
-    let {label, children, error, className='', help, ...other} = this.props;
+  value () {
+    //return this.el.value;
+    return this.props.children.reduce((acc, c, i) => {
+      let opt = this.refs[i];
+      if (opt.el.selected) {
+        acc.push(opt.props.children);
+      }
+      return acc;
+    }, []);
+  }
 
-    className = 'rh-form-control-listbox '+className;
+  onElFocus () {
+    console.log('focus', this.el);
+    this.touched = true;
+    this.active  = true;
+  }
+
+  onElBlur () {
+    console.log('blur', this.el);
+    this.active = false;
+  }
+
+  onElChange () {
+    console.log('change', this.value(), this.el);
+    this.pristine = false;
+  }
+
+  render () {
+    let {label, children, error, className = '', help, ...other} = this.props;
+
+    className = 'rh-form-control-listbox ' + className;
 
     if (error) {
       className += ' isError';
@@ -225,7 +339,10 @@ export class ListBox extends React.Component {
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
-        <div className="rh-form-control">
+        <div className="rh-form-control"
+             onBlur={this.onElBlur.bind(this)}
+             onFocus={this.onElFocus.bind(this)}
+             onChange={this.onElChange.bind(this)}>
           <select
             multiple
             size="3"
@@ -233,7 +350,9 @@ export class ListBox extends React.Component {
             ref={el => { this.el = el; }} //eslint-disable-line brace-style
             className={className}
             {...other}>
-            {children}
+            {React.Children.map(this.props.children, (element, idx) => {
+              return React.cloneElement(element, {ref: idx});
+            })}
           </select>
           {help ? <Help>{help}</Help> : null}
         </div>
@@ -245,8 +364,24 @@ export class ListBox extends React.Component {
 export const OptionGroup = ({children, label, ...other}) => <optgroup
   label={label} {...other}>{children}</optgroup>;
 
-export const Option = ({children, value, ...other}) => <option
-  value={value} {...other}>{children}</option>;
+export class Option extends React.Component {
+  constructor (props) {
+    super(props);
+    this.id = getNextId();
+  }
+
+  render () {
+    let {children, value, ...other} = this.props;
+    return (
+      <option ref={el => { this.el = el; }} //eslint-disable-line brace-style
+              value={value}
+              id={this.id}
+              {...other}>
+        {children}
+      </option>
+    );
+  }
+}
 
 //------------------------------------------------------------------------------
 
@@ -254,17 +389,47 @@ export class CheckGroup extends React.Component {
 
   constructor (props) {
     super(props);
-    this.id = getNextId();
+    this.id       = getNextId();
+    this.active   = false;
+    this.pristine = true;
+    this.touched  = false;
+    this.error    = false;
   }
 
   focus () {
-    this.el.focus();
+    //this.el.focus();
+  }
+
+  value () {
+    return this.props.children.reduce((acc, c, i) => {
+      let cbox = this.refs[i];
+      if (cbox.el.checked) {
+        acc.push(cbox.props.children);
+      }
+      return acc;
+    }, []);
+  }
+
+  onElFocus () {
+    console.log('focus', this.el);
+    this.touched = true;
+    this.active  = true;
+  }
+
+  onElBlur () {
+    console.log('blur', this.el);
+    this.active = false;
+  }
+
+  onElChange () {
+    console.log('change', this.value(), this.el);
+    this.pristine = false;
   }
 
   render () {
-    let {label, children, error, className='', help, disabled} = this.props;
+    let {label, children, error, className = '', help, disabled} = this.props;
 
-    className = 'rh-form-label-large '+className;
+    className = 'rh-form-label-large ' + className;
 
     if (error) {
       className += ' isError';
@@ -278,8 +443,14 @@ export class CheckGroup extends React.Component {
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
-        <div className="rh-form-control">
-          {children}
+        <div className="rh-form-control"
+             ref={el => { this.el = el; }} //eslint-disable-line brace-style
+             onBlur={this.onElBlur.bind(this)}
+             onFocus={this.onElFocus.bind(this)}
+             onChange={this.onElChange.bind(this)}>
+          {React.Children.map(this.props.children, (element, idx) => {
+            return React.cloneElement(element, {ref: idx});
+          })}
           {help ? <Help>{help}</Help> : null}
         </div>
       </div>
@@ -287,13 +458,25 @@ export class CheckGroup extends React.Component {
   }
 }
 
-export const Checkbox = ({children, value, className, ...other}) => {
-  let id = getNextId();
-  return (<Label htmlFor={id} className={className}>
-    <input type='checkbox' id={id} value={value} {...other}></input>
-    {children}
-  </Label>);
-};
+export class Checkbox extends React.Component {
+  constructor (props) {
+    super(props);
+    this.id = getNextId();
+  }
+
+  render () {
+    let {children, className, ...other} = this.props;
+    return (
+      <Label htmlFor={this.id} className={className}>
+        <input ref={el => { this.el = el; }} //eslint-disable-line brace-style
+               type='checkbox'
+               id={this.id}
+               {...other} />
+        {children}
+      </Label>
+    );
+  }
+}
 
 //------------------------------------------------------------------------------
 
@@ -301,17 +484,47 @@ export class RadioGroup extends React.Component {
 
   constructor (props) {
     super(props);
-    this.id = getNextId();
+    this.id       = getNextId();
+    this.active   = false;
+    this.pristine = true;
+    this.touched  = false;
+    this.error    = false;
   }
 
   focus () {
-    this.el.focus();
+    //this.el.focus();
+  }
+
+  value () {
+    return this.props.children.reduce((acc, c, i) => {
+      let cbox = this.refs[i];
+      if (cbox.el.checked) {
+        acc = cbox.props.children;
+      }
+      return acc;
+    }, '');
+  }
+
+  onElFocus () {
+    console.log('focus', this.el);
+    this.touched = true;
+    this.active  = true;
+  }
+
+  onElBlur () {
+    console.log('blur', this.el);
+    this.active = false;
+  }
+
+  onElChange () {
+    console.log('change', this.value(), this.el);
+    this.pristine = false;
   }
 
   render () {
-    let {label, children, error, className='', disabled, help} = this.props;
+    let {label, children, error, className = '', disabled, help} = this.props;
 
-    className = 'rh-form-label-large '+className;
+    className = 'rh-form-label-large ' + className;
 
     if (error) {
       className += ' isError';
@@ -328,8 +541,14 @@ export class RadioGroup extends React.Component {
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
-        <div className="rh-form-control">
-          {children}
+        <div ref={el => { this.el = el; }} //eslint-disable-line brace-style
+             className="rh-form-control"
+             onBlur={this.onElBlur.bind(this)}
+             onFocus={this.onElFocus.bind(this)}
+             onChange={this.onElChange.bind(this)}>
+          {React.Children.map(this.props.children, (element, idx) => {
+            return React.cloneElement(element, {ref: idx});
+          })}
           {help ? <Help>{help}</Help> : null}
         </div>
       </div>
@@ -337,10 +556,22 @@ export class RadioGroup extends React.Component {
   }
 }
 
-export const Radio = ({children, name, value, className, ...other}) => {
-  let id = getNextId();
-  return (<Label className={className} htmlFor={id}>
-    <input type='radio' name={name} id={id} value={value} {...other}></input>
-    {children}
-  </Label>);
-};
+export class Radio extends React.Component {
+  constructor (props) {
+    super(props);
+    this.id = getNextId();
+  }
+
+  render () {
+    let {children, className, ...other} = this.props;
+    return (
+      <Label htmlFor={this.id} className={className}>
+        <input ref={el => { this.el = el; }} //eslint-disable-line brace-style
+               type='radio'
+               id={this.id}
+               {...other} />
+        {children}
+      </Label>
+    );
+  }
+}

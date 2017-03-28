@@ -146,9 +146,9 @@ label.isError
   display: block
   padding: $base-line-height-quarter $base-line-height-half
   margin: 0
-  background-color: rgba(255,255,255,.5)
-  border: 1px solid rgba(255,255,255,.75)
-  border-radius: $border-radius-small
+  //background-color: rgba(255,255,255,.5)
+  //border: 1px solid rgba(255,255,255,.75)
+  //border-radius: $border-radius-small
   &::before
     font-family: FontAwesome
     content: '\f059'
@@ -197,14 +197,16 @@ label.isError
     align-items: center
     align-content: flex-start
     input, textarea, select
-      flex: 1
+      flex: 2
     label
       margin-right: $base-line-height
     label > input[type='radio'], label > input[type='checkbox']
       margin-right: $base-line-height-half
       width: auto
     .rh-form-help
-      display: inline-block
+      //display: inline-block
+      width: 16.66666667% // grid-col-2
+      flex: 1
       margin-left: $base-line-height-half
 
 //.rh-form-v-group
@@ -252,9 +254,6 @@ label.isError
 .rh-form-h-group-controls
   display: flex
   flex: 1
-  //vertical-align: middle
-  //border-collapse: separate
-  //width: 100%
   align-items: center
   .rh-form-component
     margin: 0

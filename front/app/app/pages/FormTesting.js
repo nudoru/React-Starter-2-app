@@ -79,10 +79,6 @@ class TemplatePage extends React.Component {
                     label="What's YOUR name?"
                     help="Real names only please"
                     placeholder="Type here"
-                    datalist="Foo,Bar,Foobar"
-                    onBlur={this.onFormBlur.bind(this)}
-                    onFocus={this.onFormFocus.bind(this)}
-                    onChange={this.onFormChange.bind(this)}
                   />
                 </FormGroup>
                 <FormGroup>
@@ -153,7 +149,7 @@ class TemplatePage extends React.Component {
                 </FormGroup>
                 <FormGroup>
                   <TextArea label="Some long input ..."
-                            help="Consult wikipedia">
+                            >
                     Lots-o-text</TextArea>
                 </FormGroup>
                 <FormGroup>
@@ -164,7 +160,7 @@ class TemplatePage extends React.Component {
                   </DropDown>
                 </FormGroup>
                 <FormGroup>
-                  <ListBox label="Pick many" help="Choooose ...">
+                  <ListBox label="Pick many">
                     <Option value="1">None</Option>
                     <Option value="2">Some</Option>
                     <Option value="3">All</Option>
