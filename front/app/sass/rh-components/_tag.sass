@@ -1,14 +1,19 @@
 .rh-tag-hgroup
   position: relative
-  margin-top: $base-line-height-half
-  margin-bottom: $base-line-height-half
   .rh-tag
-    margin-right: $base-line-height-half
+    display: inline-block
+    margin-right: $base-line-height-quarter
     margin-bottom: $base-line-height-half
 
+.rh-tag-vgroup
+  position: relative
+  .rh-tag
+    display: table
+    width: auto
+    margin-bottom: $base-line-height-quarter
+    
 .rh-tag
   +text-emboss-shadow
-  display: inline-block
   padding: $base-line-height-half
   background: $control-info-color $light-gradient
   border-radius: $border-radius-small

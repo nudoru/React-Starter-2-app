@@ -96,6 +96,24 @@ export class TextInput extends React.Component {
     this.onElChange = throttle(this.onElChange, ONCHANGE_THROTTLE);
   }
 
+  componentDidMount() {
+    if(this.props.preventDefault) {
+      this.el.addEventListener('keypress', this.nativeOnKeyPress, false);
+    }
+  }
+
+  componentWillUnmount() {
+    if(this.props.preventDefault) {
+      this.el.removeEventListener('keypress', this.nativeOnKeyPress);
+    }
+  }
+
+  nativeOnKeyPress(e) {
+    if(e.keyCode === 13) {
+      e.preventDefault();
+    }
+  }
+
   focus () {
     this.el.focus();
   }
@@ -176,6 +194,24 @@ export class TextArea extends React.Component {
     this.onElChange = throttle(this.onElChange, ONCHANGE_THROTTLE);
   }
 
+  componentDidMount() {
+    if(this.props.preventDefault) {
+      this.el.addEventListener('keypress', this.nativeOnKeyPress, false);
+    }
+  }
+
+  componentWillUnmount() {
+    if(this.props.preventDefault) {
+      this.el.removeEventListener('keypress', this.nativeOnKeyPress);
+    }
+  }
+
+  nativeOnKeyPress(e) {
+    if(e.keyCode === 13) {
+      e.preventDefault();
+    }
+  }
+
   focus () {
     this.el.focus();
   }
@@ -240,6 +276,24 @@ export class DropDown extends React.Component {
     this.error    = false;
   }
 
+  componentDidMount() {
+    if(this.props.preventDefault) {
+      this.el.addEventListener('keypress', this.nativeOnKeyPress, false);
+    }
+  }
+
+  componentWillUnmount() {
+    if(this.props.preventDefault) {
+      this.el.removeEventListener('keypress', this.nativeOnKeyPress);
+    }
+  }
+
+  nativeOnKeyPress(e) {
+    if(e.keyCode === 13) {
+      e.preventDefault();
+    }
+  }
+
   focus () {
     this.el.focus();
   }
@@ -300,6 +354,24 @@ export class ListBox extends React.Component {
     this.pristine = true;
     this.touched  = false;
     this.error    = false;
+  }
+
+  componentDidMount() {
+    if(this.props.preventDefault) {
+      this.el.addEventListener('keypress', this.nativeOnKeyPress, false);
+    }
+  }
+
+  componentWillUnmount() {
+    if(this.props.preventDefault) {
+      this.el.removeEventListener('keypress', this.nativeOnKeyPress);
+    }
+  }
+
+  nativeOnKeyPress(e) {
+    if(e.keyCode === 13) {
+      e.preventDefault();
+    }
   }
 
   focus () {

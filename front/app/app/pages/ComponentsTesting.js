@@ -17,7 +17,7 @@ import Well from '../rh-components/rh-Well';
 import IconCircle from '../rh-components/rh-IconCircle';
 import IconCircleImage from '../rh-components/rh-IconCircleImage';
 import IconCircleText from '../rh-components/rh-IconCircleText';
-import { TagHGroup, Tag } from '../rh-components/rh-Tag';
+import { TagHGroup, TagVGroup, Tag } from '../rh-components/rh-Tag';
 import { StatusIcon, StatusIconTiny } from '../rh-components/rh-StatusIcon';
 import Spinner from '../rh-components/rh-Spinner';
 import Status from '../rh-components/rh-Status';
@@ -511,15 +511,21 @@ class ComponentsTesting extends React.Component {
           </Well>
           <Well>
             <h1>Tags</h1>
+            <p>Horizontal group</p>
             <TagHGroup>
               <Tag><i className="fa fa-hashtag"/>Foo</Tag>
               <Tag><i className="fa fa-tag"/>Bar</Tag>
               <Tag><i className="fa fa-tags"/>This bar <em>that quaz</em> like a
                 foo</Tag>
               <Tag>Qiz</Tag>
-              <Tag>{Lorem.text(2, 7)}</Tag>
-              <Tag>{Lorem.text(2, 7)}</Tag>
             </TagHGroup>
+            <p>Vertical group</p>
+            <TagVGroup>
+              <Tag><i className="fa fa-hashtag"/>Foo</Tag>
+              <Tag><i className="fa fa-tag"/>Bar</Tag>
+              <Tag><i className="fa fa-tags"/>This bar <em>that quaz</em> like a
+                foo</Tag>
+            </TagVGroup>
           </Well>
           <Well>
             <h1>Tool-tips</h1>

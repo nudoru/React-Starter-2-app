@@ -148,8 +148,7 @@ class TemplatePage extends React.Component {
                   />
                 </FormGroup>
                 <FormGroup>
-                  <TextArea label="Some long input ..."
-                            >
+                  <TextArea label="Some long input ...">
                     Lots-o-text</TextArea>
                 </FormGroup>
                 <FormGroup>
