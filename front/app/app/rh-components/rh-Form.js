@@ -1,8 +1,11 @@
 import React from 'react';
+import throttle from 'lodash/throttle';
 import { getNextId } from '../utils/ElementIDCreator';
 
 const NOOP = () => {
 };
+
+const ONCHANGE_THROTTLE = 500;
 
 //------------------------------------------------------------------------------
 // Groups
@@ -90,6 +93,7 @@ export class TextInput extends React.Component {
     this.pristine = true;
     this.touched  = false;
     this.error    = false;
+    this.onElChange = throttle(this.onElChange, ONCHANGE_THROTTLE);
   }
 
   focus () {
@@ -101,18 +105,18 @@ export class TextInput extends React.Component {
   }
 
   onElFocus () {
-    console.log('focus', this.el);
+    //console.log('focus', this.el);
     this.touched = true;
     this.active  = true;
   }
 
   onElBlur () {
-    console.log('blur', this.el);
+    //console.log('blur', this.el);
     this.active = false;
   }
 
   onElChange () {
-    console.log('change', this.value(), this.el);
+    //console.log('change', this.value(), this.el);
     this.pristine = false;
   }
 
@@ -169,6 +173,7 @@ export class TextArea extends React.Component {
     this.pristine = true;
     this.touched  = false;
     this.error    = false;
+    this.onElChange = throttle(this.onElChange, ONCHANGE_THROTTLE);
   }
 
   focus () {
@@ -180,18 +185,18 @@ export class TextArea extends React.Component {
   }
 
   onElFocus () {
-    console.log('focus', this.el);
+    //console.log('focus', this.el);
     this.touched = true;
     this.active  = true;
   }
 
   onElBlur () {
-    console.log('blur', this.el);
+    //console.log('blur', this.el);
     this.active = false;
   }
 
   onElChange () {
-    console.log('change', this.value(), this.el);
+    //console.log('change', this.value(), this.el);
     this.pristine = false;
   }
 
@@ -244,18 +249,18 @@ export class DropDown extends React.Component {
   }
 
   onElFocus () {
-    console.log('focus', this.el);
+    //console.log('focus', this.el);
     this.touched = true;
     this.active  = true;
   }
 
   onElBlur () {
-    console.log('blur', this.el);
+    //console.log('blur', this.el);
     this.active = false;
   }
 
   onElChange () {
-    console.log('change', this.value(), this.el);
+    //console.log('change', this.value(), this.el);
     this.pristine = false;
   }
 
@@ -313,18 +318,18 @@ export class ListBox extends React.Component {
   }
 
   onElFocus () {
-    console.log('focus', this.el);
+    //console.log('focus', this.el);
     this.touched = true;
     this.active  = true;
   }
 
   onElBlur () {
-    console.log('blur', this.el);
+    //console.log('blur', this.el);
     this.active = false;
   }
 
   onElChange () {
-    console.log('change', this.value(), this.el);
+    //console.log('change', this.value(), this.el);
     this.pristine = false;
   }
 
@@ -411,18 +416,18 @@ export class CheckGroup extends React.Component {
   }
 
   onElFocus () {
-    console.log('focus', this.el);
+    //console.log('focus', this.el);
     this.touched = true;
     this.active  = true;
   }
 
   onElBlur () {
-    console.log('blur', this.el);
+    //console.log('blur', this.el);
     this.active = false;
   }
 
   onElChange () {
-    console.log('change', this.value(), this.el);
+    //console.log('change', this.value(), this.el);
     this.pristine = false;
   }
 
@@ -506,18 +511,18 @@ export class RadioGroup extends React.Component {
   }
 
   onElFocus () {
-    console.log('focus', this.el);
+    //console.log('focus', this.el);
     this.touched = true;
     this.active  = true;
   }
 
   onElBlur () {
-    console.log('blur', this.el);
+    //console.log('blur', this.el);
     this.active = false;
   }
 
   onElChange () {
-    console.log('change', this.value(), this.el);
+    //console.log('change', this.value(), this.el);
     this.pristine = false;
   }
 
