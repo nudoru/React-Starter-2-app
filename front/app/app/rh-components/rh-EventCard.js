@@ -15,7 +15,7 @@ const splitDate = (datestr) => {
 
 const EventCard = ({startDate, endDate="", name, city, country, room=""}) => {
   let date = splitDate(startDate);
-  return (<Card >
+  return (<Card style="narrow">
     <Row>
       <Col width="4">
         <CalendarTile month={date.month} day={date.day} year={date.year} />

@@ -1,5 +1,6 @@
 $card-horiz-width: 25rem
 $card-margin: 2rem
+$card-padding: $base-line-height-double
 
 .rh-card-container-horizontal-table
   display: flex
@@ -54,36 +55,38 @@ $card-margin: 2rem
   vertical-align: top
   position: relative
   margin: 0
-  padding: $card-margin
   box-shadow: $box-shadow-xsmall
-  h1
-    @extend h3
-    margin-bottom: $base-line-height
-    padding: 0
-    font-weight: 600
-    color: $red
-    line-height: $base-line-height-double + $base-line-height-half
-  .padded-topbottom
-    padding-top: $base-line-height
-    padding-bottom: $base-line-height
+
+  //.padded-topbottom
+  //  padding-top: $base-line-height
+  //  padding-bottom: $base-line-height
   p
     margin-bottom: 0
 
 .rh-card-header
-  margin: -2rem -2rem $base-line-height -2rem
-  padding: 1.5rem 2rem
+  padding: $card-padding
   overflow: hidden
+  border-bottom: 1px solid rgba(0,0,0,.05)
   h1
-    margin-bottom: 0
-    margin-top: $base-line-height
+    @extend h3
+    margin: 0
+    padding: 0
+    font-weight: 400
+    color: $red
+    line-height: $base-line-height-double + $base-line-height-half
+  .rh-card-title-icon
     text-align: center
+    margin-top: $base-line-height-double
+
+.rh-card-content
+  padding: $card-padding
+  &:last-child
+    margin-bottom: 0
+
 
 .rh-card-footer
-  margin: $base-line-height -2rem -2rem -2rem
-  padding: 1.5rem 2rem
+  padding: $card-padding
   text-align: center
-  //button.rh-button
-  //  @extend .rh-button-block
 
 .rh-card-cta
   margin-top: 4rem
@@ -106,6 +109,12 @@ $card-margin: 2rem
 
 .rh-card-shaded
   background: $grey-1
+
+.rh-card-narrow
+  @extend .rh-card-light
+  .rh-card-header, .rh-card-content, .rh-card-footer
+    padding: $base-line-height
+
 
 //.rh-card-pipes
 //  background: rgba(255,255,255,.75) url('../images/sample_image_light.jpg')

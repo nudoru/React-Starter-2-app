@@ -1,6 +1,6 @@
 import React from 'react';
 import IconCircle from './rh-IconCircle';
-import {Button} from './rh-Button';
+import { Button } from './rh-Button';
 
 export const CardHGroup = ({children}) => <div
   className='rh-card-container-horizontal'>{children}</div>;
@@ -15,36 +15,51 @@ export const CardVGroup = ({children}) => {
   return (<div className='rh-card-container-vertical'>{children}</div>);
 };
 
-
 export const CardMasonry33Group = ({children}) => {
   return (<div className='rh-card-container-masonry-33'>{children}</div>);
 };
 
-const CardHeader = ({children}) => <div className="rh-card-header">{children}</div>;
-const CardFooter = ({children}) => <div className="rh-card-footer">{children}</div>;
+const CardHeader = ({children}) => <div
+  className="rh-card-header">{children}</div>;
+const CardFooter = ({children}) => <div
+  className="rh-card-footer">{children}</div>;
 
 export const Card = ({
-  style = 'light',
-  title,
-  icon,
-  children,
-  onClick,
-  ctaLabel = 'Read More'
-}) => {
+                       style = 'light',
+                       title,
+                       icon,
+                       children,
+                       onClick,
+                       ctaLabel = 'Read More'
+                     }) => {
 
-  let iconArea   = icon ? (<CardHeader>
-      <IconCircle center icon={icon}/>
-    </CardHeader>) : null,
-    headerArea = title ? (<CardHeader><h1>{title}</h1></CardHeader>) : null,
-      buttonArea = onClick ? (<CardFooter><Button text block onClick={onClick}>{ctaLabel}</Button></CardFooter>) : null;
+  let needHeader = icon || title,
+      titleCls,
+      headerArea,
+      footerArea;
+
+  if (needHeader) {
+    titleCls   = icon ? 'rh-card-title-icon' : '';
+    headerArea = (
+      <CardHeader>
+        {icon ? <IconCircle center icon={icon}/> : null}
+        {title ? <h1 className={titleCls}>{title}</h1> : null}
+      </CardHeader>
+    );
+  }
+
+  if (onClick) {
+    footerArea = (<CardFooter><Button text onClick={onClick}>{ctaLabel}</Button></CardFooter>);
+  }
 
   style = 'rh-card rh-card-' + style;
 
   return (<div className={style}>
-    {iconArea}
     {headerArea}
-    {children}
-    {buttonArea}
+    <div className="rh-card-content">
+      {children}
+    </div>
+    {footerArea}
   </div>);
 };
 
