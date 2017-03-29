@@ -11,12 +11,11 @@ import PleaseWaitModal from './rh-components/rh-PleaseWaitModal';
 import ComponentsTesting from './pages/ComponentsTesting';
 import FormTesting from './pages/FormTesting';
 import TemplatePage from './pages/TemplatePage';
-import PortalHome from './pages/PortalHome';
 import LoginPanel from './rh-components/rh-LoginPanel';
 import { validateInputStr } from './utils/AppUtils';
 
-// Just a test route
-const Hello = () => <h1>Hello!</h1>;
+import PortalHome from './pages/portal/PortalHome';
+import PortalChannels from './pages/portal/PortalChannels';
 
 class App extends React.Component {
 
@@ -66,24 +65,27 @@ class App extends React.Component {
       content = (
         <Router>
           <div className="application-container">
-            <Header title={config.setup.title}
+            <Header title="Associate Learning Portal"
                     secondaryNav={config.setup.secondaryNav}
                     username='Joe User'
                     nav={[
                       {label: 'Home', route: '/'},
-                      {label: 'Components', route: '/components'},
-                      {label: 'Form', route: '/form'},
-                      {label: 'Template', route: '/template'},
-                      {label: 'Hello', route: '/hello'}
+                      {label: 'Channels', route: '/channels'},
+                      {label: 'Regions', route: '/baz'},
+                      {label: 'Course Catalog', route: '/foo'},
+                      {label: 'Global Calendar', route: '/bar'}
+                      //{label: 'Components', route: '/c'},
+                      //{label: 'Form', route: '/f'},
+                      //{label: 'Template', route: '/t'}
                     ]}/>
             <div className="application-content">
               <Switch>
                 <Route exact path="/" component={PortalHome}/>
-                <Route path="/components" component={ComponentsTesting}/>
-                <Route path="/form" component={FormTesting}/>
-                <Route path="/template" component={TemplatePage}/>
-                <Route path="/hello" component={Hello}/>
-                <Route render={() => <h1>Nothing here</h1>}/>
+                <Route exact path="/channels" component={PortalChannels}/>
+                <Route path="/c" component={ComponentsTesting}/>
+                <Route path="/f" component={FormTesting}/>
+                <Route path="/t" component={TemplatePage}/>
+                <Route render={() => <h1>There's nothing here.</h1>}/>
               </Switch>
             </div>
             <Footer />

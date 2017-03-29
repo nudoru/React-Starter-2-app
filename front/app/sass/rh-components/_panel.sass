@@ -1,6 +1,6 @@
 $panel-border-outside: 0px solid transparent
 $panel-border-inside: 1px solid $grey-2
-$panel-header-height: 4.4rem
+$panel-header-height: $base-line-height*5
 $panel-footer-height: 4.4rem
 
 .rh-panel
@@ -8,7 +8,7 @@ $panel-footer-height: 4.4rem
   background: #fff
   box-shadow: $box-shadow-medium
   border: $panel-border-outside
-  border-radius: $border-radius-small
+  //border-radius: $border-radius-small
   margin-bottom: $base-line-height
 
 %panel-area-common
@@ -17,19 +17,19 @@ $panel-footer-height: 4.4rem
 
 %panel-headerfooter-text
   font-size: 1.4rem
-  line-height: $panel-footer-height
   padding: 0
   margin: 0
   font-weight: 600
-  color: $blue-dark
+  color: $control-neutral-color-dark
 
 .rh-panel-header
   @extend %panel-area-common
   padding-left: 0
-  background: rgba(0,0,0,.1)
+  background: $grey-1
   border-bottom: $panel-border-inside
   height: $panel-header-height
-  text-shadow: $text-shadow-light
+  line-height: $panel-header-height
+  //text-shadow: $text-shadow-light
   .icon
     position: relative
     display: inline-block
@@ -59,6 +59,7 @@ $panel-footer-height: 4.4rem
   background: rgba(0,0,0,.1)
   border-top: $panel-border-inside
   height: $panel-footer-height
+  line-height: $panel-footer-height
   text-shadow: $text-shadow-light
   //box-shadow: inset 0px 3px 5px rgba(0,0,0,.1)
   h1

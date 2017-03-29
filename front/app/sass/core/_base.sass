@@ -120,7 +120,7 @@ h6
 %body-base-alt
   @extend %body-base
   font-size: $base-font-size-large
-  line-height: $base-line-height-triple
+  line-height: $base-line-height-double
 
 p, a, ul, ol, li, pre, td, th, dl, dd, dt
   @extend %body-base
@@ -187,8 +187,12 @@ ul ul
 hr
   border: none
   border-bottom: 1px solid rgba(0,0,0,.2)
-  margin: $base-line-height-triple 0
+  margin: $base-line-height 0
   padding: 0
+
+=white-text
+  h1,h2,h3,h4,h5,h6,p,li,pre,blockquote
+    color: #fff
 
 //------------------------------------------------------------------------------
 // Images

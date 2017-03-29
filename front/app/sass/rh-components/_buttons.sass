@@ -38,6 +38,12 @@ $control-button-size: 4rem
   &:hover
     background: darken($control-neutral-color, 15%)
 
+.rh-button-negative
+  background: #fff
+  color: $red
+  &:hover
+    background: darken(#fff, 10%)
+
 .rh-button-hollow
   background: none
   border: 1px solid $red
@@ -68,6 +74,14 @@ $control-button-size: 4rem
     border: 1px solid $blue-7
     color: $blue-7
 
+.rh-button-negative-hollow
+  background: none
+  border: 1px solid #fff
+  text-shadow: none
+  color: #fff
+  &:hover
+    background: rgba(255,255,255,.25)
+
 .rh-button-text
   background: none
   border: 1px solid transparent
@@ -91,6 +105,12 @@ $control-button-size: 4rem
   color: $blue
   &:hover
     color: $blue-7
+
+.rh-button-negative-text
+  @extend .rh-button-text
+  color: #fff
+  &:hover
+    color: #fff
 
 .rh-button-block
   display: block

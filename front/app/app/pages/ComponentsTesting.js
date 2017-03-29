@@ -40,6 +40,7 @@ import {
   Button,
   SecondaryButton,
   NeutralButton,
+  NegativeButton,
   ButtonHGroup,
   ButtonHRow,
   ButtonVGroup
@@ -403,6 +404,12 @@ class ComponentsTesting extends React.Component {
               <NeutralButton small text>Button</NeutralButton>
             </ButtonHRow>
             <ButtonHRow>
+              <NegativeButton>Button</NegativeButton>
+              <NegativeButton hollow>Button</NegativeButton>
+              <NegativeButton text>Button</NegativeButton>
+              <NegativeButton small>Button</NegativeButton>
+            </ButtonHRow>
+            <ButtonHRow>
               <Button icon><i className="fa fa-cog"/></Button>
               <SecondaryButton icon><i
                 className="fa fa-cog"/></SecondaryButton>
@@ -647,8 +654,8 @@ class ComponentsTesting extends React.Component {
             </Card>
           </CardVGroup>
         </PageModule>
-        <PageModule style="shaded" title="Panels" headline="">
-          <Well>
+        <PageModule title="Panels" headline="">
+          <div>
             <h1>Panel</h1>
             <Panel title='Ima control panel!' icon="cog" footerNote="Status!"
                    utilityButtons={[
@@ -684,7 +691,7 @@ class ComponentsTesting extends React.Component {
               <p>Paragraph {Lorem.paragraph(5, 10)}</p>
               <p>Paragraph {Lorem.paragraph(5, 10)}</p>
             </Panel>
-          </Well>
+          </div>
           <Well>
             <h1>Pop ups (Simple)</h1>
             <Row>

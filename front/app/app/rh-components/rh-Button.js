@@ -59,3 +59,8 @@ export const NeutralButton = (props) => {
   const {style='neutral', ...other} = props;
   return buttonMaker({style, ...other});
 };
+
+export const NegativeButton = (props) => {
+  const {style='negative', ...other} = props;
+  return buttonMaker({style, ...other});
+};
