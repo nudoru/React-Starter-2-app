@@ -16,6 +16,7 @@ import { validateInputStr } from './utils/AppUtils';
 
 import PortalHome from './pages/portal/PortalHome';
 import PortalChannels from './pages/portal/PortalChannels';
+import PortalChannelPage from './pages/portal/PortalChannelPage';
 
 class App extends React.Component {
 
@@ -73,7 +74,8 @@ class App extends React.Component {
                       {label: 'Channels', route: '/channels'},
                       {label: 'Regions', route: '/baz'},
                       {label: 'Course Catalog', route: '/foo'},
-                      {label: 'Global Calendar', route: '/bar'}
+                      {label: 'Global Calendar', route: '/bar'},
+                      {label: 'New Hire', route: '/channelpage'}
                       //{label: 'Components', route: '/c'},
                       //{label: 'Form', route: '/f'},
                       //{label: 'Template', route: '/t'}
@@ -81,7 +83,8 @@ class App extends React.Component {
             <div className="application-content">
               <Switch>
                 <Route exact path="/" component={PortalHome}/>
-                <Route exact path="/channels" component={PortalChannels}/>
+                <Route path="/channels" component={PortalChannels}/>
+                <Route path="/channelpage" component={PortalChannelPage}/>
                 <Route path="/c" component={ComponentsTesting}/>
                 <Route path="/f" component={FormTesting}/>
                 <Route path="/t" component={TemplatePage}/>

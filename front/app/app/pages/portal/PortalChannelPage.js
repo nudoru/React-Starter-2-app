@@ -12,8 +12,8 @@ import {
 import {
   SecondaryButton
 } from '../../rh-components/rh-Button';
-
-import { PortalPageTemplate } from './PortalPageTemplate';
+import Hero from '../../rh-components/rh-Hero';
+import { PortalPageTemplateNoSidebar  } from './PortalPageTemplate';
 
 const ChannelCard = ({icon = 'television', title, router}) => {
   return (
@@ -26,16 +26,18 @@ const ChannelCard = ({icon = 'television', title, router}) => {
         <p>{Lorem.paragraph(3, 3)}</p>
       </CardContent>
       <CardFooter>
-        <SecondaryButton hollow onClick={e => router.push('/channelpage')}>View Channel</SecondaryButton>
+        <SecondaryButton hollow onClick={e => router.push('/asdfasdf')}>View Channel</SecondaryButton>
       </CardFooter>
     </CardFrame>
   );
 };
 
-//const onChannelClick = () => {
-//  console.log('click!');
-//  history.push('/barbaz');
-//}
+const ChannelHero = () => {
+  return (<Hero>
+    <h1>Welcome to the Learning Channel!</h1>
+    <p>{Lorem.paragraph(3, 3)}</p>
+  </Hero>);
+};
 
 class TemplatePage extends React.Component {
 
@@ -49,19 +51,15 @@ class TemplatePage extends React.Component {
   }
 
   render () {
-    const channels = ['New Hire', 'Management', 'Information Technology', 'Sales', 'Marketing', 'Finance', 'People', 'Engineering', 'GWS'];
 
     return (
-      <PortalPageTemplate>
-        <h1>Explore Learning Channels</h1>
+      <PortalPageTemplateNoSidebar hero={<ChannelHero/>}>
+        <h1>Welcome to the Learning Channel!</h1>
         <p>Learning channels present curated information and tasks targeted
           towards a specific learning need.</p>
         <p>You don't need to be in a specific role to join a channel -
           learn something new today!</p>
-        <CardMasonry50Group>
-          {channels.map(c => <ChannelCard title={c} router={this.props.history}/>)}
-        </CardMasonry50Group>
-      </PortalPageTemplate>);
+      </PortalPageTemplateNoSidebar >);
   }
 }
 

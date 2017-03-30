@@ -27,20 +27,25 @@ import {
   ButtonHRow,
   ButtonVGroup
 } from '../../rh-components/rh-Button';
+import DonutChart from '../../rh-components/rh-DonutChart';
 
 const PortalUserSidebar = (props) => {
-  return (<CardVGroup>
-    <Card style="bars">
+  return (<div className="padding-right"> <CardVGroup>
+    <Card>
       <Row>
-        <Col width="4"><IconCircleText label="JL" className="rh-icon-circle-text-big"/></Col>
+        <Col width="4"><IconCircleText label="JL"
+                                       className="rh-icon-circle-text-big"/></Col>
         <Col>
           <h3 className="margin-none">Joe Learner</h3>
           <p>Senior Consultant</p>
           <hr/>
-          <p><i className="fa fa-trophy" /> 123 Points<br/><em className="small">30 points to next level</em></p>
+          <p><i className="fa fa-trophy"/> 123 Points<br/><em className="small">30
+            points to next level</em></p>
+          <DonutChart value={100}/>
         </Col>
       </Row>
-      <h5 className="margin-top-double margin-bottom">Your Tags <i className="fa fa-pencil"/></h5>
+      <h5 className="margin-top-double margin-bottom">Your Tags <i
+        className="fa fa-pencil padding-left"/></h5>
       <TagHGroup>
         <Tag><i className="fa fa-hashtag"/>FOSS</Tag>
         <Tag><i className="fa fa-hashtag"/>RHEL</Tag>
@@ -49,36 +54,40 @@ const PortalUserSidebar = (props) => {
         <Tag><i className="fa fa-hashtag"/>Aspiring Leader</Tag>
         <Tag><i className="fa fa-hashtag"/>Sushi</Tag>
       </TagHGroup>
-      <h5 className="margin-top-double margin-bottom">Upcoming Classes</h5>
+    </Card>
+    <Card>
+      <h5 className="margin-bottom">Your Upcoming Classes</h5>
       <CardVGroup>
-        <EventCard startDate="April 17, 2017" name={Lorem.title(4,6)}
+        <EventCard startDate="April 17, 2017" name={Lorem.title(4, 6)} link='#'
                    city="Raleigh" country="US" room="RHT-01-02-03"/>
-        <EventCard startDate="May 9, 2017" name={Lorem.title(4,6)}
+        <EventCard startDate="May 9, 2017" name={Lorem.title(4, 6)} link='#'
                    city="Raleigh" country="US" room="RHT-01-02-03"/>
-        <EventCard startDate="June 30, 2017" name={Lorem.title(4,6)}
+        <EventCard startDate="June 30, 2017" name={Lorem.title(4, 6)} link='#'
                    city="Raleigh" country="US" room="RHT-01-02-03"/>
       </CardVGroup>
-      <h5 className="margin-top-double margin-bottom">Inprogress Training</h5>
-        <table className="rh-custom-table margin-none">
-          <tr>
-            <td><StatusIcon status="1"/></td>
-            <td><a href="#">{Lorem.title(5,8)}</a></td>
-          </tr>
-          <tr>
-            <td><StatusIcon status="1"/></td>
-            <td><a href="#">{Lorem.title(5,8)}</a></td>
-          </tr>
-          <tr>
-            <td><StatusIcon status="0"/></td>
-            <td><a href="#">{Lorem.title(5,8)}</a></td>
-          </tr>
-          <tr>
-            <td><StatusIcon status="0"/></td>
-            <td><a href="#">{Lorem.title(5,8)}</a></td>
-          </tr>
-        </table>
     </Card>
-  </CardVGroup>);
+    <Card>
+      <h5 className="margin-bottom">Your Inprogress Training</h5>
+      <table className="rh-custom-table margin-none">
+        <tr>
+          <td><StatusIcon status="1"/></td>
+          <td><a href="#">{Lorem.title(5, 8)}</a></td>
+        </tr>
+        <tr>
+          <td><StatusIcon status="1"/></td>
+          <td><a href="#">{Lorem.title(5, 8)}</a></td>
+        </tr>
+        <tr>
+          <td><StatusIcon status="0"/></td>
+          <td><a href="#">{Lorem.title(5, 8)}</a></td>
+        </tr>
+        <tr>
+          <td><StatusIcon status="0"/></td>
+          <td><a href="#">{Lorem.title(5, 8)}</a></td>
+        </tr>
+      </table>
+    </Card>
+  </CardVGroup></div>);
 };
 
 export default PortalUserSidebar;

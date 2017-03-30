@@ -31,8 +31,16 @@ import {
   ButtonVGroup
 } from '../../rh-components/rh-Button';
 
-import PortalPageTemplate from './PortalPageTemplate';
+import { PortalPageTemplate } from './PortalPageTemplate';
 import Hero from '../../rh-components/rh-Hero';
+
+const HomeHero = () => {
+  return (<Hero>
+    <h1>Welcome</h1>
+    <p>{Lorem.paragraph(3, 3)}</p>
+    <NegativeButton hollow>Learn more</NegativeButton>
+  </Hero>);
+};
 
 class TemplatePage extends React.Component {
 
@@ -47,12 +55,8 @@ class TemplatePage extends React.Component {
 
   render () {
     return (
-      <PortalPageTemplate>
-        <Hero>
-          <h1>Welcome</h1>
-          <p>{Lorem.paragraph(3, 3)}</p>
-          <NegativeButton hollow>Learn more</NegativeButton>
-        </Hero>
+      <PortalPageTemplate hero={<HomeHero/>}>
+
         <p>Regardless of your role, location, or organization, Red Hat
           University gives you access to the learning and development (L+D)
           experiences you need to thrive in your career and help Red Hat
@@ -67,19 +71,20 @@ class TemplatePage extends React.Component {
           <li>By date (for instructor led offerings)</li>
           <li>Peer-Trusted Learning (Open Learning Community)</li>
         </ul>
-        <h4>You might like this ...</h4>
-        <table className="rh-custom-table margin-bottom-double">
-          <tr>
-            <td><IconCircle icon="mouse-pointer" size="s"/></td>
-            <td>
-              <a href="#" className="body_alt">{Lorem.title(7,15)}</a><br/>
+        <h3>Recommended</h3>
+        <p>Recommendations are based on your selected tags, course history and current channels.</p>
+        <CardHGroup>
+          <Card style="bars">
+            <div>
+              <a href="#" className="body_alt">{Lorem.title(7, 15)}</a><br/>
               <div className="padding-top">
-                <span><i className="fa fa-star"/><i className="fa fa-star"/><i
+                <div><i
+                  className="fa fa-comments"/> 23 Reviews </div>
+                <div className="rating-stars"><i className="fa fa-star"/><i className="fa fa-star"/><i
                   className="fa fa-star"/><i className="fa fa-star"/><i
-                  className="fa fa-star-half"/></span>
-                <span className="padding-left-double"><i
-                  className="fa fa-comments"/> 23 Reviews </span>
-                <div>
+                  className="fa fa-star-half"/></div>
+
+                <div className="padding-top">
                   <TagHGroup>
                     <Tag><i className="fa fa-hashtag"/>FOSS</Tag>
                     <Tag><i className="fa fa-hashtag"/>Atomic</Tag>
@@ -87,19 +92,18 @@ class TemplatePage extends React.Component {
                   </TagHGroup>
                 </div>
               </div>
-            </td>
-          </tr>
-          <tr>
-            <td><IconCircle icon="book" size="s"/></td>
-            <td>
-              <a href="#" className="body_alt">{Lorem.title(7,15)}</a><br/>
+            </div>
+          </Card>
+          <Card style="bars">
+            <div>
+              <a href="#" className="body_alt">{Lorem.title(7, 15)}</a><br/>
               <div className="padding-top">
-                <span><i className="fa fa-star"/><i className="fa fa-star"/><i
+                <div><i
+                  className="fa fa-comments"/> 18 Reviews </div>
+                <div className="rating-stars"><i className="fa fa-star"/><i className="fa fa-star"/><i
                   className="fa fa-star"/><i className="fa fa-star"/><i
-                  className="fa fa-star"/></span>
-                <span className="padding-left-double"><i
-                  className="fa fa-comments"/> 18 Reviews </span>
-                <div>
+                  className="fa fa-star"/></div>
+                <div className="padding-top">
                   <TagHGroup>
                     <Tag><i className="fa fa-hashtag"/>Sushi</Tag>
                     <Tag><i className="fa fa-hashtag"/>Manager</Tag>
@@ -107,27 +111,28 @@ class TemplatePage extends React.Component {
                   </TagHGroup>
                 </div>
               </div>
-            </td>
-          </tr>
-          <tr>
-            <td><IconCircle icon="desktop" size="s"/></td>
-            <td>
-              <a href="#" className="body_alt">{Lorem.title(7,15)}</a><br/>
+            </div>
+          </Card>
+          <Card style="bars">
+            <div>
+              <a href="#" className="body_alt">{Lorem.title(7, 15)}</a><br/>
               <div className="padding-top">
-                <span><i className="fa fa-star"/><i
-                  className="fa fa-star"/><i className="fa fa-star"/><i
-                  className="fa fa-star-half"/></span>
-                <span className="padding-left-double"><i
-                  className="fa fa-comments"/> 3 Reviews </span>
-                <div>
+                <div className="padding-right-double"><i
+                  className="fa fa-comments"/> 7 Reviews </div>
+                <div className="rating-stars"><i className="fa fa-star"/><i className="fa fa-star"/><i
+                  className="fa fa-star"/><i
+                  className="fa fa-star"/></div>
+                <div className="padding-top">
                   <TagHGroup>
-                    <Tag><i className="fa fa-hashtag"/>RHEL</Tag>
+                    <Tag><i className="fa fa-hashtag"/>Sushi</Tag>
+                    <Tag><i className="fa fa-hashtag"/>Manager</Tag>
+                    <Tag><i className="fa fa-hashtag"/>Aspiring Leader</Tag>
                   </TagHGroup>
                 </div>
               </div>
-            </td>
-          </tr>
-        </table>
+            </div>
+          </Card>
+        </CardHGroup>
         <div className="align-right">
           <NeutralButton text>View more ></NeutralButton>
         </div>

@@ -120,6 +120,7 @@ $rh-appdev-2: rgb(148, 212, 56)
 
 $color-nocolor: rgba(0, 0, 0, 0)
 $color-header: rgb(37, 37, 39)
+$color-body-bg: #fafafa
 $color-body: rgb(76, 76, 76)
 $color-body-alt: rgb(100, 100, 100)
 $color-header-title: rgb(204, 0, 0)
@@ -159,6 +160,7 @@ $text-shadow-dark: 1px 1px 0 rgba(0,0,0,.25)
 $box-shadow-light: 1px 1px 0 rgba(255,255,255,.5)
 $box-shadow-dark: 1px 1px 0 rgba(0,0,0,.2)
 $box-shadow-xsmall: 0 1px 1px 0 rgba(0,0,0,.2)
+$box-shadow-small: 1px 1px 3px rgba(0,0,0,.2)
 $box-shadow-medium: 2px 2px 7px rgba(0,0,0,.2)
 $box-shadow-large: 5px 5px 15px rgba(0,0,0,.2)
 $box-shadow-xlarge: 5px 5px 30px rgba(0,0,0,.2)
@@ -170,8 +172,11 @@ $form-el-border-error: 1px solid $control-danger-color
 
 // Metrics defined for later calculations
 $header-height-homepage: 19rem
+$header-height-homepage-extend: 15rem
 $header-height-subpage: 12rem
 $breadcrumbs-height: $base-line-height * 4
+
+$barsgradient: linear-gradient(-45deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.2) 22%,rgba(255,255,255,.1) 22.01%,rgba(255,255,255,0) 85%,rgba(255,255,255,.15) 85.01%,rgba(255,255,255,0) 100%)
 
 =text-emboss-shadow
   text-shadow: -1px -1px 0 rgba(0, 0, 0, .15), 1px 1px 0 rgba(255, 255, 255, .1)
@@ -181,6 +186,9 @@ $breadcrumbs-height: $base-line-height * 4
   background: linear-gradient(-45deg,#fff 0%,#eee 22%,#f6f6f6 22.01%,#fff 85%,#fafafa 85.01%,#fff 100%)
   //background-size: cover
   //background-attachment: fixed
+
+=background-darkblue-bars
+  background: $blue-dark $barsgradient
 
 // From footer on redhat.hom
 =background-black

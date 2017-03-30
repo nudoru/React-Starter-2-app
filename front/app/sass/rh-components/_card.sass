@@ -51,12 +51,24 @@ $card-padding: $base-line-height-double
     margin-right: $base-line-height
     margin-bottom: $base-line-height
 
+.rh-card-container-masonry-50
+  display: flex
+  min-width: 100%
+  flex-wrap: wrap
+  align-items: flex-start
+  justify-content: center
+  .rh-card
+    box-shadow: $box-shadow-xlarge
+    width: calc(50% - #{$base-line-height})
+    margin-right: $base-line-height
+    margin-bottom: $base-line-height
+
 .rh-card
   vertical-align: top
   position: relative
   margin: 0
-  box-shadow: $box-shadow-xsmall
-
+  box-shadow: $box-shadow-small
+  background-color: #fff
   //.padded-topbottom
   //  padding-top: $base-line-height
   //  padding-bottom: $base-line-height
@@ -65,8 +77,11 @@ $card-padding: $base-line-height-double
 
 .rh-card-header
   padding: $card-padding
+  padding-bottom: $card-padding/2
   overflow: hidden
   border-bottom: 1px solid rgba(0,0,0,.05)
+  h1,h2,h3,h4,h5,h6
+    margin: 0
   h1
     @extend h3
     margin: 0
@@ -78,6 +93,17 @@ $card-padding: $base-line-height-double
     text-align: center
     margin-top: $base-line-height-double
 
+.rh-card-header-dark-blue
+  +background-darkblue-bars
+  +white-text
+  +small-headers
+  padding-top: $base-line-height-double
+  padding-bottom: $base-line-height-half
+  h1
+    font-weight: 600
+    line-height: $base-line-height-double
+    text-shadow: $text-shadow-dark
+
 .rh-card-content
   padding: $card-padding
   &:last-child
@@ -86,6 +112,7 @@ $card-padding: $base-line-height-double
 
 .rh-card-footer
   padding: $card-padding
+  padding-top: $card-padding/2
   text-align: center
 
 .rh-card-cta
@@ -111,7 +138,7 @@ $card-padding: $base-line-height-double
   background: $grey-1
 
 .rh-card-narrow
-  @extend .rh-card-light
+  box-shadow: none
   .rh-card-header, .rh-card-content, .rh-card-footer
     padding: $base-line-height
 

@@ -194,6 +194,24 @@ hr
   h1,h2,h3,h4,h5,h6,p,li,pre,blockquote
     color: #fff
 
+=small-headers
+  h1
+    @extend h3
+  h2
+    @extend h4
+  h3
+    @extend h5
+  h4
+    @extend h6
+
+=small-text
+  p, a, ul, ol, li, pre, td, th, dl, dd, dt
+    @extend %body-base-small
+
+=big-text
+  p, a, ul, ol, li, pre, td, th, dl, dd, dt
+    @extend %body-base-alt
+
 //------------------------------------------------------------------------------
 // Images
 //------------------------------------------------------------------------------

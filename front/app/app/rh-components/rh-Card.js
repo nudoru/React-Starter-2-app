@@ -11,23 +11,35 @@ export const CardHGroupDecorative = ({children}) => <div
 export const CardHGroupTable = ({children}) => <div
   className='rh-card-container-horizontal-table'>{children}</div>;
 
-export const CardVGroup = ({children}) => {
-  return (<div className='rh-card-container-vertical'>{children}</div>);
-};
+export const CardVGroup = ({children}) => <div
+  className='rh-card-container-vertical'>{children}</div>;
 
-export const CardMasonry33Group = ({children}) => {
-  return (<div className='rh-card-container-masonry-33'>{children}</div>);
-};
+export const CardMasonry33Group = ({children}) => <div
+  className='rh-card-container-masonry-33'>{children}</div>;
 
-const CardHeader = ({children}) => <div
-  className="rh-card-header">{children}</div>;
-const CardFooter = ({children}) => <div
-  className="rh-card-footer">{children}</div>;
+export const CardMasonry50Group = ({children}) => <div
+  className='rh-card-container-masonry-50'>{children}</div>;
+
+export const CardHeader = ({children, className, ...other}) => <div
+  className={'rh-card-header ' + className} {...other}>{children}</div>;
+
+export const CardFooter = ({children, className, ...other}) => <div
+  className={'rh-card-footer ' + className} {...other}>{children}</div>;
+
+export const CardContent = ({children, className, ...other}) => <div
+  className={'rh-card-content ' + className} {...other}>{children}</div>;
+
+export const CardFrame = ({children, className, ...other}) => {
+  return (<div className={'rh-card ' + className} {...other}>
+    {children}
+  </div>);
+};
 
 export const Card = ({
                        style = 'light',
                        title,
                        icon,
+                       className,
                        children,
                        onClick,
                        ctaLabel = 'Read More'
@@ -52,41 +64,13 @@ export const Card = ({
     footerArea = (<CardFooter><Button text onClick={onClick}>{ctaLabel}</Button></CardFooter>);
   }
 
-  style = 'rh-card rh-card-' + style;
+  style = 'rh-card rh-card-' + style + ' ' + className;
 
   return (<div className={style}>
     {headerArea}
-    <div className="rh-card-content">
+    <CardContent>
       {children}
-    </div>
+    </CardContent>
     {footerArea}
   </div>);
 };
-
-// export const CardIcon = ({
-//   style = 'light',
-//   icon,
-//   title,
-//   cta = 'Read more',
-//   ctaLink,
-//   children
-// }) => {
-//
-//   let buttonArea = (<div></div>),
-//
-//
-//   style = 'rh-card rh-card-icon rh-card-' + style;
-//
-//   if (ctaLink) {
-//     buttonArea = (<div className="rh-card-footer">
-//       <a href={ctaLink} className="cta">{cta}</a>
-//     </div>)
-//   }
-//
-//   return (<div className={style}>
-//     {iconArea}
-//     <h1>{title}</h1>
-//     {children}
-//     {buttonArea}
-//   </div>);
-// };

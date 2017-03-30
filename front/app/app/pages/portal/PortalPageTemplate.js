@@ -3,21 +3,37 @@ import PageModule from '../../rh-components/rh-PageModule';
 import { Grid, Row, Col } from '../../rh-components/rh-Grid';
 import PortalUserSidebar from './PortalUserSidebar';
 
-const PortalPageTemplate = ({children}) => {
+export const PortalPageTemplate = ({children, hero}) => {
   return (
     <div>
-      <PageModule>
-        <Row>
-          <Col className="padding-right-double">
-            {children}
-          </Col>
-          <Col width="4">
-            <PortalUserSidebar/>
-          </Col>
-        </Row>
+      <PageModule className="padding-none">
+        <div className="color-bg-body">
+          {hero}
+          <Row>
+            <Col className="padded">
+              {children}
+            </Col>
+            <Col width="4" className="padding-top">
+              <PortalUserSidebar/>
+            </Col>
+          </Row>
+        </div>
       </PageModule>
     </div>
-  )
+  );
 };
 
-export default PortalPageTemplate;
+export const PortalPageTemplateNoSidebar = ({children, hero}) => {
+  return (
+    <div>
+      <PageModule className="padding-none">
+        <div className="color-bg-white">
+          {hero}
+          <div className="padded">
+            {children}
+          </div>
+        </div>
+      </PageModule>
+    </div>
+  );
+};
