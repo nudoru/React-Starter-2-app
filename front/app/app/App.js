@@ -66,7 +66,7 @@ class App extends React.Component {
       content = (
         <Router>
           <div className="application-container">
-            <Header title="Associate Learning Portal"
+            <Header title={config.setup.title}
                     secondaryNav={config.setup.secondaryNav}
                     username='Joe User'
                     nav={[

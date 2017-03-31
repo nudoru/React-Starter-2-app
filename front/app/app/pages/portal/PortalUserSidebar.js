@@ -41,7 +41,6 @@ const PortalUserSidebar = (props) => {
           <hr/>
           <p><i className="fa fa-trophy"/> 123 Points<br/><em className="small">30
             points to next level</em></p>
-          <DonutChart value={100}/>
         </Col>
       </Row>
       <h5 className="margin-top-double margin-bottom">Your Tags <i

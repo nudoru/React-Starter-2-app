@@ -93,16 +93,13 @@ $card-padding: $base-line-height-double
     text-align: center
     margin-top: $base-line-height-double
 
-.rh-card-header-dark-blue
-  +background-darkblue-bars
-  +white-text
+%card-header-for-bg
   +small-headers
   padding-top: $base-line-height-double
   padding-bottom: $base-line-height-half
   h1
     font-weight: 600
     line-height: $base-line-height-double
-    text-shadow: $text-shadow-dark
 
 .rh-card-content
   padding: $card-padding
@@ -111,8 +108,7 @@ $card-padding: $base-line-height-double
 
 
 .rh-card-footer
-  padding: $card-padding
-  padding-top: $card-padding/2
+  padding: $card-padding/2 $card-padding
   text-align: center
 
 .rh-card-cta
@@ -142,6 +138,31 @@ $card-padding: $base-line-height-double
   .rh-card-header, .rh-card-content, .rh-card-footer
     padding: $base-line-height
 
+
+.rh-card-header-dark-blue
+  +background-darkblue-bars
+  +white-text
+  @extend %card-header-for-bg
+  h1
+    text-shadow: $text-shadow-dark
+
+.rh-card-info
+  border: 1px solid $control-info-color
+  .rh-card-header
+    @extend %card-header-for-bg
+    background-color: $control-info-color
+    +white-text
+    h1
+      text-shadow: $text-shadow-dark
+
+.rh-card-success
+  border: 1px solid $control-success-color
+  .rh-card-header
+    @extend %card-header-for-bg
+    background-color: $control-success-color
+    +white-text
+    h1
+      text-shadow: $text-shadow-dark
 
 //.rh-card-pipes
 //  background: rgba(255,255,255,.75) url('../images/sample_image_light.jpg')
