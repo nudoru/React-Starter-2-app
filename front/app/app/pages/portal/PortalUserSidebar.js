@@ -43,6 +43,13 @@ const PortalUserSidebar = (props) => {
             points to next level</em></p>
         </Col>
       </Row>
+      <h5 className="margin-top-double margin-bottom">Your channels</h5>
+      <table className="rh-custom-table margin-none">
+        <tr>
+          <td><StatusIcon status="1"/></td>
+          <td><a href="#">New Hire</a></td>
+        </tr>
+      </table>
       <h5 className="margin-top-double margin-bottom">Your Tags <i
         className="fa fa-pencil padding-left"/></h5>
       <TagHGroup>

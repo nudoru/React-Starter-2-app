@@ -10,8 +10,14 @@ import {
   CardMasonry33Group
 } from '../../rh-components/rh-Card';
 import {
-  SecondaryButton
+  Button,
+  SecondaryButton,
+  NegativeButton,
+  NeutralButton
 } from '../../rh-components/rh-Button';
+import IconCircle from '../../rh-components/rh-IconCircle';
+import IconCircleImage from '../../rh-components/rh-IconCircleImage';
+import IconCircleText from '../../rh-components/rh-IconCircleText';
 import { Grid, Row, Col } from '../../rh-components/rh-Grid';
 import Hero from '../../rh-components/rh-Hero';
 import { PortalPageTemplateNoSidebar } from './PortalPageTemplate';
@@ -19,19 +25,24 @@ import DonutChart from '../../rh-components/rh-DonutChart';
 import { TabHGroup, Tab } from '../../rh-components/rh-Tabs';
 import { StatusIcon, StatusIconTiny } from '../../rh-components/rh-StatusIcon';
 import Status from '../../rh-components/rh-Status';
+import {
+  BlockLinkHGroup,
+  BlockLinkVGroup,
+  BlockLink
+} from '../../rh-components/rh-BlockLinks';
+import {StepBar, StepBarItem} from '../../rh-components/rh-StepBar';
 
 const ChannelHero = () => {
   return (<Hero>
     <Row>
-      <Col>
-        <h1>Welcome to the New Hire Learning Channel!</h1>
+      <Col width="9">
+        <h1>New Hire Learning Channel</h1>
         <h5>Begin your journey as a <strong>new hire</strong> at Red Hat.</h5>
       </Col>
       <Col width="3">
         <div className="margin-center">
           <DonutChart value={42} size={125} strokewidth={10} valuelabel="Complete"
                       className="rh-donutchart-white margin-center"/>
-          <p className="small padding-top">You're currently active in this channel.</p>
         </div>
       </Col>
     </Row>
@@ -51,7 +62,7 @@ const ChannelCard = ({icon = 'cog', flag}) => {
         {flag ? <Status type="pass">You've completed this module.</Status> : null}
       </CardContent>
       <CardFooter>
-        <SecondaryButton text>Start ></SecondaryButton>
+        <Button hollow>Start ></Button>
       </CardFooter>
     </CardFrame>
   );
@@ -72,22 +83,57 @@ class TemplatePage extends React.Component {
 
     return (
       <PortalPageTemplateNoSidebar hero={<ChannelHero/>}>
-        <TabHGroup>
-          <Tab active={true} label="Emerging"/>
-          <Tab active={false} label="Practicing"/>
-          <Tab active={false} label="Experienced" />
-          <Tab active={false} label="On going" />
-        </TabHGroup>
-        <h1>Welcome to Red Hat</h1>
-        <p>Beging your learning journey here. {Lorem.paragraph(5,5)}</p>
+        <h1>Welcome to Red Hat!</h1>
+        <Row className="margin-bottom-double">
+          <Col width="9" className="padding-right">
+            <p>Begin your learning journey here. {Lorem.paragraph(5,5)}</p>
+            <ul>
+              <li>{Lorem.sentence(10, 30)}</li>
+              <li>{Lorem.sentence(10, 30)}</li>
+              <li>{Lorem.sentence(10, 30)}</li>
+            </ul>
+          </Col>
+          <Col width="3">
+            <BlockLinkVGroup style="white">
+              <BlockLink label="You're active in this channel as a New Hire." link="#">
+                <NeutralButton hollow block>Leave channel ></NeutralButton>
+              </BlockLink>
+              <BlockLink label="View channel resources"
+                         byline="A message or report problems with content."
+                         link="#"/>
+              <BlockLink label="Leave feedback"
+                         byline="A message or report problems with content."
+                         link="#"/>
+            </BlockLinkVGroup>
+          </Col>
+        </Row>
+        <hr/>
+
+        <StepBar>
+          <StepBarItem>Prepare</StepBarItem>
+          <StepBarItem current>Welcome</StepBarItem>
+          <StepBarItem>Connect</StepBarItem>
+          <StepBarItem>Grow + Develop</StepBarItem>
+        </StepBar>
+
+        {/*<TabHGroup>*/}
+          {/*<Tab active={false} label="Prepare"/>*/}
+          {/*<Tab active={true} label="Welcome"/>*/}
+          {/*<Tab active={false} label="Connect"/>*/}
+          {/*<Tab active={false} label="Grow + Develop" />*/}
+          {/*<Tab active={false} label="Resources" />*/}
+        {/*</TabHGroup>*/}
+
         <h2>Goals for this section</h2>
         <ul>
           <li>{Lorem.sentence(10, 30)}</li>
           <li>{Lorem.sentence(10, 30)}</li>
           <li>{Lorem.sentence(10, 30)}</li>
+          <li>{Lorem.sentence(10, 30)}</li>
+          <li>{Lorem.sentence(10, 30)}</li>
         </ul>
         <CardMasonry33Group>
-          {[1,1,1,1,0,0,0,0,0].map(f => <ChannelCard flag={f}/>)}
+          {[1,1,0,1,0,0,0,0,0].map(f => <ChannelCard flag={f}/>)}
         </CardMasonry33Group>
       </PortalPageTemplateNoSidebar >);
   }

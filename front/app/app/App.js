@@ -15,6 +15,7 @@ import LoginPanel from './rh-components/rh-LoginPanel';
 import { validateInputStr } from './utils/AppUtils';
 
 import PortalHome from './pages/portal/PortalHome';
+import PortalMyPage from './pages/portal/PortalMyPage';
 import PortalChannels from './pages/portal/PortalChannels';
 import PortalChannelPage from './pages/portal/PortalChannelPage';
 
@@ -71,6 +72,7 @@ class App extends React.Component {
                     username='Joe User'
                     nav={[
                       {label: 'Home', route: '/'},
+                      {label: 'My Page', route: '/mypage'},
                       {label: 'Channels', route: '/channels'},
                       {label: 'Regions', route: '/baz'},
                       {label: 'Course Catalog', route: '/foo'},
@@ -85,6 +87,7 @@ class App extends React.Component {
                 <Route exact path="/" component={PortalHome}/>
                 <Route path="/channels" component={PortalChannels}/>
                 <Route path="/channelpage" component={PortalChannelPage}/>
+                <Route path="/mypage" component={PortalMyPage}/>
                 <Route path="/c" component={ComponentsTesting}/>
                 <Route path="/f" component={FormTesting}/>
                 <Route path="/t" component={TemplatePage}/>

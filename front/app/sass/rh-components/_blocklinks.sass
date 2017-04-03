@@ -5,36 +5,40 @@
   li
     list-style: none
     margin-left: 0
+    background: $blue
     a:before
       content: '\f18e'
       font-family: 'FontAwesome'
       font-weight: 400
       padding-right: $base-line-height-half
       color: rgba(255,255,255,.75)
+      &:hover
+        text-decoration: none
     a
       +transition-all()
       @extend %control-button-text
       display: block
-      background: $color-link
-      color: #fff
-      //font-weight: 600
       padding: $base-line-height
-      margin-bottom: $base-line-height-half
+      color: #fff
     a:hover
       text-decoration: none
-      background: $color-link-hover
     em
+      @extend .small
       display: block
       font-style: italic
       font-weight: 400
-      font-size: $base-font-size-small
       text-transform: none
+    span.children
+      display: block
+      width: 100%
+      padding: $base-line-height
+      padding-top: $base-line-height-half
 
 .block-links-shaded
   @extend .block-links
   li
+    background: $grey-9
     a
-      background: $grey-9
       text-shadow: $text-shadow-dark
     a:hover
       background: $grey-7
@@ -42,18 +46,19 @@
 .block-links-blue
   @extend .block-links
   li
+    background: $blue
     a
-      background: $blue
       text-shadow: $text-shadow-dark
     a:hover
-      background: $blue-7
+      background: $blue-8
 
 .block-links-white
   @extend .block-links
   li
+    background: #fff
+    border: 1px solid $grey-1
     a
       color: $color-body
-      background: #fff
       text-shadow: $text-shadow-light
     a:hover
       background: $grey-2
@@ -61,10 +66,14 @@
       color: $red
 
 .block-links-horizontal
-  display: table
-  table-layout: fixed
+  display: flex
+  align-items: flex-start
   li
-    display: table-cell
-    padding-right: $base-line-height
+    margin-right: $base-line-height
     &:last-of-type
       padding-right: 0
+
+
+.block-links-vertical
+  li
+    margin-bottom: $base-line-height-half
