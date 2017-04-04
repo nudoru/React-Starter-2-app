@@ -1,33 +1,11 @@
 import React from 'react';
 import Lorem from '../../../../../shared/utils/Lorem';
-import { Grid, Row, Col } from '../../rh-components/rh-Grid';
-import {
-  Card,
-  CardHGroup,
-  CardHGroupDecorative,
-  CardHGroupTable,
-  CardVGroup
-} from '../../rh-components/rh-Card';
-import IconCircle from '../../rh-components/rh-IconCircle';
+import { Col, Row } from '../../rh-components/rh-Grid';
+import { Card, CardVGroup } from '../../rh-components/rh-Card';
 import IconCircleText from '../../rh-components/rh-IconCircleText';
 import EventCard from '../../rh-components/rh-EventCard';
-import {
-  BlockLinkHGroup,
-  BlockLinkVGroup,
-  BlockLink
-} from '../../rh-components/rh-BlockLinks';
-import { TagHGroup, Tag } from '../../rh-components/rh-Tag';
-import { StatusIcon, StatusIconTiny } from '../../rh-components/rh-StatusIcon';
-import {
-  Button,
-  SecondaryButton,
-  NeutralButton,
-  NegativeButton,
-  ButtonHGroup,
-  ButtonHRow,
-  ButtonVGroup
-} from '../../rh-components/rh-Button';
-import DonutChart from '../../rh-components/rh-DonutChart';
+import { Tag, TagHGroup } from '../../rh-components/rh-Tag';
+import { StatusIcon } from '../../rh-components/rh-StatusIcon';
 
 const PortalUserSidebar = (props) => {
   return (<div className="padding-right"> <CardVGroup>

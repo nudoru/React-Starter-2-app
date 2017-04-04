@@ -26,8 +26,27 @@ _days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
 _currentText = _textSets[0].toLowerCase().split(' ');
 
+function rNumber (min, max) {
+  return _toolbox.rndNumber(min, max);
+}
+
+function rItem (arry) {
+  return arry[rNumber(0, arry.length - 1)];
+}
+
+function rItems (num, arry) {
+  if (num >= arry.length) {
+    return arry;
+  }
+  let res = [];
+  for (let i = 0; i < num; i++) {
+    res.push(rItem(arry));
+  }
+  return res;
+}
+
 function sentence (min, max) {
-  return _toolbox.capitalizeFirstLetterStr(text(min, max)) + getRandomItem(_punctuation);
+  return _toolbox.capitalizeFirstLetterStr(text(min, max)) + rItem(_punctuation);
 }
 
 function title (min, max) {
@@ -37,7 +56,7 @@ function title (min, max) {
 function paragraph (min, max) {
   var str   = '',
       delim = ' ',
-      len   = _toolbox.rndNumber(min, max),
+      len   = rNumber(min, max),
       i     = 0;
 
   for (; i < len; i++) {
@@ -53,29 +72,25 @@ function paragraph (min, max) {
 function text (min, max) {
   var str   = '',
       delim = ' ',
-      len   = _toolbox.rndNumber(min, max),
+      len   = rNumber(min, max),
       i     = 0;
 
   for (; i < len; i++) {
     if (i === len - 1) {
       delim = '';
     }
-    str += getRandomItem(_currentText) + delim;
+    str += rItem(_currentText) + delim;
   }
 
   return str;
 }
 
-function getRandomItem (arry) {
-  return arry[_toolbox.rndNumber(0, arry.length - 1)];
-}
-
 function getFirstName () {
-  return _toolbox.rndNumber(0, 1) ? getRandomItem(_maleFirstNames) : getRandomItem(_femaleFirstNames);
+  return rNumber(0, 1) ? rItem(_maleFirstNames) : rItem(_femaleFirstNames);
 }
 
 function getLastName () {
-  return getRandomItem(_lastNames);
+  return rItem(_lastNames);
 }
 
 function flName () {
@@ -91,12 +106,12 @@ function lfName () {
  * @returns {{monthNumber: *, monthName: *, monthDay, weekDayNumber: *, weekDay: *, year}}
  */
 function date () {
-  var month = _toolbox.rndNumber(0, 11),
-      wkday = _toolbox.rndNumber(0, 4),
+  var month = rNumber(0, 11),
+      wkday = rNumber(0, 4),
       date  = {
         monthNumber  : month + 1,
         monthName    : _months[month],
-        monthDay     : _toolbox.rndNumber(1, 28),
+        monthDay     : rNumber(1, 28),
         weekDayNumber: wkday + 1,
         weekDay      : _days[wkday],
         year         : _toolbox.rndElement(['2017'])
@@ -122,6 +137,9 @@ function guid () {
 }
 
 module.exports = {
+  rNumber,
+  rItem,
+  rItems,
   text,
   sentence,
   title,

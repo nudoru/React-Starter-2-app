@@ -30,7 +30,7 @@ import {
   ButtonHRow,
   ButtonVGroup
 } from '../../rh-components/rh-Button';
-
+import {CourseFeatured} from './PortalCommonElements';
 import { PortalPageTemplate } from './PortalPageTemplate';
 import Hero from '../../rh-components/rh-Hero';
 
@@ -48,67 +48,23 @@ class TemplatePage extends React.Component {
   render () {
     return (
       <PortalPageTemplate>
-        <h3>Recommended</h3>
+        <h3>Recommended based on your tags</h3>
         <p>Recommendations are based on your selected tags, course history and current channels.</p>
         <CardHGroup>
-          <Card style="bars">
-            <div>
-              <a href="#" className="body_alt">{Lorem.title(7, 15)}</a><br/>
-              <div className="padding-top">
-                <div><i
-                  className="fa fa-comments"/> 23 Reviews </div>
-                <div className="rating-stars"><i className="fa fa-star"/><i className="fa fa-star"/><i
-                  className="fa fa-star"/><i className="fa fa-star"/><i
-                  className="fa fa-star-half"/></div>
-
-                <div className="padding-top">
-                  <TagHGroup>
-                    <Tag><i className="fa fa-hashtag"/>FOSS</Tag>
-                    <Tag><i className="fa fa-hashtag"/>Atomic</Tag>
-                    <Tag><i className="fa fa-hashtag"/>OpenShift</Tag>
-                  </TagHGroup>
-                </div>
-              </div>
-            </div>
-          </Card>
-          <Card style="bars">
-            <div>
-              <a href="#" className="body_alt">{Lorem.title(7, 15)}</a><br/>
-              <div className="padding-top">
-                <div><i
-                  className="fa fa-comments"/> 18 Reviews </div>
-                <div className="rating-stars"><i className="fa fa-star"/><i className="fa fa-star"/><i
-                  className="fa fa-star"/><i className="fa fa-star"/><i
-                  className="fa fa-star"/></div>
-                <div className="padding-top">
-                  <TagHGroup>
-                    <Tag><i className="fa fa-hashtag"/>Sushi</Tag>
-                    <Tag><i className="fa fa-hashtag"/>Manager</Tag>
-                    <Tag><i className="fa fa-hashtag"/>Aspiring Leader</Tag>
-                  </TagHGroup>
-                </div>
-              </div>
-            </div>
-          </Card>
-          <Card style="bars">
-            <div>
-              <a href="#" className="body_alt">{Lorem.title(7, 15)}</a><br/>
-              <div className="padding-top">
-                <div className="padding-right-double"><i
-                  className="fa fa-comments"/> 7 Reviews </div>
-                <div className="rating-stars"><i className="fa fa-star"/><i className="fa fa-star"/><i
-                  className="fa fa-star"/><i
-                  className="fa fa-star"/></div>
-                <div className="padding-top">
-                  <TagHGroup>
-                    <Tag><i className="fa fa-hashtag"/>Sushi</Tag>
-                    <Tag><i className="fa fa-hashtag"/>Manager</Tag>
-                    <Tag><i className="fa fa-hashtag"/>Aspiring Leader</Tag>
-                  </TagHGroup>
-                </div>
-              </div>
-            </div>
-          </Card>
+          <CourseFeatured tags={['FOSS','Atomic', 'OpenShift']}/>
+          <CourseFeatured tags={['Sushi','Manager', 'Aspiring Leader']}/>
+          <CourseFeatured tags={['RHEL','Atomic']}/>
+        </CardHGroup>
+        <div className="align-right">
+          <NeutralButton text>View more ></NeutralButton>
+        </div>
+        <hr/>
+        <h3 className="padding-top">People like you are taking these courses</h3>
+        <p>Recommendations are based on your selected tags, course history and current channels.</p>
+        <CardHGroup>
+          <CourseFeatured tags={['FOSS','Atomic', 'OpenShift']}/>
+          <CourseFeatured tags={['Sushi','Manager', 'Aspiring Leader']}/>
+          <CourseFeatured tags={['RHEL','Atomic']}/>
         </CardHGroup>
         <div className="align-right">
           <NeutralButton text>View more ></NeutralButton>

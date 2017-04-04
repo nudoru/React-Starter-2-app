@@ -7,6 +7,14 @@ import {fetchConfigData} from './services/fetchConfig';
 import AppStore from './store/AppStore';
 import SetConfig from'./store/actions/SetConfig';
 
+const LoadingMessage = () => <PleaseWaitModal><h1>Please wait ...</h1></PleaseWaitModal>;
+const ErrorMessage = () => <ModalMessage message={{
+                              title: 'There was a problem loading the configuration.',
+                              icon : 'exclamation',
+                              error: true
+                            }}>
+                            </ModalMessage>;
+
 class Bootstrap extends React.Component {
 
   constructor() {
@@ -35,16 +43,9 @@ class Bootstrap extends React.Component {
     let loadingContent;
 
     if (this.state.loading) {
-      loadingContent = (<PleaseWaitModal>
-        <h1>Please wait ...</h1>
-      </PleaseWaitModal>);
+      loadingContent = <LoadingMessage/>;
     } else if (this.state.isError) {
-      loadingContent = (<ModalMessage message={{
-        title: 'There was a problem loading the configuration.',
-        icon : 'exclamation',
-        error: true
-      }}>
-      </ModalMessage>);
+      loadingContent = <ErrorMessage/>;
     }
 
     if (loadingContent) {

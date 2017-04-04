@@ -1,41 +1,10 @@
 import React from 'react';
-import {history} from 'react-router-dom';
-import Lorem from '../../../../../shared/utils/Lorem';
+import { history } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {
-  CardHeader,
-  CardContent,
-  CardFooter,
-  CardFrame,
-  CardMasonry50Group
-} from '../../rh-components/rh-Card';
-import {
-  SecondaryButton
-} from '../../rh-components/rh-Button';
+import { CardMasonry50Group } from '../../rh-components/rh-Card';
 
 import { PortalPageTemplate } from './PortalPageTemplate';
-
-const ChannelCard = ({icon = 'television', title, router}) => {
-  return (
-    <CardFrame>
-      <CardHeader className="rh-card-header-dark-blue">
-        <h1><i
-          className={'fa fa-' + icon + ' padding-right'}/>{title}</h1>
-      </CardHeader>
-      <CardContent>
-        <p>{Lorem.paragraph(3, 3)}</p>
-      </CardContent>
-      <CardFooter>
-        <SecondaryButton hollow onClick={e => router.push('/channelpage')}>View Channel</SecondaryButton>
-      </CardFooter>
-    </CardFrame>
-  );
-};
-
-//const onChannelClick = () => {
-//  console.log('click!');
-//  history.push('/barbaz');
-//}
+import { ChannelCard } from './PortalCommonElements';
 
 class TemplatePage extends React.Component {
 
