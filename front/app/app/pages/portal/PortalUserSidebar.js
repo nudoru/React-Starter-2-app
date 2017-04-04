@@ -25,7 +25,7 @@ const PortalUserSidebar = (props) => {
       <table className="rh-custom-table margin-none">
         <tr>
           <td><StatusIcon status="1"/></td>
-          <td><a href="#">New Hire</a></td>
+          <td><a href="#">New Hire Learning Channel.</a><br/><strong>42%</strong> complete on current goal.</td>
         </tr>
       </table>
       <h5 className="margin-top-double margin-bottom">Your Tags <i

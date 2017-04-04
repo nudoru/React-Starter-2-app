@@ -32,7 +32,7 @@ import {
 } from '../../rh-components/rh-Button';
 import {CourseFeatured} from './PortalCommonElements';
 import { PortalPageTemplate } from './PortalPageTemplate';
-import Hero from '../../rh-components/rh-Hero';
+import DonutChart from '../../rh-components/rh-DonutChart';
 
 class TemplatePage extends React.Component {
 
@@ -48,7 +48,36 @@ class TemplatePage extends React.Component {
   render () {
     return (
       <PortalPageTemplate>
-        <h3>Recommended based on your tags</h3>
+        <Row className="background-greybars margin-bottom-triple padded">
+          <Col width="9">
+            <h1>Joe Learner</h1>
+            <h2><strong>New hire</strong> senior consultant</h2>
+          </Col>
+          <Col width="3">
+            <div className="margin-center">
+              <DonutChart value={83} size={125} strokewidth={10}
+                          valuelabel="Point Goal"
+                          className="margin-center"/>
+            </div>
+          </Col>
+        </Row>
+        <h3>Actions</h3>
+        <CardHGroup>
+          <Card icon="television">You have <strong>1</strong> active learning channel.
+            <NeutralButton hollow block className="margin-top-double">View</NeutralButton>
+          </Card>
+          <Card icon="calendar-o">You have <strong>3</strong> upcoming classes.
+            <NeutralButton hollow block className="margin-top-double">View</NeutralButton>
+          </Card>
+          <Card icon="mouse-pointer">You have <strong>4</strong> in-progress learning activities.
+            <NeutralButton hollow block className="margin-top-double">View</NeutralButton>
+          </Card>
+          <Card icon="linkedin-square">Import job and experience data from your LinkedIn profile.
+            <NeutralButton hollow block className="margin-top-double">More</NeutralButton>
+          </Card>
+        </CardHGroup>
+        <hr/>
+        <h3 className="margin-top-double">Recommended based on your tags</h3>
         <p>Recommendations are based on your selected tags, course history and current channels.</p>
         <CardHGroup>
           <CourseFeatured tags={['FOSS','Atomic', 'OpenShift']}/>
@@ -59,7 +88,7 @@ class TemplatePage extends React.Component {
           <NeutralButton text>View more ></NeutralButton>
         </div>
         <hr/>
-        <h3 className="padding-top">People like you are taking these courses</h3>
+        <h3 className="margin-top-double">People like you are taking these courses</h3>
         <p>Recommendations are based on your selected tags, course history and current channels.</p>
         <CardHGroup>
           <CourseFeatured tags={['FOSS','Atomic', 'OpenShift']}/>

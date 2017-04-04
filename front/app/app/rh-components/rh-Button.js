@@ -13,7 +13,7 @@ const NOOP = () => {
 /*
  style = secondary, neutral, hollow
  */
-const buttonMaker = ({children, style, small, text, hollow, icon, block, disabled, onClick = NOOP, ...other}) => {
+const buttonMaker = ({children, style, small, text, hollow, icon, block, disabled, onClick = NOOP, className='', ...other}) => {
   let cls = 'rh-button' + (style ? ' rh-button-' + style : '');
   if (text) {
     if(!style) {
@@ -41,6 +41,8 @@ const buttonMaker = ({children, style, small, text, hollow, icon, block, disable
       onClick = NOOP;
     }
   }
+
+  cls += ' '+className;
 
   return <button onClick={onClick} className={cls} {...other}>{children}</button>;
 };

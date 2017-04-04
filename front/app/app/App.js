@@ -20,8 +20,9 @@ const LoadingMessage = () => <PleaseWaitModal><h1>Reticulating splines ...</h1><
 
 const RouteMessage = ({children}) => <div>
                                       <PageModule>
-                                        <h1>{children}</h1>
-                                        <p>Text</p>
+                                        <div className="color-bg-body">
+                                          <h1>{children}</h1>
+                                        </div>
                                       </PageModule>
                                     </div>;
 
@@ -32,9 +33,9 @@ const AppHeader = ({config}) => <Header title={config.setup.title}
                                            {label: 'Home', route: '/'},
                                            {label: 'My Page', route: '/mypage'},
                                            {label: 'Channels', route: '/channels'},
-                                           {label: 'Regions', route: '/baz'},
-                                           {label: 'Course Catalog', route: '/foo'},
-                                           {label: 'Global Calendar', route: '/bar'},
+                                           {label: 'Regions', route: '/404'},
+                                           {label: 'Course Catalog', route: '/404'},
+                                           {label: 'Global Calendar', route: '/404'},
                                            {label: 'New Hire', route: '/channelpage'}
                                            //{label: 'Components', route: '/c'},
                                            //{label: 'Form', route: '/f'},
@@ -53,6 +54,7 @@ const AppRouter = ({config}) => <Router>
                                 <Route path="/c" component={ComponentsTesting}/>
                                 <Route path="/f" component={FormTesting}/>
                                 <Route path="/t" component={TemplatePage}/>
+                                <Route path="/404" render={() => <RouteMessage>There's nothing here.</RouteMessage>}/>
                                 <Route render={() => <h1>There's nothing here.</h1>}/>
                               </Switch>
                             </div>
