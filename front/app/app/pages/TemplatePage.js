@@ -35,12 +35,13 @@ class TemplatePage extends React.Component {
 TemplatePage.defaultProps = {};
 TemplatePage.propTypes    = {};
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     config: state.config
   };
 };
-const mapDispatchToProps = (dispatch) => {
+
+const mapDispatchToProps = dispatch => {
   return {};
 };
 

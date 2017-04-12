@@ -3,6 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Bootstrap from './app/Bootstrap'
 
+// Polyfill fetch
+require('isomorphic-fetch');
+
 // Globally available styles
 import css from './sass/index.sass';
 

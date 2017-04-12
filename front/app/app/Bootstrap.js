@@ -1,23 +1,32 @@
 import React from 'react';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import ModalMessage from './rh-components/rh-ModalMessage';
 import PleaseWaitModal from './rh-components/rh-PleaseWaitModal';
 import App from './App';
-import {fetchConfigData} from './services/fetchConfig';
+import { fetchConfigData } from './services/fetchConfig';
 import AppStore from './store/AppStore';
 import SetConfig from'./store/actions/SetConfig';
 
-const LoadingMessage = () => <PleaseWaitModal><h1>Please wait ...</h1></PleaseWaitModal>;
-const ErrorMessage = () => <ModalMessage message={{
-                              title: 'There was a problem loading the configuration.',
-                              icon : 'exclamation',
-                              error: true
-                            }}>
-                            </ModalMessage>;
+const LoadingMessage = () =>
+  <PleaseWaitModal><h1>Please wait ...</h1>
+  </PleaseWaitModal>;
+
+const ErrorMessage = () =>
+  <ModalMessage message={{
+    title: 'There was a problem loading the configuration.',
+    icon : 'exclamation',
+    error: true
+  }}>
+  </ModalMessage>;
+
+const Application = () =>
+  <Provider store={AppStore}>
+    <App/>
+  </Provider>;
 
 class Bootstrap extends React.Component {
 
-  constructor() {
+  constructor () {
     super();
     this.state = {
       loading: true,  // Loading the config.json file
@@ -26,12 +35,12 @@ class Bootstrap extends React.Component {
   }
 
   // On initial mounting of the component, load config or start app
-  componentDidMount() {
+  componentDidMount () {
     this.fetchConfig();
   }
 
   // Start the app or load the configuration file
-  fetchConfig() {
+  fetchConfig () {
     fetchConfigData().fork(console.error,
       config => {
         AppStore.dispatch(SetConfig(config));
@@ -39,23 +48,14 @@ class Bootstrap extends React.Component {
       });
   }
 
-  render() {
-    let loadingContent;
-
+  render () {
     if (this.state.loading) {
-      loadingContent = <LoadingMessage/>;
+      return <LoadingMessage/>;
     } else if (this.state.isError) {
-      loadingContent = <ErrorMessage/>;
+      return <ErrorMessage/>;
     }
 
-    if (loadingContent) {
-      return loadingContent;
-    }
-
-    return (
-      <Provider store={AppStore}>
-        <App/>
-      </Provider>);
+    return <Application/>;
   }
 }
 

@@ -1,5 +1,5 @@
 import moment from 'moment';
-import {compose, curry, both, contains} from 'ramda';
+import {compose, curry, both, contains, sequence} from 'ramda';
 import {removeTagsStr, removeEntityStr, removeWhiteSpace} from '../../../../shared/utils/Toolbox';
 
 export const noOp = () => {};
@@ -29,6 +29,7 @@ export const contentTitleToLink = (title) => 'https://www.redhat.com/en#'+remove
 
 //------------------------------------------------------------------------------
 // Composabile f()s
+// Refer to functional.js for more
 //------------------------------------------------------------------------------
 
 // Characters we shouldn't allow in user ID input
@@ -48,9 +49,41 @@ export const isCompletedToNum = c => c.status.completed ? 2 : 1;
 // Utils
 //------------------------------------------------------------------------------
 
+// Chain an array of Tasks in to one task
+export const chainTasks = (taskArry) => sequence(Task.of, taskArry);
+
 // Validate user name input, length must be >0 and <30 and have no bad chars
 // String => true | false
 export const validateInputStr = (str) => both(stringLengthIsLessThan(30), containsNoBadChars)(str);
 
 // String -> String
 export const stripHTML = (str) => compose(removeTagsStr, removeEntityStr)(str);
+
+// For debugging in a compose
+export const trace = x => {
+  console.log('>>> ', x);
+  return x;
+};
+
+// 1 Just getting an array w/ unique values using a object/keys then getting the keys
+const keys = obj => Object.keys(obj);
+// 2
+const createObjectKeyMap = curry((key, arry) => arry.reduce((acc, el) => {
+  acc[el[key]] = 1;
+  return acc;
+}, {}));
+// 3
+export const getUniqueKeys = (key, arry) => compose(keys, createObjectKeyMap(key))(arry);
+
+/*
+ Turn an object of {key1:value1, key2:value2, ...} into paramname=value[&...] for a
+ */
+// acc += (idx > 0 ? '&' : '') + key + '=' + encodeURIComponent(objArry[key]);
+export const parameterize = objArry =>
+  Object
+    .keys(objArry)
+    .reduce((acc, key) => {
+      acc.push(key + '=' + encodeURIComponent(objArry[key]));
+      return acc;
+    }, ['?'])
+    .join('&');
