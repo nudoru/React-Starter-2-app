@@ -4,6 +4,7 @@ import { Either } from './utils/functional';
 import ModalMessage from './rh-components/rh-ModalMessage';
 import PleaseWaitModal from './rh-components/rh-PleaseWaitModal';
 import App from './App';
+
 import { fetchConfigData } from './services/fetchConfig';
 import AppStore from './store/AppStore';
 import SetConfig from'./store/actions/SetConfig';
@@ -53,20 +54,23 @@ class Bootstrap extends React.Component {
   }
 
   render () {
-    //return Either.fromBool(this.state.isLoading)
-    //  .fold(
-    //    () => Either.fromBool(this.state.isError)
-    //      .fold(() => <Application/>,
-    //        () => <ErrorMessage/>),
-    //    () => <LoadingMessage/>);
-
+    return Either
+            .fromBool(this.state.isLoading)
+            .fold(
+              () => Either
+                    .fromBool(this.state.isError)
+                    .fold(() => <Application/>,
+                      () => <ErrorMessage/>),
+              () => <LoadingMessage/>);
+    /*
     if (this.state.isLoading) {
       return <LoadingMessage/>;
     } else if (this.state.isError) {
       return <ErrorMessage/>;
+    } else {
+      return <Application/>;
     }
-
-    return <Application/>;
+    */
   }
 }
 

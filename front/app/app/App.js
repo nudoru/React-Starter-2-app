@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Either } from './utils/functional';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { resetId } from './utils/ElementIDCreator';
 import Header from './rh-components/rh-Header';
@@ -80,7 +81,7 @@ class App extends React.Component {
 
   constructor () {
     super();
-    this.state = {ready: true};
+    this.state = {isReady: true};
     //this.storeListener;
   }
 
@@ -89,13 +90,21 @@ class App extends React.Component {
   }
 
   render () {
-    if (!this.state.ready) {
+    resetId();
+
+    return Either
+      .fromBool(this.state.isReady)
+      .fold(() => <LoadingMessage/>,
+        () => <AppRouter config={this.props.config}/>);
+
+    /*
+    if (this.state.isReady) {
+      resetId();
+      return <AppRouter config={this.props.config}/>;
+    } else {
       return <LoadingMessage/>;
     }
-
-    resetId(); // Reset IDs for form element ID generator
-
-    return <AppRouter config={this.props.config}/>;
+    */
   }
 }
 

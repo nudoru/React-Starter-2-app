@@ -27,19 +27,23 @@ export const tfilterer = (f, cnct) => (acc, x) => f(x) ? cnct(acc, x) : acc;
 // Implementation from Brian Lonsdorf
 //------------------------------------------------------------------------------
 
-export const Right = x =>
+const Right = x =>
   ({
     chain  : f => f(x),
     map    : f => Right(f(x)),
     fold   : (f, g) => g(x),
+    concat : o =>
+      o.fold(e => Left(e),
+        r => Right(x.concat(r))),
     inspect: () => `Right(${x})`
   });
 
-export const Left = x =>
+const Left = x =>
   ({
     chain  : f => Left(x),
     map    : f => Left(x),
     fold   : (f, g) => f(x),
+    concat : o => Left(x),
     inspect: () => `Left(${x})`
   });
 
@@ -50,6 +54,7 @@ export const Left = x =>
 //   .fold(e => 3000, c => c.port)
 
 export const Either = {
+  Left, Right,
   fromNullable: x => x != null ? Right(x) : Left(null), // eslint-disable-line eqeqeq
   fromBool    : x => x ? Right(x) : Left(null),
   fromTryCatch: f => {
@@ -91,7 +96,13 @@ export const Either = {
  });
  */
 
-// https://github.com/DrBoolean/spotify-fp-example/blob/master/monoid.js
+
+//------------------------------------------------------------------------------
+// Semigroup examples
+// CONSIDER USING fantasy-monoids INSTEAD
+// https://github.com/fantasyland/fantasy-monoids
+// from https://github.com/DrBoolean/spotify-fp-example/blob/master/monoid.js
+//------------------------------------------------------------------------------
 
 export const Sum = x =>
   ({
