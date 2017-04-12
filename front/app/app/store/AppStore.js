@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import DefaultReducer from './DefaultReducer';
+import DefaultReducer from './reducers/default';
 import DefaultState from './DefaultState';
 
 // Debugging for Redux-devtools-extension for Chrome

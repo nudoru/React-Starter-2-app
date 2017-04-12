@@ -8,7 +8,7 @@ export const fetchConfigData = () => {
         resolve(json);
       }))
       .catch((err) => {
-      console.warn('Error loading configuration', err);
+      console.warn('Error isLoading configuration', err);
       reject(err);
     });
   });

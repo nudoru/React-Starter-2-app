@@ -128,7 +128,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
  return validateInputStr(str);
  }
 
- // For LoginPanel, handle loading and validating the user ID
+ // For LoginPanel, handle isLoading and validating the user ID
  handleLogin (userId, onSuccessFn, onErrorFn) {
  console.log('Login for ', userId);
  onSuccessFn();
