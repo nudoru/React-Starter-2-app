@@ -6,31 +6,34 @@ const Panel = (props) => {
       header, footer;
 
   if (props.title || props.icon || props.utilityButtons) {
-    header = <PanelHeader {...props}/>
+    header = <PanelHeader {...props}/>;
   }
 
   if (props.footerNote || props.actionButtons) {
-    footer = <PanelFooter {...props}/>
+    footer = <PanelFooter {...props}/>;
   }
 
-  return (<div className={panelClass.join(' ')}>
+  return (<section className={panelClass.join(' ')}>
     {header}
     <div className="rh-panel-content">
       {props.children}
     </div>
     {footer}
-  </div>);
+  </section>);
 };
 
 export default Panel;
 
 export const PanelHeader = ({title, icon, utilityButtons}) => {
   let headerIcon = icon ?
-    <div className="icon"><i className={'fa fa-' + icon}/></div> : null;
+    <div className="rh-panel-header-icon"><i className={'fa fa-' + icon}/>
+    </div> : null;
 
   return (<div className="rh-panel-header">
     {headerIcon}
-    <h1>{title}</h1>
+    <div className="rh-panel-header-label">
+      <h1>{title}</h1>
+    </div>
     <div className="rh-panel-header-buttons">
       {utilityButtons ? utilityButtons.map(b => b) : null}
     </div>

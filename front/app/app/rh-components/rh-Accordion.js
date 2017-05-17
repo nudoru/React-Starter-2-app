@@ -8,6 +8,7 @@ const isString = (str) => is(String, str);
  * The title prop can either be a string or another components (single line of text)
  */
 class Accordion extends React.Component {
+  Ø;
 
   constructor (props) {
     super(props);
@@ -29,15 +30,17 @@ class Accordion extends React.Component {
         clsName       = 'rh-accordion ' + this.props.className;
 
     return (<section className={clsName}>
-      <div className="rh-accordion-title"
+      <div className="rh-panel-header"
            onClick={this._onTitleClick.bind(this)}>
-        <div className="icon"><i className={'fa fa-' + icon}/></div>
-        {title}
+        <div className="rh-panel-header-icon"><i className={'fa fa-' + icon}/></div>
+        <div className="rh-panel-header-label">
+          {title}
+        </div>
       </div>
       <AnimateHeight
         duration={250}
         height={contentHeight}
-        contentClassName={'rh-accordion-content'}>
+        contentClassName={'rh-panel-content'}>
         {this.props.children}
       </AnimateHeight>
 

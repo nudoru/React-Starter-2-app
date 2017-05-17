@@ -22,30 +22,49 @@ $panel-footer-height: 4.4rem
 
 .rh-panel-header
   @extend %panel-area-common
+  display: flex
+  align-items: center
+  justify-content: space-between
   padding-left: 0
   background: $grey-0
   border-bottom: $panel-border-inside
   height: $panel-header-height
   line-height: $panel-header-height
-  //text-shadow: $text-shadow-light
-  .icon
-    position: relative
-    display: inline-block
-    padding: 0 $base-line-height
-    width: $panel-header-height
-    height: $panel-header-height
-    border-bottom: $panel-border-inside // the background color overlays the header background color
-    text-align: center
-    background-color: rgba(255,255,255,.5)
-    i.fa
-      font-size: 1.6rem
-      line-height: $panel-header-height
-      color: $blue-dark
+
+.rh-panel-header-icon
+  position: relative
+  display: inline-block
+  padding: 0 $base-line-height
+  width: $panel-header-height
+  height: $panel-header-height - .1rem
+  //border-bottom: $panel-border-inside // the background color overlays the header background color
+  text-align: center
+  background-color: rgba(255,255,255,.5)
+  i.fa
+    font-size: 1.6rem
+    line-height: $panel-header-height
+    color: $blue-dark
+
+.rh-panel-header-label
+  display: inline-block
+  flex: 1
+  padding-left: $base-line-height
   h1
     @extend %panel-headerfooter-text
     display: inline
-    padding-left: $base-line-height
 
+.rh-panel-header-buttons,
+.rh-panel-footer-buttons
+  //position: absolute
+  //right: $base-line-height
+  //top: $base-line-height-half
+  //text-align: right
+  button
+    @extend .rh-button-small
+  button:not(:last-of-type)
+    margin-right: $base-line-height
+  &:last-of-type
+    margin-right: 0
 
 .rh-panel-content
   @extend %panel-area-common
@@ -54,6 +73,9 @@ $panel-footer-height: 4.4rem
 
 .rh-panel-footer
   @extend %panel-area-common
+  display: flex
+  align-items: center
+  justify-content: space-between
   background: rgba(0,0,0,.1)
   border-top: $panel-border-inside
   height: $panel-footer-height
@@ -63,15 +85,3 @@ $panel-footer-height: 4.4rem
   h1
     @extend %panel-headerfooter-text
 
-.rh-panel-header-buttons,
-.rh-panel-footer-buttons
-  position: absolute
-  right: $base-line-height
-  top: $base-line-height-half
-  text-align: right
-  button
-    @extend .rh-button-small
-  button:not(:last-of-type)
-    margin-right: $base-line-height
-  &:last-of-type
-    margin-right: 0

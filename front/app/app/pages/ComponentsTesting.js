@@ -60,6 +60,9 @@ import {
   Select,
   SelectOption
 } from '../rh-components/rh-Form';
+import DonutChart from '../rh-components/rh-DonutChart';
+import { AccordionVGroup } from '../rh-components/rh-Accordion';
+import Accordion from '../rh-components/rh-Accordion';
 
 const TextStyles = () => {
   return (
@@ -653,6 +656,15 @@ class ComponentsTesting extends React.Component {
               <p>{Lorem.paragraph(3, 7)}</p>
             </Card>
           </CardVGroup>
+        </PageModule>
+        <PageModule title="Accordions" headline="">
+          <div>
+            <Accordion title='Foo!!!' active={false} className='rh-accordion-shadows'>
+              <Card title="Title" style="dark">
+                <p>{Lorem.paragraph(3, 7)}</p>
+              </Card>
+            </Accordion>
+          </div>
         </PageModule>
         <PageModule title="Panels" headline="">
           <div>

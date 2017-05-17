@@ -87,8 +87,9 @@ const DemoTable = ({name}) => (<div className="padded">
 </div>);
 
 const RowTitle = ({name}) => (
-  <ul>
-    <li><em>{name}</em>, Sales Consultant</li>
+  <ul className="rh-accordion-header-label-list">
+    <li><StatusIconTiny status="1"/></li>
+    <li className="f1 padding-left"><em>{name}</em>, Sales Consultant</li>
     <li>40%: 2 of 5 Complete</li>
   </ul>);
 
@@ -158,7 +159,7 @@ class ReportingPage extends React.Component {
 
                 {
                   NAMES.map(name => (
-                    <Accordion title={<RowTitle name={name}/>} active={false}>
+                    <Accordion title={<RowTitle name={name}/>} active={false} className='rh-accordion-shadows'>
                       <DemoTable name={name}/>
                     </Accordion>))
                 }

@@ -1,41 +1,29 @@
 .rh-accordion
   @extend .rh-panel
   margin-bottom: $base-line-height-half
-
-.rh-accordion-title
-  +transition-all()
-  @extend .rh-panel-header
-  cursor: pointer
-  ul
-    @extend .list-plain-horizontal
-    display: inline-block
-    padding-left: $base-line-height
-    li:not(:last-of-type)
-      padding-right: $base-line-height-double
-      &:after
-        content: "|"
-        padding-left: $base-line-height-double
-        color: $grey-4
-  &:hover
-    background-color: #fff
-    .icon > i, h1, span, p, li, em
-      color: $blue
-  h1, i, span, p, li, td
-    @extend .noselect
-    @extend %panel-headerfooter-text
-    font-weight: 400
-    color: $grey-8
-    em
-      font-weight: 600
-      text-transform: uppercase
-      font-style: normal
-      color: $blue-dark
-
-.rh-accordion-content
-  @extend .rh-panel-content
-  transition: transform 500ms ease-out
-  padding: $base-line-height
-  box-shadow: inset 3px 3px 30px rgba(0,0,0,.03)
+  .rh-panel-header
+    +transition-all()
+    cursor: pointer
+    &:hover
+      background-color: #fff
+      .rh-panel-header-icon > i
+        color: $blue
+      .rh-panel-header-label
+        h1, span, p, li, em
+          color: $blue
+    .rh-panel-header-label
+      h1, i, span, p, li, td
+        @extend .noselect
+        @extend %panel-headerfooter-text
+        font-weight: 400
+        color: $grey-8
+        em
+          font-weight: 600
+          text-transform: uppercase
+          font-style: normal
+          color: $blue-dark
+  .rh-panel-content
+    padding: $base-line-height
 
 //section.rh-accordion section.rh-accordion
 //  border: 1px solid #0f0 !important
@@ -49,3 +37,23 @@
     margin-bottom: 0
     &:not(:last-child)
       border-bottom: 1px solid $grey-5
+
+.rh-accordion-shadows
+  .rh-panel-content
+    box-shadow: inset 3px 3px 30px rgba(0,0,0,.05)
+
+// This is a ul
+.rh-accordion-header-label-list
+  @extend .list-plain
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding-left: $base-line-height
+  li.f1
+    flex: 1
+  li:not(:last-of-type)
+    padding-right: $base-line-height-double
+  li
+    .rh-statusicon-tiny
+      position: relative
+      top: .3rem
