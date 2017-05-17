@@ -1,8 +1,8 @@
-import * as ACTIONS from './Actions';
+import * as Actions from './ActionTypes';
 
 const SetConfig = (config)  => {
   return {
-    type: ACTIONS.SET_CONFIG,
+    type: Actions.SET_CONFIG,
     config
   };
 };

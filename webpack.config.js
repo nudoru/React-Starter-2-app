@@ -1,4 +1,4 @@
-const {resolve, join}   = require('path');
+const {resolve}   = require('path');
 const webpack           = require('webpack');
 const HTMLPlugin        = require('html-webpack-plugin');
 const CopyPlugin        = require('copy-webpack-plugin');
@@ -32,7 +32,7 @@ module.exports = env => {
       // Main application
       app   : appEntryFile,
       // Vendor libs to include in separate file
-      vendor: ['lodash', 'react', 'react-dom', 'moment', 'react-scroll', 'redux', 'react-redux', 'react-router-dom']
+      vendor: ['lodash', 'react', 'react-dom', 'moment', 'react-scroll', 'redux', 'react-redux', 'react-router-dom', 'ramda']
     },
 
     output: {
@@ -77,7 +77,7 @@ module.exports = env => {
           loader : 'babel-loader',
           exclude: ['/node_modules/'],
           query  : {
-            presets: removeEmpty(['react', isProd ? undefined : 'react-hmre']),
+            presets: removeEmpty(['es2015', 'react', isProd ? undefined : 'react-hmre']),
             compact: true
           }
         }

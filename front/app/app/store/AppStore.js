@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
 import thunk from 'redux-thunk';
-import DefaultReducer from './reducers/default';
+import {reducer} from './reducers/index';
 import DefaultState from './DefaultState';
 
 // Debugging for Redux-devtools-extension for Chrome
@@ -8,9 +9,9 @@ import DefaultState from './DefaultState';
 
 /* eslint-disable no-underscore-dangle */
 const AppStore = createStore(
-  DefaultReducer,
+  reducer,
   DefaultState,
-  applyMiddleware(thunk),
+  applyMiddleware(thunk, logger),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 /* eslint-enable */
 

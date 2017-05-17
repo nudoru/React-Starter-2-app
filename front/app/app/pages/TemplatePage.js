@@ -4,8 +4,8 @@ import PageModule from '../rh-components/rh-PageModule';
 
 class TemplatePage extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 

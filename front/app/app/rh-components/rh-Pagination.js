@@ -1,5 +1,5 @@
 import React from 'react';
-import {fillIntArray} from '../../../../shared/utils/Toolbox';
+import {fillIntArray} from '../utils/Toolbox';
 
 const Pagination = ({
   prev = false,

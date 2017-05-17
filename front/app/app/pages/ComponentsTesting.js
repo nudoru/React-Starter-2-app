@@ -1,5 +1,5 @@
 import React from 'react';
-import Lorem from '../../../../shared/utils/Lorem';
+import Lorem from '../utils/Lorem';
 
 import PageModule from '../rh-components/rh-PageModule';
 import Breadcrumbs from '../rh-components/rh-Breadcrumbs';

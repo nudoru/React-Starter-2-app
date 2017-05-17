@@ -1,0 +1,51 @@
+.rh-accordion
+  @extend .rh-panel
+  margin-bottom: $base-line-height-half
+
+.rh-accordion-title
+  +transition-all()
+  @extend .rh-panel-header
+  cursor: pointer
+  ul
+    @extend .list-plain-horizontal
+    display: inline-block
+    padding-left: $base-line-height
+    li:not(:last-of-type)
+      padding-right: $base-line-height-double
+      &:after
+        content: "|"
+        padding-left: $base-line-height-double
+        color: $grey-4
+  &:hover
+    background-color: #fff
+    .icon > i, h1, span, p, li, em
+      color: $blue
+  h1, i, span, p, li, td
+    @extend .noselect
+    @extend %panel-headerfooter-text
+    font-weight: 400
+    color: $grey-8
+    em
+      font-weight: 600
+      text-transform: uppercase
+      font-style: normal
+      color: $blue-dark
+
+.rh-accordion-content
+  @extend .rh-panel-content
+  transition: transform 500ms ease-out
+  padding: $base-line-height
+  box-shadow: inset 3px 3px 30px rgba(0,0,0,.03)
+
+//section.rh-accordion section.rh-accordion
+//  border: 1px solid #0f0 !important
+
+//section.rh-accordion ~ section.rh-accordion
+//  border: 1px solid #f00 !important
+
+.rh-accordion-vgroup
+  margin-bottom: $base-line-height
+  .rh-accordion
+    margin-bottom: 0
+    &:not(:last-child)
+      border-bottom: 1px solid $grey-5

@@ -10,6 +10,7 @@ import PageModule from './rh-components/rh-PageModule';
 import ComponentsTesting from './pages/ComponentsTesting';
 import FormTesting from './pages/FormTesting';
 import TemplatePage from './pages/TemplatePage';
+import ReportingPage from './pages/ReportingPage';
 import PortalHome from './pages/portal/PortalHome';
 import PortalMyPage from './pages/portal/PortalMyPage';
 import PortalChannels from './pages/portal/PortalChannels';
@@ -60,7 +61,8 @@ const AppRouter = ({config}) =>
       <AppHeader config={config}/>
       <div className="application-content">
         <Switch>
-          <Route exact path="/" component={PortalHome}/>
+          <Route exact path="/" component={ReportingPage}/>
+          <Route path="/home" component={PortalHome}/>
           <Route path="/channels" component={PortalChannels}/>
           <Route path="/channelpage" component={PortalChannelPage}/>
           <Route path="/mypage" component={PortalMyPage}/>

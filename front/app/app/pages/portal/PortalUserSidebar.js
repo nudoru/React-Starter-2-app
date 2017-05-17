@@ -1,5 +1,5 @@
 import React from 'react';
-import Lorem from '../../../../../shared/utils/Lorem';
+import Lorem from '../../utils/Lorem';
 import { Col, Row } from '../../rh-components/rh-Grid';
 import { Card, CardVGroup } from '../../rh-components/rh-Card';
 import IconCircleText from '../../rh-components/rh-IconCircleText';

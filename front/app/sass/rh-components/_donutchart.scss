@@ -14,15 +14,31 @@
 }
 
 .rh-donutchart-white .rh-donutchart-indicator {
-  stroke: #fff
+  stroke: #fff;
 }
 
-.rh-donutchart-red .rh-donutchart-text {
-  fill: $red-dark-1;
+.rh-donutchart-success .rh-donutchart-text {
+  fill: $control-success-color-dark;
 }
 
-.rh-donutchart-red .rh-donutchart-indicator {
-  stroke: $red
+.rh-donutchart-success .rh-donutchart-indicator {
+  stroke: $control-success-color;
+}
+
+.rh-donutchart-warning .rh-donutchart-text {
+  fill: $control-warning-color-dark;
+}
+
+.rh-donutchart-warning .rh-donutchart-indicator {
+  stroke: $control-warning-color;
+}
+
+.rh-donutchart-danger .rh-donutchart-text {
+  fill: $control-danger-color-dark;
+}
+
+.rh-donutchart-danger .rh-donutchart-indicator {
+  stroke: $control-danger-color;
 }
 
 .rh-donutchart-text {

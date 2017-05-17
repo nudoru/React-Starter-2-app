@@ -1,5 +1,5 @@
 import React from 'react';
-import Lorem from '../../../../../shared/utils/Lorem';
+import Lorem from '../../utils/Lorem';
 import { connect } from 'react-redux';
 import { Col, Row } from '../../rh-components/rh-Grid';
 import { CardHGroup } from '../../rh-components/rh-Card';

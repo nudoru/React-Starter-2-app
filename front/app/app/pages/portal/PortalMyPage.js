@@ -1,5 +1,5 @@
 import React from 'react';
-import Lorem from '../../../../../shared/utils/Lorem';
+import Lorem from '../../utils/Lorem';
 import { connect } from 'react-redux';
 import PageModule from '../../rh-components/rh-PageModule';
 import { Grid, Row, Col } from '../../rh-components/rh-Grid';

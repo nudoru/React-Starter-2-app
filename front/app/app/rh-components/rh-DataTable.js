@@ -1,5 +1,5 @@
 import React from 'react';
-import {capitalizeFirstLetterStr} from '../../../../shared/utils/Toolbox';
+import {capitalizeFirstLetterStr} from '../utils/Toolbox';
 /*
  let sample = {
  headers: [

@@ -1,6 +1,6 @@
 import moment from 'moment';
 import {compose, curry, both, contains, sequence} from 'ramda';
-import {removeTagsStr, removeEntityStr, removeWhiteSpace} from '../../../../shared/utils/Toolbox';
+import {removeTagsStr, removeEntityStr, removeWhiteSpace} from './Toolbox';
 
 export const noOp = () => {};
 

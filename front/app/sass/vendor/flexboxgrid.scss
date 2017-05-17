@@ -47,6 +47,10 @@ $fxgrid-padding: 0;
   flex-wrap: wrap;
 }
 
+.fxgrid-row-center {
+  align-items: center;
+}
+
 .fxgrid-row.reverse {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;

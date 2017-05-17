@@ -1,6 +1,6 @@
 import React from 'react';
 import { history } from 'react-router-dom';
-import Lorem from '../../../../../shared/utils/Lorem';
+import Lorem from '../../utils/Lorem';
 import { connect } from 'react-redux';
 import { CardMasonry33Group } from '../../rh-components/rh-Card';
 import { NeutralButton } from '../../rh-components/rh-Button';
