@@ -36,6 +36,7 @@ import {
   Radio
 } from '../rh-components/rh-Form';
 import Well from '../rh-components/rh-Well';
+import {Status, StatusLabel} from '../rh-components/rh-Status';
 
 const NAMES = ['Yanick Swati', 'Verginia Eadberht', 'Lamis Flaviana', 'Miltiades Ratan', 'Gorgi Carlisa', 'Aljoša Chloé', 'Rhea Perttu', 'Marcia Rut', 'Sindri Ji-Hoon', 'Björn Perpetua', 'Yanick Swati', 'Verginia Eadberht', 'Lamis Flaviana', 'Miltiades Ratan', 'Gorgi Carlisa', 'Aljoša Chloé', 'Rhea Perttu', 'Marcia Rut', 'Sindri Ji-Hoon', 'Björn Perpetua', 'Yanick Swati', 'Verginia Eadberht', 'Lamis Flaviana', 'Miltiades Ratan', 'Gorgi Carlisa', 'Aljoša Chloé', 'Rhea Perttu', 'Marcia Rut', 'Sindri Ji-Hoon', 'Björn Perpetua'];
 
@@ -88,9 +89,9 @@ const DemoTable = ({name}) => (<div className="padded">
 
 const RowTitle = ({name}) => (
   <ul className="rh-accordion-header-label-list">
-    <li><StatusIconTiny status="1"/></li>
     <li className="f1 padding-left"><em>{name}</em>, Sales Consultant</li>
     <li>40%: 2 of 5 Complete</li>
+    <li><StatusLabel type="info">In progress</StatusLabel></li>
   </ul>);
 
 class ReportingPage extends React.Component {
@@ -113,6 +114,19 @@ class ReportingPage extends React.Component {
   }
 
   render () {
+    let filterForm = (<VForm>
+      <fieldset>
+        <Row>
+          <Col className="padding-right"><TextInput label="Name"/></Col>
+          <Col className="padding-left"><DropDown label="Status">
+            <Option value="1">None</Option>
+            <Option value="2">Some</Option>
+            <Option value="3">All</Option>
+          </DropDown></Col>
+        </Row>
+      </fieldset>
+    </VForm>);
+
     return (
       <div>
         <PageModule className="padding-none">
@@ -139,23 +153,8 @@ class ReportingPage extends React.Component {
                     <Col>Not started</Col>
                   </Row>
                 </Card>
-                <Card title='My Team'>
-                <Accordion title='Filtering Options' active={true}
-                           className='margin-bottom-triple'>
-                  <HForm>
-                    <fieldset>
-                      <Row>
-                        <Col><TextInput label="Name"/></Col>
-                        <Col><DropDown label="Status">
-                          <Option value="1">None</Option>
-                          <Option value="2">Some</Option>
-                          <Option value="3">All</Option>
-                        </DropDown></Col>
-                      </Row>
-                    </fieldset>
-                  </HForm>
-                </Accordion>
-                <hr className="margin-bottom-triple"/>
+                <Card title='My Team' hControls={filterForm}>
+
 
                 {
                   NAMES.map(name => (

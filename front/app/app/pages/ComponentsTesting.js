@@ -19,7 +19,7 @@ import IconCircleImage from '../rh-components/rh-IconCircleImage';
 import IconCircleText from '../rh-components/rh-IconCircleText';
 import { TagHGroup, TagVGroup, Tag } from '../rh-components/rh-Tag';
 import { StatusIcon, StatusIconTiny } from '../rh-components/rh-StatusIcon';
-import Status from '../rh-components/rh-Status';
+import {Status, StatusLabel} from '../rh-components/rh-Status';
 import Spinner from '../rh-components/rh-Spinner';
 import ToolTip from '../rh-components/rh-ToolTip';
 import Popupsimple from '../rh-components/rh-PopupSimple';
@@ -511,6 +511,29 @@ class ComponentsTesting extends React.Component {
               icons (after v 4.6) are not included.</p>
           </Well>
           <Well>
+            <h1>Donut Chart</h1>
+            <Row className="fxgrid-row-center">
+              <Col><DonutChart value={75} size={80} strokewidth={10}
+                               valuelabel=""
+                               className="rh-donutchart-success margin-center"/></Col>
+              <Col>Complete</Col>
+
+              <Col><DonutChart value={20} size={80} strokewidth={10}
+                               valuelabel=""
+                               className="margin-center"/></Col>
+              <Col>In progress</Col>
+
+              <Col><DonutChart value={5} size={80} strokewidth={10}
+                               valuelabel=""
+                               className="rh-donutchart-warning margin-center"/></Col>
+              <Col>Not started</Col>
+              <Col><DonutChart value={42} size={100} strokewidth={20}
+                               valuelabel="Boom"
+                               className="rh-donutchart-danger margin-center"/></Col>
+              <Col>Explosions</Col>
+            </Row>
+          </Well>
+          <Well>
             <h1>Spinner</h1>
             <Spinner type="spinner-xlg"/>
             <Spinner type="spinner-lg"/>
@@ -571,6 +594,11 @@ class ComponentsTesting extends React.Component {
             <StatusIconTiny status="2"/>
             <StatusIconTiny status="3"/>
             <StatusIconTiny status="4"/>
+            <StatusLabel>Status!</StatusLabel>
+            <StatusLabel type="info">Status!</StatusLabel>
+            <StatusLabel type="pass">Status!</StatusLabel>
+            <StatusLabel type="warning">Status!</StatusLabel>
+            <StatusLabel type="fail">Status!</StatusLabel>
             <Status>Lorem Ipsum is simply dummy text of the printing and
               typesetting industry. Lorem Ipsum has been the industry's standard
               dummy text ever since the 1500s, when an unknown printer took a

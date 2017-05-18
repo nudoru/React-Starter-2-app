@@ -23,6 +23,9 @@ export const CardMasonry50Group = ({children}) => <div
 export const CardHeader = ({children, className, ...other}) => <div
   className={'rh-card-header ' + className} {...other}>{children}</div>;
 
+export const CardHeaderControls = ({children, className, ...other}) => <div
+  className={'rh-card-header-controls ' + className} {...other}>{children}</div>;
+
 export const CardFooter = ({children, className, ...other}) => <div
   className={'rh-card-footer ' + className} {...other}>{children}</div>;
 
@@ -42,12 +45,14 @@ export const Card = ({
                        className,
                        children,
                        onClick,
+                        hControls,
                        ctaLabel = 'Read More'
                      }) => {
 
   let needHeader = icon || title,
       titleCls,
       headerArea,
+      hControlsArea,
       footerArea;
 
   if (needHeader) {
@@ -60,6 +65,10 @@ export const Card = ({
     );
   }
 
+  if(hControls) {
+    hControlsArea = <CardHeaderControls>{hControls}</CardHeaderControls>
+  }
+
   if (onClick) {
     footerArea = (<CardFooter><Button text onClick={onClick}>{ctaLabel}</Button></CardFooter>);
   }
@@ -68,6 +77,7 @@ export const Card = ({
 
   return (<div className={style}>
     {headerArea}
+    {hControlsArea}
     <CardContent>
       {children}
     </CardContent>

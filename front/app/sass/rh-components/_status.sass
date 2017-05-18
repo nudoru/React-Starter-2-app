@@ -59,3 +59,41 @@
     color: $control-danger-color
   .message
     background-color: $control-danger-color
+
+
+.rh-status-label
+  @extend .rh-status
+  width: auto
+  height: auto
+  background: $control-neutral-color-dark $dark-gradient
+  display: inline-block
+  margin: 0 $base-line-height-half
+  .icon
+    padding: $base-line-height-quarter $base-line-height
+    padding-right: 0
+    width: auto
+    text-shadow: $text-shadow-dark
+    i.fa
+      color: #fff !important
+  .message
+    text-transform: none
+    padding: $base-line-height-quarter $base-line-height-half
+    padding-right: $base-line-height
+    height: auto
+    background: none
+
+.rh-status-label-info
+  @extend .rh-status-label
+  background: $control-info-color $dark-gradient
+
+.rh-status-label-pass
+  @extend .rh-status-label
+  background: $control-success-color $dark-gradient
+
+.rh-status-label-warning
+  @extend .rh-status-label
+  background: $control-warning-color $dark-gradient
+
+.rh-status-label-fail
+  @extend .rh-status-label
+  background: $control-danger-color $dark-gradient
