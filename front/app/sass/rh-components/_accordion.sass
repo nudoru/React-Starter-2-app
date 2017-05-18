@@ -4,6 +4,7 @@
   .rh-panel-header
     +transition-all()
     cursor: pointer
+    background-image: $light-gradient
     &:hover
       background-color: #fff
       .rh-panel-header-icon > i
@@ -34,12 +35,13 @@
 .rh-accordion-vgroup
   margin-bottom: $base-line-height
   .rh-accordion
-    margin-bottom: 0
-    &:not(:last-child)
-      border-bottom: 1px solid $grey-5
+    margin-bottom: -0.2rem
+    //&:not(:last-child)
+    //  border-bottom: 1px solid $grey-1
 
 .rh-accordion-shadows
   .rh-panel-content
+    background-image: $dark-gradient
     box-shadow: inset 3px 3px 30px rgba(0,0,0,.05)
 
 // This is a ul

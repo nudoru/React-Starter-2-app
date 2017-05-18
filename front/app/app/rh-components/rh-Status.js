@@ -1,66 +1,72 @@
 import React from 'react';
 
-export const Status = ({type, children}) => {
-  let cls = 'rh-status', icon;
+export const Status = ({type, icon, children}) => {
+  let cls = 'rh-status', sIcon;
 
   if (type) {
     cls += '-' + type;
   }
 
-  switch (type) {
-    case 'info':
-      icon = 'info';
-      break;
-    case 'pass':
-      icon = 'check';
-      break;
-    case 'warning':
-      icon = 'exclamation-triangle';
-      break;
-    case 'fail':
-      icon = 'times';
-      break;
-    default:
-      icon = 'circle-o';
+  if(icon) {
+    sIcon = icon;
+  } else {
+    switch (type) {
+      case 'info':
+        sIcon = 'info';
+        break;
+      case 'success':
+        sIcon = 'check';
+        break;
+      case 'warning':
+        sIcon = 'exclamation-triangle';
+        break;
+      case 'danger':
+        sIcon = 'times';
+        break;
+      default:
+        sIcon = 'circle-o';
+    }
   }
-
 
   return (<div className={cls}>
     <div className="icon">
-      <i className={"fa fa-" + icon} />
+      <i className={"fa fa-" + sIcon} />
     </div>
     <div className="message">{children}</div>
   </div>);
 };
 
-export const StatusLabel = ({type, children}) => {
-  let cls = 'rh-status-label', icon;
+export const StatusLabel = ({type, icon, children}) => {
+  let cls = 'rh-status-label', sIcon;
 
   if (type) {
     cls += '-' + type;
   }
 
-  switch (type) {
-    case 'info':
-      icon = 'info';
-      break;
-    case 'pass':
-      icon = 'check';
-      break;
-    case 'warning':
-      icon = 'exclamation-triangle';
-      break;
-    case 'fail':
-      icon = 'times';
-      break;
-    default:
-      icon = 'circle-o';
+  if(icon) {
+    sIcon = icon;
+  } else {
+    switch (type) {
+      case 'info':
+        sIcon = 'info';
+        break;
+      case 'success':
+        sIcon = 'check';
+        break;
+      case 'warning':
+        sIcon = 'exclamation-triangle';
+        break;
+      case 'danger':
+        sIcon = 'times';
+        break;
+      default:
+        sIcon = 'circle-o';
+    }
   }
-
 
   return (<div className={cls}>
     <div className="icon">
-      <i className={"fa fa-" + icon} />
+      <i className={"fa fa-" + sIcon} />
     </div>
     <div className="message">{children}</div>
   </div>);

@@ -60,27 +60,27 @@ const DemoTable = ({name}) => (<div className="padded">
       </thead>
       <tr>
         <td>{Lorem.title(5, 10)}</td>
-        <td><StatusIcon status="3"/></td>
+        <td><StatusIcon type="success"/></td>
         <td>5/1/17</td>
       </tr>
       <tr>
         <td>{Lorem.title(5, 10)}</td>
-        <td><StatusIcon status="3"/></td>
+        <td><StatusIcon type="success"/></td>
         <td>5/1/17</td>
       </tr>
       <tr>
         <td>{Lorem.title(5, 10)}</td>
-        <td><StatusIcon status="1"/></td>
+        <td><StatusIcon type="inprogress"/></td>
         <td>-</td>
       </tr>
       <tr>
         <td>{Lorem.title(5, 10)}</td>
-        <td><StatusIcon status="0"/></td>
+        <td><StatusIcon type="none"/></td>
         <td>-</td>
       </tr>
       <tr>
         <td>{Lorem.title(5, 10)}</td>
-        <td><StatusIcon status="0"/></td>
+        <td><StatusIcon type="none"/></td>
         <td>-</td>
       </tr>
     </table>
@@ -91,7 +91,7 @@ const RowTitle = ({name}) => (
   <ul className="rh-accordion-header-label-list">
     <li className="f1 padding-left"><em>{name}</em>, Sales Consultant</li>
     <li>40%: 2 of 5 Complete</li>
-    <li><StatusLabel type="info">In progress</StatusLabel></li>
+    <li><StatusLabel type="info" icon="refresh">In progress</StatusLabel></li>
   </ul>);
 
 class ReportingPage extends React.Component {
@@ -133,35 +133,35 @@ class ReportingPage extends React.Component {
           <div className="color-bg-body">
             <Row>
               <Col className="padded">
-                <h1 className="margin-bottom-triple">MWC Team Status Report</h1>
+                <Card title='MWC Team Status Report' hControls={filterForm}>
 
-                <Card className='margin-bottom-double' title='My Team Summary'>
-                  <Row className="fxgrid-row-center">
-                    <Col><DonutChart value={75} size={80} strokewidth={10}
-                                     valuelabel=""
-                                     className="rh-donutchart-success margin-center"/></Col>
-                    <Col>Complete</Col>
+                  <Card className='margin-bottom-double'>
+                    <Row className="fxgrid-row-center">
+                      <Col><DonutChart value={75} size={80} strokewidth={10}
+                                       valuelabel=""
+                                       className="rh-donutchart-success margin-center"/></Col>
+                      <Col>Complete</Col>
 
-                    <Col><DonutChart value={20} size={80} strokewidth={10}
-                                     valuelabel=""
-                                     className="margin-center"/></Col>
-                    <Col>In progress</Col>
+                      <Col><DonutChart value={20} size={80} strokewidth={5}
+                                       valuelabel=""
+                                       className="margin-center"/></Col>
+                      <Col>In progress</Col>
 
-                    <Col><DonutChart value={5} size={80} strokewidth={10}
-                                     valuelabel=""
-                                     className="rh-donutchart-warning margin-center"/></Col>
-                    <Col>Not started</Col>
-                  </Row>
-                </Card>
-                <Card title='My Team' hControls={filterForm}>
+                      <Col><DonutChart value={5} size={80} strokewidth={5}
+                                       valuelabel=""
+                                       className="rh-donutchart-warning margin-center"/></Col>
+                      <Col>Not started</Col>
+                    </Row>
+                  </Card>
 
-
+                  <AccordionVGroup>
                 {
                   NAMES.map(name => (
                     <Accordion title={<RowTitle name={name}/>} active={false} className='rh-accordion-shadows'>
                       <DemoTable name={name}/>
                     </Accordion>))
                 }
+                  </AccordionVGroup>
                 </Card>
               </Col>
               {/*<Col width="3" className="padding-top">*/}

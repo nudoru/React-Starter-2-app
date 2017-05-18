@@ -36,7 +36,7 @@
   .message
     background-color: $control-info-color
 
-.rh-status-pass
+.rh-status-success
   @extend .rh-status
   background-color: lighten($control-success-color-light, 10%)
   .icon
@@ -52,7 +52,7 @@
   .message
     background-color: $control-warning-color
 
-.rh-status-fail
+.rh-status-danger
   @extend .rh-status
   background-color: lighten($control-danger-color-light, 10%)
   .icon
@@ -86,7 +86,7 @@
   @extend .rh-status-label
   background: $control-info-color $dark-gradient
 
-.rh-status-label-pass
+.rh-status-label-success
   @extend .rh-status-label
   background: $control-success-color $dark-gradient
 
@@ -94,6 +94,6 @@
   @extend .rh-status-label
   background: $control-warning-color $dark-gradient
 
-.rh-status-label-fail
+.rh-status-label-danger
   @extend .rh-status-label
   background: $control-danger-color $dark-gradient

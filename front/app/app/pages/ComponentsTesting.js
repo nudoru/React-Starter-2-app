@@ -584,21 +584,21 @@ class ComponentsTesting extends React.Component {
           </Well>
           <Well>
             <h1>Status Icons</h1>
-            <StatusIcon status="0"/>
-            <StatusIcon status="1"/>
-            <StatusIcon status="2"/>
-            <StatusIcon status="3"/>
-            <StatusIcon status="4"/>
-            <StatusIconTiny status="0"/>
-            <StatusIconTiny status="1"/>
-            <StatusIconTiny status="2"/>
-            <StatusIconTiny status="3"/>
-            <StatusIconTiny status="4"/>
+            <StatusIcon type="none"/>
+            <StatusIcon type="inprogress"/>
+            <StatusIcon type="danger"/>
+            <StatusIcon type="success"/>
+            <StatusIcon type="pending"/>
+            <StatusIconTiny type="none"/>
+            <StatusIconTiny type="inprogress"/>
+            <StatusIconTiny type="danger"/>
+            <StatusIconTiny type="success"/>
+            <StatusIconTiny type="pending"/>
             <StatusLabel>Status!</StatusLabel>
             <StatusLabel type="info">Status!</StatusLabel>
-            <StatusLabel type="pass">Status!</StatusLabel>
+            <StatusLabel type="success">Status!</StatusLabel>
             <StatusLabel type="warning">Status!</StatusLabel>
-            <StatusLabel type="fail">Status!</StatusLabel>
+            <StatusLabel type="danger">Status!</StatusLabel>
             <Status>Lorem Ipsum is simply dummy text of the printing and
               typesetting industry. Lorem Ipsum has been the industry's standard
               dummy text ever since the 1500s, when an unknown printer took a
@@ -610,7 +610,7 @@ class ComponentsTesting extends React.Component {
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.</Status>
             <Status type="info">About that something ... </Status>
-            <Status type="pass">Lorem Ipsum is simply dummy text of the printing
+            <Status type="success">Lorem Ipsum is simply dummy text of the printing
               and typesetting industry. Lorem Ipsum has been the industry's
               standard dummy text ever since the 1500s, when an unknown printer
               took a galley of type and scrambled it to make a type specimen
@@ -621,7 +621,7 @@ class ComponentsTesting extends React.Component {
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.</Status>
             <Status type="warning">Something might go wrong ...</Status>
-            <Status type="fail">Something blew up!</Status>
+            <Status type="danger">Something blew up!</Status>
           </Well>
           <hr/>
           <h1>Card groups</h1>
