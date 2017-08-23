@@ -15,10 +15,13 @@ class Accordion extends React.Component {
     this.state = {active: props.active};
   }
 
-  componentDidMount () {}
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.active !== this.props.active) {
+      this.setState({active: nextProps.active})
+    }
+  }
 
   _onTitleClick () {
-    console.log('Title!');
     this.setState({active: !this.state.active});
   }
 
@@ -41,7 +44,7 @@ class Accordion extends React.Component {
         duration={250}
         height={contentHeight}
         contentClassName={'rh-panel-content'}>
-        {this.props.children}
+        {this.state.active ? this.props.children : null}
       </AnimateHeight>
 
     </section>);

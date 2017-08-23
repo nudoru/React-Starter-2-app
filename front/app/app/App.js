@@ -61,11 +61,11 @@ const AppRouter = ({config}) =>
       <AppHeader config={config}/>
       <div className="application-content">
         <Switch>
-          <Route exact path="/" component={ReportingPage}/>
-          <Route path="/home" component={PortalHome}/>
+          <Route exact path="/" component={PortalHome}/>
           <Route path="/channels" component={PortalChannels}/>
           <Route path="/channelpage" component={PortalChannelPage}/>
           <Route path="/mypage" component={PortalMyPage}/>
+          <Route path="/report" component={ReportingPage}/>
           <Route path="/c" component={ComponentsTesting}/>
           <Route path="/f" component={FormTesting}/>
           <Route path="/t" component={TemplatePage}/>

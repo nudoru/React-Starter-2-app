@@ -1,5 +1,5 @@
 import React from 'react';
-import range from 'lodash/range'
+import {range} from 'ramda';
 import Lorem from '../../utils/Lorem';
 import { connect } from 'react-redux';
 import PageModule from '../../rh-components/rh-PageModule';
@@ -47,7 +47,7 @@ export const CourseCardMetadata = ({tags, stars}) => {
     <div><i
       className="fa fa-comments-o padding-right "/><a href="#">{Lorem.rNumber(20,50)} Reviews</a></div>
     <div className="rating-stars">
-      {range(stars).map(s => <i className="fa fa-star"/>)}
+      {range(0,stars).map(s => <i className="fa fa-star"/>)}
     </div>
     <div className="padding-top">
       <TagHGroup>

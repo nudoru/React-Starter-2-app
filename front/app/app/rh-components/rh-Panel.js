@@ -29,6 +29,7 @@ export const PanelHeader = ({title, icon, utilityButtons}) => {
     <div className="rh-panel-header-icon"><i className={'fa fa-' + icon}/>
     </div> : null;
 
+    // TODO apply key to utility buttons
   return (<div className="rh-panel-header">
     {headerIcon}
     <div className="rh-panel-header-label">
@@ -41,6 +42,7 @@ export const PanelHeader = ({title, icon, utilityButtons}) => {
 };
 
 export const PanelFooter = ({footerNote, actionButtons}) => {
+  // TODO apply key to action buttons
   return (<div className="rh-panel-footer">
     <h1>{footerNote}</h1>
     <div className="rh-panel-footer-buttons">

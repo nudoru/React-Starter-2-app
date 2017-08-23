@@ -5,7 +5,7 @@
       {
         "targets": {
           "browsers": [
-            "last 3 versions",
+            "last 2 versions",
             "Firefox ESR",
             "not ie <= 11"
           ]

@@ -699,21 +699,21 @@ class ComponentsTesting extends React.Component {
             <h1>Panel</h1>
             <Panel title='Ima control panel!' icon="cog" footerNote="Status!"
                    utilityButtons={[
-                     <button
-                       className="rh-button rh-button-text-neutral rh-button-icon">
+                     <button  key="aba"
+                              className="rh-button rh-button-text-neutral rh-button-icon">
                        <i className="fa fa-wrench"/></button>,
-                     <button
+                     <button key="abb"
                        className="rh-button rh-button-text-neutral rh-button-icon">
                        <i className="fa fa-comment"/></button>,
-                     <button
+                     <button key="abc"
                        className="rh-button rh-button-text-neutral rh-button-icon">
                        <i className="fa fa-close"/></button>
                    ]}
-                   actionButtons={[<button className="rh-button rh-button-text">
+                   actionButtons={[<button key="uba" className="rh-button rh-button-text">
                      Primary</button>,
-                     <button className="rh-button rh-button-text-secondary">
+                     <button key="ubb" className="rh-button rh-button-text-secondary">
                        Secondary</button>,
-                     <button className="rh-button rh-button-text-neutral">
+                     <button key="ubc" className="rh-button rh-button-text-neutral">
                        Neutral</button>]}>
               <h1>H1 {Lorem.text(2, 5)}</h1>
               <p>Paragraph {Lorem.paragraph(5, 10)}</p>

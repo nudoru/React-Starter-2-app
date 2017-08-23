@@ -4,7 +4,7 @@ const IconCircleText = ({label, style, center, className}) => {
   let cls = 'rh-icon-circle-text';
 
   if (style) {
-    cls += '-' + this.props.style;
+    cls += '-' + style;
   }
 
   if (center) {
