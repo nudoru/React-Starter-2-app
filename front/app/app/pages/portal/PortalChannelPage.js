@@ -90,7 +90,7 @@ class TemplatePage extends React.Component {
           <li>{Lorem.sentence(10, 30)}</li>
         </ul>
         <CardMasonry33Group>
-          {[1, 1, 0, 1, 0, 0, 0, 0, 0].map(f => <CourseCard flag={f}/>)}
+          {[1, 1, 0, 1, 0, 0, 0, 0, 0].map((f,i) => <CourseCard key={i} flag={f}/>)}
         </CardMasonry33Group>
       </PortalPageTemplateNoSidebar >);
   }

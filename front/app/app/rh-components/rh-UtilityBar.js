@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 class UtilityBar extends React.Component {
@@ -37,9 +38,9 @@ UtilityBar.defaultProps = {
   username: null
 };
 UtilityBar.propTypes = {
-  label: React.PropTypes.string,
-  links: React.PropTypes.array,
-  username: React.PropTypes.string
+  label: PropTypes.string,
+  links: PropTypes.array,
+  username: PropTypes.string
 };
 
 export default UtilityBar;

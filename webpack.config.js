@@ -23,7 +23,8 @@ module.exports = env => {
 
     entry: {
       app   : appEntryFile,
-      vendor: ['lodash', 'react', 'react-dom', 'moment', 'redux', 'react-redux', 'react-router-dom', 'ramda']
+      // Removed 'moment' - only include in app file if it's used
+      vendor: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom', 'ramda']
     },
 
     output: {

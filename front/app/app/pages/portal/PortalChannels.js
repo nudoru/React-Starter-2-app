@@ -28,7 +28,7 @@ class TemplatePage extends React.Component {
         <p>You don't need to be in a specific role to join a channel -
           learn something new today!</p>
         <CardMasonry50Group>
-          {channels.map(c => <ChannelCard title={c} router={this.props.history}/>)}
+          {channels.map((c,i) => <ChannelCard key={i} title={c} router={this.props.history}/>)}
         </CardMasonry50Group>
       </PortalPageTemplate>);
   }

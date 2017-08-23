@@ -25,10 +25,10 @@ const Pagination = ({
     <ul>
       <li>{prev}</li>
       {
-        numbers.map((n) => {
+        numbers.map((n, i) => {
           return (n === current ?
-            (<li><span className="active">{n}</span></li>) :
-            (<li><a href="#">{n}</a></li>))
+            (<li key={i}><span className="active">{n}</span></li>) :
+            (<li key={i}><a href="#">{n}</a></li>))
         })
       }
       <li>{next}</li>

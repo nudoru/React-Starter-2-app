@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // let testData = {
 //   header: [{title: 'title', cellRenderer: null}],
@@ -40,8 +41,8 @@ class CustomTable extends React.Component {
 
 CustomTable.defaultProps = {};
 CustomTable.propTypes    = {
-  headers: React.propTypes.array,
-  rows: React.propTypes.array
+  headers: PropTypes.array,
+  rows: PropTypes.array
 };
 
 export default CustomTable;

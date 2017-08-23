@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ModalMessage from './rh-ModalMessage'
@@ -130,12 +131,12 @@ class LoginPanel extends React.Component {
 
 LoginPanel.defaultProps = {};
 LoginPanel.propTypes    = {
-  title         : React.PropTypes.string,
-  prompt        : React.PropTypes.string,
-  inputLabel    : React.PropTypes.string,
-  buttonLabel   : React.PropTypes.string,
-  validateFn    : React.PropTypes.func,
-  processLoginFn: React.PropTypes.func
+  title         : PropTypes.string,
+  prompt        : PropTypes.string,
+  inputLabel    : PropTypes.string,
+  buttonLabel   : PropTypes.string,
+  validateFn    : PropTypes.func,
+  processLoginFn: PropTypes.func
 };
 
 export default LoginPanel;

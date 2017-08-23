@@ -9,8 +9,8 @@ const SearchBar = ({placeholder}) => {
   </div>;
 };
 
-const NavItem = ({item, key}) => {
-  return <li key={key}>
+const NavItem = ({item}) => {
+  return <li>
     <NavLink exact
              activeClassName='active'
              to={item.route}>{item.label}</NavLink>

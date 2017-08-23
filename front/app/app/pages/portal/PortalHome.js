@@ -50,11 +50,12 @@ class TemplatePage extends React.Component {
           <li>Peer-Trusted Learning (Open Learning Community)</li>
         </ul>
         <h3>Recommended</h3>
-        <p>Recommendations are based on your selected tags, course history and current channels.</p>
+        <p>Recommendations are based on your selected tags, course history and
+          current channels.</p>
         <CardHGroup>
-          <CourseFeatured tags={['FOSS','Atomic', 'OpenShift']}/>
-          <CourseFeatured tags={['Sushi','Manager', 'Aspiring Leader']}/>
-          <CourseFeatured tags={['RHEL','Atomic']}/>
+          <CourseFeatured tags={['FOSS', 'Atomic', 'OpenShift']}/>
+          <CourseFeatured tags={['Sushi', 'Manager', 'Aspiring Leader']}/>
+          <CourseFeatured tags={['RHEL', 'Atomic']}/>
         </CardHGroup>
         <div className="align-right">
           <NeutralButton text>View more ></NeutralButton>
@@ -64,6 +65,7 @@ class TemplatePage extends React.Component {
           <Col className="padding-right">
             <h4>Posts</h4>
             <table className="rh-custom-table margin-bottom-double">
+              <tbody>
               <tr>
                 <td><IconCircle icon="newspaper-o" size="s"/></td>
                 <td><a href="#">{Lorem.sentence(3, 7)}</a></td>
@@ -84,6 +86,7 @@ class TemplatePage extends React.Component {
                 <td><a href="#">{Lorem.sentence(3, 7)}</a></td>
                 <td>{Lorem.date().string}</td>
               </tr>
+              </tbody>
             </table>
             <div className="align-right">
               <NeutralButton text>View older ></NeutralButton>
@@ -92,6 +95,7 @@ class TemplatePage extends React.Component {
           <Col>
             <h4>New Courses</h4>
             <table className="rh-custom-table margin-bottom-double">
+              <tbody>
               <tr>
                 <td><IconCircle icon="mouse-pointer" size="s"/></td>
                 <td><a href="#">{Lorem.sentence(3, 7)}</a></td>
@@ -107,6 +111,7 @@ class TemplatePage extends React.Component {
                 <td><a href="#">{Lorem.sentence(3, 7)}</a></td>
                 <td>{Lorem.date().string}</td>
               </tr>
+              </tbody>
             </table>
           </Col>
         </Row>

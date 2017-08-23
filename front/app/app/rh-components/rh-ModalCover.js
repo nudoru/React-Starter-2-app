@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 class ModalCover extends React.Component {
@@ -35,9 +36,9 @@ ModalCover.defaultProps = {
 };
 
 ModalCover.propTypes = {
-  dismissible: React.PropTypes.bool,
-  dismissFunc: React.PropTypes.func,
-  visible    : React.PropTypes.bool
+  dismissible: PropTypes.bool,
+  dismissFunc: PropTypes.func,
+  visible    : PropTypes.bool
 };
 
 export default ModalCover;

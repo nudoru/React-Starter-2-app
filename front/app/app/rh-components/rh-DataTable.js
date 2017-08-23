@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import {capitalizeFirstLetterStr} from '../utils/Toolbox';
+import { capitalizeFirstLetterStr } from '../utils/Toolbox';
+
 /*
  let sample = {
  headers: [
@@ -21,17 +23,17 @@ import {capitalizeFirstLetterStr} from '../utils/Toolbox';
 
 class DataTable extends React.Component {
 
-  constructor() {
+  constructor () {
     super();
     this.state = {tableData: null};
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     this.copyPropsToState(nextProps);
   }
 
   // direction: -1 asc, 1 dec
-  sortColumn(idx, direction) {
+  sortColumn (idx, direction) {
     let workingState = this.state.tableData;
 
     // Headers
@@ -59,12 +61,11 @@ class DataTable extends React.Component {
     this.setState({tableData: workingState});
   }
 
-
-  componentDidMount() {
+  componentDidMount () {
     this.copyPropsToState();
   }
 
-  copyPropsToState(nextProps) {
+  copyPropsToState (nextProps) {
     let newData;
     if (this.props.data && !this.props.jsonData) {
       newData = this.props.data;
@@ -82,7 +83,7 @@ class DataTable extends React.Component {
     this.setState({tableData: newData});
   }
 
-  convertJSONToTableData(json) {
+  convertJSONToTableData (json) {
     let data = {headers: [], data: []};
 
     data.headers = Object.keys(json[0]).reduce((p, c) => {
@@ -102,7 +103,7 @@ class DataTable extends React.Component {
     return data;
   }
 
-  render() {
+  render () {
     if (this.state.tableData) {
       let classes = 'rh-table rh-table-zebra' + (this.props.style ? ' rh-table-' + this.props.style : '') + (this.props.hover ? ' rh-table-hover' : '');
       return (
@@ -118,11 +119,11 @@ class DataTable extends React.Component {
         </table>
       );
     } else {
-      return <p>No data to display.</p>
+      return <p>No data to display.</p>;
     }
   }
 
-  renderColumnHeading(th, idx) {
+  renderColumnHeading (th, idx) {
     let headerClass = 'sortable ' + th.className,
         arrowClass  = 'fa fa-minus';
     if (th.sorted === -1) {
@@ -137,17 +138,17 @@ class DataTable extends React.Component {
     </th>);
   }
 
-  headerClick(idx, sorted) {
+  headerClick (idx, sorted) {
     this.sortColumn(idx, (sorted === 0 || sorted === -1 ? 1 : -1));
   }
 
-  renderRow(tr, idx) {
+  renderRow (tr, idx) {
     return (<tr key={idx}>
       {tr.map((td, i) => this.renderCell(td, i))}
-    </tr>)
+    </tr>);
   }
 
-  renderCell(td, idx) {
+  renderCell (td, idx) {
     let cellContent = td.content;
     if (td.link) {
       cellContent = (<a href={td.link}
@@ -164,10 +165,10 @@ DataTable.defaultProps = {
 };
 
 DataTable.propTypes = {
-  data : React.PropTypes.array,
-  jsonData : React.PropTypes.object,
-  style: React.PropTypes.string,
-  hover: React.PropTypes.bool
+  data    : PropTypes.array,
+  jsonData: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  style   : PropTypes.string,
+  hover   : PropTypes.bool
 };
 
 export default DataTable;

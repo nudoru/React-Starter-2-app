@@ -34,40 +34,28 @@ const AppHeader = ({config}) =>
           secondaryNav={config.setup.secondaryNav}
           username='Joe User'
           nav={[
-            {label: 'Home', route: '/'},
-            {label: 'My Page', route: '/mypage'},
-            {
-              label: 'Channels',
-              route: '/channels'
-            },
-            {label: 'Regions', route: '/404'},
-            {
-              label: 'Course Catalog',
-              route: '/404'
-            },
-            {
-              label: 'Global Calendar',
-              route: '/404'
-            },
-            {
-              label: 'New Hire',
-              route: '/channelpage'
-            }
+            {label: 'Components', route: '/'},
+            {label: 'Forms', route: '/forms'}
           ]}/>;
 
+/*
+<Route exact path="/" component={PortalHome}/>
+<Route path="/channels" component={PortalChannels}/>
+<Route path="/channelpage" component={PortalChannelPage}/>
+<Route path="/mypage" component={PortalMyPage}/>
+<Route path="/report" component={ReportingPage}/>
+<Route path="/c" component={ComponentsTesting}/>
+<Route path="/f" component={FormTesting}/>
+<Route path="/t" component={TemplatePage}/>
+ */
 const AppRouter = ({config}) =>
   <Router>
     <div className="application-container">
       <AppHeader config={config}/>
       <div className="application-content">
         <Switch>
-          <Route exact path="/" component={PortalHome}/>
-          <Route path="/channels" component={PortalChannels}/>
-          <Route path="/channelpage" component={PortalChannelPage}/>
-          <Route path="/mypage" component={PortalMyPage}/>
-          <Route path="/report" component={ReportingPage}/>
-          <Route path="/c" component={ComponentsTesting}/>
-          <Route path="/f" component={FormTesting}/>
+          <Route exact path="/" component={ComponentsTesting}/>
+          <Route path="/forms" component={FormTesting}/>
           <Route path="/t" component={TemplatePage}/>
           <Route path="/404" render={() => <RouteMessage>There's nothing
             here.</RouteMessage>}/>

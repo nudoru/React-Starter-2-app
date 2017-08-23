@@ -1,40 +1,20 @@
 import React from 'react';
-import {range} from 'ramda';
+import { range } from 'ramda';
 import Lorem from '../../utils/Lorem';
 import { connect } from 'react-redux';
-import PageModule from '../../rh-components/rh-PageModule';
-import { Grid, Row, Col } from '../../rh-components/rh-Grid';
 import {
   Card,
-  CardHeader,
   CardContent,
   CardFooter,
   CardFrame,
-  CardHGroup,
-  CardHGroupDecorative,
-  CardHGroupTable,
-  CardVGroup,
-  CardMasonry33Group
+  CardHeader
 } from '../../rh-components/rh-Card';
-import IconCircle from '../../rh-components/rh-IconCircle';
-import IconCircleText from '../../rh-components/rh-IconCircleText';
-import EventCard from '../../rh-components/rh-EventCard';
-import {
-  BlockLinkHGroup,
-  BlockLinkVGroup,
-  BlockLink
-} from '../../rh-components/rh-BlockLinks';
-import { TagHGroup, Tag } from '../../rh-components/rh-Tag';
-import { StatusIcon, StatusIconTiny } from '../../rh-components/rh-StatusIcon';
+import { Tag, TagHGroup } from '../../rh-components/rh-Tag';
 import Status from '../../rh-components/rh-Status';
 import {
   Button,
-  SecondaryButton,
   NeutralButton,
-  NegativeButton,
-  ButtonHGroup,
-  ButtonHRow,
-  ButtonVGroup
+  SecondaryButton
 } from '../../rh-components/rh-Button';
 
 const possibleTags = ['RHEL','Atomic','Spicy Tuna Roll','ODF','Wasabi','OpenShift','OpenStack'];
@@ -47,11 +27,11 @@ export const CourseCardMetadata = ({tags, stars}) => {
     <div><i
       className="fa fa-comments-o padding-right "/><a href="#">{Lorem.rNumber(20,50)} Reviews</a></div>
     <div className="rating-stars">
-      {range(0,stars).map(s => <i className="fa fa-star"/>)}
+      {range(0,stars).map((s,i) => <i key={i} className="fa fa-star"/>)}
     </div>
     <div className="padding-top">
       <TagHGroup>
-        {tags.map(t => <Tag><i className="fa fa-hashtag"/>{t}</Tag>)}
+        {tags.map((t,i) => <Tag key={i}><i className="fa fa-hashtag"/>{t}</Tag>)}
       </TagHGroup>
     </div>
   </div>);
@@ -106,7 +86,6 @@ export const CourseCard = ({icon = 'cog', flag=0}) => {
       <CardFooter>
         {flag ? <Status type="pass">You've completed this module.</Status> : null}
         {flag ? <NeutralButton hollow block>Start <i className="padding-left fa fa-play-circle"/></NeutralButton> : <Button block>Start <i className="padding-left fa fa-play-circle"/></Button>}
-
       </CardFooter>
     </CardFrame>
   );

@@ -19,7 +19,7 @@ import IconCircleImage from '../rh-components/rh-IconCircleImage';
 import IconCircleText from '../rh-components/rh-IconCircleText';
 import { TagHGroup, TagVGroup, Tag } from '../rh-components/rh-Tag';
 import { StatusIcon, StatusIconTiny } from '../rh-components/rh-StatusIcon';
-import {Status, StatusLabel} from '../rh-components/rh-Status';
+import { Status, StatusLabel } from '../rh-components/rh-Status';
 import Spinner from '../rh-components/rh-Spinner';
 import ToolTip from '../rh-components/rh-ToolTip';
 import Popupsimple from '../rh-components/rh-PopupSimple';
@@ -464,7 +464,8 @@ class ComponentsTesting extends React.Component {
                   <Col>
                     <ButtonVGroup>
                       <Button icon><i className="fa fa-cog"/></Button>
-                      <SecondaryButton icon><i className="fa fa-cog"/></SecondaryButton>
+                      <SecondaryButton icon><i
+                        className="fa fa-cog"/></SecondaryButton>
                       <NeutralButton icon><i
                         className="fa fa-cog"/></NeutralButton>
                     </ButtonVGroup>
@@ -537,7 +538,7 @@ class ComponentsTesting extends React.Component {
             <h1>Spinner</h1>
             <Spinner type="spinner-xlg"/>
             <Spinner type="spinner-lg"/>
-            <Spinner />
+            <Spinner/>
             <Spinner type="spinner-sm"/>
             <Spinner type="spinner-xs"/>
             <Spinner type="spinner-inverse"/>
@@ -610,7 +611,8 @@ class ComponentsTesting extends React.Component {
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.</Status>
             <Status type="info">About that something ... </Status>
-            <Status type="success">Lorem Ipsum is simply dummy text of the printing
+            <Status type="success">Lorem Ipsum is simply dummy text of the
+              printing
               and typesetting industry. Lorem Ipsum has been the industry's
               standard dummy text ever since the 1500s, when an unknown printer
               took a galley of type and scrambled it to make a type specimen
@@ -687,7 +689,8 @@ class ComponentsTesting extends React.Component {
         </PageModule>
         <PageModule title="Accordions" headline="">
           <div>
-            <Accordion title='Foo!!!' active={false} className='rh-accordion-shadows'>
+            <Accordion title='Foo!!!' active={false}
+                       className='rh-accordion-shadows'>
               <Card title="Title" style="dark">
                 <p>{Lorem.paragraph(3, 7)}</p>
               </Card>
@@ -699,21 +702,24 @@ class ComponentsTesting extends React.Component {
             <h1>Panel</h1>
             <Panel title='Ima control panel!' icon="cog" footerNote="Status!"
                    utilityButtons={[
-                     <button  key="aba"
-                              className="rh-button rh-button-text-neutral rh-button-icon">
+                     <button key="aba"
+                             className="rh-button rh-button-text-neutral rh-button-icon">
                        <i className="fa fa-wrench"/></button>,
                      <button key="abb"
-                       className="rh-button rh-button-text-neutral rh-button-icon">
+                             className="rh-button rh-button-text-neutral rh-button-icon">
                        <i className="fa fa-comment"/></button>,
                      <button key="abc"
-                       className="rh-button rh-button-text-neutral rh-button-icon">
+                             className="rh-button rh-button-text-neutral rh-button-icon">
                        <i className="fa fa-close"/></button>
                    ]}
-                   actionButtons={[<button key="uba" className="rh-button rh-button-text">
+                   actionButtons={[<button key="uba"
+                                           className="rh-button rh-button-text">
                      Primary</button>,
-                     <button key="ubb" className="rh-button rh-button-text-secondary">
+                     <button key="ubb"
+                             className="rh-button rh-button-text-secondary">
                        Secondary</button>,
-                     <button key="ubc" className="rh-button rh-button-text-neutral">
+                     <button key="ubc"
+                             className="rh-button rh-button-text-neutral">
                        Neutral</button>]}>
               <h1>H1 {Lorem.text(2, 5)}</h1>
               <p>Paragraph {Lorem.paragraph(5, 10)}</p>
@@ -771,6 +777,7 @@ class ComponentsTesting extends React.Component {
               <td>Description</td>
             </tr>
             </thead>
+            <tbody>
             <tr>
               <td>Data</td>
               <td>Data</td>
@@ -783,21 +790,22 @@ class ComponentsTesting extends React.Component {
               <td>Data</td>
               <td>Data</td>
             </tr>
+            </tbody>
           </table>
         </PageModule>
         <PageModule style="bars" title="" headline="">
-          <TextStyles />
+          <TextStyles/>
         </PageModule>
         <PageModule style="red" title="Module Title" headline="Module Headline">
-          <TextStyles />
+          <TextStyles/>
         </PageModule>
         <PageModule style="blue" title="Module Title"
                     headline="Module Headline">
-          <TextStyles />
+          <TextStyles/>
         </PageModule>
         <PageModule style="dark" title="Module Title"
                     headline="Module Headline">
-          <TextStyles />
+          <TextStyles/>
         </PageModule>
       </div>
     );

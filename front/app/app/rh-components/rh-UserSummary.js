@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import IconCircleImage from './rh-IconCircleImage.js';
 
@@ -37,10 +38,10 @@ UserSummary.defaultProps = {
   profileImageURL: null
 };
 UserSummary.propTypes    = {
-  profileImageURL: React.PropTypes.string,
-  name           : React.PropTypes.string,
-  summary        : React.PropTypes.string,
-  style          : React.PropTypes.string
+  profileImageURL: PropTypes.string,
+  name           : PropTypes.string,
+  summary        : PropTypes.string,
+  style          : PropTypes.string
 };
 
 export default UserSummary;

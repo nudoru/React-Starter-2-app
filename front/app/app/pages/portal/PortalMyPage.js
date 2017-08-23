@@ -1,36 +1,9 @@
 import React from 'react';
-import Lorem from '../../utils/Lorem';
 import { connect } from 'react-redux';
-import PageModule from '../../rh-components/rh-PageModule';
-import { Grid, Row, Col } from '../../rh-components/rh-Grid';
-import {
-  Card,
-  CardHGroup,
-  CardHGroupDecorative,
-  CardHGroupTable,
-  CardVGroup,
-  CardMasonry33Group
-} from '../../rh-components/rh-Card';
-import IconCircle from '../../rh-components/rh-IconCircle';
-import IconCircleText from '../../rh-components/rh-IconCircleText';
-import EventCard from '../../rh-components/rh-EventCard';
-import {
-  BlockLinkHGroup,
-  BlockLinkVGroup,
-  BlockLink
-} from '../../rh-components/rh-BlockLinks';
-import { TagHGroup, Tag } from '../../rh-components/rh-Tag';
-import { StatusIcon, StatusIconTiny } from '../../rh-components/rh-StatusIcon';
-import {
-  Button,
-  SecondaryButton,
-  NeutralButton,
-  NegativeButton,
-  ButtonHGroup,
-  ButtonHRow,
-  ButtonVGroup
-} from '../../rh-components/rh-Button';
-import {CourseFeatured} from './PortalCommonElements';
+import { Col, Row } from '../../rh-components/rh-Grid';
+import { Card, CardHGroup } from '../../rh-components/rh-Card';
+import { NeutralButton } from '../../rh-components/rh-Button';
+import { CourseFeatured } from './PortalCommonElements';
 import { PortalPageTemplate } from './PortalPageTemplate';
 import DonutChart from '../../rh-components/rh-DonutChart';
 

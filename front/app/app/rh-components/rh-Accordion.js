@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimateHeight from 'react-animate-height';
+import PropTypes from 'prop-types';
 import { is } from 'ramda';
 
 const isString = (str) => is(String, str);
@@ -8,16 +9,15 @@ const isString = (str) => is(String, str);
  * The title prop can either be a string or another components (single line of text)
  */
 class Accordion extends React.Component {
-  Ø;
 
   constructor (props) {
     super(props);
     this.state = {active: props.active};
   }
 
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.active !== this.props.active) {
-      this.setState({active: nextProps.active})
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.active !== this.props.active) {
+      this.setState({active: nextProps.active});
     }
   }
 
@@ -35,7 +35,8 @@ class Accordion extends React.Component {
     return (<section className={clsName}>
       <div className="rh-panel-header"
            onClick={this._onTitleClick.bind(this)}>
-        <div className="rh-panel-header-icon"><i className={'fa fa-' + icon}/></div>
+        <div className="rh-panel-header-icon"><i className={'fa fa-' + icon}/>
+        </div>
         <div className="rh-panel-header-label">
           {title}
         </div>
@@ -44,7 +45,7 @@ class Accordion extends React.Component {
         duration={250}
         height={contentHeight}
         contentClassName={'rh-panel-content'}>
-        {this.state.active ? this.props.children : null}
+        {this.state.active ? this.props.children : <div/>}
       </AnimateHeight>
 
     </section>);
@@ -57,9 +58,9 @@ Accordion.defaultProps = {
   className: ''
 };
 Accordion.propTypes    = {
-  title    : React.PropTypes.object,
-  active   : React.PropTypes.boolean,
-  className: React.PropTypes.string
+  title    : PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  active   : PropTypes.bool,
+  className: PropTypes.string
 };
 
 export default Accordion;
