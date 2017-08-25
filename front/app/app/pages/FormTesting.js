@@ -116,9 +116,9 @@ class TemplatePage extends React.Component {
                 </FormGroup>
                 <FormGroup>
                   <TextInput label="I'm disabled" disabled="true"
-                             value="Can't edit this"/>
+                             defaultValue="Can't edit this"/>
                   <TextInput label="I'm ERRORED" className="isError"
-                             value="You did it wrong!"/>
+                             defaultValue="You did it wrong!"/>
                 </FormGroup>
                 <FormGroup>
                   <TextInput className="input-1" placeholder="Width 1"/>
@@ -181,9 +181,9 @@ class TemplatePage extends React.Component {
                 </FormGroup>
                 <FormGroup>
                   <TextInput label="I'm disabled" disabled
-                             value="Can't edit this"/>
+                             defaultValue="Can't edit this"/>
                   <TextInput label="I'm ERRORED" error
-                             value="You did it wrong!"/>
+                             defaultValue="You did it wrong!"/>
                 </FormGroup>
               </fieldset>
             </HForm>

@@ -253,8 +253,8 @@ export class TextArea extends React.Component {
             id={this.id}
             ref={el => { this.el = el; }} //eslint-disable-line brace-style
             className={className}
+            defaultValue={children}
             {...other}>
-            {children}
           </textarea>
           {help ? <Help>{help}</Help> : null}
         </div>
@@ -512,7 +512,8 @@ export class CheckGroup extends React.Component {
       className += ' isError';
     }
 
-    children.forEach(c => c.props.className = className);
+    // TODO - find an alternate way
+    //children.forEach(c => c.props.className = className);
 
     if (disabled) {
       children.forEach(c => c.props.disabled = true);
@@ -607,10 +608,12 @@ export class RadioGroup extends React.Component {
       className += ' isError';
     }
 
-    children.forEach(c => c.props.className = className);
+    // TODO - find an alternate way
+    //children.forEach(c => c.props.className = className);
 
     // Assign the same name so they group properly
-    children.forEach(c => c.props.name = this.id);
+    // TODO - find an alternate way
+    //children.forEach(c => c.props.name = this.id);
 
     if (disabled) {
       children.forEach(c => c.props.disabled = true);

@@ -6,6 +6,7 @@ node_modules
 ._*
 .Spotlight-V100
 .Trashes
+*.zip
 
 front/app/config.json
 front/www
