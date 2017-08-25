@@ -1,42 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PageModule from '../rh-components/rh-PageModule';
-import { Grid, Row, Col } from '../rh-components/rh-Grid';
-import { Card, CardVGroup } from '../rh-components/rh-Card';
-import {
-  BlockLinkHGroup,
-  BlockLinkVGroup,
-  BlockLink
-} from '../rh-components/rh-BlockLinks';
-import { TagHGroup, Tag } from '../rh-components/rh-Tag';
+import { Col, Row } from '../rh-components/rh-Grid';
+import { Card } from '../rh-components/rh-Card';
 import DonutChart from '../rh-components/rh-DonutChart';
-import { AccordionVGroup } from '../rh-components/rh-Accordion';
-import Accordion from '../rh-components/rh-Accordion';
-import { StatusIcon, StatusIconTiny } from '../rh-components/rh-StatusIcon';
+import Accordion, { AccordionVGroup } from '../rh-components/rh-Accordion';
+import { StatusIcon } from '../rh-components/rh-StatusIcon';
 import Lorem from '../utils/Lorem';
 import {
-  VForm,
-  HForm,
-  FormGroup,
-  FormHGroupRow,
-  FormVGroup,
-  FormHGroup,
-  HInputDecorator,
-  Label,
-  TextInput,
   Datalist,
   DatalistOption,
-  TextArea,
   DropDown,
-  ListBox,
   Option,
-  CheckGroup,
-  Checkbox,
-  RadioGroup,
-  Radio
+  TextInput,
+  VForm
 } from '../rh-components/rh-Form';
-import Well from '../rh-components/rh-Well';
-import {Status, StatusLabel} from '../rh-components/rh-Status';
+import { StatusLabel } from '../rh-components/rh-Status';
 
 const NAMES = ['Yanick Swati', 'Verginia Eadberht', 'Lamis Flaviana', 'Miltiades Ratan', 'Gorgi Carlisa', 'Aljoša Chloé', 'Rhea Perttu', 'Marcia Rut', 'Sindri Ji-Hoon', 'Björn Perpetua', 'Yanick Swati', 'Verginia Eadberht', 'Lamis Flaviana', 'Miltiades Ratan', 'Gorgi Carlisa', 'Aljoša Chloé', 'Rhea Perttu', 'Marcia Rut', 'Sindri Ji-Hoon', 'Björn Perpetua', 'Yanick Swati', 'Verginia Eadberht', 'Lamis Flaviana', 'Miltiades Ratan', 'Gorgi Carlisa', 'Aljoša Chloé', 'Rhea Perttu', 'Marcia Rut', 'Sindri Ji-Hoon', 'Björn Perpetua'];
 

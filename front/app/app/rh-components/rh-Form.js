@@ -356,6 +356,7 @@ export class ListBox extends React.Component {
     this.pristine = true;
     this.touched  = false;
     this.error    = false;
+    this.options = [];
   }
 
   componentDidMount() {
@@ -380,10 +381,11 @@ export class ListBox extends React.Component {
     this.el.focus();
   }
 
+  // TODO - test this.options
   value () {
     //return this.el.value;
     return this.props.children.reduce((acc, c, i) => {
-      let opt = this.refs[i];
+      let opt = this.options[i];
       if (opt.el.selected) {
         acc.push(opt.props.children);
       }
@@ -426,7 +428,7 @@ export class ListBox extends React.Component {
             multiple
             size="3"
             id={this.id}
-            ref={el => { this.el = el; }} //eslint-disable-line brace-style
+            ref={el => { this.options.push(el); }} //eslint-disable-line brace-style
             className={className}
             {...other}>
             {React.Children.map(this.props.children, (element, idx) => {
@@ -473,6 +475,7 @@ export class CheckGroup extends React.Component {
     this.pristine = true;
     this.touched  = false;
     this.error    = false;
+    this.options = [];
   }
 
   focus () {
@@ -481,7 +484,7 @@ export class CheckGroup extends React.Component {
 
   value () {
     return this.props.children.reduce((acc, c, i) => {
-      let cbox = this.refs[i];
+      let cbox = this.options[i];
       if (cbox.el.checked) {
         acc.push(cbox.props.children);
       }
@@ -524,7 +527,7 @@ export class CheckGroup extends React.Component {
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
         <div className="rh-form-control"
-             ref={el => { this.el = el; }} //eslint-disable-line brace-style
+             ref={el => { this.options.push(el); }} //eslint-disable-line brace-style
              onBlur={this.onElBlur.bind(this)}
              onFocus={this.onElFocus.bind(this)}
              onChange={this.onElChange.bind(this)}>
@@ -569,6 +572,7 @@ export class RadioGroup extends React.Component {
     this.pristine = true;
     this.touched  = false;
     this.error    = false;
+    this.options = [];
   }
 
   focus () {
@@ -577,7 +581,7 @@ export class RadioGroup extends React.Component {
 
   value () {
     return this.props.children.reduce((acc, c, i) => {
-      let cbox = this.refs[i];
+      let cbox = this.options[i];
       if (cbox.el.checked) {
         acc = cbox.props.children;
       }
@@ -623,7 +627,7 @@ export class RadioGroup extends React.Component {
 
     return (<div className="rh-form-component">
         {label ? <Label htmlFor={this.id}>{label}</Label> : null }
-        <div ref={el => { this.el = el; }} //eslint-disable-line brace-style
+        <div ref={el => { this.options.push(el); }} //eslint-disable-line brace-style
              className="rh-form-control"
              onBlur={this.onElBlur.bind(this)}
              onFocus={this.onElFocus.bind(this)}

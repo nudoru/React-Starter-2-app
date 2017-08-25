@@ -233,7 +233,7 @@ class ComponentsTesting extends React.Component {
       <div>
         <PageModule style="full-homepage">
           <h1>Hello</h1>
-          <h3>Let's take a look at some components! Scroll down ...</h3>
+          <h3>Let&apos;s take a look at some components! Scroll down ...</h3>
           <IconCircle center icon="arrow-down"/>
         </PageModule>
         <PageModule style="white">
@@ -601,7 +601,7 @@ class ComponentsTesting extends React.Component {
             <StatusLabel type="warning">Status!</StatusLabel>
             <StatusLabel type="danger">Status!</StatusLabel>
             <Status>Lorem Ipsum is simply dummy text of the printing and
-              typesetting industry. Lorem Ipsum has been the industry's standard
+              typesetting industry. Lorem Ipsum has been the industry&apos;s standard
               dummy text ever since the 1500s, when an unknown printer took a
               galley of type and scrambled it to make a type specimen book. It
               has survived not only five centuries, but also the leap into
@@ -613,7 +613,7 @@ class ComponentsTesting extends React.Component {
             <Status type="info">About that something ... </Status>
             <Status type="success">Lorem Ipsum is simply dummy text of the
               printing
-              and typesetting industry. Lorem Ipsum has been the industry's
+              and typesetting industry. Lorem Ipsum has been the industry&apos;s
               standard dummy text ever since the 1500s, when an unknown printer
               took a galley of type and scrambled it to make a type specimen
               book. It has survived not only five centuries, but also the leap

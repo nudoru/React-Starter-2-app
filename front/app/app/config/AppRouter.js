@@ -25,9 +25,9 @@ export const AppRouter = ({config}) =>
           <Route exact path="/" component={ComponentsTesting}/>
           <Route path="/forms" component={FormTesting}/>
           <Route path="/t" component={TemplatePage}/>
-          <Route path="/404" render={() => <RouteMessage>There's nothing
+          <Route path="/404" render={() => <RouteMessage>There&apos;s nothing
             here.</RouteMessage>}/>
-          <Route render={() => <RouteMessage>There's nothing
+          <Route render={() => <RouteMessage>There&apos;s nothing
             here.</RouteMessage>}/>
         </Switch>
       </div>

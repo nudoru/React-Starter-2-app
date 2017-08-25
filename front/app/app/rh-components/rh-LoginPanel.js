@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import ModalMessage from './rh-ModalMessage'
+import ModalMessage from './rh-ModalMessage';
 import Spinner from './rh-Spinner';
 import Status from './rh-Status';
 import {
@@ -13,7 +13,7 @@ import {
 
 class LoginPanel extends React.Component {
 
-  constructor() {
+  constructor () {
     super();
     this.state = {
       isPrompting  : true,
@@ -25,21 +25,21 @@ class LoginPanel extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.refs.emailInput.focus();
+  componentDidMount () {
+    this.emailInput.focus();
   }
 
-  onEmailInputChange(e) {
-    let userinput = this.refs.emailInput.value;
+  onEmailInputChange (e) {
+    let userinput = this.emailInput.value;
     this.setState({
       isInputError : this.props.validateFn(userinput),
       usernameInput: userinput
     });
   }
 
-  onContinueClick(e) {
+  onContinueClick (e) {
     e.preventDefault();
-    let userinput = this.refs.emailInput.value;
+    let userinput = this.emailInput.value;
 
     if (this.state.isInputError || userinput.length === 0) {
       console.warn('Invalid id');
@@ -53,16 +53,17 @@ class LoginPanel extends React.Component {
       this.onProcessLoginFnError.bind(this));
   }
 
-  onProcessLoginFnSuccess(msg) {
-    this.setState({isPrompting: false, isFetching: true})
+  onProcessLoginFnSuccess (msg) {
+    this.setState({isPrompting: false, isFetching: true});
   }
 
-  onProcessLoginFnError(err) {
+  onProcessLoginFnError (err) {
     this.setState({isWSError: true});
   }
 
-  render() {
-    let {isPrompting, isFetching, isWSError, isInputError, usernameInput, lastRequest} = this.state, content;
+  render () {
+    let {isPrompting, isFetching, isWSError, isInputError, usernameInput, lastRequest} = this.state,
+        content;
 
     if (isPrompting) {
       let err, buttonStyles = ['rh-button'];
@@ -75,7 +76,7 @@ class LoginPanel extends React.Component {
             again.</Status>;
       } else if (isInputError) {
         err =
-          <Status type="warning">That doesn't look like a valid
+          <Status type="warning">That doesn&apos;t look like a valid
             ID.</Status>;
       }
 
@@ -90,7 +91,8 @@ class LoginPanel extends React.Component {
             <FormHGroupRow>
               <FormHGroup>
                 <HInputDecorator icon="user"/>
-                <input ref="emailInput" type="text" maxLength="30"
+                <input ref={(input) => {this.emailInput = input; }} type="text" //eslint-disable-line brace-style
+                       maxLength="30"
                        defaultValue={this.state.usernameInput}
                        onInput={this.onEmailInputChange.bind(this)}/>
                 <HInputDecorator>@redhat.com</HInputDecorator>
@@ -110,7 +112,7 @@ class LoginPanel extends React.Component {
         <div className="text-center">
           <Spinner type="spinner-lg"/>
         </div>
-      </div>)
+      </div>);
     }
 
     return (
