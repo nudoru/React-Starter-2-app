@@ -84,6 +84,8 @@ export const Help = ({children}) => <span
 
 //------------------------------------------------------------------------------
 
+// TODO
+// - set defaultValue from children prop to be consistent with TextArea
 export class TextInput extends React.Component {
 
   constructor (props) {
