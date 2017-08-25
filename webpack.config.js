@@ -4,7 +4,7 @@ const HTMLPlugin        = require('html-webpack-plugin');
 const CopyPlugin        = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PurifyCSSPlugin   = require('purifycss-webpack-plugin');
-
+const HappyPack = require('happypack');
 // Source
 const appEntryFile  = resolve(__dirname, 'front', 'app', 'index.js');
 const appConfigFile = resolve(__dirname, 'front', 'app', 'config.json');
@@ -72,25 +72,35 @@ module.exports = env => {
           }]
         },
         {
-          enforce: 'pre',
           test   : /\.jsx?$/,
-          use    : 'eslint-loader?{configFile:\'./.eslintrc\', quiet:false, failOnWarning:false, failOnError:true}',
-          exclude: ['/node_modules/', '/app/vendor/']
-        },
-        {
-          test   : /\.jsx?$/,
-          loader : 'babel-loader',
+          loader : 'happypack/loader',
           exclude: ['/node_modules/'],
           query  : {
             presets: removeEmpty(['es2015', 'react', isProd ? undefined : 'react-hmre']),
             compact: true
           }
         }
+        // Disabled for Happypack
+        //{
+        //  enforce: 'pre',
+        //  test   : /\.jsx?$/,
+        //  use    : 'eslint-loader?{configFile:\'./.eslintrc\', quiet:false, failOnWarning:false, failOnError:true}',
+        //  exclude: ['/node_modules/', '/app/vendor/']
+        //},
+        //{
+        //  test   : /\.jsx?$/,
+        //  loader : 'babel-loader',
+        //  exclude: ['/node_modules/'],
+        //  query  : {
+        //    presets: removeEmpty(['es2015', 'react', isProd ? undefined : 'react-hmre']),
+        //    compact: true
+        //  }
+        //}
       ]
     },
 
     plugins: removeEmpty([
-      // ALL BUILDS
+      new HappyPack({ threads: 4, loaders: ['babel-loader', 'eslint-loader?{configFile:\'./.eslintrc\', quiet:false, failOnWarning:false, failOnError:true}'] }),
       new HTMLPlugin({
         title   : 'Application',
         template: 'front/app/index.html'
